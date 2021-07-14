@@ -30,7 +30,7 @@ To learn more about the benefits of using Alchemy, check out the "Why Use Alchem
 
 ## 🎁 Alchemy's Products and Features 
 
-Alchemy has a full suite of products built to accelerate blockchain development. Our tools make it easier for blockchain developers to focus on their applications and users, rather than blockchain interfacing.
+Alchemy has a full suite of products built to accelerate blockchain development. Our tools make it easier for blockchain developers to focus on their applications and users, rather than interfacing with the blockchain.
 
 {% page-ref page="introduction/core-products/" %}
 
