@@ -36,7 +36,7 @@ Alchemy has a full suite of products built to accelerate blockchain development.
 
 ## 🛠 Start Building! 
 
-Get set up to use the Alchemy API in less than five minutes. Learn how to get and use your API key, start making requests, and set up your application to use Alchemy's endpoints.
+Get set up to use the Alchemy API in under five minutes. Learn how to get and use your API key, start making requests, and set up your application to use Alchemy's endpoints.
 
 {% page-ref page="introduction/getting-started.md" %}
 
