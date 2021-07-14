@@ -13,7 +13,7 @@ For more information on Ethereum JSON-RPC check out the [Ethereum Wiki](https://
 {% endhint %}
 
 {% hint style="info" %}
- Alchemy supports [**EIP-1898**](https://eips.ethereum.org/EIPS/eip-1898), which adds `blockHash`to JSON-RPC methods which accept a default block parameter.  By allowing methods with a _block number_ parameter to also accept a_block hash_ parameter, EIP-1898 protects against race conditions.  
+ Alchemy supports [**EIP-1898**](https://eips.ethereum.org/EIPS/eip-1898), which adds `blockHash`to JSON-RPC methods which accept a default block parameter.  By allowing methods with a _block number_ parameter to also accept a _block hash_ parameter, EIP-1898 protects against race conditions.  
 
 For instance,  if a user executes`eth_call` for block number 10000, but the network undergoes a  reorg causing the block \#10000 to change, it is unclear if the call evaluated at the old block or the new one. 
 {% endhint %}
