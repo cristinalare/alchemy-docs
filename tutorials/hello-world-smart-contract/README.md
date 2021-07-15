@@ -426,7 +426,7 @@ Open up the hello-world project in your favorite editor \(we like [VSCode](https
 ```text
 // Specifies the version of Solidity, using semantic versioning.
 // Learn more: https://solidity.readthedocs.io/en/v0.5.10/layout-of-source-files.html#pragma
-pragma solidity ^0.5.2;;
+pragma solidity ^0.5.2;
 
 // Defines a contract named `HelloWorld`.
 // A contract is a collection of functions and data (its state).
