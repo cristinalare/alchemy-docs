@@ -9,7 +9,7 @@ description: >-
 For more information on Polygon's API check out the [official documentation](https://docs.matic.network/).
 
 {% hint style="warning" %}
-Please be aware that not all Ethereum methods are recognized by Polygon; likewise, not all Polygon methods are currently supported on Alchemy.  
+**NOTE:** Not all standard Ethereum methods are supported by Polygon. Likewise, not all Polygon methods are currently supported on Alchemy. For the full list of supported Polygon methods, check out the [official documentation](https://docs.matic.network/).
 {% endhint %}
 
 ## Mainnet vs. Testnet
