@@ -35,7 +35,6 @@
 
 * [👩‍💻 Simple Web3 Script](tutorials/simple-web3-script.md)
 * [💸 Sending Transactions Using Web3](tutorials/sending-transactions-using-web3-and-alchemy.md)
-* [📱Building a dApp with Real-Time Transaction Notifications](tutorials/building-a-dapp-with-real-time-transaction-notifications.md)
 * [🌎 Hello World Smart Contract](tutorials/hello-world-smart-contract/README.md)
   * [💻 Interacting with a Smart Contract](tutorials/hello-world-smart-contract/interacting-with-a-smart-contract.md)
   * [📩 Submitting your Smart Contract to Etherscan](tutorials/hello-world-smart-contract/submitting-your-smart-contract-to-etherscan.md)
@@ -44,6 +43,7 @@
   * [🪄How to Mint an NFT](tutorials/how-to-create-an-nft/how-to-mint-a-nft.md)
   * [👛 How to View Your NFT in Your Mobile Wallet](tutorials/how-to-create-an-nft/how-to-view-your-nft-in-your-wallet.md)
 * [📝 NFT Minter Tutorial: How to Create a Full Stack DApp](tutorials/nft-minter.md)
+* [📱Building a dApp with Real-Time Transaction Notifications](tutorials/building-a-dapp-with-real-time-transaction-notifications.md)
 
 ## Guides
 
