@@ -10,6 +10,10 @@ For more information on Arbitrum's API check out the [official documentation](ht
 **HINT:** If you click on the "**Example**" title you can try out all the example requests in real-time using our [Composer](https://composer.alchemyapi.io/) tool, however all the example requests are on **Ethereum mainnet**, to switch to **Arbitrum** simply toggle the "network" dropdown.  
 {% endhint %}
 
+{% hint style="warning" %}
+Query methods with a block number argument more than 20 blocks behind `latest` are currently not supported on Arbitrum.
+{% endhint %}
+
 ## Mainnet vs. Testnet
 
 There are two networks on Arbitrum: Mainnet and Rinkeby testnet. The endpoints are as follows:
