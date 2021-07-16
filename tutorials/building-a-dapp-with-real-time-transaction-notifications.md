@@ -64,7 +64,7 @@ In this tutorial, we utilize Heroku for hosting a server and website; if you cho
 #### a\) Make a clone of the existing [Github Repository](https://github.com/pileofscraps/alchemy_notify.git)
 
 ```text
-git clone https://github.com/pileofscraps/alchemy_notify.git
+git clone https://github.com/alchemyplatform/Alchemy-Notify-Tutorial
 
 cd alchemy_notify
 ```
@@ -174,7 +174,7 @@ And now, with everything in place, you can test out your dApp!
 
 _🎉 **Congratulations on your dApp deployment! Feel free to edit your app, change its behavior, or make the frontend more spiffy!**_
 
-### **5.** [**Conclusion**](https://app.gitbook.com/@alchemyapi/s/alchemy/~/drafts/-MekEA1klO24zCw4Q00L/tutorials/building-a-dapp-with-real-time-transaction-notifications#5-conclusion-1)\*\*\*\*
+### **5.** [**Conclusion**](https://docs.alchemy.com/alchemy/tutorials/building-a-dapp-with-real-time-transaction-notifications#9-conclusion)\*\*\*\*
 
 ## **Build Project From Scratch**
 
@@ -370,7 +370,7 @@ async function addAddress(new_address) {
 The webhook id and the alchemy auth token comes from the Alchemy UI which we use to create our webhook in the next step!  
 {% endhint %}
 
-### **7. Complete** [**Steps 2 & 3**](https://app.gitbook.com/@alchemyapi/s/alchemy/~/drafts/-MekEA1klO24zCw4Q00L/tutorials/building-a-dapp-with-real-time-transaction-notifications#2-alchemy-notify-api-and-register-webhook-notifications) **from the Heroku-Serviced Project.** 
+### **7. Complete** [**Steps 2 & 3**](https://docs.alchemy.com/alchemy/tutorials/building-a-dapp-with-real-time-transaction-notifications#2-alchemy-notify-api-and-register-webhook-notifications) **from the Heroku-Serviced Project.** 
 
 ### **8. Create the frontend for your dApp**
 
