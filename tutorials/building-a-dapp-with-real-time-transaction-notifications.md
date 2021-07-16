@@ -16,7 +16,7 @@ In this tutorial, we’ll look at an example of how, with just a few lines of co
 
 1. High level walkthrough of the example project
 2. Build the project using Heroku
-   1. Set Up Github Repo & Heroku 
+   1. Clone [Github Repo](https://github.com/pileofscraps/alchemy_notify.git) & Set Up Heroku 
    2. Create a [free Alchemy account](https://alchemy.com/?r=affiliate:ba2189be-b27d-4ce9-9d52-78ce131fdc2d)
    3. Alchemy Notify API & Register Webhook Notifications
    4. Insert Alchemy Webhook Id and Auth Key
@@ -61,7 +61,7 @@ The “send a notification” flow looks like this:
 
 In this tutorial, we utilize Heroku for hosting a server and website; if you choose to use heroku, be sure to follow all of the following steps.  \(If you want to use another provider, see “Build Project From Scratch”\)
 
-#### a\) Make a clone of the existing Github Repository
+#### a\) Make a clone of the existing [Github Repository](https://github.com/pileofscraps/alchemy_notify.git)
 
 ```text
 git clone https://github.com/pileofscraps/alchemy_notify.git
