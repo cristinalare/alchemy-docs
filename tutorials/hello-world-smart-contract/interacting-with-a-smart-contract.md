@@ -141,7 +141,7 @@ Define `updateMessage(newMessage)` and create our transaction.
 
 * `'from': PUBLIC_KEY` : The origin of our transaction is our public address
 * `'to': contractAddress` : The contract we wish to interact with and send the transaction
-* `'nonce': nonce` : The account nonce with the number of transactions send from our address
+* `'nonce': nonce` : The account nonce with the number of transactions sent from our address
 * `'gas': estimatedGas` :  The estimated gas needed to complete the transaction
 * `'data': helloWorldContract.methods.update("<new message>").encodeABI()` : The computation we wish to perform in this transaction \(updating the contract message\)
 

@@ -44,7 +44,7 @@ none
 
 `QUANTITY` - integer of the current block number the client is on.
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_blockNumber%22%2C%22paramValues%22%3A%5B%5D%7D)
+#### \`\`[Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
 
 Request
 
@@ -123,7 +123,7 @@ params: [
 * `transactions`: Array - Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter.
 * `uncles`: Array - Array of uncle hashes.
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByHash%22%2C%22paramValues%22%3A%5B%220xc0f4906fea23cf6f3cce98cb44e8e1449e455b28d684dfa9ff65426495584de6%22%2Ctrue%5D%7D)
+#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByHash%22%2C%22paramValues%22%3A%5B%220xc0f4906fea23cf6f3cce98cb44e8e1449e455b28d684dfa9ff65426495584de6%22%2Cfalse%5D%7D)
 
 Request
 
@@ -205,7 +205,7 @@ params: [
 
 See [`eth_getBlockByHash`](ethereum.md#eth_getblockbyhash)
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%220x1b4%22%2Ctrue%5D%7D)
+#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
 
 Request
 
@@ -302,7 +302,7 @@ params: [
 * `r`: `DATA`, 32 Bytes - ECDSA signature r
 * `s`: `DATA`, 32 Bytes - ECDSA signature s
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionByHash%22%2C%22paramValues%22%3A%5B%220x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b%22%5D%7D)
+#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionByHash%22%2C%22paramValues%22%3A%5B%220x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b%22%5D%7D)
 
 Request
 
@@ -376,7 +376,7 @@ params: [
 
 `QUANTITY` - integer of the number of transactions send from this address.
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionCount%22%2C%22paramValues%22%3A%5B%220xc94770007dda54cF92009BFF0dE90c06F603a09f%22%2C%22latest%22%5D%7D)
+#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionCount%22%2C%22paramValues%22%3A%5B%220xc94770007dda54cF92009BFF0dE90c06F603a09f%22%2C%22latest%22%5D%7D)
 
 Request
 
@@ -458,7 +458,7 @@ It also returns either:
 * `root` : `DATA` 32 bytes of post-transaction stateroot \(pre Byzantium\)
 * `status`: `QUANTITY` either 1 \(success\) or 0 \(failure\)
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionReceipt%22%2C%22paramValues%22%3A%5B%220xab059a62e22e230fe0f56d8555340a29b2e9532360368f810595453f6fdd213b%22%5D%7D)
+#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionReceipt%22%2C%22paramValues%22%3A%5B%220xab059a62e22e230fe0f56d8555340a29b2e9532360368f810595453f6fdd213b%22%5D%7D)
 
 Request
 
