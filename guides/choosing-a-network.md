@@ -95,5 +95,5 @@ Arbitrum currently has one testnet on connected to Ethereum's Kovan testnet \([d
 * ChainID: 144545313136048
 * Symbol: ETH
 * Block Explorer URL: [https://explorer5.arbitrum.io/\#/](https://explorer5.arbitrum.io/#/)
-* Faucet: [https://github.com/kovan-testnet/faucet.](https://github.com/kovan-testnet/faucet.)
+* Faucet: [https://github.com/kovan-testnet/faucet](https://github.com/kovan-testnet/faucet.)
 
