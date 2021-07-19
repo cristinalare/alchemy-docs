@@ -78,12 +78,13 @@ While the subscription is active, you will receive events which are objects with
 
 #### **1. alchemy\_newFullPendingTransactions** 
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 The `alchemy_newFullPendingTransactions` ****subscription type is a super costly to maintain and requires a large number of compute units since it emits full transaction information instead of just transaction hashes. We do not recommend keeping this subscription open for long periods of time for non-enterprise tier users. 
 
 **NOTE:** 
 
 * The naming of this subscription is different from the naming of the web3 subscription API, [`alchemy_fullPendingTransactions`](../documentation/alchemy-web3/enhanced-web3-api.md#web-3-eth-subscribe-alchemy_fullpendingtransactions).
+* This method is only supported on Ethereum networks
 {% endhint %}
 
 Returns the transaction information for all transactions that are added to the pending state. This subscription type subscribes to pending transactions, similar to the standard Web3 call `web3.eth.subscribe("pendingTransactions")`, but differs in that it emits full transaction information rather than just transaction hashes. ****
@@ -148,6 +149,10 @@ Result
 #### 2. alchemy\_filteredNewFullPendingTransactions
 
 Returns the transaction information for all transactions that are added to the pending state that match a given filter. Currently supports an address filter, which will return transactions from or to the address.
+
+{% hint style="warning" %}
+**NOTE:** This method is only supported on Ethereum networks.
+{% endhint %}
 
 **Example**
 
@@ -215,6 +220,10 @@ Result
 Returns the hash for all transactions that are added to the pending state.
 
 When a transaction that was previously part of the canonical chain isn’t part of the new canonical chain after a reorganization its again emitted.
+
+{% hint style="warning" %}
+**NOTE:** This method is only supported on Ethereum networks.
+{% endhint %}
 
 **Parameters**
 
