@@ -1906,64 +1906,7 @@ Result
 }
 ```
 
-#### 3. newPendingTransactions <a id="newpendingtransactions"></a>
-
-Returns the hash for all transactions that are added to the pending state.
-
-When a transaction that was previously part of the canonical chain isn’t part of the new canonical chain after a reorganization its again emitted.
-
-**Parameters**
-
-none
-
-**Example**
-
-Request
-
-{% tabs %}
-{% tab title="Curl" %}
-```bash
-curl https://arb-mainnet.g.alchemy.com/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","id": 2, "method": "eth_subscribe", "params": ["newPendingTransactions"]}'
-```
-{% endtab %}
-
-{% tab title="Postman" %}
-```http
-URL: https://arb-mainnet.g.alchemy.com/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_subscribe",
-    "params":["newPendingTransactions"]
-    "id":2
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Result
-
-```javascript
-{
-    "jsonrpc":"2.0",
-    "id":2,
-    "result":"0xc3b33aa549fb9a60e95d21862596617c"
-}
-{
-    "jsonrpc":"2.0",
-    "method":"eth_subscription",
-    "params":{
-        "subscription":"0xc3b33aa549fb9a60e95d21862596617c",
-        "result":"0xd6fdc5cc41a9959e922f30cb772a9aef46f4daea279307bc5f7024edc4ccd7fa"
-    }
-}
-```
-
-#### 4. syncing
+#### 3. syncing
 
 Indicates when the node starts or stops synchronizing. The result can either be a boolean indicating that the synchronization has started \(true\), finished \(false\) or an object with various progress indicators.
 
