@@ -12,22 +12,6 @@ For more information on Ethereum JSON-RPC check out the [Ethereum Wiki](https://
 **HINT:** If you click on the "**Example**" title you can try out all the example requests in real-time using our [Composer](https://composer.alchemyapi.io/) tool!
 {% endhint %}
 
-{% hint style="info" %}
- Alchemy supports [**EIP-1898**](https://eips.ethereum.org/EIPS/eip-1898), which adds `blockHash`to JSON-RPC methods which accept a default block parameter.  By allowing methods with a _block number_ parameter to also accept a _block hash_ parameter, EIP-1898 protects against race conditions.  
-
-For instance,  if a user executes`eth_call` for block number 10000, but the network undergoes a  reorg causing the block \#10000 to change, it is unclear if the call evaluated at the old block or the new one. 
-{% endhint %}
-
-{% hint style="info" %}
-Note that parameters under EIP-1898 are now an object instead of a string
-
-**Example:** `eth_getBalance`   
-
-| Non EIP-1898 Param | EIP-1898 Param  |
-| :--- | :--- |
-| `["0x<some-address>", "0x<some-block-number>"]` | `["0x<some-address>", {"blockHash": "0x<some-blockhash>"}]` |
-{% endhint %}
-
 ## 📦 Retrieving Blocks
 
 Calls related to retrieving blocks and block information. 

@@ -93,9 +93,21 @@ A super easy way to distinguish between these two addresses is by calling [eth\_
 * [**0x Contract Address**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getCode%22%2C%22paramValues%22%3A%5B%220xe41d2489571d322189246dafa5ebde1f4699f498%22%2C%22latest%22%5D%7D)
 * [**Vitalik's Wallet Address**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getCode%22%2C%22paramValues%22%3A%5B%220xAb5801a7D398351b8bE11C439e05C5B3259aeC9B%22%2C%22latest%22%5D%7D)
 
+## What are best practices for avoiding re-orgs when calling JSON-RPC methods? <a id="how-do-i-distinguish-between-a-contract-address-and-a-wallet-address"></a>
+
+Alchemy supports [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898), which adds `blockHash` to all JSON-RPC methods that accept a default block parameter. By allowing methods with a block number parameter to also accept a block hash parameter, EIP-1898 protects against re-orgs. 
+
+For instance, if a user executes `eth_call` for block number 10000, but the network undergoes a re-org causing the block 10000 to change, it is unclear if the call evaluated at the old block or the new one. 
+
+{% hint style="info" %}
+**Example:** `eth_getBalance`   
+
+| Non EIP-1898 Param | EIP-1898 Param  |
+| :--- | :--- |
+| `["0x<some-address>", "0x<some-block-number>"]` | `["0x<some-address>", {"blockHash": "0x<some-blockhash>"}]` |
+{% endhint %}
+
 ## My question isn't here, where can I get help? <a id="my-question-isnt-here-where-can-i-get-help"></a>
 
 Don't worry, we got you. Check out our [support page](https://docs.alchemyapi.io/other/contact-us) for plenty of options!
-
-
 
