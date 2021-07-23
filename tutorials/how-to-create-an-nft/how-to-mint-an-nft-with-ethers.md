@@ -140,7 +140,7 @@ describe("MyNFT", function () {
     }
   })
 
-  it("works", async function () {
+  it("emits a Transfer event", async function () {
     await expect(mintNft(tokenURI, env, ethers.provider))
       .to.emit(deployedContract, 'Transfer');
   });
