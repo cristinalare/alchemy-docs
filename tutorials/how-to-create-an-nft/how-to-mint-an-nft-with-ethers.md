@@ -22,7 +22,36 @@ command line remains unchanged.
 
 As a reminder, "Minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain.
 This tutorial assumes that that you've successfully [deployed a smart contract to the Ropsten network in Part I](how-to-write-and-deploy-a-nft-smart-contract)
-of the NFT tutorial series, which includes [installing Ethers](how-to-create-an-nft#step-12-install-ethers-js).
+of the NFT tutorial series, which includes [installing Ethers](./how-to-create-an-nft#step-12-install-ethers-js). However, you'll want to update your MyNFT.sol to support the latest OpenZeppelin library.
+
+```solidity
+// Contract based on https://docs.openzeppelin.com/contracts/3.x/erc721
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+
+contract MyNFT is ERC721URIStorage {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+
+    constructor() ERC721("MyNFT", "MNFT") {}
+
+    function mintNFT(address recipient, string memory tokenURI)
+    public
+    returns (uint256)
+    {
+        _tokenIds.increment();
+
+        uint256 newItemId = _tokenIds.current();
+        _mint(recipient, newItemId);
+        _setTokenURI(newItemId, tokenURI);
+
+        return newItemId;
+    }
+}
+```
 
 ### Step 1: Create a mint-nft.ts file <a id="step-1-create-a-mint-nft-ts-file"></a>
 
