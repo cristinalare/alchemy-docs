@@ -149,4 +149,4 @@ describe("MyNFT", function () {
 
 What we've done here is to create a library function which contains as much of the behavior as possible so that we can maximize test coverage,
 using [dependency injection](https://wiki.c2.com/?DependencyInjection). Our script therefore contains no logic, and merely injects the necessary
-parameters into our minting function.
+parameters into our minting function. The wallet provided by `waffle.provider.getWallets()` links to a [Hardhat Network](https://hardhat.org/hardhat-network/) account that conveniently comes preloaded with an eth balance that we can use to fund our test transactions.
