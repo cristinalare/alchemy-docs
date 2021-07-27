@@ -139,7 +139,7 @@ First, let's define a function called `mintNFT(tokenData)` and create our transa
 Your `mint-nft.js` file should look like this now:
 
 ```javascript
-arequire('dotenv').config();
+require('dotenv').config();
 const API_URL = process.env.API_URL;
 const PUBLIC_KEY = process.env.PUBLIC_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
