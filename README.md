@@ -14,7 +14,7 @@ Jump into our API Reference pages, from the Ethereum Standard JSON-RPC API, to A
 
 {% page-ref page="documentation/apis/" %}
 
-## 🤷♂ What is Alchemy?
+## 🤷 What is Alchemy?
 
 Alchemy is a blockchain developer platform focused on making Ethereum development easy. We've built a suite of developer tools, enhanced APIs, and superior node infrastructure to make building and running blockchain applications seamless.
 
