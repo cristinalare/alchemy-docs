@@ -156,7 +156,7 @@ For our Akita Token Rescue dashboard, this is the specific request that we use:
 Navigate to the `main.py` to find where your API key is being used.  Note that to get an Alchemy API key you will need to [create an App](https://www.youtube.com/watch?v=tfggWxfG9o0) in the Alchemy dashboard.
 
 {% hint style="info" %}
-**NOTE:** For this tutorial, we require using an app that is pointed towards the Ethereum mainnet since our contract is deployed on mainnet. For your own dApps that are in development, you may want to use one of the testnets instead.
+**NOTE:** For this tutorial, we require using an app that is pointed towards the Ethereum mainnet since our contract is deployed on mainnet. 
 {% endhint %}
 
 Our Heroku app is configured to accept the Alcehmy API key as an environment variable to encourage safe, best practices.  Once you get your API key after creating an account, run the following command in the same file directory that you previously ran `heroku create` to set your environment variables within Heroku itself .
