@@ -205,7 +205,7 @@ _🎉 **Congratulations on your dApp deployment! Feel free to edit your app, poi
 
 In this tutorial, we provide a generalized setup for a Python webapp that allows you to query the Alchemy Transfers API, process the JSON response, and then push the data to the frontend.
 
-### **1-2. Complete** [**Steps 2 & 3**](https://app.gitbook.com/@alchemyapi/s/alchemy/~/drafts/-MfET1dvyot4MLOlzTtl/tutorials/building-a-dashboard-with-alchemy-transfers#2-create-a-free-alchemy-account) **from the Heroku Project.** 
+### **1-2. Complete** [**Steps 2 & 3**](https://docs.alchemy.com/alchemy/tutorials/transfers-tutorial#2-create-a-free-alchemy-account) **from the Heroku Project.** 
 
 ### **3. Configure your App with your Alchemy API Key**
 
