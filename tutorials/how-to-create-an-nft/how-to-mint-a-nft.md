@@ -165,6 +165,12 @@ async function mintNFT(tokenURI) {
 }​
 ```
 
+{% hint style="info" %}
+## How can I mint multiple NFTs? <a id="how-do-i-distinguish-between-a-contract-address-and-a-wallet-address"></a>
+
+To mint `x` number of NFTs in a single command, we can use a simple `for loop` running from `0` to `x-1` within a function wrapping the minting process.  This would allow us to effectively mint `x` NFTs every time the wrapper mint function is called. 
+{% endhint %}
+
 ### Step 8: Sign the transaction <a id="step-8-sign-the-transaction"></a>
 
 Now that we've created our transaction, we need to sign it in order to send it off. Here is where we'll use our private key.
