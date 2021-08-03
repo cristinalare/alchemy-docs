@@ -11,6 +11,10 @@ Transfers are a representation of value being exchanged between two accounts. Of
 
 **If you don't have an account yet,** [**you can sign up with Alchemy for free**](https://alchemy.com/?r=affiliate:4cf7f72f-9238-45c4-a230-6840fcd048ae)**.** 
 
+{% hint style="success" %}
+**TIP:**  Check out[ this tutorial](../../../tutorials/transfers-tutorial.md) on [integrating historical transaction data into your dApp](../../../tutorials/transfers-tutorial.md)  to learn how to get started using the Transfers API! 
+{% endhint %}
+
 ## Types of Transfers
 
 There are three main types of transfers that are captured when using this API.  
