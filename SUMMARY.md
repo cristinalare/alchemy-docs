@@ -18,6 +18,7 @@
 * [📖 Alchemy API Reference](documentation/apis/README.md)
   * [Ethereum API](documentation/apis/ethereum/README.md)
     * [eth\_blockNumber](documentation/apis/ethereum/eth_blocknumber.md)
+    * [eth\_getBlockByHash](documentation/apis/ethereum/eth_getBlockByHash.md)
   * [Arbitrum API](documentation/apis/arbitrum.md)
   * [Polygon API](documentation/apis/polygon-api.md)
   * [Enhanced APIs](documentation/apis/enhanced-apis/README.md)
