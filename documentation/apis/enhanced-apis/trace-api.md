@@ -38,7 +38,7 @@ Executes the given call and returns a number of possible traces for it.
 
 #### **Parameters**
 
-1. `Object` - Call options, same as [`eth_call`](../ethereum.md#eth_call).
+1. `Object` - Call options, same as [`eth_call`](../ethereum/#eth_call).
    * `from`: `Address` - \(optional\) 20 Bytes - The address the transaction is send from.
    * `to`: `Address` - \(optional when creating new contract\) 20 Bytes - The address the transaction is directed to.
    * `gas`: `Quantity` - \(optional\) Integer formatted as a hex string of the gas provided for the transaction execution. eth\_call consumes zero gas, but this parameter may be needed by some executions.

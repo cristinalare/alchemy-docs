@@ -68,7 +68,7 @@ An object with the following fields:
 
 Subscribes to pending transactions, similar to the standard Web3 call `web3.eth.subscribe("pendingTransactions")`, but differs in that it emits full transaction information rather than just transaction hashes.
 
-Note that the argument passed to this function is `"alchemy_fullPendingTransactions"`, which is different from the string used in raw [`eth_subscribe`](../apis/ethereum.md#eth_subscribe) JSON-RPC calls, where it is `"alchemy_newFullPendingTransactions"` instead. This is confusing, but it is also consistent with the existing Web3 subscription APIs \(for example: `web3.eth.subscribe("pendingTransactions")` vs `"newPendingTransactions"` in raw JSON-RPC\).
+Note that the argument passed to this function is `"alchemy_fullPendingTransactions"`, which is different from the string used in raw [`eth_subscribe`](../apis/ethereum/#eth_subscribe) JSON-RPC calls, where it is `"alchemy_newFullPendingTransactions"` instead. This is confusing, but it is also consistent with the existing Web3 subscription APIs \(for example: `web3.eth.subscribe("pendingTransactions")` vs `"newPendingTransactions"` in raw JSON-RPC\).
 
 ### web3.alchemy.getAssetTransfers\({fromBlock, toBlock, fromAddress, toAddress, contractAddresses, excludeZeroValue, maxCount, category, pageKey}\)
 

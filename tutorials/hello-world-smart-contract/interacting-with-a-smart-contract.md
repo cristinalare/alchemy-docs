@@ -135,8 +135,8 @@ PRIVATE_KEY = "your-private-account-address"
 Define `updateMessage(newMessage)` and create our transaction. 
 
 1. First grab your `PUBLIC_KEY` __and __`PRIVATE_KEY` from the .env file.
-2. Next, we'll need to grab the account `nonce`. The nonce specification is used to keep track of the number of transactions sent from your address. We need this for security purposes and to prevent [replay attacks](../../resources/blockchain-glossary.md#account-nonce). To get the number of transactions sent from your address we use [getTransactionCount](../../documentation/apis/ethereum.md#eth_gettransactioncount). 
-3. Next, we'll use [eth\_estimateGas](../../documentation/apis/ethereum.md#eth_estimategas) to figure out the right amount of gas to include in order to complete our transaction. This avoids the risk of a failed transaction due to insufficient gas. 
+2. Next, we'll need to grab the account `nonce`. The nonce specification is used to keep track of the number of transactions sent from your address. We need this for security purposes and to prevent [replay attacks](../../resources/blockchain-glossary.md#account-nonce). To get the number of transactions sent from your address we use [getTransactionCount](../../documentation/apis/ethereum/#eth_gettransactioncount). 
+3. Next, we'll use [eth\_estimateGas](../../documentation/apis/ethereum/#eth_estimategas) to figure out the right amount of gas to include in order to complete our transaction. This avoids the risk of a failed transaction due to insufficient gas. 
 4. Finally we'll create our `transaction` with the following info:
 
 * `'from': PUBLIC_KEY` : The origin of our transaction is our public address

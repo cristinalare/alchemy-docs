@@ -34,7 +34,7 @@ To begin, open a WebSocket using the WebSocket URL for your app. You can find yo
 
 ![](../.gitbook/assets/websocket-key-copy.gif)
 
-Any of the APIs listed in the [Alchemy API Reference](../documentation/apis/ethereum.md) or [Enhanced API](../documentation/apis/enhanced-apis/token-api.md) can also be used via WebSocket. To do so, use the same payload that would be sent as the body of a POST request, but instead send that payload through the WebSocket.
+Any of the APIs listed in the [Alchemy API Reference](../documentation/apis/ethereum/) or [Enhanced API](../documentation/apis/enhanced-apis/token-api.md) can also be used via WebSocket. To do so, use the same payload that would be sent as the body of a POST request, but instead send that payload through the WebSocket.
 
 ### With Web3
 
@@ -51,7 +51,7 @@ When connected by a WebSocket, you may use two additional methods: `eth_subscrib
 
 ### eth\_subscribe
 
-Creates a new subscription for specified events. Learn more about `eth_subscribe` [here](../documentation/apis/ethereum.md#eth_subscribe).  
+Creates a new subscription for specified events. Learn more about `eth_subscribe` [here](../documentation/apis/ethereum/#eth_subscribe).  
 
 #### Parameters
 

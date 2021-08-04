@@ -207,7 +207,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum.md#eth_getblockbyhash)
+See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash)
 
 Request
 
@@ -418,7 +418,7 @@ Result
 
 Returns the receipt of a transaction by transaction hash. 
 
-This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](ethereum.md#eth_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions. 
+This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](ethereum/#eth_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions. 
 
 This call is also commonly used to get the contract address for a contract creation tx.
 
@@ -654,7 +654,7 @@ params: [
 
 #### Returns
 
-See [`eth_getTransactionByHash`](ethereum.md#eth_gettransactionbyhash)\`\`
+See [`eth_getTransactionByHash`](ethereum/#eth_gettransactionbyhash)\`\`
 
 Request
 
@@ -727,7 +727,7 @@ Returns information about a transaction by block number and transaction index po
 
 #### Returns
 
-See [`eth_getTransactionByHash`](ethereum.md#eth_gettransactionbyhash)\`\`
+See [`eth_getTransactionByHash`](ethereum/#eth_gettransactionbyhash)\`\`
 
 Request
 
@@ -806,7 +806,7 @@ params: ["0x29adbbaf99a3f97b2baefa11e865cf9d74435716ef8618caaa388619f5ae7d8e5d2c
 
 `DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available. 
 
-Use [`eth_getTransactionReceipt`](ethereum.md#eth_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
+Use [`eth_getTransactionReceipt`](ethereum/#eth_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
 
 {% hint style="danger" %}
 **Note:** Since `eth_sendRawTransaction` is a request used for writing to the blockchain and changes its state, it is impossible to execute the same request twice. This means if you were to copy the example given below you will not get the expected response. 
@@ -1045,16 +1045,16 @@ Returns the account and storage values of the specified account including the Me
 #### **Parameters**
 
 1. `DATA`, 20 Bytes - address of the account.
-2. `ARRAY`, 32 Bytes - array of storage-keys which should be proofed and included. See[`eth_getStorageAt`](ethereum.md#eth_getstorageat)
+2. `ARRAY`, 32 Bytes - array of storage-keys which should be proofed and included. See[`eth_getStorageAt`](ethereum/#eth_getstorageat)
 3. `QUANTITY|TAG` - integer block number, or the string `"latest"` or `"earliest"`, see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter)
 
 #### **Returns**
 
 `Object` - A account object:
 
-* `balance`: `QUANTITY` - the balance of the account. See[`eth_getBalance`](ethereum.md#eth_getbalance)
+* `balance`: `QUANTITY` - the balance of the account. See[`eth_getBalance`](ethereum/#eth_getbalance)
 * `codeHash`: `DATA`, 32 Bytes - hash of the code of the account. For a simple Account without code it will return `"0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"`
-* `nonce`: `QUANTITY`, - nonce of the account. See [`eth_getTransactionCount`](ethereum.md#eth_gettransactioncount)\`\`
+* `nonce`: `QUANTITY`, - nonce of the account. See [`eth_getTransactionCount`](ethereum/#eth_gettransactioncount)\`\`
 * `storageHash`: `DATA`, 32 Bytes - SHA3 of the StorageRoot. All storage will deliver a MerkleProof starting with this rootHash.
 * `accountProof`: `ARRAY` - Array of rlp-serialized MerkleTree-Nodes, starting with the stateRoot-Node, following the path of the SHA3 \(address\) as key.
 * `storageProof`: `ARRAY` - Array of storage-entries as requested. Each entry is a object with these properties:
@@ -1230,7 +1230,7 @@ _If you need to pull logs frequently, we recommend_ [_using WebSockets_](../../g
 * `address`: `DATA|Array`, 20 Bytes - \(optional\) Contract address or a list of addresses from which logs should originate.
 * `topics`: `Array` of `DATA`, - \(optional\) Array of 32 Bytes DATA topics. 
   * Topics are order-dependent. Each topic can also be an array of DATA with "or" options. 
-  * Check out more details on how to format topics in [eth\_newFilter](ethereum.md#eth_newfilter).
+  * Check out more details on how to format topics in [eth\_newFilter](ethereum/#eth_newfilter).
 * `blockHash`: `DATA`, 32 Bytes - \(optional\) With the addition of EIP-234 \(Geth &gt;= v1.8.13 or Parity &gt;= v2.1.0\), blockHash is a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash `blockHash`. **If blockHash is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.**
 
 ```javascript
@@ -1247,7 +1247,7 @@ params: [
 
 #### Returns
 
-See [`eth_getFilterChanges`](ethereum.md#eth_getfilterchanges)
+See [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges)
 
 {% hint style="info" %}
 Pending example!
@@ -1563,7 +1563,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum.md#eth_getblockbyhash) 
+See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash) 
 
 Request
 
@@ -1642,7 +1642,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum.md#eth_getblockbyhash) 
+See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash) 
 
 Request
 
@@ -1992,7 +1992,7 @@ If successful this returns the subscription id. Subscriptions are creates with a
 #### Parameters <a id="parameters"></a>
 
 1. subscription name
-2. optional arguments \([see below](ethereum.md#optional-arguments)\)
+2. optional arguments \([see below](ethereum/#optional-arguments)\)
 
 #### **Returns** 
 
