@@ -1,12 +1,10 @@
 ---
-description: Returns the current price per gas in wei. 
-
-{% hint style="info" %}
-If you are curious about the difference in gas price between this method and the [eth gas station](https://ethgasstation.info/), check out this [GitHub issue](https://github.com/ethereum/go-ethereum/issues/15825).
-{% endhint %}
+description: Returns the current price per gas in wei.
 ---
 
 # eth\_gasPrice
+
+{% hint style="info" %}
 
 ### Parameters
 
@@ -14,9 +12,9 @@ none
 
 ### Returns
 
-`QUANTITY` - integer of the current gas price in wei. 
+`QUANTITY` - integer of the current gas price in wei.
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_gasPrice%22%2C%22paramValues%22%3A%5B%5D%7D)
+**Example**
 
 Request
 
@@ -54,3 +52,4 @@ Result
   "result": "0x98bca5a00"
 }
 ```
+

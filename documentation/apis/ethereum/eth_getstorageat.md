@@ -1,21 +1,25 @@
 ---
-description: Returns the value from a storage position at a given address, or in other words, returns the state of the contract's storage, which may not be exposed via the contract's methods. 
+description: >-
+  Returns the value from a storage position at a given address, or in other
+  words, returns the state of the contract's storage, which may not be exposed
+  via the contract's methods.
 ---
+
 # eth\_getStorageAt
 
-### Parameters
+## Parameters
 
 * `DATA`, 20 Bytes - address of the storage.
 * `QUANTITY` - integer of the position in the storage.
 * `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending", see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
 
-### Returns
+## Returns
 
 * `DATA` - the value at this storage position.
 
-#### Example
+### Example
 
-Calculating the correct position depends on the storage to retrieve. Consider the following contract deployed at `0x295a70b2de5e3953354a6a8344e616ed314d7251` by address `0x391694e7e0b0cce554cb130d723a9d27458f9298`. 
+Calculating the correct position depends on the storage to retrieve. Consider the following contract deployed at `0x295a70b2de5e3953354a6a8344e616ed314d7251` by address `0x391694e7e0b0cce554cb130d723a9d27458f9298`.
 
 ```javascript
 contract Storage {
@@ -29,7 +33,7 @@ contract Storage {
 }
 ```
 
-Retrieving the value of `pos0` is straight forward: 
+Retrieving the value of `pos0` is straight forward:
 
 [Request](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getStorageAt%22%2C%22paramValues%22%3A%5B%220x295a70b2de5e3953354a6a8344e616ed314d7251%22%2C%220x0%22%2C%22latest%22%5D%7D)
 
@@ -127,3 +131,4 @@ Result
     "result":"0x000000000000000000000000000000000000000000000000000000000000162e"
 }
 ```
+

@@ -1,5 +1,5 @@
 ---
-description: Returns the balance of the account of a given address. 
+description: Returns the balance of the account of a given address.
 ---
 
 # eth\_getBalance
@@ -18,9 +18,9 @@ params: [
 
 ### Returns
 
-`QUANTITY` - integer of the current balance for the given address in wei. 
+`QUANTITY` - integer of the current balance for the given address in wei.
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%220xc94770007dda54cF92009BFF0dE90c06F603a09f%22%2C%22latest%22%5D%7D)
+### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%220xc94770007dda54cF92009BFF0dE90c06F603a09f%22%2C%22latest%22%5D%7D)
 
 Request
 
@@ -58,3 +58,4 @@ Result
   "result": "0x7c2562030800"
 }
 ```
+

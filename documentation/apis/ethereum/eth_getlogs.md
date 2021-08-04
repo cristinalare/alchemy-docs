@@ -1,14 +1,12 @@
 ---
-description: Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../../../guides/eth_getlogs.md) page. 
-
-{% hint style="warning" %}
-**NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**no limit on the response size**_. You can also request _**any block range**_ with a cap of _**10K logs in the response**_. 
-
-_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../../../guides/using-websockets.md) _to push new logs to you when they are available._ 
-{% endhint %}
+description: >-
+  Returns an array of all logs matching a given filter object. For more
+  information about eth_getLogs check out our Deep Dive into eth_getLogs page.
 ---
 
 # eth\_getLogs
+
+{% hint style="warning" %}
 
 ### Parameters
 
@@ -44,7 +42,7 @@ params: [
 
 See [`eth_getFilterChanges`](./#eth_getfilterchanges)
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getLogs%22%2C%22paramValues%22%3A%5B%7B%22address%22%3A%220xb59f67a8bff5d8cd03f6ac17265c550ed8f33907%22%2C%22topics%22%3A%22%5B%5C%220xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef%5C%22%5D%22%2C%22blockHash%22%3A%220x8243343df08b9751f5ca0c5f8c9c0460d8a9b6351066fae0acbd4d3e776de8bb%22%7D%5D%7D)
+**Example**
 
 Request
 
@@ -98,3 +96,4 @@ Result
   ]
 }
 ```
+

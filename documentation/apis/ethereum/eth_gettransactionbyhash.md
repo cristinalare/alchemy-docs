@@ -1,13 +1,15 @@
 ---
-description: Returns the information about a transaction requested by transaction hash. In the response object, `blockHash`, `blockNumber`, and `transactionIndex` are `null` when the transaction is pending.
+description: >-
+  Returns the information about a transaction requested by transaction hash. In
+  the response object, `blockHash`, `blockNumber`, and `transactionIndex` are
+  `null` when the transaction is pending.
 ---
 
 # eth\_getTransactionByHash
 
-
 ### Parameters
 
-`DATA`, 32 Bytes - hash of a transaction 
+`DATA`, 32 Bytes - hash of a transaction
 
 ```javascript
 params: [
@@ -34,7 +36,7 @@ params: [
 * `r`: `DATA`, 32 Bytes - ECDSA signature r
 * `s`: `DATA`, 32 Bytes - ECDSA signature s
 
-#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionByHash%22%2C%22paramValues%22%3A%5B%220x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b%22%5D%7D)
+### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionByHash%22%2C%22paramValues%22%3A%5B%220x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b%22%5D%7D)
 
 Request
 
@@ -87,3 +89,4 @@ Result
   }
 }
 ```
+

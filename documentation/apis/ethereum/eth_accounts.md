@@ -1,11 +1,10 @@
 ---
 description: Returns a list of addresses owned by client.
+---
+
+# eth\_accounts
 
 {% hint style="warning" %}
-Since Alchemy does not store keys, this will always return empty.
-{% endhint %}
----
-# eth\_accounts
 
 ### **Parameters**
 
@@ -15,7 +14,7 @@ none
 
 `Array of DATA`, 20 Bytes - addresses owned by the client.
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_accounts%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
+#### **Example**
 
 Request
 
@@ -53,3 +52,4 @@ Result
   "result": []
 }
 ```
+

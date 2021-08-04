@@ -1,14 +1,22 @@
 ---
-description: Returns a fee per gas that is an estimate of how much you can pay as a priority fee, or "tip", to get a transaction included in the current block. Generally you will use the value returned from this method to set the `maxFeePerGas` in a subsequent transaction that you are submitting. This method was introduced with [EIP 1559](https://blog.alchemy.com/blog/eip-1559).
+description: >-
+  Returns a fee per gas that is an estimate of how much you can pay as a
+  priority fee, or "tip", to get a transaction included in the current block.
 ---
 
 # eth\_maxPriorityFeePerGas
 
-**Returns**
+Generally you will use the value returned from this method to set the `maxFeePerGas` in a subsequent transaction that you are submitting. This method was introduced with [EIP 1559](https://blog.alchemy.com/blog/eip-1559).
+
+### Parameters
+
+none
+
+### **Returns**
 
 `QUANTITY` - the estimated priority fee per gas.
 
-**Example**
+#### **Example**
 
 Request
 
@@ -46,3 +54,4 @@ Result
   "result": "0x12a05f1f9"
 }
 ```
+

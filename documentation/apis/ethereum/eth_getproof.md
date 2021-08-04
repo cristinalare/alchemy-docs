@@ -1,5 +1,8 @@
 ---
-description: Returns the account and storage values of the specified account including the Merkle-proof. This call can be used to verify that the data you are pulling from is not tampered with. 
+description: >-
+  Returns the account and storage values of the specified account including the
+  Merkle-proof. This call can be used to verify that the data you are pulling
+  from is not tampered with.
 ---
 
 # eth\_getProof
@@ -24,7 +27,7 @@ description: Returns the account and storage values of the specified account inc
   * `value`: `QUANTITY` - the storage value
   * `proof`: `ARRAY` - Array of rlp-serialized MerkleTree-Nodes, starting with the storageHash-Node, following the path of the SHA3 \(key\) as path.
 
-#### **Example**
+### **Example**
 
 Request
 
@@ -84,3 +87,4 @@ Result
   }
 }
 ```
+

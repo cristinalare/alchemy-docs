@@ -1,14 +1,14 @@
 ---
-description: Executes a new message call immediately without creating a transaction on the block chain. 
-
-This is one of the most commonly used API calls. It is used to read from the blockchain which includes executing smart contracts, but does not publish anything to the blockchain. This call does not consume any Ether.  
-
-{% hint style="warning" %}
-Starting from [Geth 1.9.13](https://github.com/ethereum/go-ethereum/pull/20783), `eth_call`will check the balance of the sender \(to make sure that the sender has enough gas to complete the request\) before executing the call. This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the call as if it were a transaction. 
-{% endhint %}
+description: >-
+  Executes a new message call immediately without creating a transaction on the
+  block chain.
 ---
 
 # eth\_call
+
+This is one of the most commonly used API calls. It is used to read from the blockchain which includes executing smart contracts, but does not publish anything to the blockchain. This call does not consume any Ether.
+
+{% hint style="warning" %}
 
 ### Parameters
 
@@ -22,7 +22,7 @@ Starting from [Geth 1.9.13](https://github.com/ethereum/go-ethereum/pull/20783),
 * `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending" \(see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter)\), OR the `blockHash` \(in accordance with [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898)\) **Note: the parameter is an object instead of a string and should be specified as: `{"blockHash": "0x<some-hash>"}.`** Learn more [here](https://eips.ethereum.org/EIPS/eip-1898).
 
 {% hint style="danger" %}
-**Note:** `eth_call` has a timeout restriction at the node level. Batching multiple `eth_call`  together on-chain using pre-deployed smart contracts might result in unexpected timeouts that cause none of your calls to complete. Instead, consider serializing these calls, or using smaller batches if they fail with a node error code. 
+**Note:** `eth_call` has a timeout restriction at the node level. Batching multiple `eth_call` together on-chain using pre-deployed smart contracts might result in unexpected timeouts that cause none of your calls to complete. Instead, consider serializing these calls, or using smaller batches if they fail with a node error code.
 {% endhint %}
 
 ```javascript
@@ -43,7 +43,7 @@ params: [
 
 `DATA` - the return value of executed contract.
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_call%22%2C%22paramValues%22%3A%5B%7B%22to%22%3A%220xd46e8dd67c5d32be8058bb8eb970870f07244567%22%2C%22from%22%3A%220xb60e8dd61c5d32be8058bb8eb970870f07233155%22%2C%22gas%22%3A%220x76c0%22%2C%22gasPrice%22%3A%220x9184e72a000%22%2C%22value%22%3A%220x9184e72a%22%2C%22data%22%3A%220xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675%22%7D%2C%22latest%22%5D%7D)
+**Example**
 
 Request
 
@@ -81,3 +81,4 @@ Result
   "result": "0x"
 }
 ```
+

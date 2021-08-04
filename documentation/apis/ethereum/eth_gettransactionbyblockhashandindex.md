@@ -1,14 +1,16 @@
 ---
-description: Returns information about a transaction by block hash and transaction index position.
+description: >-
+  Returns information about a transaction by block hash and transaction index
+  position.
 ---
 
 # eth\_getTransactionByBlockHashAndIndex
 
 ### Parameters
 
-`DATA`, 32 Bytes - hash of a block. 
+`DATA`, 32 Bytes - hash of a block.
 
-`QUANTITY` - integer of the transaction index position. 
+`QUANTITY` - integer of the transaction index position.
 
 ```javascript
 params: [ 
@@ -21,7 +23,7 @@ params: [
 
 See [`eth_getTransactionByHash`](./#eth_gettransactionbyhash)\`\`
 
-#### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionByBlockHashAndIndex%22%2C%22paramValues%22%3A%5B%220xc0f4906fea23cf6f3cce98cb44e8e1449e455b28d684dfa9ff65426495584de6%22%2C%220x0%22%5D%7D)
+### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionByBlockHashAndIndex%22%2C%22paramValues%22%3A%5B%220xc0f4906fea23cf6f3cce98cb44e8e1449e455b28d684dfa9ff65426495584de6%22%2C%220x0%22%5D%7D)
 
 Request
 
@@ -74,3 +76,4 @@ Result
   }
 }
 ```
+

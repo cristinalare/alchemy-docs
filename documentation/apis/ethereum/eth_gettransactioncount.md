@@ -20,7 +20,7 @@ params: [
 
 `QUANTITY` - integer of the number of transactions send from this address.
 
-#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionCount%22%2C%22paramValues%22%3A%5B%220xc94770007dda54cF92009BFF0dE90c06F603a09f%22%2C%22latest%22%5D%7D)
+### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionCount%22%2C%22paramValues%22%3A%5B%220xc94770007dda54cF92009BFF0dE90c06F603a09f%22%2C%22latest%22%5D%7D)
 
 Request
 
@@ -58,3 +58,4 @@ Result
   "result": "0x219"
 }
 ```
+

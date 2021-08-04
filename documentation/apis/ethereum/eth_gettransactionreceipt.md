@@ -1,21 +1,18 @@
 ---
-description: Returns the receipt of a transaction by transaction hash. 
-
-This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](./#eth_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions. 
-
-This call is also commonly used to get the contract address for a contract creation tx.
-
-{% hint style="warning" %}
-**Note:** the receipt is not available for pending transactions.
-{% endhint %}
+description: Returns the receipt of a transaction by transaction hash.
 ---
 
 # eth\_getTransactionReceipt
 
+This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](./#eth_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions.
+
+This call is also commonly used to get the contract address for a contract creation tx.
+
+{% hint style="warning" %}
 
 ### Parameters
 
-`DATA`, 32 Bytes - hash of a transaction 
+`DATA`, 32 Bytes - hash of a transaction
 
 ```javascript
 params: [ 
@@ -44,7 +41,7 @@ It also returns either:
 * `root` : `DATA` 32 bytes of post-transaction stateroot \(pre Byzantium\)
 * `status`: `QUANTITY` either 1 \(success\) or 0 \(failure\)
 
-#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getTransactionReceipt%22%2C%22paramValues%22%3A%5B%220xab059a62e22e230fe0f56d8555340a29b2e9532360368f810595453f6fdd213b%22%5D%7D)
+**Example**
 
 Request
 
@@ -112,3 +109,4 @@ Result
   }
 }
 ```
+

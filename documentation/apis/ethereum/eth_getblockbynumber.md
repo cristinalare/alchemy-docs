@@ -4,7 +4,6 @@ description: Returns information about a block by block number.
 
 # eth\_getBlockByNumber
 
-
 ### Parameters
 
 * `QUANTITY|TAG` - integer of a block number, or the string "earliest", "latest" or "pending", as in the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
@@ -21,7 +20,7 @@ params: [
 
 See [`eth_getBlockByHash`](./#eth_getblockbyhash)
 
-#### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
+### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
 
 Request
 
@@ -80,3 +79,4 @@ Result
   }
 }
 ```
+
