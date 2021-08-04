@@ -4,17 +4,17 @@ description: Returns the number of the most recent block.
 
 # eth\_blockNumber
 
-#### Parameters
+### Parameters
 
 none
 
-#### Returns
+### Returns
 
 `QUANTITY` - integer of the current block number the client is on.
 
 #### \`\`[Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
 
-Request
+#### Request
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -41,7 +41,7 @@ Body:
 {% endtab %}
 {% endtabs %}
 
-Result
+#### Result
 
 ```javascript
 {
