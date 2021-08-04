@@ -104,6 +104,12 @@ web3.eth
   .then(gasAmount => {
     /* … */
   });
+
+web3.eth
+  .getMaxPriorityFeePerGas().then(console.log);
+
+web3.eth
+  .getFeeHistory(4, "latest", [25, 50, 75]).then(console.log);
 ```
 
 ### With a Browser Provider

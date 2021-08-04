@@ -22,6 +22,8 @@ We're obsessed with providing the most developer-friendly experience across our 
 | net\_version | 10 |
 | eth\_subscribe | 10 |
 | eth\_unsubscribe | 10 |
+| eth\_feeHistory | 10 |
+| eth\_maxPriorityFeePerGas | 10 |
 | eth\_getTransactionReceipt | 15 |
 | eth\_getUncleByBlockHashAndIndex | 15 |
 | eth\_getUncleByBlockNumberAndIndex | 15 |

@@ -171,6 +171,7 @@ async function updateMessage(newMessage) {
       'to': contractAddress,
       'nonce': nonce,
       'gas': gasEstimate, 
+      'maxFeePerGas': 1000000108,
       'data': helloWorldContract.methods.update(newMessage).encodeABI()
     };
 }
@@ -214,6 +215,7 @@ async function updateMessage(newMessage) {
       'to': contractAddress,
       'nonce': nonce,
       'gas': gasEstimate, 
+      'maxFeePerGas': 1000000108,
       'data': helloWorldContract.methods.update(newMessage).encodeABI()
     };
 
@@ -270,6 +272,7 @@ async function updateMessage(newMessage) {
       'to': contractAddress,
       'nonce': nonce,
       'gas': gasEstimate, 
+      'maxFeePerGas': 1000000108,
       'data': helloWorldContract.methods.update(newMessage).encodeABI()
     };
 

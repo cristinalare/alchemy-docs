@@ -134,6 +134,7 @@ First, let's define a function called `mintNFT(tokenData)` and create our transa
 * `'to': contractAddress` : The contract we wish to interact with and send the transaction
 * `'nonce': nonce` : The account nonce with the number of transactions send from our address
 * `'gas': estimatedGas` : The estimated gas needed to complete the transaction
+* `'maxPriorityFeePerGas': estimatedFee`: The estimated fee to bid per gas.
 * `'data': nftContract.methods.mintNFT(PUBLIC_KEY, md).encodeABI()` : The computation we wish to perform in this transaction— which in this case is minting an NFT
 
 Your `mint-nft.js` file should look like this now:
@@ -160,6 +161,7 @@ async function mintNFT(tokenURI) {
     'to': contractAddress,
     'nonce': nonce,
     'gas': 500000,
+    'maxPriorityFeePerGas': 1999999987,
     'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()
   };
 }​
@@ -199,6 +201,7 @@ async function mintNFT(tokenURI) {
     'to': contractAddress,
     'nonce': nonce,
     'gas': 500000,
+    'maxPriorityFeePerGas': 1999999987,
     'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()
   };
 
@@ -257,6 +260,7 @@ async function mintNFT(tokenURI) {
     'to': contractAddress,
     'nonce': nonce,
     'gas': 500000,
+    'maxPriorityFeePerGas': 1999999987,
     'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()
   };
 
