@@ -1,6 +1,5 @@
 ---
-description: >-
-  Returns the number of the most recent block.
+description: Returns the number of the most recent block.
 ---
 
 # eth\_blockNumber
@@ -13,7 +12,7 @@ none
 
 `QUANTITY` - integer of the current block number the client is on.
 
-#### \`\`[Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
+### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
 
 Request
 
@@ -51,3 +50,4 @@ Result
   "result": "0xa1c054"
 }
 ```
+

@@ -40,7 +40,7 @@ params: [
 * `transactions`: Array - Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter.
 * `uncles`: Array - Array of uncle hashes.
 
-## [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByHash%22%2C%22paramValues%22%3A%5B%220xc0f4906fea23cf6f3cce98cb44e8e1449e455b28d684dfa9ff65426495584de6%22%2Cfalse%5D%7D)
+### [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByHash%22%2C%22paramValues%22%3A%5B%220xc0f4906fea23cf6f3cce98cb44e8e1449e455b28d684dfa9ff65426495584de6%22%2Cfalse%5D%7D)
 
 Request
 
