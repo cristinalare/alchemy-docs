@@ -212,7 +212,7 @@ In this tutorial, we provide a generalized setup for a Python webapp that allows
 To follow safe, best practices, we encourage you to store your API key in an `.env` file. Taking the key that we generated from the previous step, create an `.env` file with the following contents:
 
 {% hint style="info" %}
-HINT: You'll need to install the dotenv package if you haven't already. Follow [these steps](sending-transactions-using-web3-and-alchemy/#5-install-dotenv) to learn more. 
+HINT: You'll need to install the dotenv package if you haven't already. Follow [these steps](sending-txs/#5-install-dotenv) to learn more. 
 {% endhint %}
 
 ```text

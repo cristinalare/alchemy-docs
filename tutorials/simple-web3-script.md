@@ -56,5 +56,5 @@ The latest block number is 11043912
 
 Woo! Congrats! You just wrote your first web3 script using Alchemy 🎉 
 
-_Not sure what to do next? Build upon your skills learned in this tutorial by checking out our beginner's tutorial for_ [_sending Ethereum transactions using Web3 and Alchemy_](sending-transactions-using-web3-and-alchemy/)_._
+_Not sure what to do next? Build upon your skills learned in this tutorial by checking out our beginner's tutorial for_ [_sending Ethereum transactions using Web3 and Alchemy_](sending-txs/)_._
 

@@ -74,8 +74,8 @@
 ## Tutorials
 
 * [👩‍💻 Simple Web3 Script](tutorials/simple-web3-script.md)
-* [💸 Sending Transactions Using Web3](tutorials/sending-transactions-using-web3-and-alchemy/README.md)
-  * [⛽️ How to Send Transactions with EIP 1559](tutorials/sending-transactions-using-web3-and-alchemy/how-to-send-transactions-with-eip-1559.md)
+* [💸 Sending Transactions Using Web3](tutorials/sending-txs/README.md)
+  * [⛽️ How to Send Transactions with EIP 1559](tutorials/sending-txs/eip-1559.md)
 * [🌎 Hello World Smart Contract](tutorials/hello-world-smart-contract/README.md)
   * [💻 Interacting with a Smart Contract](tutorials/hello-world-smart-contract/interacting-with-a-smart-contract.md)
   * [📩 Submitting your Smart Contract to Etherscan](tutorials/hello-world-smart-contract/submitting-your-smart-contract-to-etherscan.md)
