@@ -38,6 +38,7 @@
     * [eth\_protocolVersion](documentation/apis/ethereum/eth_protocolversion.md)
     * [eth\_gasPrice](documentation/apis/ethereum/eth_gasprice.md)
     * [eth\_estimateGas](documentation/apis/ethereum/eth_estimategas.md)
+    * [eth\_feeHistory](documentation/apis/ethereum/eth_feehistory.md)
     * [eth\_maxPriorityFeePerGas](documentation/apis/ethereum/eth_maxpriorityfeepergas.md)
     * [eth\_chainId](documentation/apis/ethereum/eth_chainid.md)
     * [net\_version](documentation/apis/ethereum/net_version.md)
