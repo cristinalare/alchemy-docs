@@ -143,6 +143,7 @@ Define `updateMessage(newMessage)` and create our transaction.
 * `'to': contractAddress` : The contract we wish to interact with and send the transaction
 * `'nonce': nonce` : The account nonce with the number of transactions sent from our address
 * `'gas': estimatedGas` :  The estimated gas needed to complete the transaction
+* `'maxFeePerGas': estimatedGasPrice`: The estimated total fee to pay per gas. This value should be set to the baseFee of the pending block plus an estimated tip for the miner, usually retrieved from `eth_maxPriorityFeePerGas`.
 * `'data': helloWorldContract.methods.update("<new message>").encodeABI()` : The computation we wish to perform in this transaction \(updating the contract message\)
 
 Your `contract-interact.js` file should look like this now: 

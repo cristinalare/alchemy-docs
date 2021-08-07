@@ -30,7 +30,7 @@ params: ["0x8D2B29"]
 curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
--d'{"jsonrpc":"2.0", "id": 1, "method":"parity_getBlockReceipts","params":["0x8D2B29"]}
+-d '{"jsonrpc":"2.0", "id":1, "method":"parity_getBlockReceipts","params":["0x8D2B29"]}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -47,6 +47,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
       "blockNumber": "0x8d2b29",
       "contractAddress": null,
       "cumulativeGasUsed": "0x5208",
+      "effectiveGasPrice": "0x12a05f200",
       "from": "0x4d6bb4ed029b33cf25d0810b029bd8b1a6bcab7b",
       "gasUsed": "0x5208",
       "logs": [],
@@ -62,6 +63,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
       "blockNumber": "0x8d2b29",
       "contractAddress": null,
       "cumulativeGasUsed": "0x3fc28",
+      "effectiveGasPrice": "0x12a05f200",
       "from": "0x0caf0d921b2bd24ca04e1f06344e976af223783b",
       "gasUsed": "0x3aa20",
       "logs": [],
