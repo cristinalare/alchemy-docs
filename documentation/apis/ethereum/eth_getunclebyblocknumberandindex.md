@@ -22,6 +22,10 @@ params: [
 
 See [`eth_getBlockByHash`](./#eth_getblockbyhash) 
 
+{% hint style="warning" %}
+**NOTE:** The return does not contain a list of transactions in the uncle block, to get this, make another request to [eth\_getBlockByHash](eth_getblockbyhash.md) _or_ [eth\_getBlockByNumber](eth_getblockbynumber.md)
+{% endhint %}
+
 #### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getUncleByBlockNumberAndIndex%22%2C%22paramValues%22%3A%5B%220x29c%22%2C%220x0%22%5D%7D)
 
 Request
