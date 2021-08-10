@@ -187,8 +187,8 @@ describe("MyNFT", () => {
   }
 
   describe("mintNft", async () => {
-    it("emits the Transfer event", () => {
-      return expect(mintNftDefault())
+    it("emits the Transfer event", async () => {
+      await expect(mintNftDefault())
         .to.emit(deployedContract, "Transfer")
         .withArgs(ethers.constants.AddressZero, wallet.address, "1");
     });
@@ -220,22 +220,22 @@ describe("MyNFT", () => {
         );
     });
 
-    it("cannot mint to address zero", () => {
+    it("cannot mint to address zero", async () => {
       const TX = deployedContract.mintNFT(
         ethers.constants.AddressZero,
         TOKEN_URI
       );
-      return expect(TX).to.be.revertedWith("ERC721: mint to the zero address");
+      await expect(TX).to.be.revertedWith("ERC721: mint to the zero address");
     });
   });
 
-  describe("balanceOf", () => {
+  describe("balanceOf", async () => {
     it("gets the count of NFTs for this address", async () => {
       await expect(await deployedContract.balanceOf(wallet.address)).to.eq("0");
 
       await mintNftDefault();
 
-      return expect(await deployedContract.balanceOf(wallet.address)).to.eq(
+      await expect(await deployedContract.balanceOf(wallet.address)).to.eq(
         "1"
       );
     });
@@ -275,8 +275,8 @@ describe("deploying and minting NFT's", () => {
     envProperties["NFT_CONTRACT_ADDRESS"] = deployedContract.address;
   });
 
-  it("calls through and returns the transaction object", () => {
-    return expect(mintNft(TOKEN_URI, env, waffle.provider))
+  it("calls through and returns the transaction object", async () => {
+    await expect(mintNft(TOKEN_URI, env, waffle.provider))
       .to.emit(deployedContract, "Transfer")
       .withArgs(ethers.constants.AddressZero, wallet.address, "1");
   });
