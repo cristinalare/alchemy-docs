@@ -26,7 +26,7 @@ of the NFT tutorial series, which includes [installing Ethers](../how-to-create-
 
 ### Step 1: Create your Solidity contract <a id="step-1-create-your-solidity-contract"></a>
 
-OpenZeppelin is library for secure smart contract development. You simply inherit their implementations of popular standards such as ERC20 or ERC721, and extend the behavior to your needs. We're going to put this file at `/contracts/MyNFT.sol`.
+OpenZeppelin is library for secure smart contract development. You simply inherit their implementations of popular standards such as ERC20 or ERC721, and extend the behavior to your needs. We're going to put this file at `contracts/MyNFT.sol`.
 
 ```solidity
 // Contract based on https://docs.openzeppelin.com/contracts/4.x/erc721
@@ -127,7 +127,7 @@ export function getProvider(): ethers.providers.Provider {
 }
 ```
 
-Note that the final `getProvider()` function uses "ropsten". This argument is optional and defaults to "homestead" if omitted. We're using Alchemy, but there are several [supported alternatives](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider).
+Note that the final `getProvider()` function uses the ropsten network. This argument is optional and defaults to "homestead" if omitted. We're using Alchemy of course, but there are several [supported alternatives](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider).
 
 ### Step 3: Create Hardhat tasks to deploy our contract and mint NFT's <a id="step-3-create-hardhat-tasks"></a>
 
@@ -243,7 +243,7 @@ describe("MyNFT", () => {
 });
 ```
 
-### Step 5: Create integration tests <a id="step-4-create-integration-tests"></a>
+### Step 5: Create integration tests <a id="step-5-create-integration-tests"></a>
 
 Create a `test/lib/mint-nft.spec.ts` file containing the following. This will test the combined behavior of our contract as well as its interaction with our helper functions.
 
@@ -283,10 +283,7 @@ describe("deploying and minting NFT's", () => {
 });
 ```
 
-## Putting It All Together
-
-What we've done is to create a library function which contains as much of the behavior as possible so that we can maximize test coverage,
-using [dependency injection](https://wiki.c2.com/?DependencyInjection). Our Hardhat tasks contain the bare minimum functionality to pipe our command line arguments and environment as parameters into our deploying and minting functions. The wallet provided by `waffle.provider.getWallets()` links to a [Hardhat Network](https://hardhat.org/hardhat-network/) account that [conveniently comes preloaded](https://hardhat.org/hardhat-network/reference/#initial-state) with an eth balance that we can use to fund our test transactions.
+## Running Our Tasks
 
 To see our tasks, we run `hardhat` and see this output (excluding the built-in tasks).
 
@@ -306,3 +303,30 @@ Usage: hardhat [GLOBAL OPTIONS] deploy-nft
 
 deploy-nft: Deploy NFT contract
 ```
+
+## Running Our Tests
+
+To run our tests, we run `hardhat test`.
+
+```zsh
+  mintNft
+    ✓ calls through and returns the transaction object (60ms)
+
+  MyNFT
+    mintNft
+      ✓ emits the Transfer event (60ms)
+      ✓ returns the new item ID
+      ✓ increments the item ID (57ms)
+      ✓ cannot mint to address zero
+    balanceOf
+      ✓ gets the count of NFTs for this address
+
+
+  6 passing (2s)
+
+✨  Done in 5.66s.
+```
+
+## Putting It All Together
+
+What we've done is to cram as much of our deploying and minting code as possible into a library of functions that we can thoroughly test via [dependency injection](https://wiki.c2.com/?DependencyInjection). Our Hardhat tasks then merely pipe our dependencies (command line arguments and environment variables) as parameters into those functions, minimizing the footprint of any untested code. The wallet provided by `waffle.provider.getWallets()` links to a [Hardhat Network](https://hardhat.org/hardhat-network/) account that [conveniently comes preloaded](https://hardhat.org/hardhat-network/reference/#initial-state) with an eth balance that we can use to fund our test transactions.
