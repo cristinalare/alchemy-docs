@@ -327,6 +327,6 @@ To run our tests, we run `hardhat test`.
 ✨  Done in 5.66s.
 ```
 
-## Putting It All Together
+## Summary
 
 What we've done is to cram as much of our deploying and minting code as possible into a library of functions that we can thoroughly test via [dependency injection](https://wiki.c2.com/?DependencyInjection). Our Hardhat tasks then merely pipe our dependencies (command line arguments and environment variables) as parameters into those functions, minimizing the footprint of any untested code. The wallet provided by `waffle.provider.getWallets()` links to a [Hardhat Network](https://hardhat.org/hardhat-network/) account that [conveniently comes preloaded](https://hardhat.org/hardhat-network/reference/#initial-state) with an eth balance that we can use to fund our test transactions.
