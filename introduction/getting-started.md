@@ -165,7 +165,7 @@ Don't know where to start? Check out these four tutorials to get more familiar w
 
 1. Test out your dashboard knowledge with the [Dashboard Demo App](../guides/demo-app.md)
 2. Write a [simple web3 script](../tutorials/simple-web3-script.md) that gets the latest block number
-3. Learn how to send an [Ethereum transaction](../tutorials/sending-txs/) using Web3 and Alchemy
+3. Learn how to send an [Ethereum transaction](../tutorials/sending-txs.md) using Web3 and Alchemy
 4. Try deploying your first [smart contract ](../tutorials/hello-world-smart-contract/)and get your hands dirty with some solidity programming
 
 
