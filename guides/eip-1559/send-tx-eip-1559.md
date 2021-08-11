@@ -228,3 +228,5 @@ Which returns a hex:
 
 Alchemy has exposed the [`eth_maxPriorityFeePerGas`](../../documentation/apis/ethereum/eth_maxpriorityfeepergas.md) method so that you can pretty much call that and not worry too much about fee calculations. However you might want to make your own calculations, similar to how you might currently offer a "low", "medium", and "high" fee \(like what [Eth Gas Station](https://ethgasstation.info/) offers\). To do this, you can use the [`eth_feeHistory`](https://docs.alchemy.com/alchemy/documentation/apis/ethereum#eth_feehistory) API, which returns detailed information on historical fees for blocks, allowing you to build a better estimate. We will not go into detail on that here.
 
+**If you're interested in learning more, or have feedback, suggestions, or questions, reach out to us in** [**Discord**](https://alchemy.com/discord)**! Get started with Alchemy today by** [**signing up for free**](https://alchemy.com/?r=affiliate:5494a54b-6ae1-4d33-9016-c331c0dcdc1f)**.**
+

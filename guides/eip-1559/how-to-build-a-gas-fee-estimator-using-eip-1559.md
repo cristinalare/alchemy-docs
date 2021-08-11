@@ -279,7 +279,7 @@ For another thing, it's not clear exactly how much savings there are to be had h
 
 Another interesting area for fee "protection" would be to look at spikes in the `gasUsedRatio`. What happens when a block is 50% full and then the next one is 99% full? Lots of transactions get dropped. Perhaps there is a better predictor of these spikes?
 
-Similarly what happens when a block is completely full and then the next one is empty? There was so much potential to submit cheap tips!
+Similarly what happens when a block is completely full and then the next one is empty? There was so much potential to submit cheap tips! In any case, thanks for reading all the way through 🎉
 
-In any case, thanks for reading all the way through. If you're interested in learning more, or have feedback, suggestions, or questions, reach out to us in [Discord](https://alchemy.com/discord)! Get started with Alchemy today by [signing up for free](https://alchemy.com/?r=affiliate:5494a54b-6ae1-4d33-9016-c331c0dcdc1f).
+**If you're interested in learning more, or have feedback, suggestions, or questions, reach out to us in** [**Discord**](https://alchemy.com/discord)**! Get started with Alchemy today by** [**signing up for free**](https://alchemy.com/?r=affiliate:5494a54b-6ae1-4d33-9016-c331c0dcdc1f)**.**
 
