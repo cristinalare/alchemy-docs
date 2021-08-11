@@ -1,16 +1,15 @@
 ---
 description: >-
   This tutorial describes how to mint an NFT on the Ethereum blockchain using
-  Ethers via the ethers.js library, and our smart contract from Part I: How to Create an NFT.
-  We'll also explore basic test setup using dependency injection.
+  Ethers via the ethers.js library, and our smart contract from Part I: How to
+  Create an NFT. We'll also explore basic test se
 ---
 
-# 🪄How to Mint an NFT Using Ethers.js
+# 🪄How to Mint an NFT with Ethers.js
 
-_Estimated time to complete this guide: ~10 minutes_ 
+_Estimated time to complete this guide: ~10 minutes_
 
-In [another tutorial](how-to-mint-an-nft-with-ethers), we learned how to mint an NFT using Web3 and the [OpenZeppelin contracts
-library](https://docs.openzeppelin.com/contracts/erc721). In this exercise, we're going to walk you through an alternative implementation using version 4 of the [OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/erc721) as well as the [Ethers.js](https://docs.ethers.io/) Ethereum library instead of Web3.
+In [another tutorial](https://github.com/alchemyplatform/alchemy-docs/tree/9725d639b8e0a5421e738ecd9916b9b10e473702/tutorials/how-to-create-an-nft/how-to-mint-an-nft-with-ethers/README.md), we learned how to mint an NFT using Web3 and the [OpenZeppelin contracts library](https://docs.openzeppelin.com/contracts/erc721). In this exercise, we're going to walk you through an alternative implementation using version 4 of the [OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/erc721) as well as the [Ethers.js](https://docs.ethers.io/) Ethereum library instead of Web3.
 
 We'll also cover the basics of testing your contract with [Hardhat and Waffle](https://hardhat.org/plugins/nomiclabs-hardhat-waffle.html). For this tutorial I'm using Yarn, but you can use npm/npx if you prefer.
 
@@ -20,15 +19,13 @@ In all other respects, this tutorial works the same as the Web3 version, includi
 
 ## A Quick Reminder
 
-As a reminder, "minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain.
-This tutorial assumes that that you've successfully [deployed a smart contract to the Ropsten network in Part I](how-to-mint-a-nft)
-of the NFT tutorial series, which includes [installing Ethers](../how-to-create-an-nft#step-12-install-ethers-js).
+As a reminder, "minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain. This tutorial assumes that that you've successfully [deployed a smart contract to the Ropsten network in Part I](https://github.com/alchemyplatform/alchemy-docs/tree/9725d639b8e0a5421e738ecd9916b9b10e473702/tutorials/how-to-create-an-nft/how-to-mint-a-nft/README.md) of the NFT tutorial series, which includes [installing Ethers](./#step-12-install-ethers-js).
 
 ### Step 1: Create your Solidity contract <a id="step-1-create-your-solidity-contract"></a>
 
 OpenZeppelin is library for secure smart contract development. You simply inherit their implementations of popular standards such as ERC20 or ERC721, and extend the behavior to your needs. We're going to put this file at `contracts/MyNFT.sol`.
 
-```solidity
+```text
 // Contract based on https://docs.openzeppelin.com/contracts/4.x/erc721
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -61,8 +58,7 @@ contract MyNFT is ERC721URIStorage {
 
 Create a `mint-nft.ts` file mediate our interaction with the Solidity contract via Ethers.js. I put this under a `lib` directory, but you can organize however you prefer.
 
-
-```ts
+```typescript
 import { Contract, ethers } from "ethers";
 import contractArtifact from "../artifacts/contracts/MyNFT.sol/MyNFT.json";
 import { FactoryOptions } from "@nomiclabs/hardhat-ethers/src/types/index";
@@ -133,7 +129,7 @@ Note that the final `getProvider()` function uses the ropsten network. This argu
 
 Create the file `tasks/nft.ts` containing the following:
 
-```ts
+```typescript
 import { deploy, getProvider, mintNftAndPrintHash } from "../lib/mint-nft";
 import { task, types } from "hardhat/config";
 import { processEnv } from "../lib/safe-env";
@@ -154,11 +150,11 @@ task("mint-nft", "Mint an NFT")
   });
 ```
 
-### Step 4: Create unit tests<a id="step-4-create-unit-tests"></a>
+### Step 4: Create unit tests <a id="step-4-create-unit-tests"></a>
 
 Create a `test/MyNFT.spec.ts` file containing the following code. This will test the contract itself. Note that we're leaving most of [methods inherited from the OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#IERC721) untested for the sake of brevity. These tests should provide a firm foundation for you to test as much of the functionality as you want.
 
-```ts
+```typescript
 import { ethers, waffle } from "hardhat";
 import { Contract, Wallet } from "ethers";
 import { expect } from "chai";
@@ -247,7 +243,7 @@ describe("MyNFT", () => {
 
 Create a `test/lib/mint-nft.spec.ts` file containing the following. This will test the combined behavior of our contract as well as its interaction with our helper functions.
 
-```ts
+```typescript
 import { ethers, waffle } from "hardhat";
 import { Contract, Wallet } from "ethers";
 import { expect } from "chai";
@@ -285,9 +281,9 @@ describe("deploying and minting NFT's", () => {
 
 ## Running Our Tasks
 
-To see our tasks, we run `hardhat` and see this output (excluding the built-in tasks).
+To see our tasks, we run `hardhat` and see this output \(excluding the built-in tasks\).
 
-```zsh
+```text
 AVAILABLE TASKS:
 
   deploy-nft    Deploy NFT contract
@@ -296,7 +292,7 @@ AVAILABLE TASKS:
 
 Forget the arguments to your task? No problem.
 
-```zsh
+```text
 $ hardhat help deploy-nft
 
 Usage: hardhat [GLOBAL OPTIONS] deploy-nft
@@ -308,7 +304,7 @@ deploy-nft: Deploy NFT contract
 
 To run our tests, we run `hardhat test`.
 
-```zsh
+```text
   mintNft
     ✓ calls through and returns the transaction object (60ms)
 
@@ -329,4 +325,5 @@ To run our tests, we run `hardhat test`.
 
 ## Summary
 
-What we've done is to cram as much of our deploying and minting code as possible into a library of functions that we can thoroughly test via [dependency injection](https://wiki.c2.com/?DependencyInjection). Our Hardhat tasks then merely pipe our dependencies (command line arguments and environment variables) as parameters into those functions, minimizing the footprint of any untested code. The wallet provided by `waffle.provider.getWallets()` links to a [Hardhat Network](https://hardhat.org/hardhat-network/) account that [conveniently comes preloaded](https://hardhat.org/hardhat-network/reference/#initial-state) with an eth balance that we can use to fund our test transactions.
+What we've done is to cram as much of our deploying and minting code as possible into a library of functions that we can thoroughly test via [dependency injection](https://wiki.c2.com/?DependencyInjection). Our Hardhat tasks then merely pipe our dependencies \(command line arguments and environment variables\) as parameters into those functions, minimizing the footprint of any untested code. The wallet provided by `waffle.provider.getWallets()` links to a [Hardhat Network](https://hardhat.org/hardhat-network/) account that [conveniently comes preloaded](https://hardhat.org/hardhat-network/reference/#initial-state) with an eth balance that we can use to fund our test transactions.
+
