@@ -1,7 +1,7 @@
 ---
 description: >-
   Tutorial for how to build a gas fee estimation tool for Ethereum using
-  EIP-1559 methods
+  EIP-1559 methods.
 ---
 
 # 📊How to Build a Gas Fee Estimator using EIP-1559
