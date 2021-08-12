@@ -5,7 +5,7 @@ description: >-
   subscribing to events.
 ---
 
-# �� Using WebSockets
+# 🔈 Using WebSockets
 
 ## WebSockets vs. HTTP
 

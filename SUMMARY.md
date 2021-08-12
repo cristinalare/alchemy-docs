@@ -98,7 +98,7 @@
   * [🔄 Retrying an EIP 1559 transaction](guides/eip-1559/retry-eip-1559-tx.md)
   * [📊 How to Build a Gas Fee Estimator using EIP-1559](guides/eip-1559/gas-estimator.md)
 * [🔔 Using Alchemy Notify/Webhooks](guides/using-notify.md)
-* [�� Using WebSockets](guides/using-websockets.md)
+* [🔈 Using WebSockets](guides/using-websockets.md)
 * [📋 Dashboard Walkthrough](guides/demo-app.md)
 * [🤿 Deep Dive into eth\_getLogs](guides/eth_getlogs.md)
 * [💸 Connecting Metamask to Alchemy](guides/connecting-metamask-to-alchemy.md)
