@@ -94,7 +94,7 @@ task("mint-nft", "Mint an NFT")
 
 You'll notice our tasks imported a few helpers. Here they are.
 
-contract.ts
+`contract.ts`
 ```typescript
 import { Contract, ethers } from "ethers";
 import { getContractAt } from "@nomiclabs/hardhat-ethers/internal/helpers";
@@ -111,7 +111,7 @@ export function getContract(
 }
 ```
 
-env.ts
+`env.ts`
 ```typescript
 export function env(key: string): string {
   const value = process.env[key];
@@ -122,7 +122,7 @@ export function env(key: string): string {
 }
 ```
 
-provider.ts
+`provider.ts`
 
 Note that the final `getProvider()` function uses the ropsten network. This argument is optional and defaults to "homestead" if omitted. We're using Alchemy of course, but there are several [supported alternatives](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider).
 
@@ -136,7 +136,7 @@ export function getProvider(): ethers.providers.Provider {
 }
 ```
 
-wallet.ts
+`wallet.ts`
 ```typescript
 import { ethers } from "ethers";
 import { env } from "./env";
@@ -149,9 +149,9 @@ export function getWallet(): ethers.Wallet {
 
 ### Step 4: Create tests
 
-Under your test directory, create these files. Note that these tests are not comprehensive. They test a small subset of the ERC721 functionality offered by the OpenZeppelin library, and are intended to provide you with the building blocks to create more robust tests.
+Under your `test` directory, create these files. Note that these tests are not comprehensive. They test a small subset of the ERC721 functionality offered by the OpenZeppelin library, and are intended to provide you with the building blocks to create more robust tests.
 
-MyNFT.spec.ts (unit tests)
+`test/MyNFT.spec.ts` (unit tests)
 
 ```typescript
 import { ethers, waffle } from "hardhat";
@@ -232,7 +232,7 @@ describe("MyNFT", () => {
 });
 ```
 
-tasks.spec.ts (integration specs)
+`tasks.spec.ts` (integration specs)
 
 ```typescript
 import { deployTestContract, getTestWallet } from "./test-helper";
@@ -282,7 +282,7 @@ describe("tasks", () => {
 });
 ```
 
-test-helpers.ts
+`test-helpers.ts`
 Note this require the NPM libraries imported, including sinon, chai, and sinon-chai. The `sinon.restore()` call is necessary due to the use of stubbing.
 
 ```typescript
@@ -311,7 +311,7 @@ export function getTestWallet(): Wallet {
 
 ## Step 5: Configuration
 
-Here's our fairly bare bones hardhat.config.ts.
+Here's our fairly bare bones `hardhat.config.ts`.
 
 ```typescript
 import("@nomiclabs/hardhat-ethers");
