@@ -94,6 +94,7 @@
 * [🍴EIP-1559 Resource and Tutorial Hub](guides/eip-1559/README.md)
   * [🧰 The Developer EIP-1559 Prep Kit](https://blog.alchemy.com/blog/eip-1559)
   * [⛽️ How to Send Transactions with EIP 1559](guides/eip-1559/send-tx-eip-1559.md)
+  * [🧐maxPriorityFeePerGas vs maxFeePerGas](guides/eip-1559/maxpriorityfeepergas-vs-maxfeepergas.md)
   * [🔄 Retrying an EIP 1559 transaction](guides/eip-1559/retry-eip-1559-tx.md)
   * [📊 How to Build a Gas Fee Estimator using EIP-1559](guides/eip-1559/gas-estimator.md)
 * [🔔 Using Alchemy Notify/Webhooks](guides/using-notify.md)
