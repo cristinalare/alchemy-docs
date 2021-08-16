@@ -11,6 +11,7 @@
   * [🔔 Alchemy Notify](introduction/core-products/alchemy-notify.md)
   * [🛠️ Alchemy Build](introduction/core-products/alchemy-build.md)
   * [🔬 Alchemy Monitor](introduction/core-products/alchemy-monitor.md)
+* [🤝Contributing To Docs](introduction/contributing-to-docs.md)
 * [💰 Referral Program](introduction/referral-program.md)
 
 ## Documentation
