@@ -2,26 +2,26 @@
 description: >-
   This tutorial describes how to mint an NFT on the Ethereum blockchain using
   Ethers via the ethers.js library, and our smart contract from Part I: How to
-  Create an NFT. We'll also explore basic test se
+  Create an NFT. We'll also explore basic test setup.
 ---
 
 # 🪄How to Mint an NFT with Ethers.js
 
 _Estimated time to complete this guide: ~10 minutes_
 
-In [another tutorial](https://github.com/alchemyplatform/alchemy-docs/tree/9725d639b8e0a5421e738ecd9916b9b10e473702/tutorials/how-to-create-an-nft/how-to-mint-an-nft-with-ethers/README.md), we learned how to mint an NFT using Web3 and the [OpenZeppelin contracts library](https://docs.openzeppelin.com/contracts/erc721). In this exercise, we're going to walk you through an alternative implementation using version 4 of the [OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/erc721) as well as the [Ethers.js](https://docs.ethers.io/) Ethereum library instead of Web3.
+In [another tutorial](how-to-mint-a-nft.md), we learned how to mint an NFT using Web3 and the [OpenZeppelin contracts library](https://docs.openzeppelin.com/contracts/erc721). In this exercise, we're going to walk you through an alternative implementation using version 4 of the [OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/erc721) as well as the [Ethers.js](https://docs.ethers.io/) Ethereum library instead of Web3.
 
 We'll also cover the basics of testing your contract with [Hardhat and Waffle](https://hardhat.org/plugins/nomiclabs-hardhat-waffle.html). For this tutorial I'm using Yarn, but you can use npm/npx if you prefer.
 
-Lastly, we'll use TypeScript.
+Lastly, we'll use TypeScript. This is fairly [well documented](https://hardhat.org/guides/typescript.html#typescript-support), so we won't cover it here.
 
 In all other respects, this tutorial works the same as the Web3 version, including tools such as Pinata and IPFS.
 
 ## A Quick Reminder
 
-As a reminder, "minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain. This tutorial assumes that that you've successfully [deployed a smart contract to the Ropsten network in Part I](https://github.com/alchemyplatform/alchemy-docs/tree/9725d639b8e0a5421e738ecd9916b9b10e473702/tutorials/how-to-create-an-nft/how-to-mint-a-nft/README.md) of the NFT tutorial series, which includes [installing Ethers](./#step-12-install-ethers-js).
+As a reminder, "minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain. This tutorial assumes that that you've successfully [deployed a smart contract to the Ropsten network in Part I](../how-to-create-an-nft/README.md) of the NFT tutorial series, which includes [installing Ethers](../how-to-create-an-nft/README.md#step-12-install-ethersjs).
 
-### Step 1: Create your Solidity contract <a id="step-1-create-your-solidity-contract"></a>
+### Step 1: Create your Solidity contract
 
 OpenZeppelin is library for secure smart contract development. You simply inherit their implementations of popular standards such as ERC20 or ERC721, and extend the behavior to your needs. We're going to put this file at `contracts/MyNFT.sol`.
 
@@ -54,67 +54,80 @@ contract MyNFT is ERC721URIStorage {
 }
 ```
 
-### Step 2: Create a mint-nft.ts file <a id="step-2-create-a-mint-nft-ts-file"></a>
+### Step 2: Create Hardhat tasks to deploy our contract and mint NFT's
 
-Create a `mint-nft.ts` file mediate our interaction with the Solidity contract via Ethers.js. I put this under a `lib` directory, but you can organize however you prefer.
+Create the file `tasks/nft.ts` containing the following:
 
 ```typescript
-import { Contract, ethers } from "ethers";
-import contractArtifact from "../artifacts/contracts/MyNFT.sol/MyNFT.json";
-import { FactoryOptions } from "@nomiclabs/hardhat-ethers/src/types/index";
-import { safeEnv } from "./safe-env";
+import { task, types } from "hardhat/config";
+import { Contract } from "ethers";
 import { TransactionResponse } from "@ethersproject/abstract-provider";
+import { env } from "../lib/env";
+import { getContract } from "../lib/contract";
+import { getWallet } from "../lib/wallet";
 
-export function mintNft(
-  tokenURI: string,
-  env: safeEnv,
-  provider: ethers.providers.Provider
-): Promise<TransactionResponse> {
-  const NFT_CONTRACT = getContract(env, provider);
-  return NFT_CONTRACT.mintNFT(env("ETH_PUBLIC_KEY"), tokenURI, {
-    gasLimit: 500_000,
+task("deploy-contract", "Deploy NFT contract").setAction(async (_, hre) => {
+  return hre.ethers
+    .getContractFactory("MyNFT", getWallet())
+    .then((contractFactory) => contractFactory.deploy())
+    .then((result) => {
+      process.stdout.write(`Contract address: ${result.address}`);
+    });
+});
+
+task("mint-nft", "Mint an NFT")
+  .addParam("tokenUri", "Your ERC721 Token URI", undefined, types.string)
+  .setAction(async (tokenUri, hre) => {
+    return getContract("MyNFT", hre)
+      .then((contract: Contract) => {
+        return contract.mintNFT(env("ETH_PUBLIC_KEY"), tokenUri, {
+          gasLimit: 500_000,
+        });
+      })
+      .then((tr: TransactionResponse) => {
+        process.stdout.write(`TX hash: ${tr.hash}`);
+      });
   });
-}
+```
 
-export function mintNftAndPrintHash(
-  tokenURI: string,
-  env: safeEnv,
-  provider: ethers.providers.Provider
-): Promise<void> {
-  return mintNft(tokenURI, env, provider).then((tr: TransactionResponse) => {
-    process.stdout.write(`TX hash: ${tr.hash}`);
-  });
-}
+### Step 3: Create helpers
 
-function getContract(
-  env: safeEnv,
-  provider: ethers.providers.Provider
-): Contract {
-  const WALLET = new ethers.Wallet(env("ETH_PRIVATE_KEY"), provider);
+You'll notice our tasks imported a few helpers. Here they are.
 
-  return new ethers.Contract(
-    env("NFT_CONTRACT_ADDRESS"),
-    contractArtifact.abi,
-    WALLET
-  );
-}
+`contract.ts`
+```typescript
+import { Contract, ethers } from "ethers";
+import { getContractAt } from "@nomiclabs/hardhat-ethers/internal/helpers";
+import { HardhatRuntimeEnvironment } from "hardhat/types";
+import { env } from "./env";
+import { getProvider } from "./provider";
 
-type contractFactoryGetter = (
+export function getContract(
   name: string,
-  signerOrOptions?: ethers.Signer | FactoryOptions
-) => Promise<ethers.ContractFactory>;
-
-export async function deploy(
-  env: safeEnv,
-  provider: ethers.providers.Provider,
-  cfg: contractFactoryGetter
+  hre: HardhatRuntimeEnvironment
 ): Promise<Contract> {
-  const WALLET = new ethers.Wallet(env("ETH_PRIVATE_KEY"), provider);
-
-  return cfg("MyNFT", WALLET).then((contract: ethers.ContractFactory) =>
-    contract.deploy()
-  );
+  const WALLET = new ethers.Wallet(env("ETH_PRIVATE_KEY"), getProvider());
+  return getContractAt(hre, name, env("NFT_CONTRACT_ADDRESS"), WALLET);
 }
+```
+
+`env.ts`
+```typescript
+export function env(key: string): string {
+  const value = process.env[key];
+  if (value === undefined) {
+    throw `${key} is undefined`;
+  }
+  return value;
+}
+```
+
+`provider.ts`
+
+Note that the final `getProvider()` function uses the ropsten network. This argument is optional and defaults to "homestead" if omitted. We're using Alchemy of course, but there are several [supported alternatives](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider).
+
+```typescript
+import { ethers } from "ethers";
 
 export function getProvider(): ethers.providers.Provider {
   return ethers.getDefaultProvider("ropsten", {
@@ -123,44 +136,31 @@ export function getProvider(): ethers.providers.Provider {
 }
 ```
 
-Note that the final `getProvider()` function uses the ropsten network. This argument is optional and defaults to "homestead" if omitted. We're using Alchemy of course, but there are several [supported alternatives](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider).
-
-### Step 3: Create Hardhat tasks to deploy our contract and mint NFT's <a id="step-3-create-hardhat-tasks"></a>
-
-Create the file `tasks/nft.ts` containing the following:
-
+`wallet.ts`
 ```typescript
-import { deploy, getProvider, mintNftAndPrintHash } from "../lib/mint-nft";
-import { task, types } from "hardhat/config";
-import { processEnv } from "../lib/safe-env";
+import { ethers } from "ethers";
+import { env } from "./env";
+import { getProvider } from "./provider";
 
-task("deploy-nft", "Deploy NFT contract").setAction(
-  async (taskArgs, { ethers: { getContractFactory } }) => {
-    return deploy(processEnv, getProvider(), getContractFactory).then(
-      (result) => process.stdout.write(`Contract address: ${result.address}`)
-    );
-  }
-);
-
-task("mint-nft", "Mint an NFT")
-  .addParam("tokenUri", "Your ERC721 Token URI", undefined, types.string)
-  .setAction(async (tokenUri) => {
-    const provider = getProvider();
-    return mintNftAndPrintHash(tokenUri, processEnv, provider);
-  });
+export function getWallet(): ethers.Wallet {
+  return new ethers.Wallet(env("ETH_PRIVATE_KEY"), getProvider());
+}
 ```
 
-### Step 4: Create unit tests <a id="step-4-create-unit-tests"></a>
+### Step 4: Create tests
 
-Create a `test/MyNFT.spec.ts` file containing the following code. This will test the contract itself. Note that we're leaving most of [methods inherited from the OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#IERC721) untested for the sake of brevity. These tests should provide a firm foundation for you to test as much of the functionality as you want.
+Under your `test` directory, create these files. Note that these tests are not comprehensive. They test a small subset of the ERC721 functionality offered by the OpenZeppelin library, and are intended to provide you with the building blocks to create more robust tests.
+
+`test/MyNFT.spec.ts` (unit tests)
 
 ```typescript
 import { ethers, waffle } from "hardhat";
 import { Contract, Wallet } from "ethers";
 import { expect } from "chai";
-import { deploy } from "../lib/mint-nft";
-import { newProxyEnv } from "../lib/safe-env";
 import { TransactionResponse } from "@ethersproject/abstract-provider";
+import sinon from "sinon";
+import { deployTestContract } from "./test-helper";
+import * as provider from "../lib/provider";
 
 describe("MyNFT", () => {
   const TOKEN_URI = "http://example.com/ip_records/42";
@@ -168,14 +168,9 @@ describe("MyNFT", () => {
   let wallet: Wallet;
 
   beforeEach(async () => {
-    [wallet] = waffle.provider.getWallets(); // https://hardhat.org/hardhat-network/reference/#initial-state
-    deployedContract = await deploy(
-      newProxyEnv({
-        ETH_PRIVATE_KEY: wallet.privateKey,
-      }),
-      waffle.provider,
-      ethers.getContractFactory
-    );
+    sinon.stub(provider, "getProvider").returns(waffle.provider);
+    [wallet] = waffle.provider.getWallets();
+    deployedContract = await deployTestContract("MyNFT");
   });
 
   async function mintNftDefault(): Promise<TransactionResponse> {
@@ -190,7 +185,7 @@ describe("MyNFT", () => {
     });
 
     it("returns the new item ID", async () => {
-      expect(
+      await expect(
         await deployedContract.callStatic.mintNFT(wallet.address, TOKEN_URI)
       ).to.eq("1");
     });
@@ -225,79 +220,143 @@ describe("MyNFT", () => {
     });
   });
 
-  describe("balanceOf", async () => {
+  describe("balanceOf", () => {
     it("gets the count of NFTs for this address", async () => {
       await expect(await deployedContract.balanceOf(wallet.address)).to.eq("0");
 
       await mintNftDefault();
 
-      await expect(await deployedContract.balanceOf(wallet.address)).to.eq(
-        "1"
+      expect(await deployedContract.balanceOf(wallet.address)).to.eq("1");
+    });
+  });
+});
+```
+
+`tasks.spec.ts` (integration specs)
+
+```typescript
+import { deployTestContract, getTestWallet } from "./test-helper";
+import { waffle, run } from "hardhat";
+import { expect } from "chai";
+import sinon from "sinon";
+import * as provider from "../lib/provider";
+
+describe("tasks", () => {
+  beforeEach(async () => {
+    sinon.stub(provider, "getProvider").returns(waffle.provider);
+    const wallet = getTestWallet();
+    sinon.stub(process, "env").value({
+      ETH_PUBLIC_KEY: wallet.address,
+      ETH_PRIVATE_KEY: wallet.privateKey,
+    });
+  });
+
+  describe("deploy-contract", () => {
+    it("calls through and returns the transaction object", async () => {
+      sinon.stub(process.stdout, "write");
+
+      await run("deploy-contract");
+
+      await expect(process.stdout.write).to.have.been.calledWith(
+        "Contract address: 0x610178dA211FEF7D417bC0e6FeD39F05609AD788"
+      );
+    });
+  });
+
+  describe("mint-nft", () => {
+    beforeEach(async () => {
+      const deployedContract = await deployTestContract("MyNFT");
+      process.env.NFT_CONTRACT_ADDRESS = deployedContract.address;
+    });
+
+    it("calls through and returns the transaction object", async () => {
+      sinon.stub(process.stdout, "write");
+
+      await run("mint-nft", { tokenUri: "https://example.com/record/4" });
+
+      await expect(process.stdout.write).to.have.been.calledWith(
+        "TX hash: 0xd1e60d34f92b18796080a7fcbcd8c2b2c009687daec12f8bb325ded6a81f5eed"
       );
     });
   });
 });
 ```
 
-### Step 5: Create integration tests <a id="step-5-create-integration-tests"></a>
-
-Create a `test/lib/mint-nft.spec.ts` file containing the following. This will test the combined behavior of our contract as well as its interaction with our helper functions.
+`test-helpers.ts`
+Note this require the NPM libraries imported, including sinon, chai, and sinon-chai. The `sinon.restore()` call is necessary due to the use of stubbing.
 
 ```typescript
-import { ethers, waffle } from "hardhat";
+import sinon from "sinon";
+import chai from "chai";
+import sinonChai from "sinon-chai";
+import { ethers as hardhatEthers, waffle } from "hardhat";
 import { Contract, Wallet } from "ethers";
-import { expect } from "chai";
-import { deploy, mintNft } from "../../lib/mint-nft";
-import { safeEnv, newProxyEnv } from "../../lib/safe-env";
 
-describe("deploying and minting NFT's", () => {
-  const TOKEN_URI = "http://example.com/ip_records/42";
-  let deployedContract: Contract;
-  let wallet: Wallet;
-  let env: safeEnv;
+chai.use(sinonChai);
 
-  beforeEach(async () => {
-    [wallet] = waffle.provider.getWallets();
-    const envProperties: NodeJS.ProcessEnv = {
-      ETH_PUBLIC_KEY: wallet.address,
-      ETH_PRIVATE_KEY: wallet.privateKey,
-    };
-    env = newProxyEnv(envProperties);
-    deployedContract = await deploy(
-      env,
-      waffle.provider,
-      ethers.getContractFactory
-    );
-    envProperties["NFT_CONTRACT_ADDRESS"] = deployedContract.address;
-  });
-
-  it("calls through and returns the transaction object", async () => {
-    await expect(mintNft(TOKEN_URI, env, waffle.provider))
-      .to.emit(deployedContract, "Transfer")
-      .withArgs(ethers.constants.AddressZero, wallet.address, "1");
-  });
+afterEach(() => {
+  sinon.restore();
 });
+
+export function deployTestContract(name: string): Promise<Contract> {
+  return hardhatEthers
+    .getContractFactory(name, getTestWallet())
+    .then((contractFactory) => contractFactory.deploy());
+}
+
+export function getTestWallet(): Wallet {
+  return waffle.provider.getWallets()[0];
+}
 ```
+
+## Step 5: Configuration
+
+Here's our fairly bare bones `hardhat.config.ts`.
+
+```typescript
+import("@nomiclabs/hardhat-ethers");
+import("@nomiclabs/hardhat-waffle");
+import dotenv from "dotenv";
+// You need to export an object to set up your config
+// Go to https://hardhat.org/config/ to learn more
+
+const argv = JSON.parse(env("npm_config_argv"));
+if (argv.original !== ["hardhat", "test"]) {
+  require('dotenv').config();
+}
+
+import("./tasks/nft");
+
+import { HardhatUserConfig } from "hardhat/config";
+
+const config: HardhatUserConfig = {
+  solidity: "0.8.6",
+};
+
+export default config;
+```
+
+Note the conditional to only invoke dotenv if we're not running tests. You might not want to run this in production, but rest assured that dotenv will silently ignore it if the .env file isn't present.
 
 ## Running Our Tasks
 
-To see our tasks, we run `hardhat` and see this output \(excluding the built-in tasks\).
+Now that we've put these files in place, we can run `hardhat` to see our tasks \(excluding the built-in tasks for brevity\).
 
 ```text
 AVAILABLE TASKS:
 
-  deploy-nft    Deploy NFT contract
+  deploy-contract    Deploy NFT contract
   mint-nft      Mint an NFT
 ```
 
 Forget the arguments to your task? No problem.
 
 ```text
-$ hardhat help deploy-nft
+$ hardhat help deploy-contract
 
-Usage: hardhat [GLOBAL OPTIONS] deploy-nft
+Usage: hardhat [GLOBAL OPTIONS] deploy-contract
 
-deploy-nft: Deploy NFT contract
+deploy-contract: Deploy NFT contract
 ```
 
 ## Running Our Tests
@@ -325,5 +384,5 @@ To run our tests, we run `hardhat test`.
 
 ## Summary
 
-What we've done is to cram as much of our deploying and minting code as possible into a library of functions that we can thoroughly test via [dependency injection](https://wiki.c2.com/?DependencyInjection). Our Hardhat tasks then merely pipe our dependencies \(command line arguments and environment variables\) as parameters into those functions, minimizing the footprint of any untested code. The wallet provided by `waffle.provider.getWallets()` links to a [Hardhat Network](https://hardhat.org/hardhat-network/) account that [conveniently comes preloaded](https://hardhat.org/hardhat-network/reference/#initial-state) with an eth balance that we can use to fund our test transactions.
+In this tutorial, we've created a firm foundation for a well tested NFT infrastructure based on Solidity. The wallet provided by `waffle.provider.getWallets()` links to a local fake [Hardhat Network](https://hardhat.org/hardhat-network/) account that [conveniently comes preloaded](https://hardhat.org/hardhat-network/reference/#initial-state) with an eth balance that we can use to fund our test transactions.
 
