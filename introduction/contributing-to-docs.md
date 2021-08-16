@@ -2,7 +2,7 @@
 description: Instructions for contributing to Alchemy's Open Source Docs
 ---
 
-# 🤝Contributing To Docs
+# 🤝Contributing to these Docs
 
 ## Why Contribute? <a id="why-contribute"></a>
 
