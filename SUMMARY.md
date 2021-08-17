@@ -61,6 +61,7 @@
     * [eth\_unsubscribe](documentation/apis/ethereum/eth_unsubscribe.md)
   * [Arbitrum API](documentation/apis/arbitrum.md)
   * [Polygon API](documentation/apis/polygon-api.md)
+  * [Optimism API](documentation/apis/optimism-api.md)
   * [Enhanced APIs](documentation/apis/enhanced-apis/README.md)
     * [Transfers API](documentation/apis/enhanced-apis/transfers-api.md)
     * [Block API](documentation/apis/enhanced-apis/block-api-beta.md)

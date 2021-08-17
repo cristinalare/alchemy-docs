@@ -2,7 +2,7 @@
 description: >-
   This tutorial describes how to mint an NFT on the Ethereum blockchain using
   Ethers via the ethers.js library, and our smart contract from Part I: How to
-  Create an NFT. We'll also explore basic test setup.
+  Create an NFT. We'll also explore basic test se
 ---
 
 # 🪄How to Mint an NFT with Ethers.js
@@ -19,7 +19,7 @@ In all other respects, this tutorial works the same as the Web3 version, includi
 
 ## A Quick Reminder
 
-As a reminder, "minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain. This tutorial assumes that that you've successfully [deployed a smart contract to the Ropsten network in Part I](../how-to-create-an-nft/README.md) of the NFT tutorial series, which includes [installing Ethers](../how-to-create-an-nft/README.md#step-12-install-ethersjs).
+As a reminder, "minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain. This tutorial assumes that that you've successfully [deployed a smart contract to the Ropsten network in Part I](./) of the NFT tutorial series, which includes [installing Ethers](./#step-12-install-ethersjs).
 
 ### Step 1: Create your Solidity contract
 
@@ -95,6 +95,7 @@ task("mint-nft", "Mint an NFT")
 You'll notice our tasks imported a few helpers. Here they are.
 
 `contract.ts`
+
 ```typescript
 import { Contract, ethers } from "ethers";
 import { getContractAt } from "@nomiclabs/hardhat-ethers/internal/helpers";
@@ -112,6 +113,7 @@ export function getContract(
 ```
 
 `env.ts`
+
 ```typescript
 export function env(key: string): string {
   const value = process.env[key];
@@ -137,6 +139,7 @@ export function getProvider(): ethers.providers.Provider {
 ```
 
 `wallet.ts`
+
 ```typescript
 import { ethers } from "ethers";
 import { env } from "./env";
@@ -151,7 +154,7 @@ export function getWallet(): ethers.Wallet {
 
 Under your `test` directory, create these files. Note that these tests are not comprehensive. They test a small subset of the ERC721 functionality offered by the OpenZeppelin library, and are intended to provide you with the building blocks to create more robust tests.
 
-`test/MyNFT.spec.ts` (unit tests)
+`test/MyNFT.spec.ts` \(unit tests\)
 
 ```typescript
 import { ethers, waffle } from "hardhat";
@@ -232,7 +235,7 @@ describe("MyNFT", () => {
 });
 ```
 
-`tasks.spec.ts` (integration specs)
+`tasks.spec.ts` \(integration specs\)
 
 ```typescript
 import { deployTestContract, getTestWallet } from "./test-helper";
@@ -282,8 +285,7 @@ describe("tasks", () => {
 });
 ```
 
-`test-helpers.ts`
-Note this require the NPM libraries imported, including sinon, chai, and sinon-chai. The `sinon.restore()` call is necessary due to the use of stubbing.
+`test-helpers.ts` Note this require the NPM libraries imported, including sinon, chai, and sinon-chai. The `sinon.restore()` call is necessary due to the use of stubbing.
 
 ```typescript
 import sinon from "sinon";

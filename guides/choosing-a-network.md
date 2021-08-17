@@ -8,7 +8,7 @@ description: >-
 
 ## Layer 1 vs. Layer 2
 
-Alchemy currently supports the Ethereum Layer 1 chain and the [Arbitrum Layer 2 chain](https://www.alchemy.com/layer2/arbitrum). Arbitrum is a separate chain built on top of Ethereum as a smart contract that supports faster transaction times, higher throughput, lower gas costs, and many more benefits. Activity and transactions are ultimately relayed to the Layer 1 chain from Arbitrum through [optimistic rollups](https://developer.offchainlabs.com/docs/rollup_basics). 
+Alchemy currently supports the Ethereum Layer 1 chain and the [Arbitrum Layer 2 chain](https://www.alchemy.com/layer2/arbitrum). Arbitrum is a separate chain built on top of Ethereum as a smart contract that supports faster transaction times, higher throughput, lower gas costs, and many more benefits. Activity and transactions are ultimately relayed to the Layer 1 chain from Arbitrum through [optimistic rollups](https://developer.offchainlabs.com/docs/rollup_basics).
 
 ## Mainnet vs. Testnet
 
@@ -76,7 +76,7 @@ Check out more info about Ropsten on the [GitHub](https://github.com/ethereum/ro
 
 ## Arbitrum Testnet
 
-### [Mainnet](https://developer.offchainlabs.com/docs/developer_quickstart) 
+### [Mainnet](https://developer.offchainlabs.com/docs/developer_quickstart)
 
 Arbitrum currently has one testnet on connected to Ethereum's Kovan testnet \([described ](choosing-a-network.md#kovan)[above](choosing-a-network.md#kovan)\). This operates exactly the same as Arbitrum mainnet but is built as a smart contract on Kovan instead of on Ethtereum mainnet. It is currently under development and will be released shortly.
 
@@ -86,7 +86,7 @@ Arbitrum currently has one testnet on connected to Ethereum's Kovan testnet \([d
 * Symbol: ETH
 * Block Explorer URL: [https://explorer.arbitrum.io](https://explorer.arbitrum.io)
 
-### [Kovan](https://developer.offchainlabs.com/docs/public_testnet) 
+### [Kovan](https://developer.offchainlabs.com/docs/public_testnet)
 
 Arbitrum currently has one testnet on connected to Ethereum's Kovan testnet \([described ](choosing-a-network.md#kovan)[above](choosing-a-network.md#kovan)\). This operates exactly the same as Arbitrum mainnet but is built as a smart contract on Kovan instead of on Ethtereum mainnet. It is currently under development and will be released shortly.
 
