@@ -881,7 +881,11 @@ Call to write to the blockchain.
 Creates a new message call transaction or a contract creation for signed transactions.
 
 {% hint style="warning" %}
-Alchemy does not store keys, so transactions sent via Alchemy must be signed ahead of time using another provider like [ethers](https://docs.ethers.io/v5/api/signer/) \(via `eth_signTransaction`\) and sent with `eth_sendRawTransaction`.
+Alchemy does not store keys, so transactions sent via Alchemy must be signed ahead of time using another provider like [ethers](https://docs.ethers.io/v5/api/signer/) \(via `eth_signTransaction`\) and sent with `eth_sendRawTransaction`.  
+{% endhint %}
+
+{% hint style="danger" %}
+NOTE: Writing data on Optimism is handled by its sequencers; for more information on specifics, please refer to the [Optimism docs](https://community.optimism.io/docs/).
 {% endhint %}
 
 #### Parameters
