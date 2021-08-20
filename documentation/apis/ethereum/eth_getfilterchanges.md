@@ -6,7 +6,7 @@ description: >-
 
 # eth\_getFilterChanges
 
-#### **Parameters**
+### Parameters
 
 1. `QUANTITY` - the filter id.
 
