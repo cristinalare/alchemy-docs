@@ -1,7 +1,7 @@
 ---
 description: >-
-  Quick start guide to Alchemy: fast, reliable, and scalable tools built for
-  blockchain developers.
+  Quick start guide to Alchemy! Learn how to create an Alchemy key, make your
+  first request, setup up Alchemy as your client, and get to building!
 ---
 
 # 🚀 Getting Started

@@ -9,7 +9,7 @@ description: >-
 
 Sending a transaction on Ethereum post London fork uses these two new gas price fields: `maxFeePerGas` and [`maxPriorityFeePerGas`](../../documentation/apis/ethereum/eth_maxpriorityfeepergas.md). We won't go into detail on the incentive theory behind fee markets here. Instead, we will dive into the difference between these two fields and when you might want to use one vs the other \(or both\).
 
-If you've gone through our [tutorial on sending an EIP 1559 transaction](https://docs.alchemy.com/alchemy/tutorials/sending-txs/eip-1559) then you've seen that we recommend using only the `maxPriorityFeePerGas` field. We did this for simplicity, but it's not always the better field to use.
+If you've gone through our [tutorial on sending an EIP 1559 transaction](https://docs.alchemy.com/alchemy/guides/eip-1559/send-tx-eip-1559) then you've seen that we recommend using only the `maxPriorityFeePerGas` field. We did this for simplicity, but it's not always the better field to use.
 
 To understand why, let's first make sure we're familiar with all the terms.
 

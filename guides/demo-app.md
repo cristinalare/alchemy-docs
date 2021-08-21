@@ -1,5 +1,7 @@
 ---
-description: Explore our product with the demo app we create for you when you sign up!
+description: >-
+  Each team comes with a ready to go demo app! Easily explore our product with
+  the demo app to make sample requests to get you up and running!
 ---
 
 # 📋 Dashboard Walkthrough

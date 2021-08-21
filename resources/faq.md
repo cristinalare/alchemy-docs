@@ -1,12 +1,14 @@
 ---
-description: Frequently asked questions
+description: >-
+  Common questions about Alchemy, it's products, and blockchain development.
+  Feel free to submit questions at the bottom of this page.
 ---
 
 # ❓ FAQ
 
 ## Is there an Alchemy token? <a id="is-there-an-alchemy-token"></a>
 
-Nope! We do not currently have an Alchemy token sale but our users will be the first to know if we ever do ;\)
+Nope! We do not currently have an Alchemy token sale but our users will be the first to know if we ever do 😉
 
 ## How can I invest in Alchemy? <a id="how-can-i-invest-in-alchemy"></a>
 

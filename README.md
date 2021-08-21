@@ -1,5 +1,7 @@
 ---
-description: The world’s most powerful blockchain developer platform.
+description: >-
+  Welcome to Alchemy Docs - documentation for the world’s most powerful
+  blockchain developer platform.
 ---
 
 # 👋 Welcome to Alchemy

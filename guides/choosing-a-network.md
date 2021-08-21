@@ -1,7 +1,7 @@
 ---
 description: >-
-  A detailed guide to choosing a Network from Layer 1s to Layer 2s, and Mainntet
-  to testnets.
+  A detailed guide to choosing which Network to deploy on. Compares Layer 1
+  chains vs Layer 2 chains as well as Mainntet vs Testnets environments.
 ---
 
 # 🌐 Choosing a Network
@@ -18,7 +18,7 @@ Every blockchain \(including both Layer 1s and Layer 2s\) has a mainnet. The mai
 
 There are four different types of testnets that Alchemy supports.
 
-### \*\*\*\*[**Rinkeby**](https://rinkeby.etherscan.io/)\*\*\*\*
+### [**Rinkeby**](https://rinkeby.etherscan.io/)
 
 Rinkeby is a proof-of-authority blockchain that uses the Clique PoA consensus protocol, and is only supported by Geth. This testnet is immune to spam attacks since the Ether supply is controlled by trusted parties and has to be requested from a [faucet](https://faucet.rinkeby.io/), not mined.
 
@@ -29,7 +29,7 @@ Rinkeby is a proof-of-authority blockchain that uses the Clique PoA consensus pr
 
 Check out more info about Rinkeby on the [website](https://www.rinkeby.io).
 
-### \*\*\*\*[**Goerli**](https://goerli.etherscan.io/)\*\*\*\*
+### [**Goerli**](https://goerli.etherscan.io/)
 
 Goerli is a proof-of-authority blockchain, supported by multiple clients. This testnet has the goal of being both widely usable across all client implementations supporting Clique Proof of Authority \(PoA\) engine and robust enough to guarantee consistent availability and high reliability.
 
@@ -47,7 +47,7 @@ Goerli is a proof-of-authority blockchain, supported by multiple clients. This t
 
 Check out more info about Goerli on the [GitHub](https://github.com/goerli/testnet).
 
-### \*\*\*\*[**Kovan**](https://kovan.etherscan.io/)\*\*\*\*
+### [**Kovan**](https://kovan.etherscan.io/)
 
 Kovan is a proof-of-authority blockchain, started by the Parity team and supported by Parity only. Ether can’t be mined; it has to be requested from the [faucet](https://github.com/kovan-testnet/faucet). This testnet is known for being immune to spam attacks.
 
@@ -58,7 +58,7 @@ Kovan is a proof-of-authority blockchain, started by the Parity team and support
 
 Check out more info about Kovan on the [GitHub](https://github.com/kovan-testnet/proposal).
 
-### [**Ropsten**](https://ropsten.etherscan.io/)\*\*\*\*
+### [**Ropsten**](https://ropsten.etherscan.io/)
 
 Ropsten is a proof-of-work blockchain that most closely resembles the current Ethereum production environment, it is supported by Geth and Parity.
 
