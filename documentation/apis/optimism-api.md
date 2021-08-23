@@ -1475,7 +1475,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key  \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_protocolVersion","params":[],"id":0}'
@@ -1484,13 +1484,13 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
     "jsonrpc":"2.0",
     "method":"eth_protocolVersion",
-    "params":[]
+    "params":[],
     "id":0
 }
 ```
@@ -1501,9 +1501,9 @@ Result
 
 ```javascript
 {
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": "0x40"
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": "64"
 }
 ```
 
@@ -1530,7 +1530,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":0}'
@@ -1539,7 +1539,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -1556,9 +1556,9 @@ Result
 
 ```javascript
 {
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": "0x98bca5a00"
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": "0xe4e1c0"
 }
 ```
 
@@ -1599,7 +1599,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_estimateGas","params":[{see above}],"id":1}'
@@ -1608,7 +1608,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -1658,7 +1658,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":83}'
@@ -1667,7 +1667,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -1684,9 +1684,9 @@ Result
 
 ```javascript
 {
-  "id": 83,
-  "jsonrpc": "2.0",
-  "result": "0x3d" // 61
+    "jsonrpc": "2.0",
+    "id": 83,
+    "result": "0xa"
 }
 ```
 
@@ -1715,7 +1715,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
@@ -1724,7 +1724,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -1741,9 +1741,9 @@ Result
 
 ```javascript
 {
-  "id":67,
-  "jsonrpc": "2.0",
-  "result": "3"
+    "jsonrpc": "2.0",
+    "id": 67,
+    "result": "10"
 }
 ```
 
@@ -1766,7 +1766,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":67}'
@@ -1775,7 +1775,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -1792,9 +1792,9 @@ Result
 
 ```javascript
 {
-  "id":67,
-  "jsonrpc":"2.0",
-  "result":true
+    "jsonrpc": "2.0",
+    "id": 67,
+    "result": true
 }
 ```
 
@@ -1833,7 +1833,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_getUncleByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":0}'
@@ -1842,7 +1842,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -1914,7 +1914,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_getUncleByBlockHashAndIndex","params":["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", "0x0"],"id":0}'
@@ -1923,7 +1923,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -1990,7 +1990,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_getUncleCountByBlockHash","params":["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35"],"id":0}'
@@ -1999,7 +1999,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -2047,7 +2047,7 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://opt-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_getUncleCountByBlockNumber","params":["0xe8"],"id":1}'
@@ -2056,7 +2056,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://opt-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -2076,432 +2076,6 @@ Result
   "jsonrpc": "2.0",
   "id": 0,
   "result": "0x0"
-}
-```
-
-## 🔦 Filters
-
-Calls related to creating, getting, and reading from filters. 
-
-Eth filters expose the same information as the [`eth_subscribe`](ethereum/#eth_subscribe) methods, except that updates are received by polling rather than receiving pushes. A user may create a filter than repeatedly call `eth_getFilterChanges`on it, each time receiving events that have occurred since the last time `eth_getFilterChanges`was called \(or since the filter was created if this is the first time `eth_getFilterChanges`is being called.
-
-{% hint style="warning" %}
-**Note**: Filters expire after 5 minutes of inactivity, so several of the example requests below will return`"filter not found"` if you try and call them. 
-{% endhint %}
-
-### eth\_getFilterChanges
-
-Polling method for a filter, which returns an array of logs which occurred since last poll.
-
-#### **Parameters**
-
-1. `QUANTITY` - the filter id.
-
-```javascript
-params: [
-  "0xfe704947a3cd3ca12541458a4321c869"
-]
-```
-
-#### **Returns**
-
-`Array` - Array of log objects, or an empty array if nothing has changed since last poll.
-
-* For filters created with `eth_newBlockFilter` the return are block hashes \(`DATA`, 32 Bytes\), e.g. `["0x3454645634534..."]`.
-* For filters created with `eth_newPendingTransactionFilter`  the return are transaction hashes \(`DATA`, 32 Bytes\), e.g. `["0x6345343454645..."]`.
-* For filters created with `eth_newFilter` logs are objects with following params:
-  * `removed`: `TAG` - `true` when the log was removed, due to a chain reorganization. `false` if its a valid log.
-  * `logIndex`: `QUANTITY` - integer of the log index position in the block. `null` when its pending log.
-  * `transactionIndex`: `QUANTITY` - integer of the transactions index position log was created from. `null` when its pending log.
-  * `transactionHash`: `DATA`, 32 Bytes - hash of the transactions this log was created from. `null` when its pending log.
-  * `blockHash`: `DATA`, 32 Bytes - hash of the block where this log was in. `null` when its pending. `null` when its pending log.
-  * `blockNumber`: `QUANTITY` - the block number where this log was in. `null` when its pending. `null` when its pending log.
-  * `address`: `DATA`, 20 Bytes - address from which this log originated.
-  * `data`: `DATA` - contains one or more 32 Bytes non-indexed arguments of the log.
-  * `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. 
-    * In _solidity_: The first topic is the _hash_ of the signature of the event \(e.g. `Deposit(address,bytes32,uint256)`\), except you declare the event with the `anonymous` specifier.
-
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getFilterChanges%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
-
-Request
-
-{% tabs %}
-{% tab title="Curl" %}
-```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["0xfe704947a3cd3ca12541458a4321c869"],"id":73}'
-```
-{% endtab %}
-
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_getFilterChanges",
-    "params":["0xfe704947a3cd3ca12541458a4321c869"],
-    "id":73
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Result
-
-```javascript
-{
-    "jsonrpc": "2.0",
-    "id": 73,
-    "result": [{
-        "address": "0xb5a5f22694352c15b00323844ad545abb2b11028",
-        "blockHash": "0x99e8663c7b6d8bba3c7627a17d774238eae3e793dee30008debb2699666657de",
-        "blockNumber": "0x5d12ab",
-        "data": "0x0000000000000000000000000000000000000000000000a247d7a2955b61d000",
-        "logIndex": "0x0",
-        "removed": false,
-        "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", "0x000000000000000000000000bdc0afe57b8e9468aa95396da2ab2063e595f37e", "0x0000000000000000000000007503e090dc2b64a88f034fb45e247cbd82b8741e"],
-        "transactionHash": "0xa74c2432c9cf7dbb875a385a2411fd8f13ca9ec12216864b1a1ead3c99de99cd",
-        "transactionIndex": "0x3"
-    }, {
-        "address": "0xe38165c9f6deb144afc9c32c206b024817e1496d",
-        "blockHash": "0x99e8663c7b6d8bba3c7627a17d774238eae3e793dee30008debb2699666657de",
-        "blockNumber": "0x5d12ab",
-        "data": "0x0000000000000000000000000000000000000000000000000000000025c6b720",
-        "logIndex": "0x3",
-        "removed": false,
-        "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", "0x00000000000000000000000080e73e47173b2d00b531bf83bc39e710157125c3", "0x0000000000000000000000008f6cc93795969e5bbbf07c66dfee7d41ad24f1ef"],
-        "transactionHash": "0x9e8f1cb1facb9a11a1cf947634053a0b2d557399f926b12127aa10497a2f0153",
-        "transactionIndex": "0x5"
-    }
-}
-```
-
-### eth\_getFilterLogs
-
-Returns an array of all logs matching filter with given id. Can compute the same results with an `eth_getLogs` call \(see hint below\). 
-
-{% hint style="warning" %}
-This method only works for filters creates with [`eth_newFilter`](ethereum/#eth_newfilter)not for filters created using [`eth_newBlockFilter`](ethereum/#eth_newblockfilter) or [`eth_newPendingTransactionFilter`](ethereum/#eth_newpendingtransactionfilter), which will return `"filter not found".`
-
-### eth\_getLogs vs. eth\_getFilterLogs
-
-These two computations will return the same results:
-
-1. Calling `eth_getLogs` with params `[<options>]`
-2. Calling `eth_newFilter` with params `[<options>]`, getting a filter id `<filterId>` back, then calling `eth_getFilterLogs` with params `[<filterId>]`
-{% endhint %}
-
-#### **Parameters**
-
-1. `QUANTITY` - The filter id.
-
-```javascript
-params: [
-  "0xfe704947a3cd3ca12541458a4321c869"
-]
-```
-
-#### **Returns**
-
-See [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges)\`\`
-
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getFilterLogs%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
-
-Request
-
-{% tabs %}
-{% tab title="Curl" %}
-```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","method":"eth_getFilterLogs","params":["0xfe704947a3cd3ca12541458a4321c869"],"id":74}'
-```
-{% endtab %}
-
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_getFilterLogs",
-    "params":["0xfe704947a3cd3ca12541458a4321c869"],
-    "id":74
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Result
-
-```javascript
-{
-    "jsonrpc": "2.0",
-    "id": 73,
-    "result": [{
-        "address": "0xb5a5f22694352c15b00323844ad545abb2b11028",
-        "blockHash": "0x99e8663c7b6d8bba3c7627a17d774238eae3e793dee30008debb2699666657de",
-        "blockNumber": "0x5d12ab",
-        "data": "0x0000000000000000000000000000000000000000000000a247d7a2955b61d000",
-        "logIndex": "0x0",
-        "removed": false,
-        "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", "0x000000000000000000000000bdc0afe57b8e9468aa95396da2ab2063e595f37e", "0x0000000000000000000000007503e090dc2b64a88f034fb45e247cbd82b8741e"],
-        "transactionHash": "0xa74c2432c9cf7dbb875a385a2411fd8f13ca9ec12216864b1a1ead3c99de99cd",
-        "transactionIndex": "0x3"
-    }, {
-        "address": "0xe38165c9f6deb144afc9c32c206b024817e1496d",
-        "blockHash": "0x99e8663c7b6d8bba3c7627a17d774238eae3e793dee30008debb2699666657de",
-        "blockNumber": "0x5d12ab",
-        "data": "0x0000000000000000000000000000000000000000000000000000000025c6b720",
-        "logIndex": "0x3",
-        "removed": false,
-        "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", "0x00000000000000000000000080e73e47173b2d00b531bf83bc39e710157125c3", "0x0000000000000000000000008f6cc93795969e5bbbf07c66dfee7d41ad24f1ef"],
-        "transactionHash": "0x9e8f1cb1facb9a11a1cf947634053a0b2d557399f926b12127aa10497a2f0153",
-        "transactionIndex": "0x5"
-    }
-}
-```
-
-### eth\_newBlockFilter
-
-Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges).
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-`QUANTITY` - A filter id.
-
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_newBlockFilter%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
-
-Request
-
-{% tabs %}
-{% tab title="Curl" %}
-```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","method":"eth_newBlockFilter","params":[],"id":0}'
-```
-{% endtab %}
-
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_newBlockFilter",
-    "params":[],
-    "id":73
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Result
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": "0x9fb7f13924bb605fd29f3ddd6d193ece"
-}
-```
-
-### eth\_newFilter
-
-Creates a filter object, based on filter options, to notify when the state changes \(logs\). Unlike `eth_newBlockFilter`which notifies you of **all** new ****blocks, you can pass in filter options to track new logs matching the topics specified.  ****
-
-To check if the state has changed, call [`eth_getFilterChanges.`](ethereum/#eth_getfilterchanges)\`\`
-
-{% hint style="info" %}
-#### A note on specifying topic filters:
-
-Topics are order-dependent. A transaction with a log with topics \[A, B\] will be matched by the following topic filters:
-
-* `[]` “anything”
-* `[A]` “A in first position \(and anything after\)”
-* `[null, B]` “anything in first position AND B in second position \(and anything after\)”
-* `[A, B]` “A in first position AND B in second position \(and anything after\)”
-* `[[A, B], [A, B]]` “\(A OR B\) in first position AND \(A OR B\) in second position \(and anything after\)”
-{% endhint %}
-
-#### **Parameters**
-
-* `Object` - The filter options:
-  1. `fromBlock`: `QUANTITY|TAG` - \(optional, default: `"latest"`\) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
-  2. `toBlock`: `QUANTITY|TAG` - \(optional, default: `"latest"`\) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
-  3. `address`: `DATA|Array`, 20 Bytes - \(optional\) Contract address or a list of addresses from which logs should originate.
-  4. `topics`: `Array of DATA`, - \(optional\) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with “or” options.
-
-```javascript
-params: [{
-  "fromBlock": "0x1",
-  "toBlock": "0x2",
-  "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
-  "topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b", null, ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc"]]
-}]
-```
-
-#### **Returns**
-
-`QUANTITY` - A filter id.
-
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_newFilter%22%2C%22paramValues%22%3A%5B%7B%22fromBlock%22%3A%220x1%22%2C%22toBlock%22%3A%220x2%22%2C%22address%22%3A%220x8888f1f195afa192cfee860698584c030f4c9db1%22%2C%22topics%22%3A%22%5B%5C%220x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b%5C%22%2C%20null%2C%20%5B%5C%220x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b%5C%22%2C%20%5C%220x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc%5C%22%5D%5D%22%7D%5D%7D)\*\*\*\*
-
-Request
-
-{% tabs %}
-{% tab title="Curl" %}
-```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"fromBlock": "0x1","toBlock": "0x2","address": "0x8888f1f195afa192cfee860698584c030f4c9db1","topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b", null, ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc"]]}],"id":0}'
-```
-{% endtab %}
-
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_newFilter",
-    "params":[{"fromBlock": "0x1","toBlock": "0x2","address": "0x8888f1f195afa192cfee860698584c030f4c9db1","topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b", null, ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc"]]}],
-    "id":0
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Result
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": "0xdcc9a819f80efa9e1d215a9d41b2d22e"
-}
-```
-
-### eth\_newPendingTransactionFilter
-
-Creates a filter in the node, to notify when new pending transactions arrive.To check if the state has changed, call [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges)\`\`
-
-#### **Parameters**
-
-None
-
-#### **Returns**
-
-`QUANTITY` - A filter id.
-
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_newPendingTransactionFilter%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
-
-Request
-
-{% tabs %}
-{% tab title="Curl" %}
-```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","method":"eth_newPendingTransactionFilter","params":[],"id":0}'
-```
-{% endtab %}
-
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_newPendingTransactionFilter",
-    "params":[],
-    "id":73
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Result
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": "0xa08914f1caedfcbe814d9fb33e69678d"
-}
-```
-
-### eth\_uninstallFilter
-
-Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally, Filters timeout when they aren’t requested with [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges)for a period of time.
-
-#### **Parameters**
-
-1. `QUANTITY` - The filter id.
-
-```javascript
-params: [
-  "0xfe704947a3cd3ca12541458a4321c869"
-]
-```
-
-#### **Returns**
-
-`Boolean` - `true` if the filter was successfully uninstalled, otherwise `false`.
-
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_uninstallFilter%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
-
-Request
-
-{% tabs %}
-{% tab title="Curl" %}
-```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0xfe704947a3cd3ca12541458a4321c869"],"id":0}'
-```
-{% endtab %}
-
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_uninstallFilter",
-    "params":["0xfe704947a3cd3ca12541458a4321c869"],
-    "id":0
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Result
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "id": 0,
-  "result": false
 }
 ```
 
