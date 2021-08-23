@@ -782,6 +782,358 @@ Result
 }
 ```
 
+## Polygon-Bor Methods
+
+Bor specific calls supported on Polygon
+
+### bor\_getAuthor
+
+Returns address of Author
+
+#### Parameters
+
+* block number \(in hexadecimal format\)
+
+#### Returns
+
+`AUTHOR` - address
+
+Request
+
+{% tabs %}
+{% tab title="Curl" %}
+```bash
+curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"jsonrpc":"2.0","method":"bor_getAuthor","params":["0x1234"], "id":1}'
+```
+{% endtab %}
+
+{% tab title="Postman" %}
+```http
+URL: https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key
+RequestType: POST
+Body: 
+{
+    "jsonrpc":"2.0",
+    "method":"bor_getAuthor",
+    "params":["0x1234"], 
+    "id":1
+}
+```
+{% endtab %}
+{% endtabs %}
+
+Result
+
+```javascript
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x5973918275c01f50555d44e92c9d9b353cadad54"
+}
+```
+
+### bor\_getCurrentValidators
+
+Returns current validators
+
+#### Parameters
+
+`NONE`
+
+#### Returns
+
+`AUTHOR` - address
+
+Request
+
+{% tabs %}
+{% tab title="Curl" %}
+```bash
+curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"jsonrpc":"2.0","method":"bor_getCurrentValidators","params":[], "id":1}'
+```
+{% endtab %}
+
+{% tab title="Postman" %}
+```http
+URL: https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key
+RequestType: POST
+Body: 
+{
+    "jsonrpc":"2.0",
+    "method":"bor_getCurrentValidators",
+    "params":[],
+    "id":1
+}
+```
+{% endtab %}
+{% endtabs %}
+
+Result
+
+```javascript
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "ID": 0,
+            "signer": "0x46a3a41bd932244dd08186e4c19f1a7e48cbcdf4",
+            "power": 1,
+            "accum": -15
+        },
+        {
+            "ID": 0,
+            "signer": "0x6a654ca3bfb5cfb23bf30bafbf96b3b6ec26bb0e",
+            "power": 1,
+            "accum": -21
+        },
+        {
+            "ID": 0,
+            "signer": "0x7c7379531b2aee82e4ca06d4175d13b9cbeafd49",
+            "power": 5,
+            "accum": -8
+        },
+        {
+            "ID": 0,
+            "signer": "0xe77bbfd8ed65720f187efdd109e38d75eaca7385",
+            "power": 2,
+            "accum": 5
+        },
+        {
+            "ID": 0,
+            "signer": "0xf0245f6251bef9447a08766b9da2b07b28ad80b0",
+            "power": 7,
+            "accum": -4
+        }
+    ]
+}
+
+```
+
+### bor\_getCurrentProposer
+
+Returns current proposer's address
+
+#### Parameters
+
+`NONE`
+
+#### Returns
+
+`AUTHOR` - address
+
+Request
+
+{% tabs %}
+{% tab title="Curl" %}
+```bash
+curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"jsonrpc":"2.0","method":"bor_getCurrentProposer","params":[], "id":1}'
+```
+{% endtab %}
+
+{% tab title="Postman" %}
+```http
+URL: https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key
+RequestType: POST
+Body: 
+{
+    "jsonrpc":"2.0",
+    "method":"bor_getCurrentProposer",
+    "params":[],
+    "id":1
+}
+```
+{% endtab %}
+{% endtabs %}
+
+Result
+
+```javascript
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0xb79fad4ca981472442f53d16365fdf0305ffd8e9"
+}
+```
+
+### bor\_getRootHash
+
+Returns the root hash given a block range
+
+{% hint style="warning" %}
+ The current supported maximum block range for **`bor_getRootHash`** is **`32767`**
+{% endhint %}
+
+#### Parameters
+
+* `from` block number \(in `int` format\)
+* `to` block number \(in `int` format\)
+
+#### Returns
+
+`HASH` 
+
+Request
+
+{% tabs %}
+{% tab title="Curl" %}
+```bash
+curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"jsonrpc":"2.0","method":"bor_getRootHash","params":[1000000, 1032767], "id":1}'
+```
+{% endtab %}
+
+{% tab title="Postman" %}
+```http
+URL: https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key
+RequestType: POST
+Body: 
+{
+    "jsonrpc":"2.0",
+    "method":"bor_getRootHash",
+    "params":[1000000, 1032767],
+    "id":1
+}
+```
+{% endtab %}
+{% endtabs %}
+
+Result
+
+```javascript
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "04b073e17b7186ab4daae17c5e2cc2d5a729cffd102cede41ee458a2d5573994"
+}
+
+```
+
+### eth\_getRootHash
+
+Returns the root hash given a block range
+
+{% hint style="warning" %}
+The current supported maximum block range for **`eth_getRootHash`** is **`32767`**
+{% endhint %}
+
+#### Parameters
+
+* `from` block number \(in `int` format\)
+* `to` block number \(in `int` format\)
+
+#### Returns
+
+`HASH` 
+
+Request
+
+{% tabs %}
+{% tab title="Curl" %}
+```bash
+curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"jsonrpc":"2.0","method":"eth_getRootHash","params":[1000000, 1032767], "id":1}'
+```
+{% endtab %}
+
+{% tab title="Postman" %}
+```http
+URL: https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key
+RequestType: POST
+Body: 
+{
+    "jsonrpc":"2.0",
+    "method":"eth_getRootHash",
+    "params":[1000000, 1032767],
+    "id":1
+}
+```
+{% endtab %}
+{% endtabs %}
+
+Result
+
+```javascript
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "04b073e17b7186ab4daae17c5e2cc2d5a729cffd102cede41ee458a2d5573994"
+}
+
+```
+
+### eth\_getSignersAtHash
+
+Returns all signs given a blockhash
+
+#### Parameters
+
+* `blockhash` 
+
+#### Returns
+
+`HASH` 
+
+Request
+
+{% tabs %}
+{% tab title="Curl" %}
+```bash
+curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"jsonrpc":"2.0","method":"bor_getSignersAtHash","params":["0x29fa73e3da83ddac98f527254fe37002e052725a88904bac14f03e919e1e2876"], "id":1'
+```
+{% endtab %}
+
+{% tab title="Postman" %}
+```http
+URL: https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key
+RequestType: POST
+Body: 
+{
+    "jsonrpc":"2.0",
+    "method":"bor_getSignersAtHash",
+    "params":["0x29fa73e3da83ddac98f527254fe37002e052725a88904bac14f03e919e1e2876"], 
+    "id":1
+}
+```
+{% endtab %}
+{% endtabs %}
+
+Result
+
+```javascript
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        "0x0375b2fc7140977c9c76d45421564e354ed42277",
+        "0x42eefcda06ead475cde3731b8eb138e88cd0bac3",
+        "0x5973918275c01f50555d44e92c9d9b353cadad54",
+        "0x7fcd58c2d53d980b247f1612fdba93e9a76193e6",
+        "0xb702f1c9154ac9c08da247a8e30ee6f2f3373f41",
+        "0xb8bb158b93c94ed35c1970d610d1e2b34e26652c",
+        "0xf84c74dea96df0ec22e11e7c33996c73fcc2d822"
+    ]
+}
+```
+
+
+
 ## ✍ Writing Transactions 
 
 Call to write to the blockchain. 
