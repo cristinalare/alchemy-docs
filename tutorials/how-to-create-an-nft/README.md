@@ -164,7 +164,7 @@ Now time that our environment is set up, onto more exciting stuff: _writing our 
 Open up the my-nft project in your favorite editor \(we like [VSCode](https://code.visualstudio.com/)\). Smart contracts are written in a language called Solidity which is what we will use to write our MyNFT.sol smart contract.‌
 
 1. Navigate to the “contracts” folder and create a new file called MyNFT.sol
-2. Below is our NFT smart contract code, which based off of the [OpenZepplin](https://docs.openzeppelin.com/contracts/3.x/erc721) library's ERC721 implementation. Copy and paste the contents below into your MyNFT.sol file.
+2. Below is our NFT smart contract code, which based off of the [OpenZeppelin](https://docs.openzeppelin.com/contracts/3.x/erc721) library's ERC721 implementation. Copy and paste the contents below into your MyNFT.sol file.
 
 {% hint style="warning" %}
 **NOTE:** If you want to attach a price to the NFT through the smart contract 
