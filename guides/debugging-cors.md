@@ -57,3 +57,7 @@ If none of the causes and fixes above are helping then please loop us in! You ca
 
 This information is not required, but it will help us get a better handle on the issue.
 
+## Setting up a CORS proxy
+
+If you are experiencing more widespread problems with CORS, e.g. not just with Alchemy, then you might want to set up a CORS proxy. This means all of your end-users will talk directly to your own domain and therefore CORS issues are impossible. Then in your own back-end you will call Alchemy endpoints and send the responses back to your end-users. This is a more difficult, but also guaranteed longer-term solution to CORS problems.
+
