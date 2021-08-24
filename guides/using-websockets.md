@@ -94,26 +94,11 @@ Returns the transaction information for all transactions that are added to the p
 Request
 
 {% tabs %}
-{% tab title="Curl" %}
+{% tab title="wscat" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","id": 2, "method": "eth_subscribe", "params": ["alchemy_newFullPendingTransactions"]}'
-```
-{% endtab %}
+wscat -c wss://eth-mainnet.alchemyapi.io/v2/<key>
 
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_subscribe",
-    "params":["alchemy_newFullPendingTransactions"]
-    "id":1
-}
+{"jsonrpc":"2.0","id": 2, "method": "eth_subscribe", "params": ["alchemy_newFullPendingTransactions"]}
 ```
 {% endtab %}
 {% endtabs %}
@@ -159,30 +144,11 @@ Returns the transaction information for all transactions that are added to the p
 Request
 
 {% tabs %}
-{% tab title="Curl" %}
+{% tab title="wscat" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","id": 1, "method": "eth_subscribe", "params": ["alchemy_filteredNewFullPendingTransactions", {"address": "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2"}]}'
-```
-{% endtab %}
+wscat -c wss://eth-mainnet.alchemyapi.io/v2/<key>
 
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_subscribe",
-    "params":[
-        "alchemy_filteredNewFullPendingTransactions", {
-            "address": "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2"
-        }
-    ],
-    "id":1
-}
+{"jsonrpc":"2.0","id": 1, "method": "eth_subscribe", "params": ["alchemy_filteredNewFullPendingTransactions", {"address": "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2"}]}
 ```
 {% endtab %}
 {% endtabs %}
@@ -236,10 +202,10 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","id": 2, "method": "eth_subscribe", "params": ["newPendingTransactions"]}'
+ wscat -c wss://eth-mainnet.alchemyapi.io/v2/<key>
+ 
+
+{"jsonrpc":"2.0","id": 2, "method": "eth_subscribe", "params": ["newPendingTransactions"]}
 ```
 {% endtab %}
 
@@ -293,10 +259,9 @@ Request
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","id": 1, "method": "eth_subscribe", "params": ["newHeads"]}'
+wscat -c wss://eth-mainnet.alchemyapi.io/v2/<key>
+
+{"jsonrpc":"2.0","id": 1, "method": "eth_subscribe", "params": ["newHeads"]}
 ```
 {% endtab %}
 
@@ -376,26 +341,12 @@ Some examples of topic specifications:
 Request
 
 {% tabs %}
-{% tab title="Curl" %}
+{% tab title="wscat" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","id": 1, "method": "eth_subscribe", "params": ["logs", {"address": "0x8320fe7702b96808f7bbc0d4a888ed1468216cfd", "topics": ["0xd78a0cb8bb633d06981248b816e7bd33c2a35a6089241d099fa519e361cab902"]}]}'
-```
-{% endtab %}
 
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_subscribe",
-    "params":["logs", {"address": "0x8320fe7702b96808f7bbc0d4a888ed1468216cfd", "topics": ["0xd78a0cb8bb633d06981248b816e7bd33c2a35a6089241d099fa519e361cab902"]}]
-    "id":1
-}
+wscat -c wss://eth-mainnet.alchemyapi.io/v2/<key>
+
+{"jsonrpc":"2.0","id": 1, "method": "eth_subscribe", "params": ["logs", {"address": "0x8320fe7702b96808f7bbc0d4a888ed1468216cfd", "topics": ["0xd78a0cb8bb633d06981248b816e7bd33c2a35a6089241d099fa519e361cab902"]}]}
 ```
 {% endtab %}
 {% endtabs %}
@@ -441,26 +392,11 @@ none
 Request
 
 {% tabs %}
-{% tab title="Curl" %}
+{% tab title="wscat" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","id": 1, "method": "eth_subscribe", "params": ["syncing"]}'
-```
-{% endtab %}
+wscat -c wss://eth-mainnet.alchemyapi.io/v2/<key>
 
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_subscribe",
-    "params":["syncing"]
-    "id":1
-}
+{"jsonrpc":"2.0","id": 1, "method": "eth_subscribe", "params": ["syncing"]}
 ```
 {% endtab %}
 {% endtabs %}
@@ -505,26 +441,11 @@ Cancels an existing subscription so that no further events are sent.
 Request
 
 {% tabs %}
-{% tab title="Curl" %}
+{% tab title="wscat" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0", "id": 1, "method": "eth_unsubscribe", "params": ["0x9cef478923ff08bf67fde6c64013158d"]}'
-```
-{% endtab %}
+wscat -c wss://eth-mainnet.alchemyapi.io/v2/<key>
 
-{% tab title="Postman" %}
-```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"eth_subscribe",
-    "params":["0x9cef478923ff08bf67fde6c64013158d"],
-    "id":1
-}
+{"jsonrpc":"2.0", "id": 1, "method": "eth_unsubscribe", "params": ["0x9cef478923ff08bf67fde6c64013158d"]}
 ```
 {% endtab %}
 {% endtabs %}
