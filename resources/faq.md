@@ -109,6 +109,16 @@ For instance, if a user executes `eth_call` for block number 10000, but the netw
 | `["0x<some-address>", "0x<some-block-number>"]` | `["0x<some-address>", {"blockHash": "0x<some-blockhash>"}]` |
 {% endhint %}
 
+## Size of a request header field exceeds server limit
+
+Large request headers will return errors even on methods that should be very small.
+
+You may not always know exactly what headers you are sending in an API call. If you have a global wrapper or a wrapper that is very far up your import tree, then you may not even know that it is adding headers to your requests.
+
+As an example, the Honeycomb Trace wrapper will add extremely large `X-Honeycomb-Trace` headers to every request you send. This will show up on our end as `Request header exceeds LimitRequestFieldSize: X-Honeycomb-Trace` and will be returned to you as a `Size of a request header field exceeds server limits` error.
+
+In general you should avoid such global wrappers. If you want to trace a request then add the headers as-needed.
+
 ## My question isn't here, where can I get help? <a id="my-question-isnt-here-where-can-i-get-help"></a>
 
 Don't worry, we got you. Check out our [support page](https://docs.alchemyapi.io/other/contact-us) for plenty of options!
