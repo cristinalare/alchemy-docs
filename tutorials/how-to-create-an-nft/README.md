@@ -7,23 +7,23 @@ description: >-
 
 # 🎨 How to Create an NFT
 
-_Estimated time to complete this guide: ~15 minutes_ 
+_Estimated time to complete this guide: ~15 minutes_
 
 Even if you've been living under a rock, you'll have noticed that every major news outlet has been profiling the rise of NFTs in the past few weeks.
 
 With NFTs bringing blockchain into the public eye, now is an excellent opportunity to understand the hype yourself by publishing your own NFT \(ERC-721 Token\) on the Ethereum blockchain!
 
-In this tutorial, we will walk through creating and deploying an ERC-721 smart contract on the Ropsten test network using [Metamask](https://metamask.io/), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org/), [Pinata](https://pinata.cloud/) and [Alchemy](https://alchemy.com/?r=affiliate:68212b46-a5c5-4f4c-bc8b-73f50536fcaf) \(don’t fret if you don’t understand what any of this means yet— we will explain it\). In Part II of this tutorial_,_ we’ll go through how we can use our smart contract to [mint an NFT](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-mint-a-nft), and in Part III we’ll cover how [view your NFT on Metamask](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-view-your-nft-in-your-wallet). 
+In this tutorial, we will walk through creating and deploying an ERC-721 smart contract on the Ropsten test network using [Metamask](https://metamask.io/), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org/), [Pinata](https://pinata.cloud/) and [Alchemy](https://alchemy.com/?r=affiliate:68212b46-a5c5-4f4c-bc8b-73f50536fcaf) \(don’t fret if you don’t understand what any of this means yet— we will explain it\). In Part II of this tutorial_,_ we’ll go through how we can use our smart contract to [mint an NFT](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-mint-a-nft), and in Part III we’ll cover how [view your NFT on Metamask](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-view-your-nft-in-your-wallet).
 
-And of course, if you have questions at any point, don't hesitate to reach out in the [Alchemy Discord](https://discord.gg/gWuC7zB)! 
+And of course, if you have questions at any point, don't hesitate to reach out in the [Alchemy Discord](https://discord.gg/gWuC7zB)!
 
-### Step 1: Connect to the Ethereum network 
+## Step 1: Connect to the Ethereum network
 
 There a bunch of ways to make requests to the Ethereum blockchain, but to make things easiest, we’ll use a free account on [Alchemy](https://alchemy.com/?r=affiliate:68212b46-a5c5-4f4c-bc8b-73f50536fcaf), a blockchain developer platform and API that allows us to communicate with the Ethereum chain without having to run our own nodes.
 
 In this tutorial, we'll also take advantage of Alchemy's developer tools for monitoring and analytics to understand what’s going on under the hood in our smart contract deployment. If you don’t already have an Alchemy account, you can sign up for free [here](https://alchemy.com/?r=affiliate:68212b46-a5c5-4f4c-bc8b-73f50536fcaf).
 
-### Step 2: Create your app \(and API key\)
+## Step 2: Create your app \(and API key\)
 
 Once you’ve created an Alchemy account, you can generate an API key by creating an app. This will allow us to make requests to the Ropsten test network. Check out [this guide](https://docs.alchemyapi.io/guides/choosing-a-network) if you're curious to learn more about test networks.
 
@@ -31,13 +31,13 @@ Once you’ve created an Alchemy account, you can generate an API key by creatin
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/avF_wnWdWxL9X9YtBm8FO8bw.png)
 
-2. Name your app \(we chose "My First NFT!"\), offer a short description, select “Staging” for the Environment \(used for your app bookkeeping\), and choose “Ropsten” for your network. 
+1. Name your app \(we chose "My First NFT!"\), offer a short description, select “Staging” for the Environment \(used for your app bookkeeping\), and choose “Ropsten” for your network. 
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/jFpUacfvT5qV052WW_aFjA00.png)
 
-3. Click “Create app” and that’s it! Your app should appear in the table below. 
+1. Click “Create app” and that’s it! Your app should appear in the table below. 
 
-### Step 3: Create an Ethereum account \(address\)
+## Step 3: Create an Ethereum account \(address\)
 
 We need an Ethereum account to send and receive transactions. For this tutorial, we’ll use Metamask, a virtual wallet in the browser used to manage your Ethereum account address. If you want to understand more about how transactions on Ethereum work, check out [this page](https://ethereum.org/en/developers/docs/transactions/) from the Ethereum foundation.
 
@@ -45,11 +45,11 @@ You can download and create a Metamask account for free [here](https://metamask.
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/7Dc2Us6mf6a5qplHf5FXq6eB.png)
 
-### Step 4: Add ether from a Faucet
+## Step 4: Add ether from a Faucet
 
 In order to deploy our smart contract to the test network, we’ll need some fake Eth. To get Eth you can go to the [Ropsten faucet](https://faucet.ropsten.be/) and enter your Ropsten account address, then click “Send Ropsten Eth.” You should see Eth in your Metamask account soon after!
 
-### Step 5: Check your Balance
+## Step 5: Check your Balance
 
 To double check our balance is there, let’s make an [eth\_getBalance](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_getbalance) request using [Alchemy’s composer tool](https://composer.alchemyapi.io?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%22%22%2C%22latest%22%5D%7D). This will return the amount of Eth in our wallet. After you input your Metamask account address and click “Send Request”, you should see a response like this:
 
@@ -61,7 +61,7 @@ To double check our balance is there, let’s make an [eth\_getBalance](https://
 
 Phew! Our fake money is all there! 🤑
 
-### Step 6: Initialize our project
+## Step 6: Initialize our project
 
 First, we’ll need to create a folder for our project. Navigate to your [command line](https://www.computerhope.com/jargon/c/commandi.htm) and type:
 
@@ -70,7 +70,7 @@ mkdir my-nft
 cd my-nft
 ```
 
-Now that we’re inside our project folder, we’ll use `npm init` to initialize the project. If you don’t already have npm installed, follow [these instructions](https://docs.alchemyapi.io/alchemy/guides/alchemy-for-macs#1-install-nodejs-and-npm) \(we’ll also need [Node.js](https://nodejs.org/en/download/), so download that too!\). 
+Now that we’re inside our project folder, we’ll use `npm init` to initialize the project. If you don’t already have npm installed, follow [these instructions](https://docs.alchemyapi.io/alchemy/guides/alchemy-for-macs#1-install-nodejs-and-npm) \(we’ll also need [Node.js](https://nodejs.org/en/download/), so download that too!\).
 
 ```text
 npm init
@@ -105,9 +105,9 @@ About to write to /Users/thesuperb1/Desktop/my-nft/package.json:
 
 Approve the package.json, and we’re good to go!
 
-### Step 7: Download [Hardhat](https://hardhat.org/getting-started/#overview)
+## Step 7: Download [Hardhat](https://hardhat.org/getting-started/#overview)
 
-Hardhat is a development environment to compile, deploy, test, and debug your Ethereum software. It helps developers when building smart contracts and dApps locally before deploying to the live chain. 
+Hardhat is a development environment to compile, deploy, test, and debug your Ethereum software. It helps developers when building smart contracts and dApps locally before deploying to the live chain.
 
 Inside our `my-nft` project run:
 
@@ -117,12 +117,12 @@ npm install --save-dev hardhat
 
 Check out this page for more details on [installation instructions](https://hardhat.org/getting-started/#overview).
 
-### Step 8: Create Hardhat project
+## Step 8: Create Hardhat project
 
-Inside our project folder run: 
+Inside our project folder run:
 
 ```text
-npx hardhat 
+npx hardhat
 ```
 
 You should then see a welcome message and option to select what you want to do. Select “create an empty hardhat.config.js”:
@@ -143,9 +143,9 @@ Create a sample project
 Quit
 ```
 
-This will generate a `hardhat.config.js` file for us which is where we’ll specify all of the set up for our project \(on step 13\). 
+This will generate a `hardhat.config.js` file for us which is where we’ll specify all of the set up for our project \(on step 13\).
 
-### Step 9: Add project folders
+## Step 9: Add project folders
 
 To keep our project organized, we’ll create two new folders. Navigate to the root directory of your project in your command line and type:
 
@@ -157,7 +157,7 @@ mkdir scripts
 * `contracts/` is where we’ll keep our NFT smart contract code
 * `scripts/` is where we’ll keep scripts to deploy and interact with our smart contract
 
-### Step 10: Write our contract
+## Step 10: Write our contract
 
 Now time that our environment is set up, onto more exciting stuff: _writing our smart contract code!_
 
@@ -167,7 +167,7 @@ Open up the my-nft project in your favorite editor \(we like [VSCode](https://co
 2. Below is our NFT smart contract code, which based off of the [OpenZeppelin](https://docs.openzeppelin.com/contracts/3.x/erc721) library's ERC721 implementation. Copy and paste the contents below into your MyNFT.sol file.
 
 {% hint style="warning" %}
-**NOTE:** If you want to attach a price to the NFT through the smart contract 
+**NOTE:** If you want to attach a price to the NFT through the smart contract
 {% endhint %}
 
 ```text
@@ -199,7 +199,6 @@ contract MyNFT is ERC721, Ownable {
         return newItemId;
     }
 }
-
 ```
 
 1. Because we are inheriting classes from the OpenZepplin contracts library, in your command line run `npm install @openzeppelin/contracts@3.1.0-solc-0.7` to install the library into our folder.
@@ -223,11 +222,11 @@ Finally, starting on line 16, we have our function `mintNFT()` that allows us to
 
 `mintNFT` calls some methods from the inherited ERC721 library, and ultimately returns a number that represents the ID of the freshly minted NFT.
 
-### Step 11: Connect Metamask & Alchemy to your project
+## Step 11: Connect Metamask & Alchemy to your project
 
-Now that we've created a Metamask wallet, Alchemy account, and written our smart contract, it’s time to connect the three. 
+Now that we've created a Metamask wallet, Alchemy account, and written our smart contract, it’s time to connect the three.
 
-Every transaction sent from your virtual wallet requires a signature using your unique private key. To provide our program with this permission, we can safely store our private key \(and Alchemy API key\) in an environment file. 
+Every transaction sent from your virtual wallet requires a signature using your unique private key. To provide our program with this permission, we can safely store our private key \(and Alchemy API key\) in an environment file.
 
 To learn more about sending transactions, check out [this tutorial](https://docs.alchemyapi.io/alchemy/tutorials/sending-transactions-using-web3-and-alchemy) on sending transactions using web3.
 
@@ -251,11 +250,11 @@ API_URL = "https://eth-ropsten.alchemyapi.io/v2/your-api-key"
 PRIVATE_KEY = "your-metamask-private-key"
 ```
 
-To actually connect these to our code, we’ll reference these variables in our `hardhat.config.js` file on step 13. 
+To actually connect these to our code, we’ll reference these variables in our `hardhat.config.js` file on step 13.
 
-### Step 12: Install Ethers.js 
+## Step 12: Install Ethers.js
 
-Ethers.js is a library that makes it easier to interact and make requests to Ethereum by wrapping [standard JSON-RPC methods](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc) with more user friendly methods. 
+Ethers.js is a library that makes it easier to interact and make requests to Ethereum by wrapping [standard JSON-RPC methods](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc) with more user friendly methods.
 
 Hardhat makes it super easy to integrate [Plugins](https://hardhat.org/plugins/) for additional tooling and extended functionality. We’ll be taking advantage of the [Ethers plugin](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html) for contract deployment \([Ethers.js](https://github.com/ethers-io/ethers.js/) has some super clean contract deployment methods\).
 
@@ -265,9 +264,9 @@ In your project directory type:
 npm install --save-dev @nomiclabs/hardhat-ethers 'ethers@^5.0.0'
 ```
 
-We’ll also require ethers in our `hardhat.config.js` in the next step. 
+We’ll also require ethers in our `hardhat.config.js` in the next step.
 
-### Step 13: Update hardhat.config.js
+## Step 13: Update hardhat.config.js
 
 We’ve added several dependencies and plugins so far, now we need to update `hardhat.config.js` so that our project knows about all of them.
 
@@ -293,9 +292,9 @@ module.exports = {
 }
 ```
 
-### Step 14: Compile our contract
+## Step 14: Compile our contract
 
-To make sure everything is working so far, let’s compile our contract. The `compile` task is one of the built-in hardhat tasks. 
+To make sure everything is working so far, let’s compile our contract. The `compile` task is one of the built-in hardhat tasks.
 
 From the command line run:
 
@@ -303,11 +302,11 @@ From the command line run:
 npx hardhat compile
 ```
 
-You might get a warning about `SPDX license identifier not provided in source file` , but no need to worry about that — hopefully everything else looks good! If not, you can always message in the [Alchemy discord](https://discord.gg/u72VCg3). 
+You might get a warning about `SPDX license identifier not provided in source file` , but no need to worry about that — hopefully everything else looks good! If not, you can always message in the [Alchemy discord](https://discord.gg/u72VCg3).
 
-### Step 15: Write our deploy script
+## Step 15: Write our deploy script
 
-Now that our contract is written and our configuration file is good to go, it’s time to write our contract deploy script. 
+Now that our contract is written and our configuration file is good to go, it’s time to write our contract deploy script.
 
 Navigate to the `scripts/` folder and create a new file called `deploy.js` , adding the following contents to it:
 
@@ -315,7 +314,7 @@ Navigate to the `scripts/` folder and create a new file called `deploy.js` , add
 async function main() {
    // Grab the contract factory 
    const MyNFT = await ethers.getContractFactory("MyNFT");
-   
+
    // Start deployment, returning a promise that resolves to a contract object
    const myNFT = await MyNFT.deploy(); // Instance of the contract 
    console.log("Contract deployed to address:", myNFT.address);
@@ -343,7 +342,7 @@ A `ContractFactory` in ethers.js is an abstraction used to deploy new smart cont
 
 Calling `deploy()` on a `ContractFactory` will start the deployment, and return a `Promise` that resolves to a `Contract`. This is the object that has a method for each of our smart contract functions.
 
-### Step 16: Deploy our contract
+## Step 16: Deploy our contract
 
 We’re finally ready to deploy our smart contract! Navigate back to the root of your project directory, and in the command line run:
 
@@ -361,7 +360,7 @@ If we go to the [Ropsten etherscan](https://ropsten.etherscan.io/) and search fo
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/4Ln0adP6-oGfBQYXc7OLBCZK.png)
 
-The `From` address should match your Metamask account address and the To address will say “Contract Creation.” If we click into the transaction, we’ll see our contract address in the `To` field: 
+The `From` address should match your Metamask account address and the To address will say “Contract Creation.” If we click into the transaction, we’ll see our contract address in the `To` field:
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/EniCjfOsqEgq_Jt76bcn0yVV.png)
 
@@ -371,9 +370,9 @@ To understand what’s going on under the hood, let’s navigate to the Explorer
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/h6d6sS4SaMBUX5GEpqgNvvsc.png)
 
-Here you’ll see a handful of JSON-RPC calls that Hardhat/Ethers made under the hood for us when we called the `.deploy()` function. 
+Here you’ll see a handful of JSON-RPC calls that Hardhat/Ethers made under the hood for us when we called the `.deploy()` function.
 
-Two important ones to call out here are [`eth_sendRawTransaction`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_sendrawtransaction), which is the request to actually write our smart contract onto the Ropsten chain, and [`eth_getTransactionByHash`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactionbyhash) which is a request to read information about our transaction given the hash \(a typical pattern when sending transactions\). 
+Two important ones to call out here are [`eth_sendRawTransaction`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_sendrawtransaction), which is the request to actually write our smart contract onto the Ropsten chain, and [`eth_getTransactionByHash`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactionbyhash) which is a request to read information about our transaction given the hash \(a typical pattern when sending transactions\).
 
 To learn more about sending transactions, check out this tutorial on [sending transactions using Web3](https://docs.alchemyapi.io/alchemy/tutorials/sending-transactions-using-web3-and-alchemy).
 

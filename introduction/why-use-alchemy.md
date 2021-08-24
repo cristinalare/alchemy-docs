@@ -99,7 +99,7 @@ Alchemy Notify provides timely notifications on the most important Web3 events.
 
 **Learn more about Alchemy Notify** [**here**](core-products/alchemy-notify.md)**.** 
 
-### [Alchemy Support](../resources/contact-us.md) 
+### [Alchemy Support](../resources/contact-us/) 
 
 Alchemy has expert, hands-on support, dedicated for all customers.
 
@@ -108,7 +108,7 @@ Alchemy has expert, hands-on support, dedicated for all customers.
 * [x] Advising on building product
 * [x] Connections to other people in industry
 
-**Learn more about Alchemy Support** [**here**](../resources/contact-us.md)**.** 
+**Learn more about Alchemy Support** [**here**](../resources/contact-us/)**.** 
 
 ## 🤝 Who we work with
 

@@ -114,7 +114,9 @@
 ## Resources
 
 * [❓ FAQ](resources/faq.md)
-* [👥 Support](resources/contact-us.md)
+* [👥 Support](resources/contact-us/README.md)
+  * [Size of a request header field exceeds server limit](resources/contact-us/size-of-a-request-header-field-exceeds-server-limit.md)
+  * [🪲Debugging CORS problems for end-users](resources/contact-us/cors-problems-for-end-users.md)
 * [⛓️ Blockchain 101](resources/blockchain-101.md)
 * [📚 Blockchain Glossary](resources/blockchain-glossary.md)
 
