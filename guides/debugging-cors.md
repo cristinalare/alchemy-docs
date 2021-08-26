@@ -2,7 +2,7 @@
 description: If your users are experiencing CORS issues here's how to debug them
 ---
 
-# 🪲Debugging CORS problems for end-users
+# 🐛Debugging CORS problems for end-users
 
 ## Overview
 
@@ -29,6 +29,8 @@ As mentioned above, any hindrance in the request lifecycle before reaching Alche
 * The endpoint may be on a global blacklist \(unlikely\).
 
 In each of these cases the resolution is to add the blocked endpoint to the exceptions list, or whitelist of the antivirus. The user may need to add multiple endpoints and potentially a wildcard for the entire https://alchemy.com and https://alchemyapi.io domains.
+
+If adding an exclusion doesn't help, then try **turning off the Bitdefender "protection shield"** altogether.
 
 ### The user's ISP or router is blocking the website
 

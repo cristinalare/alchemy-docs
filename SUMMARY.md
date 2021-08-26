@@ -110,7 +110,7 @@
 * [🚦 Rate Limits](guides/rate-limits.md)
 * [♦️ Running an Eth2 Node/Validator with Alchemy](guides/running-an-eth2-node-with-alchemy.md)
 * [✅ Internal Playbook: Upgrading Ethereum Nodes](guides/internal-playbook-upgrading-ethereum-nodes.md)
-* [🪲Debugging CORS problems for end-users](guides/debugging-cors.md)
+* [🐛Debugging CORS problems for end-users](guides/debugging-cors.md)
 
 ## Resources
 
