@@ -9,7 +9,7 @@ description: >-
 
 _**Looking for the instructions on how to create webhooks programmatically? Check out the page below!**_ 
 
-{% page-ref page="../documentation/apis/enhanced-apis/notify-api.md" %}
+{% page-ref page="../documentation/enhanced-apis/notify-api.md" %}
 
 Alchemy Notify works by using webhooks, a way for you to subscribe to events that occur on your application. This guide will walk through what webhooks are and how you can use them in order to get started with Alchemy Notify. 
 
@@ -98,7 +98,7 @@ The Dropped Transactions Webhook is used to notify your app anytime a transactio
 The Address Activity Webhook allows you to track all ETH, ERC20 and ERC721 external and internal [transfer events](eth_getlogs.md#what-are-transfers) for as many Ethereum addresses as you'd like. This provides your app with real-time state changes when an address sends or receives tokens. 
 
 {% hint style="info" %}
-If you are looking for historical activity, check out the [Transfers API](../documentation/apis/enhanced-apis/transfers-api.md)! 
+If you are looking for historical activity, check out the [Transfers API](../documentation/enhanced-apis/transfers-api.md)! 
 {% endhint %}
 
 #### Types of Transfers
@@ -122,7 +122,7 @@ These are transfers that occur where the `fromAddress` is an internal \(smart co
 {% endhint %}
 
 {% hint style="info" %}
-**NOTE:**  For efficiency, we do not return internal transfers with 0 value as they don't provide useful information without digging deeper into the internal transaction itself. If you are interested in these type of events see our [Trace API](../documentation/apis/enhanced-apis/trace-api.md). 
+**NOTE:**  For efficiency, we do not return internal transfers with 0 value as they don't provide useful information without digging deeper into the internal transaction itself. If you are interested in these type of events see our [Trace API](../documentation/enhanced-apis/trace-api.md). 
 
 Additionally, we do not include any internal transfers with call type`delegatecall` because although they have a _value_  associated with them they do not actually _transfer_  that value \(see[ Appendix H of the Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf) if you're curious\). We also do not include miner rewards as an internal transfer.
 {% endhint %}
@@ -265,7 +265,7 @@ You should then see the result updated on website: [https://webhook.site/](https
 Setting up a webhook is as simple as adding a new URL to your application. There are two primary ways to activate Alchemy Notify.
 
 {% hint style="warning" %}
-**NOTE:** If you need to add over 10 addresses to the address activity webhook, we recommend adding them through an API call. See our [Notify API Reference page](../documentation/apis/enhanced-apis/notify-api.md#create-webhook) for more information on this. 
+**NOTE:** If you need to add over 10 addresses to the address activity webhook, we recommend adding them through an API call. See our [Notify API Reference page](../documentation/enhanced-apis/notify-api.md#create-webhook) for more information on this. 
 {% endhint %}
 
 ### 1.  Setting Up Webhooks from the Dashboard
@@ -282,9 +282,9 @@ Navigate to the Notify tab in your [Alchemy Dashboard](https://dashboard.alchemy
 
 ### 2. Setting up Webhooks Programmatically 
 
-[Notify API page](../documentation/apis/enhanced-apis/notify-api.md):
+[Notify API page](../documentation/enhanced-apis/notify-api.md):
 
-{% page-ref page="../documentation/apis/enhanced-apis/notify-api.md" %}
+{% page-ref page="../documentation/enhanced-apis/notify-api.md" %}
 
 ## Webhook Signature and Security 
 
