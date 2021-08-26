@@ -69,7 +69,7 @@
   * [Token API](documentation/enhanced-apis/token-api.md)
   * [Trace API](documentation/enhanced-apis/trace-api.md)
   * [Debug API](documentation/enhanced-apis/debug-api.md)
-* [🖥️ Alchemy Web3](documentation/alchemy-web3/README.md)
+* [🖥️ Alchemy Web3.js](documentation/alchemy-web3/README.md)
   * [Enhanced Web3 API](documentation/alchemy-web3/enhanced-web3-api.md)
 * [❗ Error Reference](documentation/error-reference.md)
 * [🔩 Compute Units \(CUs\)](documentation/compute-units.md)
