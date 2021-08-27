@@ -109,6 +109,10 @@ For instance, if a user executes `eth_call` for block number 10000, but the netw
 | `["0x<some-address>", "0x<some-block-number>"]` | `["0x<some-address>", {"blockHash": "0x<some-blockhash>"}]` |
 {% endhint %}
 
+## How many requests are included in Alchemy free tier and growth tier?
+
+The Alchemy free tier includes **~4,000,000 requests** each month ****with **free archive data access** and the growth tier \(with capped capacity\) ****includes **~6,000,000 requests** each month also with **free archive data access.**
+
 ## Size of a request header field exceeds server limit
 
 Large request headers will return errors even on methods that should be very small.
