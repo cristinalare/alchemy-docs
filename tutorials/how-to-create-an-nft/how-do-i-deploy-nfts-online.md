@@ -1,10 +1,10 @@
 ---
-description: Guide for deploying NFTs to a live website using web hosting services
+description: Guide for deploying your NFT minter to a live website
 ---
 
-# 🖥️ How Do I Deploy NFTs Online?
+# 🖥️ How to Build an NFT Website
 
-## Why Deploy Online?
+## How to Know When You're Ready to Deploy to a Live Site
 
 ### 1. You are ready to share your NFT with the world!
 
@@ -14,7 +14,7 @@ By now, you have likely already created an NFT on your local machine via 🎨 [H
 
 For users with operating systems/hardware that do not natively support web3 packages/other dependencies needed to run Alchemy's NFT tutorials, deploying online on cloud computing providers may empower these users to compile and run code. Cloud services often provide an alternative for developers that will not require you to change your hardware, configure VMs, or add more infrastructure to your local environment. 
 
-## Deploying Your Code Online
+## Deploying Your Code to a Live Website
 
 ### Pick a Web Hosting Service!
 
@@ -22,9 +22,9 @@ When deploying your code online, developers first need to choose an online web h
 
 Here are a few services that are commonly used for consumer-grade web applications:
 
-* [https://www.heroku.com/](https://www.heroku.com/)
-* [https://www.digitalocean.com/](https://www.digitalocean.com/)
-* [https://www.pythonanywhere.com/](https://www.pythonanywhere.com/)
+* [Heroku](https://www.heroku.com/) 
+* [DigitalOcean](https://www.digitalocean.com/) 
+* [PythonAnywhere](https://www.pythonanywhere.com/) 
 
 {% hint style="info" %}
 **NOTE:** All of these services listed above offer varying free tiers to get you up and running as quickly as possible!

@@ -87,7 +87,7 @@
   * [🪄How to Mint an NFT with Ethers.js](tutorials/how-to-create-an-nft/how-to-mint-an-nft-with-ethers.md)
   * [👛 How to View Your NFT in Your Mobile Wallet](tutorials/how-to-create-an-nft/how-to-view-your-nft-in-your-wallet.md)
   * [💵 How do I set a price on an NFT?](tutorials/how-to-create-an-nft/nft-price.md)
-  * [🖥️ How Do I Deploy NFTs Online?](tutorials/how-to-create-an-nft/how-do-i-deploy-nfts-online.md)
+  * [🖥️ How to Build an NFT Website](tutorials/how-to-create-an-nft/how-do-i-deploy-nfts-online.md)
 * [📝 NFT Minter Tutorial: How to Create a Full Stack DApp](tutorials/nft-minter.md)
 * [📜 Integrating Historical Transaction Data into your dApp](tutorials/transfers-tutorial.md)
 * [♻️Tracking Transaction Life Cycles](tutorials/tracking-transaction-life-cycles.md)
