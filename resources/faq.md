@@ -111,7 +111,7 @@ For instance, if a user executes `eth_call` for block number 10000, but the netw
 
 ## How many requests are included in Alchemy free tier and growth tier?
 
-The Alchemy free tier includes **~4,000,000 requests** each month ****with **free archive data access** and the growth tier \(with capped capacity\) ****includes **~6,000,000 requests** each month also with **free archive data access.**
+The Alchemy free tier includes **~4,000,000 requests** each month ****with **free archive data access** and the growth tier \(with capped capacity\) ****includes **~6,000,000 requests** each month also with **free archive data access.** However, Alchemy uses a [compute unit model](../documentation/compute-units.md) instead of request limiting so this number will fluctuate depending on which requests you're making. 
 
 ## Size of a request header field exceeds server limit
 
