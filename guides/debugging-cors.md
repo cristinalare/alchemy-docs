@@ -22,7 +22,7 @@ As mentioned above, any hindrance in the request lifecycle before reaching Alche
 
 ### The user has an antivirus such as Bitdefender installed
 
-[Bitdefender](https://www.bitdefender.com/) \(and other antivirus softwares\) can be installed on the OS or as a browser extension. There are multiple ways that an endpoint can be blocked by an antivirus:
+[Bitdefender](https://www.bitdefender.com/), [Brave Shields](https://support.brave.com/hc/en-us/articles/360022973471-What-is-Shields-#:~:text=Shields%20protects%20your%20privacy%20as,track%20from%20site%20to%20site.&text=Shields%20blocks%20this%20type%20of,trackers%20that%20come%20with%20them), and other antivirus softwares can be installed on the OS or as a browser extension. There are multiple ways that an endpoint can be blocked by an antivirus:
 
 * The endpoint may be categorized under "banking", which might have additional restrictions configured in the antivirus settings.
 * The user may have parental controls restricting their web access.
@@ -30,7 +30,7 @@ As mentioned above, any hindrance in the request lifecycle before reaching Alche
 
 In each of these cases the resolution is to add the blocked endpoint to the exceptions list, or whitelist of the antivirus. The user may need to add multiple endpoints and potentially a wildcard for the entire https://alchemy.com and https://alchemyapi.io domains.
 
-If adding an exclusion doesn't help, then try **turning off the Bitdefender "protection shield"** altogether.
+If adding an exclusion doesn't help, then try **turning off the Bitdefender "protection shield"** altogether. If the antivirus is not Bitdefender, then turn off whichever antivirus the user as installed.
 
 ### The user's ISP or router is blocking the website
 
