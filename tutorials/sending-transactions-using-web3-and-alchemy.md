@@ -161,7 +161,7 @@ Now, before we jump into running this code, let's talk about some of the compone
 {% hint style="info" %}
 **A Note on `data`**
 
-There are a two main types of transactions that can be sent in Ethereum.
+There are two main types of transactions that can be sent in Ethereum.
 
 * **Balance transfer:** Send eth from one address to another. No `data` field required, however, if you'd like to send additional information alongside your transaction, you can include that information in HEX format in this field. 
   * For example, let's say we wanted to write the hash of an IPFS document to the ethereum chain in order to give it an immutable timestamp. Our data field should then look like `data: web3.utils.toHex(‘IPFS hash‘)`. And now anyone can query the chain and see when that document was added. 
