@@ -1358,7 +1358,9 @@ Result
 Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../../guides/eth_getlogs.md) page. 
 
 {% hint style="warning" %}
-**NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**no limit on the response size**_. 
+**NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**no limit on the response size**_.
+
+If you absolutely need to query larger block ranges, please contact us over [discord](https://alchemy.com/discord) or at support@alchemy.com. We can open access to larger block ranges based on your use case.
 
 _If you need to pull logs frequently, we recommend_ [_using WebSockets_](../../guides/using-websockets.md) _to push new logs to you when they are available._ 
 {% endhint %}
