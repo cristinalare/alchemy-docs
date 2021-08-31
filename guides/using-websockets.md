@@ -76,7 +76,7 @@ While the subscription is active, you will receive events which are objects with
 
 ### Subscription types
 
-#### **1. alchemy\_newFullPendingTransactions** 
+### **1. alchemy\_newFullPendingTransactions** 
 
 {% hint style="warning" %}
 The `alchemy_newFullPendingTransactions` ****subscription type is a super costly to maintain and requires a large number of compute units since it emits full transaction information instead of just transaction hashes. We do not recommend keeping this subscription open for long periods of time for non-enterprise tier users. 
@@ -131,7 +131,7 @@ Result
 }
 ```
 
-#### 2. alchemy\_filteredNewFullPendingTransactions
+### 2. alchemy\_filteredNewFullPendingTransactions
 
 Returns the transaction information for all transactions that are added to the pending state that match a given filter. Currently supports an address filter, which will return transactions from or to the address.
 
@@ -181,7 +181,7 @@ Result
 }
 ```
 
-#### 3. newPendingTransactions
+### 3. newPendingTransactions
 
 Returns the hash for all transactions that are added to the pending state.
 
@@ -242,7 +242,7 @@ Result
 }
 ```
 
-#### 4. newHeads
+### 4. newHeads
 
 Emits an event any time a new header is added to the chain, including during a chain reorganization.
 
@@ -313,7 +313,7 @@ Result
  }
 ```
 
-#### 5. logs
+### 5. logs
 
 Emits logs which are part of newly added blocks that match specified filter criteria.
 
@@ -379,7 +379,7 @@ Result
 }
 ```
 
-#### 6. syncing
+### 6. syncing
 
 Indicates when the node starts or stops synchronizing. The result can either be a boolean indicating that the synchronization has started \(true\), finished \(false\) or an object with various progress indicators.
 
