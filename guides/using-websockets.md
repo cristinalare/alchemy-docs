@@ -84,7 +84,7 @@ The `alchemy_newFullPendingTransactions` ****subscription type is a super costly
 **NOTE:** 
 
 * The naming of this subscription is different from the naming of the web3 subscription API, [`alchemy_fullPendingTransactions`](../documentation/alchemy-web3/enhanced-web3-api.md#web-3-eth-subscribe-alchemy_fullpendingtransactions).
-* This method is only supported on Ethereum networks
+* This method is only supported on Ethereum networks and Polygon Mainnet.
 {% endhint %}
 
 Returns the transaction information for all transactions that are added to the pending state. This subscription type subscribes to pending transactions, similar to the standard Web3 call `web3.eth.subscribe("pendingTransactions")`, but differs in that it emits full transaction information rather than just transaction hashes. ****
@@ -136,7 +136,7 @@ Result
 Returns the transaction information for all transactions that are added to the pending state that match a given filter. Currently supports an address filter, which will return transactions from or to the address.
 
 {% hint style="warning" %}
-**NOTE:** This method is only supported on Ethereum networks.
+**NOTE:** This method is only supported on Ethereum networks and Polygon Mainnet.
 {% endhint %}
 
 **Example**
@@ -188,7 +188,7 @@ Returns the hash for all transactions that are added to the pending state.
 When a transaction that was previously part of the canonical chain isn’t part of the new canonical chain after a reorganization its again emitted.
 
 {% hint style="warning" %}
-**NOTE:** This method is only supported on Ethereum networks.
+**NOTE:** This method is only supported on Ethereum networks and Polygon Mainnet.
 {% endhint %}
 
 **Parameters**
