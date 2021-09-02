@@ -11,7 +11,7 @@ You'll need to have finished part 1 [creating and deploying a smart contract](./
 
 ## Part 4: Marrying Web2 & Web3: connecting your smart contract to a frontend project
 
-🎉Woooo! You finally made it the last part of this tutorial series: creating a full stack decentralized application \(dApp\) by connecting your Hello World smart contract to a frontend project and interacting with it. 
+🎉Woooo! You finally made it to the last part of this tutorial series: creating a full stack decentralized application \(dApp\) by connecting your Hello World smart contract to a frontend project and interacting with it. 
 
 By the end of this tutorial, you'll know how to:
 
@@ -81,7 +81,7 @@ If you try clicking "Connect Wallet" or "Update" buttons, you'll notice that the
 
 Let's go back into the `src` folder in our editor and open the `HelloWorld.js` file. It's super important that we understand everything in this file, as it is the primary React component we will be working on.
 
-At the top of our this file, you'll notice we have several import statements that are necessary to get our project running, including the React library, useEffect and useState hooks, some items from the `./util/interact.js` \(we'll describe them in more details soon!\), and the Alchemy logo. 🧙‍♂️
+At the top of this file, you'll notice we have several import statements that are necessary to get our project running, including the React library, useEffect and useState hooks, some items from the `./util/interact.js` \(we'll describe them in more details soon!\), and the Alchemy logo. 🧙‍♂️
 
 {% code title="HelloWorld.js" %}
 ```javascript
@@ -122,7 +122,7 @@ Here's what each of the variables represents:
 * `message` - a string that stores the current message in the smart contract
 * `newMessage` - a string that stores the new message that will be written to the smart contract
 
-After the state variables, you'll see five un-implemented functions: `useEffect` ,`addSmartContractListener`, `addWalletListener` , `connectWalletPressed`,  and `onPublishedPressed`. We'll explain what they do below:
+After the state variables, you'll see five un-implemented functions: `useEffect` ,`addSmartContractListener`, `addWalletListener` , `connectWalletPressed`,  and `onUpdatePressed`. We'll explain what they do below:
 
 {% code title="HelloWorld.js" %}
 ```javascript
@@ -200,10 +200,10 @@ return (
  If you scan this code carefully, you'll notice where we use our various state variables in our UI:
 
 * On lines 6-12, if the user's wallet is connected \(i.e. `walletAddress.length > 0`\), we display a truncated version of the user `walletAddress` in the button with ID "walletButton;"  otherwise it simply says "Connect Wallet."
-* On line 17, we display the current message stored in the smart contract, which captured in the `message` string.
-* One lines 23-26, we use a [controlled component](https://reactjs.org/docs/forms.html#controlled-components) to update our `newMessage` state variable when the input in the text field changes.
+* On line 17, we display the current message stored in the smart contract, which is captured in the `message` string.
+* On lines 23-26, we use a [controlled component](https://reactjs.org/docs/forms.html#controlled-components) to update our `newMessage` state variable when the input in the text field changes.
 
-In addition to our state variables, you'll also see that `connectWalletPressed` and `onPublishedPressed` functions are called when the buttons with IDs `publishButton` and `walletButton` are clicked respectively.
+In addition to our state variables, you'll also see that `connectWalletPressed` and `onUpdatePressed` functions are called when the buttons with IDs `publishButton` and `walletButton` are clicked respectively.
 
 Finally, let's address where is this `HelloWorld.js` component added.
 
@@ -244,7 +244,7 @@ export const updateMessage = async (message) => {
 
 You'll notice at the top of the file that we've commented out the `helloWorldContract` object. Later in this tutorial, we will uncomment this object and instantiate our smart contract in this variable, which we will then export into our `HelloWorld.js` component.
 
-The three unimplemented functions after our `helloWorldContract` object do the following:
+The four unimplemented functions after our `helloWorldContract` object do the following:
 
 * `loadCurrentMessage` - this function handles the logic of loading the current message stored in the smart contract. It will make a _read_ call to the Hello World smart contract using the [Alchemy Web3 API](https://github.com/alchemyplatform/alchemy-web3).
 * `connectWallet` - this function will connect the user's Metamask to our dApp.
@@ -492,7 +492,7 @@ So, next we'll tackle setting up our Ethereum wallet \(Metamask\) and then conne
 
 ## Step 4: Set up your Ethereum wallet
 
-To write anything to the Ethereum chain, users must their sign transactions using their virtual wallet's private keys. For this tutorial, we’ll use [Metamask](https://metamask.io/), a virtual wallet in the browser used to manage your Ethereum account address, as it makes this transaction signing super easy for the end-user. 
+To write anything to the Ethereum chain, users must sign transactions using their virtual wallet's private keys. For this tutorial, we’ll use [Metamask](https://metamask.io/), a virtual wallet in the browser used to manage your Ethereum account address, as it makes this transaction signing super easy for the end-user. 
 
 {% hint style="info" %}
  If you want to understand more about how transactions on Ethereum work, check out [this page](https://ethereum.org/en/developers/docs/transactions/) from the Ethereum foundation.
