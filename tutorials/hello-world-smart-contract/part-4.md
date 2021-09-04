@@ -777,7 +777,7 @@ This won't take very long; let's finish this dApp!
 
 Naturally, it makes sense to have some sort of input error handling at the start of the function. 
 
-We'll want to our function to return early if there is no Metamask extension installed, there is no wallet connected \(i.e. the `address` passed in is an empty string\), or the `message`  is an empty string. Let's add the following error handling to `updateMessage`:
+We'll want our function to return early if there is no Metamask extension installed, there is no wallet connected \(i.e. the `address` passed in is an empty string\), or the `message`  is an empty string. Let's add the following error handling to `updateMessage`:
 
 {% code title="interact.js" %}
 ```javascript
@@ -842,7 +842,7 @@ If you're already comfortable with traditional web3 Ethereum transactions, the c
 
 Let's breakdown what's happening. First, we set up our transactions parameters, where:
 
-* `to` specifies the the recipient address \(our smart contract\)
+* `to` specifies the recipient address \(our smart contract\)
 * `from` specifies the signer of the transaction, the `address` variable we passed into our function
 * `data`  contains the call to our Hello World smart contract's `update` method, receiving our `message` string variable as input
 
