@@ -1,7 +1,7 @@
 ---
 description: >-
   This tutorial describes how to mint an NFT on the Ethereum blockchain using
-  Web 3 and our smart contract from Part I: How to Create an NFT
+  Web3 and our smart contract from Part I: How to Create an NFT
 ---
 
 # 🪄How to Mint an NFT
@@ -67,7 +67,7 @@ Once you've created an account:
 * Upload an image to pinata - this will be the image asset for your NFT. Feel free to name the asset whatever you wish
 * After you upload, at the top of the page, there should be a green popup that allows you to view the hash of your upload —&gt; Copy that hashcode. You can view your upload at: [https://gateway.pinata.cloud/ipfs/&lt;](https://gateway.pinata.cloud/ipfs/QmarPqdEuzh5RsWpyH2hZ3qSXBCzC5RyK3ZHnFkAsk7u2f)hash-code&gt;
 
-For the more visual learners, the steps above are summarized here:Now, we're going to want to upload one more document to Pinata. But before we do that, we need to create it!
+For the more visual learners, the steps above are summarized here: Now, we're going to want to upload one more document to Pinata. But before we do that, we need to create it!
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/gcCjisV9jQvt6CYOjUkM1NxU.gif)
 
@@ -132,10 +132,10 @@ First, let's define a function called `mintNFT(tokenData)` and create our transa
 
 * `'from': PUBLIC_KEY` : The origin of our transaction is our public address
 * `'to': contractAddress` : The contract we wish to interact with and send the transaction
-* `'nonce': nonce` : The account nonce with the number of transactions send from our address
+* `'nonce': nonce` : The account nonce with the number of transactions sent from our address
 * `'gas': estimatedGas` : The estimated gas needed to complete the transaction
 * `'maxPriorityFeePerGas': estimatedFee`: The estimated fee to bid per gas.
-* `'data': nftContract.methods.mintNFT(PUBLIC_KEY, md).encodeABI()` : The computation we wish to perform in this transaction— which in this case is minting an NFT
+* `'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()` : The computation we wish to perform in this transaction— which in this case is minting an NFT
 
 Your `mint-nft.js` file should look like this now:
 
@@ -217,12 +217,12 @@ async function mintNFT(tokenURI) {
       }
     });
   }).catch((err) => {
-    console.log(" Promise failed:", err);
+    console.log("Promise failed:", err);
   });
 }
 ```
 
-### Step 9: Call `mintNFT` and run `node contract-interact.js` <a id="step-9-call-mint-nft-and-run-node-contract-interact-js"></a>
+### Step 9: Call `mintNFT` and run `node scripts/mint-nft.js` <a id="step-9-call-mint-nft-and-run-node-contract-interact-js"></a>
 
 Remember the metadata.json you uploaded to Pinata? Get its hashcode from Pinata and pass the following into a call to `mintNFT` [https://gateway.pinata.cloud/ipfs/&lt;metadata-hash-code&gt;](https://gateway.pinata.cloud/ipfs/<hash-code>)
 
@@ -275,7 +275,7 @@ async function mintNFT(tokenURI) {
       }
     });
   }).catch((err) => {
-    console.log(" Promise failed:", err);
+    console.log("Promise failed:", err);
   });
 }
 
@@ -293,7 +293,7 @@ Next, visit your [Alchemy mempool](https://dashboard.alchemyapi.io/mempool) to s
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/8mFvcM8er_zqvFq7TyKrMEhr.png)
 
-And that's it! You've now deployed AND minted with an NFT on the Ethereum blockchain 🎉
+And that's it! You've now deployed AND minted an NFT on the Ethereum blockchain 🎉
 
 Using the `mint-nft.js` you can mint as many NFT's as your heart \(and wallet\) desires! Just be sure to pass in a new `tokenURI` describing the NFT's metadata --otherwise, you'll just end up making a bunch of identical ones with different IDs.
 
