@@ -13,7 +13,7 @@ Even if you've been living under a rock, you'll have noticed that every major ne
 
 With NFTs bringing blockchain into the public eye, now is an excellent opportunity to understand the hype yourself by publishing your own NFT \(ERC-721 Token\) on the Ethereum blockchain!
 
-In this tutorial, we will walk through creating and deploying an ERC-721 smart contract on the Ropsten test network using [Metamask](https://metamask.io/), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org/), [Pinata](https://pinata.cloud/) and [Alchemy](https://alchemy.com/?r=affiliate:68212b46-a5c5-4f4c-bc8b-73f50536fcaf) \(don’t fret if you don’t understand what any of this means yet— we will explain it\). In Part II of this tutorial_,_ we’ll go through how we can use our smart contract to [mint an NFT](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-mint-a-nft), and in Part III we’ll cover how [view your NFT on Metamask](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-view-your-nft-in-your-wallet).
+In this tutorial, we will walk through creating and deploying an ERC-721 smart contract on the Ropsten test network using [Metamask](https://metamask.io/), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org/), [Pinata](https://pinata.cloud/) and [Alchemy](https://alchemy.com/?r=affiliate:68212b46-a5c5-4f4c-bc8b-73f50536fcaf) \(don’t fret if you don’t understand what any of this means yet— we will explain it\). In Part II of this tutorial_,_ we’ll go through how we can use our smart contract to [mint an NFT](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-mint-a-nft), and in Part III we’ll cover how to [view your NFT on Metamask](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-view-your-nft-in-your-wallet).
 
 And of course, if you have questions at any point, don't hesitate to reach out in the [Alchemy Discord](https://discord.gg/gWuC7zB)!
 
@@ -159,12 +159,12 @@ mkdir scripts
 
 ## Step 10: Write our contract
 
-Now time that our environment is set up, onto more exciting stuff: _writing our smart contract code!_
+Now that our environment is set up, onto more exciting stuff: _writing our smart contract code!_
 
 Open up the my-nft project in your favorite editor \(we like [VSCode](https://code.visualstudio.com/)\). Smart contracts are written in a language called Solidity which is what we will use to write our MyNFT.sol smart contract.‌
 
 1. Navigate to the “contracts” folder and create a new file called MyNFT.sol
-2. Below is our NFT smart contract code, which based off of the [OpenZeppelin](https://docs.openzeppelin.com/contracts/3.x/erc721) library's ERC721 implementation. Copy and paste the contents below into your MyNFT.sol file.
+2. Below is our NFT smart contract code, which is based off of the [OpenZeppelin](https://docs.openzeppelin.com/contracts/3.x/erc721) library's ERC721 implementation. Copy and paste the contents below into your MyNFT.sol file.
 
 {% hint style="warning" %}
 **NOTE:** If you want to attach a price to the NFT through the smart contract
@@ -208,14 +208,14 @@ So, what does this code _do_ exactly? Let's break it down, line by line.
 In lines 5-7, our code inherits three [OpenZepplin](https://openzeppelin.com/) smart contract classes:
 
 * `@openzeppelin/contracts/token/ERC721/ERC721.sol`contains the implementation of the ERC721 standard, which our NFT smart contract will inherit. \(To be a valid NFT, your smart contract must implement all the methods of the ERC721 standard.\) To learn more about the inherited ERC721 functions, check out the interface definition [here](https://eips.ethereum.org/EIPS/eip-721).
-* `@openzeppelin/contracts/utils/Counters.sol`provides counters that can only be incremented or decremented by one. Our smart contract uses a counter to keep track of the total number of NFTs minted and set the unique ID our new NFT. Each NFT minted using a smart contract must be assigned a unique ID—here our unique ID is just determined by the total number of NFTs in existance. For example, the first NFT we mint with our smart contract has an ID of "1," our second NFT has an ID of "2," etc.
+* `@openzeppelin/contracts/utils/Counters.sol`provides counters that can only be incremented or decremented by one. Our smart contract uses a counter to keep track of the total number of NFTs minted and set the unique ID to our new NFT. Each NFT minted using a smart contract must be assigned a unique ID—here our unique ID is just determined by the total number of NFTs in existance. For example, the first NFT we mint with our smart contract has an ID of "1," our second NFT has an ID of "2," etc.
 * `@openzeppelin/contracts/access/Ownable.sol` sets up [access control](https://docs.openzeppelin.com/contracts/3.x/access-control) on our smart contract, so only the owner of the smart contract \(you\) can mint NFTs. Note, including access control is entirely a preference. If you'd like anyone to be able to mint an NFT using your smart contract, remove the word `Ownable` on line 10 and `onlyOwner` on line 17.
 
 In Lines 10-28, we have our custom NFT smart contract, which is surprisingly short —it only contains a counter, a constructor, and single function! This is thanks to our inherited OpenZepplin contracts, which implement most of the methods we need to create an NFT, such as `ownerOf` \(returns the owner of the NFT\) and `transferFrom`\(transfers ownership of the NFT\).
 
 On line 14, you'll notice we pass 2 strings, "MyNFT" and "NFT" into the ERC721 constructor. The first variable is the smart contract's name, and the second is its symbol. You can name each of these variables whatever you wish!
 
-Finally, starting on line 16, we have our function `mintNFT()` that allows us to mint an NFT! You'll notice it this function takes in two variables:
+Finally, starting on line 16, we have our function `mintNFT()` that allows us to mint an NFT! You'll notice this function takes in two variables:
 
 * `address recipient` specifies the address that will receive your freshly minted NFT
 * `string memory tokenURI` is a string that should resolve to a JSON document that describes the NFT's metadata. An NFT's metadata is really what brings it to life, allowing it to have additional properties, such as a name, description, image, and other attributes. In part 2 of this tutorial, we will describe how to configure this metadata.
@@ -254,7 +254,7 @@ To actually connect these to our code, we’ll reference these variables in our 
 
 ## Step 12: Install Ethers.js
 
-Ethers.js is a library that makes it easier to interact and make requests to Ethereum by wrapping [standard JSON-RPC methods](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc) with more user friendly methods.
+Ethers.js is a library that makes it easier to interact with and make requests to Ethereum by wrapping [standard JSON-RPC methods](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc) with more user friendly methods.
 
 Hardhat makes it super easy to integrate [Plugins](https://hardhat.org/plugins/) for additional tooling and extended functionality. We’ll be taking advantage of the [Ethers plugin](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html) for contract deployment \([Ethers.js](https://github.com/ethers-io/ethers.js/) has some super clean contract deployment methods\).
 
@@ -356,7 +356,7 @@ You should then see something like:
 Contract deployed to address: 0x81c587EB0fE773404c42c1d2666b5f557C470eED
 ```
 
-If we go to the [Ropsten etherscan](https://ropsten.etherscan.io/) and search for our contract address we should able to see that it has been deployed successfully. The transaction will look something like this:
+If we go to the [Ropsten etherscan](https://ropsten.etherscan.io/) and search for our contract address we should be able to see that it has been deployed successfully. The transaction will look something like this:
 
 ![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/4Ln0adP6-oGfBQYXc7OLBCZK.png)
 
