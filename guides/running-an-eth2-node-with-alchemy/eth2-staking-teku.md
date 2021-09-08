@@ -6,7 +6,7 @@ description: >-
 
 # Setting up an Eth 2.0 Staking Validator with Teku
 
-This guide assumes you have already generated your validator keys and have submitted your initial 32 Eth to the beacon chain. If you have not done so, [please follow this guide](https://app.gitbook.com/@alchemyapi/s/alchemy/~/drafts/-Mhzhhn69TnxCLAdq3aC/guides/running-an-eth2-node-with-alchemy).
+This guide assumes you have already generated your validator keys and have submitted your initial 32 Eth to the beacon chain. If you have not done so, [please follow this guide](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy).
 
 To learn more about Teku, check out their [Eth2 Documentation](https://docs.teku.consensys.net/en/latest/).
 
