@@ -238,6 +238,10 @@ npm install dotenv --save
 
 Then, create a `.env` file in the root directory of our project, and add your Metamask private key and HTTP Alchemy API URL to it.
 
+{% hint style="danger" %}
+**NOTE:** Your `.env` file must be named `.env` ! Do not change the name to `xx.env`
+{% endhint %}
+
 * Follow [these instructions](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) to export your private key from Metamask
 * See below to get HTTP Alchemy API URL and copy it to your clipboard
 
