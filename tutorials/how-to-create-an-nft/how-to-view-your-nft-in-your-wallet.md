@@ -1,6 +1,6 @@
 ---
 description: >-
-  This tutorial describes how to view an existing an NFT on your Mobile Metamask
+  This tutorial describes how to view an existing NFT on your Mobile Metamask
   wallet.
 ---
 
@@ -8,7 +8,7 @@ description: >-
 
 _Estimated time to complete this guide: ~3 minutes_ 
 
-Congrats! You've made it to the shortest and simplest part of our NFT tutorial series:  how to view your freshly minted NFT in your virtual wallet. We'll be using Metamask for this example since it is what we used in the previous two parts.
+Congrats! You've made it to the shortest and simplest part of our NFT tutorial series: how to view your freshly minted NFT in your virtual wallet. We'll be using Metamask for this example since it is what we used in the previous two parts.
 
 As a prerequisite, you should already have Metamask on mobile installed, and it should include the account to which you minted your NFT — you can get the app for free on [iOS](https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202), or [Android](https://play.google.com/store/apps/details?id=io.metamask&hl=en_US&gl=US) .
 
