@@ -7,11 +7,11 @@ description: >-
 
 # 📱Integrating Your Smart Contract with the Frontend
 
-You'll need to have finished part 1 [creating and deploying a smart contract](./), part 2 [interacting with your smart contract](interacting-with-a-smart-contract.md), and part 3 [submitting your smart contract to Etherscan](https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract/submitting-your-smart-contract-to-etherscan) before starting part 4 below.  
+You'll need to have finished part 1 [creating and deploying a smart contract](./), part 2 [interacting with your smart contract](interacting-with-a-smart-contract.md), and part 3 [submitting your smart contract to Etherscan](https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract/submitting-your-smart-contract-to-etherscan) before starting part 4 below.
 
 ## Part 4: Marrying Web2 & Web3: connecting your smart contract to a frontend project
 
-🎉Woooo! You finally made it to the last part of this tutorial series: creating a full stack decentralized application \(dApp\) by connecting your Hello World smart contract to a frontend project and interacting with it. 
+🎉Woooo! You finally made it to the last part of this tutorial series: creating a full stack decentralized application \(dApp\) by connecting your Hello World smart contract to a frontend project and interacting with it.
 
 By the end of this tutorial, you'll know how to:
 
@@ -61,7 +61,7 @@ cd starter-files
 npm install
 ```
 
-Once those have finished installing,  run `npm start` in your terminal:
+Once those have finished installing, run `npm start` in your terminal:
 
 ```bash
 npm start
@@ -76,7 +76,7 @@ If you try clicking "Connect Wallet" or "Update" buttons, you'll notice that the
 ### The `HelloWorld.js` component
 
 {% hint style="warning" %}
-**NOTE:** Make sure you're in the `starter-files` folder and not the `completed`folder! 
+**NOTE:** Make sure you're in the `starter-files` folder and not the `completed`folder!
 {% endhint %}
 
 Let's go back into the `src` folder in our editor and open the `HelloWorld.js` file. It's super important that we understand everything in this file, as it is the primary React component we will be working on.
@@ -122,29 +122,29 @@ Here's what each of the variables represents:
 * `message` - a string that stores the current message in the smart contract
 * `newMessage` - a string that stores the new message that will be written to the smart contract
 
-After the state variables, you'll see five un-implemented functions: `useEffect` ,`addSmartContractListener`, `addWalletListener` , `connectWalletPressed`,  and `onUpdatePressed`. We'll explain what they do below:
+After the state variables, you'll see five un-implemented functions: `useEffect` ,`addSmartContractListener`, `addWalletListener` , `connectWalletPressed`, and `onUpdatePressed`. We'll explain what they do below:
 
 {% code title="HelloWorld.js" %}
 ```javascript
   //called only once
   useEffect(async () => { //TODO: implement
-   
+
   }, []);
 
   function addSmartContractListener() { //TODO: implement
-    
+
   }
 
   function addWalletListener() { //TODO: implement
-    
+
   }
-  
+
   const connectWalletPressed = async () => { //TODO: implement
-   
+
   };
-  
+
   const onUpdatePressed = async () => { //TODO: implement
-   
+
   };
 ```
 {% endcode %}
@@ -197,7 +197,7 @@ return (
 ```
 {% endcode %}
 
- If you scan this code carefully, you'll notice where we use our various state variables in our UI:
+If you scan this code carefully, you'll notice where we use our various state variables in our UI:
 
 * On lines 6-12, if the user's wallet is connected \(i.e. `walletAddress.length > 0`\), we display a truncated version of the user `walletAddress` in the button with ID "walletButton;"  otherwise it simply says "Connect Wallet."
 * On line 17, we display the current message stored in the smart contract, which is captured in the `message` string.
@@ -224,20 +224,20 @@ Navigate to the `util` folder in your `src` directory, and you'll notice we've i
 //export const helloWorldContract;
 
 export const loadCurrentMessage = async () => {
- 
+
 };
 
 export const connectWallet = async () => {
-  
+
 };
-  
+
 const getCurrentWalletConnected = async () => { 
-   
+
 };
 
 
 export const updateMessage = async (message) => {
-  
+
 };
 ```
 {% endcode %}
@@ -251,7 +251,7 @@ The four unimplemented functions after our `helloWorldContract` object do the fo
 * `getCurrentWalletConnected` - this function will check if an Ethereum account is already connected to our dApp on page load and update our UI accordingly.
 * `updateMessage` - this function will update the message stored in the smart contract. It will make a _write_ call to the Hello World smart contract, so the user's Metamask wallet will have to sign an Ethereum transaction to update the message.
 
-Now that we understand what we're working with, let's figure out how to read from our smart contract! 
+Now that we understand what we're working with, let's figure out how to read from our smart contract!
 
 ## Step 3: Read from your smart contract
 
@@ -307,7 +307,7 @@ const web3 = createAlchemyWeb3(alchemyKey);
 ```
 {% endcode %}
 
-Above, we first imported the Alchemy key from our `.env` file and then passed our `alchemyKey` to `createAlchemyWeb3` to establish our Alchemy Web3 endpoint. 
+Above, we first imported the Alchemy key from our `.env` file and then passed our `alchemyKey` to `createAlchemyWeb3` to establish our Alchemy Web3 endpoint.
 
 With this endpoint ready, it's time to load our smart contract!
 
@@ -320,10 +320,10 @@ To load your Hello World smart contract, you'll need its contract address and AB
 {% hint style="success" %}
 If you skipped Part 3 of this tutorial, you can use the HelloWorld contract with address [0x6f3f635A9762B47954229Ea479b4541eAF402A6A](https://ropsten.etherscan.io/address/0x6f3f635a9762b47954229ea479b4541eaf402a6a#code).
 
-It's ABI can be found [here](https://ropsten.etherscan.io/address/0x6f3f635a9762b47954229ea479b4541eaf402a6a#code). 
+It's ABI can be found [here](https://ropsten.etherscan.io/address/0x6f3f635a9762b47954229ea479b4541eaf402a6a#code).
 {% endhint %}
 
-A contract ABI is necessary for specifying which function a contract will invoke as well ensuring that the function will return data in the format you're expecting. Once we've copied our contract ABI, let's save it as a JSON file called `contract-abi.json` in your `src` directory. 
+A contract ABI is necessary for specifying which function a contract will invoke as well ensuring that the function will return data in the format you're expecting. Once we've copied our contract ABI, let's save it as a JSON file called `contract-abi.json` in your `src` directory.
 
 ![Your contract-abi.json should be stored in your src folder.](../../.gitbook/assets/image%20%2822%29.png)
 
@@ -395,9 +395,9 @@ useEffect(async () => {
 ```
 {% endcode %}
 
-Note, we only want our `loadCurrentMessage`  to be called once during the component's first render. We'll soon implement `addSmartContractListener` to automatically update the UI after the message in the smart contract changes.
+Note, we only want our `loadCurrentMessage` to be called once during the component's first render. We'll soon implement `addSmartContractListener` to automatically update the UI after the message in the smart contract changes.
 
-Before we dive into our listener, let's check out what we have so far!  Save your `HelloWorld.js` and `interact.js` files, and then go to [http://localhost:3000/](http://localhost:3000/)
+Before we dive into our listener, let's check out what we have so far! Save your `HelloWorld.js` and `interact.js` files, and then go to [http://localhost:3000/](http://localhost:3000/)
 
 You'll notice that the current message no longer says "No connection to the network." Instead it reflects the message stored in the smart contract. Sick!
 
@@ -430,7 +430,7 @@ contract HelloWorld {
    // Similar to many class-based object-oriented languages, a constructor is a special function that is only executed upon contract creation.
    // Constructors are used to initialize the contract's data. Learn more:https://solidity.readthedocs.io/en/v0.5.10/contracts.html#constructors
    constructor(string memory initMessage) {
-   
+
       // Accepts a string argument `initMessage` and sets the value into the contract's `message` storage variable).
       message = initMessage;
    }
@@ -449,9 +449,9 @@ contract HelloWorld {
 Smart contract events are a way for your contract to communicate that something happened \(i.e. there was an _event_\) on the blockchain to your front-end application, which can be 'listening' for specific events and take action when they happen.
 {% endhint %}
 
-The `addSmartContractListener` function is going to specifically listen for our Hello World smart contract's `UpdatedMessages` event, and update our UI to display the new message. 
+The `addSmartContractListener` function is going to specifically listen for our Hello World smart contract's `UpdatedMessages` event, and update our UI to display the new message.
 
-Modify `addSmartContractListener`  to the following: 
+Modify `addSmartContractListener` to the following:
 
 {% code title="HelloWorld.js" %}
 ```javascript
@@ -474,7 +474,7 @@ Let's break down what happens when the listener detects an event:
 * If an error occurs when the event is emitted, it will be reflected in the UI via our `status` state variable.
 * Otherwise, we will use the `data` object returned. The `data.returnValues` is an array indexed at zero where the first element in the array stores the previous message and second element stores the updated one. Altogether, on a successful event we'll set our `message` string to the updated message, clear the `newMessage` string, and update our `status` state variable to reflect that a new message has been published on our smart contract.
 
-Finally, let's call our listener in our  `useEffect` function so it is initialized on the `HelloWorld.js` component's first render. Altogether, your `useEffect` function should look like this:
+Finally, let's call our listener in our `useEffect` function so it is initialized on the `HelloWorld.js` component's first render. Altogether, your `useEffect` function should look like this:
 
 {% code title="HelloWorld.js" %}
 ```javascript
@@ -486,16 +486,16 @@ useEffect(async () => {
 ```
 {% endcode %}
 
-Now that we're able to read from our smart contract, it would be great to figure out how to write to it too! However, to write to our dApp, we must first have an Ethereum wallet connected to it. 
+Now that we're able to read from our smart contract, it would be great to figure out how to write to it too! However, to write to our dApp, we must first have an Ethereum wallet connected to it.
 
 So, next we'll tackle setting up our Ethereum wallet \(Metamask\) and then connecting it to our dApp!
 
 ## Step 4: Set up your Ethereum wallet
 
-To write anything to the Ethereum chain, users must sign transactions using their virtual wallet's private keys. For this tutorial, we’ll use [Metamask](https://metamask.io/), a virtual wallet in the browser used to manage your Ethereum account address, as it makes this transaction signing super easy for the end-user. 
+To write anything to the Ethereum chain, users must sign transactions using their virtual wallet's private keys. For this tutorial, we’ll use [Metamask](https://metamask.io/), a virtual wallet in the browser used to manage your Ethereum account address, as it makes this transaction signing super easy for the end-user.
 
 {% hint style="info" %}
- If you want to understand more about how transactions on Ethereum work, check out [this page](https://ethereum.org/en/developers/docs/transactions/) from the Ethereum foundation.
+If you want to understand more about how transactions on Ethereum work, check out [this page](https://ethereum.org/en/developers/docs/transactions/) from the Ethereum foundation.
 {% endhint %}
 
 ### Download Metamask
@@ -584,7 +584,7 @@ If `window.ethereum` _is not_ present, then that means Metamask is not installed
 
 Now if `window.ethereum` _is_ present, then that's when things get interesting.
 
-Using a try/catch loop, we'll try to connect to Metamask by calling[`window.ethereum.request({ method: "eth_requestAccounts" });`](https://docs.metamask.io/guide/rpc-api.html#eth-requestaccounts) Calling this function will open up Metamask in the browser, whereby the user will be prompted to connect their wallet to your dApp.  
+Using a try/catch loop, we'll try to connect to Metamask by calling[`window.ethereum.request({ method: "eth_requestAccounts" });`](https://docs.metamask.io/guide/rpc-api.html#eth-requestaccounts) Calling this function will open up Metamask in the browser, whereby the user will be prompted to connect their wallet to your dApp.
 
 * If the user chooses to connect, `method: "eth_requestAccounts"`  will return an array that contains all of the user's account addresses that connected to the dApp. Altogether, our `connectWallet` function will return a JSON object that contains the _first_ `address` in this array \(see line 9\) and a `status` message that prompts the user to write a message to the smart contract.
 * If the user rejects the connection, then the JSON object will contain an empty string for the `address` returned and a `status` message that reflects that the user rejected the connection.
@@ -609,7 +609,7 @@ Notice how most of our functionality is abstracted away from our `HelloWorld.js`
 
 In `connectWalletPressed`, we simply make an await call to our imported `connectWallet` function, and using its response, we update our `status` and `walletAddress` variables via their state hooks.
 
-Now, let's save both files \(`HelloWorld.js` and `interact.js`\) and test out our UI so far. 
+Now, let's save both files \(`HelloWorld.js` and `interact.js`\) and test out our UI so far.
 
 Open your browser on the [http://localhost:3000/](http://localhost:3000/) page, and press the "Connect Wallet" button on the top right of the page.
 
@@ -621,11 +621,11 @@ Next, try refreshing the page... this is strange. Our wallet button is prompting
 
 ![The problem on page reload](../../.gitbook/assets/the-problem.gif)
 
-However, have no fear! We easily can address that \(get it? 😅\) by implementing `getCurrentWalletConnected`, which will check if an address is already connected to our dApp and update our UI accordingly!  
+However, have no fear! We easily can address that \(get it? 😅\) by implementing `getCurrentWalletConnected`, which will check if an address is already connected to our dApp and update our UI accordingly!
 
 ### The `getCurrentWalletConnected` function
 
- Update your `getCurrentWalletConnected` function in the `interact.js` file to the following:
+Update your `getCurrentWalletConnected` function in the `interact.js` file to the following:
 
 {% code title="interact.js" %}
 ```javascript
@@ -673,9 +673,9 @@ export const getCurrentWalletConnected = async () => {
 ```
 {% endcode %}
 
-This code is _very_ similar to the `connectWallet` function we just wrote in the previous step. 
+This code is _very_ similar to the `connectWallet` function we just wrote in the previous step.
 
-The main difference is that instead of calling the method `eth_requestAccounts`, which opens Metamask for the user to connect their wallet, here we call the method  `eth_accounts`, which simply returns an array containing the Metamask addresses currently connected to our dApp. 
+The main difference is that instead of calling the method `eth_requestAccounts`, which opens Metamask for the user to connect their wallet, here we call the method `eth_accounts`, which simply returns an array containing the Metamask addresses currently connected to our dApp.
 
 To see this function in action, let's call it in our `useEffect` function of our `HelloWorld.js` component:
 
@@ -685,7 +685,7 @@ useEffect(async () => {
     const message = await loadCurrentMessage();
     setMessage(message);
     addSmartContractListener();
-    
+
     const {address, status} = await getCurrentWalletConnected();
     setWallet(address)
     setStatus(status); 
@@ -694,13 +694,13 @@ useEffect(async () => {
 ```
 {% endcode %}
 
-Notice, we use the response of our call to `getCurrentWalletConnected` to update our `walletAddress` and `status` state variables. 
+Notice, we use the response of our call to `getCurrentWalletConnected` to update our `walletAddress` and `status` state variables.
 
 Now that you've added this code, let's try refreshing our browser window.
 
 ![It&apos;s working!!!!!](../../.gitbook/assets/yasss.gif)
 
-Niceeeee! The button should say that you're connected, and show a preview of your connected wallet's address - even after you refresh! 
+Niceeeee! The button should say that you're connected, and show a preview of your connected wallet's address - even after you refresh!
 
 ### Implement `addWalletListener`
 
@@ -751,11 +751,11 @@ useEffect(async () => {
     const message = await loadCurrentMessage();
     setMessage(message);
     addSmartContractListener();
-    
+
     const {address, status} = await getCurrentWalletConnected();
     setWallet(address)
     setStatus(status); 
-    
+
     addWalletListener(); 
 }, []);
 ```
@@ -765,7 +765,7 @@ And that's it! We've successfully completed programming all of our wallet functi
 
 ## Step 6: Implement the `updateMessage` function
 
-🏃🏽‍♀️Alrighty fam, we've arrived at the home stretch!  In the `updateMessage`  of your `interact.js` file, we're going to do the following:
+🏃🏽‍♀️Alrighty fam, we've arrived at the home stretch! In the `updateMessage` of your `interact.js` file, we're going to do the following:
 
 1. Make sure the message we wish to publish in our smart contact is valid
 2. Sign our transaction using Metamask
@@ -775,9 +775,9 @@ This won't take very long; let's finish this dApp!
 
 ### Input error handling
 
-Naturally, it makes sense to have some sort of input error handling at the start of the function. 
+Naturally, it makes sense to have some sort of input error handling at the start of the function.
 
-We'll want our function to return early if there is no Metamask extension installed, there is no wallet connected \(i.e. the `address` passed in is an empty string\), or the `message`  is an empty string. Let's add the following error handling to `updateMessage`:
+We'll want our function to return early if there is no Metamask extension installed, there is no wallet connected \(i.e. the `address` passed in is an empty string\), or the `message` is an empty string. Let's add the following error handling to `updateMessage`:
 
 {% code title="interact.js" %}
 ```javascript
@@ -846,7 +846,7 @@ Let's breakdown what's happening. First, we set up our transactions parameters, 
 * `from` specifies the signer of the transaction, the `address` variable we passed into our function
 * `data`  contains the call to our Hello World smart contract's `update` method, receiving our `message` string variable as input
 
-Then, we make an await call, `window.ethereum.request`, where we ask Metamask to sign the transaction. Notice, on lines 11 and 12, we're specifying our eth method, `eth_sendTransaction`and passing in our `transactionParameters`. 
+Then, we make an await call, `window.ethereum.request`, where we ask Metamask to sign the transaction. Notice, on lines 11 and 12, we're specifying our eth method, `eth_sendTransaction`and passing in our `transactionParameters`.
 
 At this point, Metamask will open up in the browser, and prompt the user to sign or reject the transaction.
 
@@ -858,7 +858,7 @@ Altogether, our `updateMessage` function should look like this:
 {% code title="interact.js" %}
 ```javascript
 export const updateMessage = async (address, message) => {
-  
+
   //input error handling
   if (!window.ethereum || address === null) {
     return {
@@ -872,7 +872,7 @@ export const updateMessage = async (address, message) => {
       status: "❌ Your message cannot be an empty string.",
     };
   }
-  
+
   //set up transaction parameters
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
@@ -923,9 +923,9 @@ const onUpdatePressed = async () => {
 ```
 {% endcode %}
 
-It's super clean and simple. 😌And guess what...YOUR DAPP IS COMPLETE!!! 
+It's super clean and simple. 😌And guess what...YOUR DAPP IS COMPLETE!!!
 
-Let's test out the "Update" button! 
+Let's test out the "Update" button!
 
 ![DApp &quot;Update&quot; button demo](../../.gitbook/assets/finished.gif)
 

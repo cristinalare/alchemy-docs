@@ -4,7 +4,7 @@ description: >-
   Web 3 and our smart contract from Part I: How to Create an NFT
 ---
 
-# 🪄How to Mint an NFT
+# 🪄How to Mint an NFT Using Web3.js
 
 _Estimated time to complete this guide: ~10 minutes_ 
 

@@ -83,7 +83,7 @@
   * [📩 Submitting your Smart Contract to Etherscan](tutorials/hello-world-smart-contract/submitting-your-smart-contract-to-etherscan.md)
   * [📱Integrating Your Smart Contract with the Frontend](tutorials/hello-world-smart-contract/part-4.md)
 * [🎨 How to Create an NFT Tutorial](tutorials/how-to-create-an-nft/README.md)
-  * [🪄How to Mint an NFT](tutorials/how-to-create-an-nft/how-to-mint-a-nft.md)
+  * [🪄How to Mint an NFT Using Web3.js](tutorials/how-to-create-an-nft/how-to-mint-a-nft.md)
   * [🪄How to Mint an NFT with Ethers.js](tutorials/how-to-create-an-nft/how-to-mint-an-nft-with-ethers.md)
   * [👛 How to View Your NFT in Your Mobile Wallet](tutorials/how-to-create-an-nft/how-to-view-your-nft-in-your-wallet.md)
   * [💵 How do I set a price on an NFT?](tutorials/how-to-create-an-nft/nft-price.md)
