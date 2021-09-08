@@ -45,7 +45,7 @@ In this tutorial, we're going to focus on part 2, calling an existing NFT's smar
 
 [Here's a link](https://ropsten.etherscan.io/address/0x4C4a07F737Bf57F6632B6CAB089B78f62385aCaE) to the ERC-721 NFT smart contract we will be calling in this tutorial. If you'd like to learn how we made it, we highly recommend that you check out our other tutorial, ["How to Create an NFT."](https://docs.alchemyapi.io/alchemy/tutorials/how-to-create-an-nft)
 
-{% page-ref page="how-to-create-an-nft/" %}
+{% page-ref page="../how-to-create-an-nft/" %}
 
 Cool, now that we understand how making an NFT works, let's clone our starter files!
 
@@ -218,7 +218,7 @@ For this tutorial, we’ll use Metamask, a virtual wallet in the browser used to
 
 You can download and create a Metamask account for free [here](https://metamask.io/download.html). When you are creating an account, or if you already have an account, make sure to switch over to the “Ropsten Test Network” in the upper right \(so that we’re not dealing with real money\).
 
-![Sample Metamask wallet](../.gitbook/assets/image%20%2814%29.png)
+![Sample Metamask wallet](../../.gitbook/assets/image%20%2814%29.png)
 
 ### Add ether from a Faucet <a id="step-4-add-ether-from-a-faucet"></a>
 
@@ -355,7 +355,7 @@ You should see that the wallet button now reflects that your address is connecte
 
 Next, try refreshing the page... this is strange. Our wallet button is prompting us to connect Metamask, even though it is already connected...
 
-![The problem on page reload](../.gitbook/assets/test.gif)
+![The problem on page reload](../../.gitbook/assets/test.gif)
 
 Don't worry though! We easily can fix that by implementing a function called`getCurrentWalletConnected`, which will check if an address is already connected to our dApp and update our UI accordingly!  
 
@@ -888,9 +888,15 @@ const onMintPressed = async () => {
 };
 ```
 
+## Step 10: Deploy your NFT to a Live Website
+
+Ready to take your project live for users to interact with? Check out the tutorial below for deploying your Minter to a live website:
+
+{% page-ref page="how-do-i-deploy-nfts-online.md" %}
+
 One last step...
 
-## Step 10: Take the blockchain world by storm 🚀
+## Step 11: Take the blockchain world by storm 🚀
 
 JK, you made it to the end of the tutorial! To recap, by building an NFT minter, you successfully learned how to:
 
@@ -910,6 +916,6 @@ Ready to mint an NFT using your minter? Check out this demo video!
 {% embed url="https://www.youtube.com/watch?v=mmrO6\_5-hRU" caption="NFT Minter Demo" %}
 
 {% hint style="info" %}
-**NOTE:** The transactions sent through Metamask will use Metamask's default provider \(not necessarily your Alchemy endpoint\). If you'd like to send those transactions through Alchemy to unlock debugging tools and the [Alchemy Notify ](../introduction/core-products/alchemy-notify.md)suite, check out [this guide](../guides/connecting-metamask-to-alchemy.md) for connecting Metamask to Alchemy. 
+**NOTE:** The transactions sent through Metamask will use Metamask's default provider \(not necessarily your Alchemy endpoint\). If you'd like to send those transactions through Alchemy to unlock debugging tools and the [Alchemy Notify ](../../introduction/core-products/alchemy-notify.md)suite, check out [this guide](../../guides/connecting-metamask-to-alchemy.md) for connecting Metamask to Alchemy. 
 {% endhint %}
 

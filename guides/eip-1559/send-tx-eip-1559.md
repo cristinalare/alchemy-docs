@@ -8,17 +8,17 @@ The London Hardfork introduced a new EIP that modifies how gas estimation and co
 
 This tutorial will walk you through both the legacy and new \([EIP-1559](https://blog.alchemy.com/blog/eip-1559)\) way to estimate gas and send transactions. To learn more about EIP-1559, check out [this blog post](https://blog.alchemy.com/blog/eip-1559).
 
-### How sending transactions used to work <a id="how-sending-transactions-used-to-work"></a>
+## How sending transactions used to work <a id="how-sending-transactions-used-to-work"></a>
 
 When you submitted a transaction you also sent a [`gasPrice`](../../documentation/apis/ethereum/eth_gasprice.md), which is an amount you are offering to pay per gas consumed. You probably called [`eth_estimateGas`](../../documentation/apis/ethereum/eth_estimategas.md) and [`eth_gasPrice`](../../documentation/apis/ethereum/eth_gasprice.md) in order to determine an approximate amount that the transaction was going to cost you. Then, when you submitted the transaction, miners could decide to include it or not based on your `gasPrice` bid. Miners would prioritize the highest gas prices.
 
-### How sending transactions work with EIP 1559 <a id="how-sending-transactions-work-with-eip-1559"></a>
+## How sending transactions work with EIP 1559 <a id="how-sending-transactions-work-with-eip-1559"></a>
 
 It's a similar concept, but with a few incentive changes in order to more closely align user and miner interests. The total fee \(gas \* gasPrice\) will be split into a `baseFee` and a `priorityFee`. Every transaction needs to pay the base fee, which is calculated based on how full the previous block was. Transactions can also offer the miner a `priorityFee` to incentivize the miner to include the transaction in the block.
 
 I won't go into the incentive model here, if you want to dive into that check out [this blog post](https://blog.alchemy.com/blog/eip-1559).
 
-### Let's send a transaction <a id="lets-send-a-transaction"></a>
+## Let's send a transaction <a id="lets-send-a-transaction"></a>
 
 First, let's send a legacy \(non EIP 1559 transaction\). The steps below are:
 
@@ -43,7 +43,7 @@ async function signTx(web3, fields = {}) {
    'nonce': nonce,
    ...fields,
   };
- 
+
   return await web3.eth.accounts.signTransaction(transaction, PRIVATE_KEY);
 }
 
@@ -116,7 +116,7 @@ Attempting to get transaction receipt...
 }
 ```
 
-### Using EIP-1559 with Minimal changes <a id="using-eip-1559-with-minimal-changes"></a>
+## Using EIP-1559 with Minimal changes <a id="using-eip-1559-with-minimal-changes"></a>
 
 The smallest possible change we can make to the original code is to simply remove the `gasPrice` field on the transaction. So our calling code will look like this:
 
@@ -164,7 +164,7 @@ Attempting to get transaction receipt...
 }
 ```
 
-### Add maxPriorityFeePerGas field only <a id="add-max-priority-fee-per-gas-field-only-recommended"></a>
+## Add maxPriorityFeePerGas field only <a id="add-max-priority-fee-per-gas-field-only-recommended"></a>
 
 The closest analogy to the `gas`:`gasPrice` combination is `gas`:`maxPriorityFeePerGas`. Since the baseFee needs to be paid regardless, we can just submit a bid on the "tip" for the miner. Our calling code becomes:
 
@@ -190,7 +190,7 @@ sendOnlyMaxPriorityFeePerGasLondonTx(web3);
 
 Note that we have substituted the `web3.eth.getGasPrice()` call in the legacy code with `web3.eth.getMaxPriorityFeePerGas()`. I won't bore you with the output, it looks the same. The [`eth_maxPriorityFeePerGas`](../../documentation/apis/ethereum/eth_maxpriorityfeepergas.md) method is documented [here](https://docs.alchemy.com/alchemy/documentation/apis/ethereum#eth_maxpriorityfeepergas).
 
-### Add maxFeePerGas field only \(a la [Eth Gas Station](https://ethgasstation.info/)\) <a id="viewing-the-base-fee"></a>
+## Add maxFeePerGas field only \(a la [Eth Gas Station](https://ethgasstation.info/)\) <a id="viewing-the-base-fee"></a>
 
 If you are accustomed to using a fee estimator like Eth Gas Station then instead of providing only the tip you will provide only the `maxFeePerGas` field, which is the base fee plus tip. You can take the output of your API call to Eth Gas Station or another estimator and plug it in like so:
 
@@ -210,7 +210,7 @@ web3.eth.estimateGas({
 });
 ```
 
-### Viewing the baseFee <a id="viewing-the-base-fee"></a>
+## Viewing the baseFee <a id="viewing-the-base-fee"></a>
 
 When you send an EIP 1559 transaction you will _always_ be charged the `baseFee`. You can view the baseFee for the current block with:
 
@@ -224,7 +224,7 @@ Which returns a hex:
 0x8
 ```
 
-### Building a more sophisticated estimate of maxPriorityFeePerGas <a id="building-a-more-sophisticated-estimate-of-max-priority-fee-per-gas"></a>
+## Building a more sophisticated estimate of maxPriorityFeePerGas <a id="building-a-more-sophisticated-estimate-of-max-priority-fee-per-gas"></a>
 
 Alchemy has exposed the [`eth_maxPriorityFeePerGas`](../../documentation/apis/ethereum/eth_maxpriorityfeepergas.md) method so that you can pretty much call that and not worry too much about fee calculations. However you might want to make your own calculations, similar to how you might currently offer a "low", "medium", and "high" fee \(like what [Eth Gas Station](https://ethgasstation.info/) offers\). To do this, you can use the [`eth_feeHistory`](https://docs.alchemy.com/alchemy/documentation/apis/ethereum#eth_feehistory) API, which returns detailed information on historical fees for blocks, allowing you to build a better estimate. We will not go into detail on that here.
 

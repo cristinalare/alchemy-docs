@@ -45,7 +45,7 @@ Complete the checklist until you get to the confirmation step.
 
 If you want to run your own node, you can view the options for the various Eth1 providers and set up your node. **Luckily, if you use Alchemy** as your Eth1 provider and completely skip this step. 😃
 
-![Eth 1,](../../.gitbook/assets/image%20%2833%29.png)
+![Eth 1,](../../.gitbook/assets/image%20%2836%29.png)
 
 ## 3. Choosing your Eth2 client
 
