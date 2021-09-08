@@ -9,7 +9,7 @@ description: >-
 
 _Estimated time to complete this guide: ~15 minutes_
 
-Even if you've been living under a rock, you'll have noticed that every major news outlet has been profiling the rise of NFTs in the past few weeks.
+Even if you've been living under a rock, you'll have noticed that every major news outlet has been profiling the rise of NFTs.
 
 With NFTs bringing blockchain into the public eye, now is an excellent opportunity to understand the hype yourself by publishing your own NFT \(ERC-721 Token\) on the Ethereum blockchain!
 

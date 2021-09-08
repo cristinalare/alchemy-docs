@@ -6,9 +6,9 @@ description: >-
 
 # 🪄How to Mint an NFT Using Web3.js
 
-_Estimated time to complete this guide: ~10 minutes_ 
+_Estimated time to complete this guide: ~10 minutes_
 
-"Minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain. Now that we successfully [deployed a smart contract to the Ropsten network in Part I](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract) of this NFT tutorial series, let's flex our web3 skills and mint an NFT! 
+"Minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain. Now that we successfully [deployed a smart contract to the Ropsten network in Part I](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract) of this NFT tutorial series, let's flex our web3 skills and mint an NFT!
 
 At the end of this tutorial, you'll be able to mint as many NFTs as you'd like with this code —let's get started!
 
@@ -38,7 +38,7 @@ const web3 = createAlchemyWeb3(API_URL);
 Our contract ABI \(Application Binary Interface\) is the interface to interact with our smart contract. You can learn more about Contract ABIs [here](https://docs.alchemyapi.io/alchemy/guides/eth_getlogs#what-are-ab-is). Hardhat automatically generates an ABI for us and saves it in the MyNFT.json file. In order to use this we'll need to parse out the contents by adding the following lines of code to our `mint-nft.js` file:
 
 ```text
-const contract = require("../artifacts/contracts/MyNFT.sol/MyNFT.json"); 
+const contract = require("../artifacts/contracts/MyNFT.sol/MyNFT.json");
 ```
 
 If you want to see the ABI you can print it to your console:
@@ -86,7 +86,6 @@ In your root directory, make a new file called nft-metadata.json and add the fol
     "image" : "https://gateway.pinata.cloud/ipfs/QmWmvTJmJU3pozR9ZHFmQC2DNDwi2XJtf3QGyYiiagFSWb",
     "name" : "Ramses"
 }
-
 ```
 
 Feel free to change the data in the json. You can remove or add to the attributes section. Most importantly, make sure the image field points to the location of your IPFS image— otherwise, your NFT will include a photo of a \(very cute!\) dog.
@@ -129,13 +128,12 @@ First, let's define a function called `mintNFT(tokenData)` and create our transa
 1. Grab your `PRIVATE_KEY` and `PUBLIC_KEY` from the .env file.
 2. Next, we'll need to figure out the account `nonce`. The nonce specification is used to keep track of the number of transactions sent from your address— which we need for security purposes and to prevent [replay attacks](https://docs.alchemyapi.io/alchemy/resources/blockchain-glossary#account-nonce). To get the number of transactions sent from your address, we use [getTransactionCount](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactioncount).
 3. Finally we'll set up our `transaction` with the following info:
-
-* `'from': PUBLIC_KEY` : The origin of our transaction is our public address
-* `'to': contractAddress` : The contract we wish to interact with and send the transaction
-* `'nonce': nonce` : The account nonce with the number of transactions sent from our address
-* `'gas': estimatedGas` : The estimated gas needed to complete the transaction
-* `'maxPriorityFeePerGas': estimatedFee`: The estimated fee to bid per gas.
-* `'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()` : The computation we wish to perform in this transaction— which in this case is minting an NFT
+4. `'from': PUBLIC_KEY` : The origin of our transaction is our public address
+5. `'to': contractAddress` : The contract we wish to interact with and send the transaction
+6. `'nonce': nonce` : The account nonce with the number of transactions sent from our address
+7. `'gas': estimatedGas` : The estimated gas needed to complete the transaction
+8. `'maxPriorityFeePerGas': estimatedFee`: The estimated fee to bid per gas.
+9. `'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()` : The computation we wish to perform in this transaction— which in this case is minting an NFT
 
 Your `mint-nft.js` file should look like this now:
 
@@ -170,7 +168,7 @@ async function mintNFT(tokenURI) {
 {% hint style="info" %}
 ## How can I mint multiple NFTs? <a id="how-do-i-distinguish-between-a-contract-address-and-a-wallet-address"></a>
 
-To mint `x` number of NFTs in a single command, we can use a simple `for loop` running from `0` to `x-1` within a function wrapping the minting process.  This would allow us to effectively mint `x` NFTs every time the wrapper mint function is called. 
+To mint `x` number of NFTs in a single command, we can use a simple `for loop` running from `0` to `x-1` within a function wrapping the minting process. This would allow us to effectively mint `x` NFTs every time the wrapper mint function is called.
 {% endhint %}
 
 ### Step 8: Sign the transaction <a id="step-8-sign-the-transaction"></a>
@@ -297,5 +295,5 @@ And that's it! You've now deployed AND minted an NFT on the Ethereum blockchain 
 
 Using the `mint-nft.js` you can mint as many NFT's as your heart \(and wallet\) desires! Just be sure to pass in a new `tokenURI` describing the NFT's metadata --otherwise, you'll just end up making a bunch of identical ones with different IDs.
 
-Presumably, you'd like to be able to show off your NFT in your wallet 😉— so be sure to check out Part III: [How to View Your NFT in Your Wallet](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-view-your-nft-in-your-wallet). 
+Presumably, you'd like to be able to show off your NFT in your wallet 😉— so be sure to check out Part III: [How to View Your NFT in Your Wallet](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-view-your-nft-in-your-wallet).
 
