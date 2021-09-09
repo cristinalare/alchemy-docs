@@ -167,7 +167,7 @@ Open up the my-nft project in your favorite editor \(we like [VSCode](https://co
 2. Below is our NFT smart contract code, which is based off of the [OpenZeppelin](https://docs.openzeppelin.com/contracts/3.x/erc721) library's ERC721 implementation. Copy and paste the contents below into your MyNFT.sol file.
 
 {% hint style="warning" %}
-**NOTE:** If you want to attach a price to the NFT through the smart contract
+**NOTE:** If you want to attach a price to the NFT through the smart contract check out [this tutorial](nft-price.md).
 {% endhint %}
 
 ```text
