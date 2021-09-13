@@ -1,8 +1,8 @@
 ---
 description: >-
-  This tutorial describes how to mint an NFT on the Ethereum blockchain using
-  Ethers via the ethers.js library, and our smart contract from Part I: How to
-  Create an NFT. We'll also explore basic test se
+  This tutorial describes how to mint an NFT on Ethereum using Ethers via the
+  ethers.js library, and our smart contract from Part I: How to Create an NFT.
+  We'll also explore basic test setup.
 ---
 
 # 🪄How to Mint an NFT with Ethers.js
