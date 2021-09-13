@@ -90,7 +90,7 @@
 * [📝 NFT Minter Tutorial: How to Create a Full Stack DApp](tutorials/nft-minter/README.md)
   * [🖥️ How to Build an NFT Website](tutorials/nft-minter/how-do-i-deploy-nfts-online.md)
 * [📜 Integrating Historical Transaction Data into your dApp](tutorials/transfers-tutorial.md)
-* [♻️Tracking Transaction Life Cycles](tutorials/tracking-transaction-life-cycles.md)
+* [♻️ Alchemy Notify Tutorial: Tracking Transaction Life Cycles](tutorials/tracking-transaction-life-cycles.md)
 * [📱Building a dApp with Real-Time Transaction Notifications](tutorials/building-a-dapp-with-real-time-transaction-notifications.md)
 
 ## Guides
