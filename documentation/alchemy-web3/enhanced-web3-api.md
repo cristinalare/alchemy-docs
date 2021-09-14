@@ -68,7 +68,7 @@ An object with the following fields:
 
 Subscribes to pending transactions, similar to the standard Web3 call `web3.eth.subscribe("pendingTransactions")`, but differs in that it emits full transaction information rather than just transaction hashes.
 
-Note that the argument passed to this function is `"alchemy_fullPendingTransactions"`, which is different from the string used in raw [`eth_subscribe`](../apis/ethereum/#eth_subscribe) JSON-RPC calls, where it is `"alchemy_newFullPendingTransactions"` instead. This is confusing, but it is also consistent with the existing Web3 subscription APIs \(for example: `web3.eth.subscribe("pendingTransactions")` vs `"newPendingTransactions"` in raw JSON-RPC\).
+Note that the argument passed to this function is `"alchemy_fullPendingTransactions"`, which is different from the string used in raw [`eth_subscribe`](../../apis/ethereum/#eth_subscribe) JSON-RPC calls, where it is `"alchemy_newFullPendingTransactions"` instead. This is confusing, but it is also consistent with the existing Web3 subscription APIs \(for example: `web3.eth.subscribe("pendingTransactions")` vs `"newPendingTransactions"` in raw JSON-RPC\).
 
 ### web3.alchemy.getAssetTransfers\({fromBlock, toBlock, fromAddress, toAddress, contractAddresses, excludeZeroValue, maxCount, category, pageKey}\)
 
@@ -86,14 +86,14 @@ Returns an array of asset transfers based on the specified paramaters.
     * `category`: list of any combination of `external`, `token`. optional, if blank, would include both.
     * `excludeZeroValue:` a`Boolean` . optional \(default `true`\)
     * `maxCount`: max number of results to return per call. optional \(default `1000)`
-    * `pageKey`: for [pagination](../enhanced-apis/transfers-api.md#pagination). optional
+    * `pageKey`: for [pagination](../../apis/enhanced-apis/transfers-api.md#pagination). optional
 * `fromBlock` and `toBlock` are inclusive. Both default to `latest` if not specified.
 * `fromAddress` and `toAddress` will be `AND`ed together when filtering. If left blank, will indicate a wildcard \(any address\).
 * `contractAddresses` only applies to `token` category transfers \(eth log events\). The list of addresses are `OR`ed together. This filter will be `AND`ed with `fromAddress` and `toAddress` for eth log events. If empty, or unspecified, it will be taken as a wildcard \(any contract addresses\).
 * `category`: `external` for primary level eth transfers, `token` for contract event transfers.
 * `excludeZeroValue:` an optional `Boolean` to exclude asset transfers with a value field of zero \(defaults to `true`\)
 * `maxCount`: The maximum number of results to return per call. Default and max will be 1000.
-* `pageKey`: If left blank, will return the first 1000 or `maxCount` number of results. If more results are available, a uuid pageKey will be returned in the response. Pass that uuid into `pageKey` to fetch the next 1000 or maxCount. See section on [pagination](../enhanced-apis/transfers-api.md#pagination). 
+* `pageKey`: If left blank, will return the first 1000 or `maxCount` number of results. If more results are available, a uuid pageKey will be returned in the response. Pass that uuid into `pageKey` to fetch the next 1000 or maxCount. See section on [pagination](../../apis/enhanced-apis/transfers-api.md#pagination). 
 
 ### EIP 1559
 

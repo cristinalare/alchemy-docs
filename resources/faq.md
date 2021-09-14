@@ -46,7 +46,7 @@ Archive data is free and available for all of our customers, no additional set u
 
 ## How do I get the timestamp for a transaction?
 
-A transaction object will have a block number associated with it, the block number is Ethereum's measure of time, however, if you want a standard timestamp you can easily get that by making a call to [`eth_getBlockByNumber`](../documentation/apis/ethereum/#eth_getblockbynumber) and specifying the `blockNumber` field. Here is an [example request](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D). If you only have the transaction hash, you can get the full object by making a request to [`eth_getTransactionByHash`](../documentation/apis/ethereum/#eth_gettransactionbyhash).
+A transaction object will have a block number associated with it, the block number is Ethereum's measure of time, however, if you want a standard timestamp you can easily get that by making a call to [`eth_getBlockByNumber`](../apis/ethereum/#eth_getblockbynumber) and specifying the `blockNumber` field. Here is an [example request](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D). If you only have the transaction hash, you can get the full object by making a request to [`eth_getTransactionByHash`](../apis/ethereum/#eth_gettransactionbyhash).
 
 ## Why can't I invite a user who is already on a team? <a id="why-cant-i-invite-a-user-who-is-already-on-a-team"></a>
 

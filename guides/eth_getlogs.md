@@ -7,7 +7,7 @@ description: >-
 
 # 🤿 Deep Dive into eth\_getLogs
 
-New to `eth_getLogs` or want to learn more information about it? You are in the right place. `eth_getLogs` has many beneficial use cases that developers are often times unaware of. It also has some extreme vulnerabilities that can have huge consequences if you don't use it correctly. This page is a deep dive into the capabilities of `eth_getLogs` to help you improve your usage and understanding of this method! For details about the request/response specifications for `eth_getLogs`, check out our [JSON-RPC reference page](../documentation/apis/ethereum/#eth_getlogs). 
+New to `eth_getLogs` or want to learn more information about it? You are in the right place. `eth_getLogs` has many beneficial use cases that developers are often times unaware of. It also has some extreme vulnerabilities that can have huge consequences if you don't use it correctly. This page is a deep dive into the capabilities of `eth_getLogs` to help you improve your usage and understanding of this method! For details about the request/response specifications for `eth_getLogs`, check out our [JSON-RPC reference page](../apis/ethereum/#eth_getlogs). 
 
 ## What are Logs? <a id="what-are-logs"></a>
 
@@ -92,7 +92,7 @@ _Transfers_ are one of the most common functions on Ethereum contracts. They rep
 
 A contract can contain many different types of events, so the _event signature_ is used to identify what the specific event or log represents. In the example above, this contract contains two types of events: `Transfer` and `NewOwner`.
 
-Every event has an associated event signature which can be computed by taking the _keccak 256_ hash of the event _name_ and input argument _types \(_argument names are ignored\). For example, the event signature of this specific Transfer event above is `keccak256(Transfer(address,address,uint256))` , which results in the hash: `0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef` . If you would like to reproduce the hash yourself you can use this [online keccak-256 converter](https://emn178.github.io/online-tools/keccak_256.html) and input "Transfer\(address,address,uint256\)". Or, convert the string to hexadecimal number and use the [`web3_sha3`](../documentation/apis/ethereum/#web-3-_sha3) JSON-RPC call to get the corresponding hash. For "Transfer\(address,address,uint256\)", the corresponding hex value is`0x5472616e7366657228616464726573732c616464726573732c75696e7432353629`.
+Every event has an associated event signature which can be computed by taking the _keccak 256_ hash of the event _name_ and input argument _types \(_argument names are ignored\). For example, the event signature of this specific Transfer event above is `keccak256(Transfer(address,address,uint256))` , which results in the hash: `0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef` . If you would like to reproduce the hash yourself you can use this [online keccak-256 converter](https://emn178.github.io/online-tools/keccak_256.html) and input "Transfer\(address,address,uint256\)". Or, convert the string to hexadecimal number and use the [`web3_sha3`](../apis/ethereum/#web-3-_sha3) JSON-RPC call to get the corresponding hash. For "Transfer\(address,address,uint256\)", the corresponding hex value is`0x5472616e7366657228616464726573732c616464726573732c75696e7432353629`.
 
 ## Back to the Logs Example... <a id="back-to-the-logs-example"></a>
 
