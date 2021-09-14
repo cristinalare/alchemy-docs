@@ -80,6 +80,8 @@ Do more, quickly with an Alchemy Web3 extension of web3.js as well as Smart WebS
 
 Check out out full suite of Enhanced APIs here:
 
+{% page-ref page="../../documentation/apis/" %}
+
 ### Instant On 
 
 Switch to the most powerful infrastructure engine for blockchain with a single line of code. Run your app on Alchemy Supernode in 5 minutes or less.
