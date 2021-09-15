@@ -265,7 +265,7 @@ Hardhat makes it super easy to integrate [Plugins](https://hardhat.org/plugins/)
 In your project directory type:
 
 ```text
-npm install --save-dev @nomiclabs/hardhat-ethers 'ethers@^5.0.0'
+npm install --save-dev @nomiclabs/hardhat-ethers "ethers@^5.0.0"
 ```
 
 We’ll also require ethers in our `hardhat.config.js` in the next step.
