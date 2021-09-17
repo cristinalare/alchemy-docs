@@ -6,9 +6,9 @@ description: >-
 
 # 🌎 Hello World Smart Contract
 
-_Estimated time to complete this guide: ~15 minutes_ 
+_Estimated time to complete this guide: ~15 minutes_
 
-If you are new to blockchain development and don’t know where to start, or if you just want to understand how to deploy and interact with smart contracts, this guide is for you. We will walk through creating and deploying a simple smart contract on the Ropsten test network using a virtual wallet, \([Metamask](https://metamask.io/)\), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org/) __and [Truffle](https://www.trufflesuite.com/), and [Alchemy](https://dashboard.alchemyapi.io/signup?referral=affiliate:df70d561-e6cf-4922-b101-e2bb27c00a15) \(don’t worry if you don’t understand what any of this means yet, we will explain it!\).
+If you are new to blockchain development and don’t know where to start, or if you just want to understand how to deploy and interact with smart contracts, this guide is for you. We will walk through creating and deploying a simple smart contract on the Ropsten test network using a virtual wallet, \([Metamask](https://metamask.io/)\), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org/) \_\_and [Truffle](https://www.trufflesuite.com/), and [Alchemy](https://dashboard.alchemyapi.io/signup?referral=affiliate:df70d561-e6cf-4922-b101-e2bb27c00a15) \(don’t worry if you don’t understand what any of this means yet, we will explain it!\).
 
 In part 2 of this tutorial we’ll go through how we can interact with our smart contract once it’s deployed, and in part 3 we’ll cover how to publish it on Etherscan.
 
@@ -17,7 +17,7 @@ If you have questions at any point feel free to reach out in the [Alchemy Discor
 {% hint style="info" %}
 ### Hardhat vs Truffle
 
-There are two versions of this tutorial: one using Hardhat and one using Truffle. They are both development environments for building on Ethereum and have similar functionality so it's totally up to you to decide which you want to use. Hardhat is the newer kid on the block and tends to be a bit cleaner/easier to use, they also have lots of plugins to make it more customizable. 
+There are two versions of this tutorial: one using Hardhat and one using Truffle. They are both development environments for building on Ethereum and have similar functionality so it's totally up to you to decide which you want to use. Hardhat is the newer kid on the block and tends to be a bit cleaner/easier to use, they also have lots of plugins to make it more customizable.
 {% endhint %}
 
 ## Create and Deploy your Smart Contract using Hardhat
@@ -50,7 +50,7 @@ You can download and create a Metamask account for free [here](https://metamask.
 
 ### Step 4: Add ether from a Faucet <a id="step-4-add-ether-from-a-faucet"></a>
 
-In order to deploy our smart contract to the test network, we’ll need some fake Eth. To get Eth you can go to the [Ropsten faucet ](https://faucet.dimensions.network/)and enter your Ropsten account address, then click “Send Ropsten Eth.” It may take some time to receive your fake Eth due to network traffic. \(At the time of writing this, it took around 30 minutes.\) You should see Eth in your Metamask account soon after! 
+In order to deploy our smart contract to the test network, we’ll need some fake Eth. To get Eth you can go to the [Ropsten faucet ](https://faucet.dimensions.network/)and enter your Ropsten account address, then click “Send Ropsten Eth.” It may take some time to receive your fake Eth due to network traffic. \(At the time of writing this, it took around 30 minutes.\) You should see Eth in your Metamask account soon after!
 
 ### Step 5: Check your Balance <a id="step-5-check-your-balance"></a>
 
@@ -63,9 +63,9 @@ After you input your Metamask account address and click “Send Request”, you 
 ```
 
 {% hint style="info" %}
-**NOTE:** This result is in wei not eth. Wei is used as the smallest denomination of ether. The conversion from wei to eth is: 1 eth = 10^18 wei. So if we convert 0x2B5E3AF16B1880000 to decimal we get 5\*10^18 which equals 5 eth. 
+**NOTE:** This result is in wei not eth. Wei is used as the smallest denomination of ether. The conversion from wei to eth is: 1 eth = 10^18 wei. So if we convert 0x2B5E3AF16B1880000 to decimal we get 5\*10^18 which equals 5 eth.
 
-Phew! Our fake money is all there🤑 . 
+Phew! Our fake money is all there🤑 .
 {% endhint %}
 
 ### Step 6: Initialize our project
@@ -130,7 +130,7 @@ Check out this page for more details on [installation instructions](https://hard
 Inside our project folder run:
 
 ```text
-npx hardhat 
+npx hardhat
 ```
 
 You should then see a welcome message and option to select what you want to do. Select “create an empty hardhat.config.js”:
@@ -146,7 +146,7 @@ You should then see a welcome message and option to select what you want to do. 
 888    888 "Y888888 888     "Y88888 888  888 "Y888888  "Y888
 
 👷 Welcome to Hardhat v2.0.11 👷‍
- 
+
 What do you want to do? …
 Create a sample project
 ❯ Create an empty hardhat.config.js
@@ -196,7 +196,7 @@ contract HelloWorld {
    // Similar to many class-based object-oriented languages, a constructor is a special function that is only executed upon contract creation.
    // Constructors are used to initialize the contract's data. Learn more:https://solidity.readthedocs.io/en/v0.5.10/contracts.html#constructors
    constructor(string memory initMessage) {
-   
+
       // Accepts a string argument `initMessage` and sets the value into the contract's `message` storage variable).
       message = initMessage;
    }
@@ -229,7 +229,7 @@ npm install dotenv --save
 Then, create a `.env` file in the root directory of our project, and add your Metamask private key and HTTP Alchemy API URL to it.
 
 {% hint style="warning" %}
-Your environment file must be named `.env` or it won't be recognized as an environment file. 
+Your environment file must be named `.env` or it won't be recognized as an environment file.
 {% endhint %}
 
 * Follow [these instructions](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) to export your private key
@@ -310,7 +310,7 @@ Navigate to the `scripts/` folder and create a new file called `deploy.js` , add
 ```text
 async function main() {
    const HelloWorld = await ethers.getContractFactory("HelloWorld");
-   
+
    // Start deployment, returning a promise that resolves to a contract object
    const hello_world = await HelloWorld.deploy("Hello World!");   
    console.log("Contract deployed to address:", hello_world.address);
@@ -366,7 +366,7 @@ To understand what’s going on under the hood, let’s navigate to the Explorer
 
 ![](../../.gitbook/assets/hello-world-explorer.png)
 
-Here you’ll see a handful of JSON-RPC calls that Hardhat/Ethers made under the hood for us when we called the `.deploy()` function. Two important ones to call out here are [`eth_sendRawTransaction`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_sendrawtransaction), which is the request to actually write our contract onto the Ropsten chain, and [`eth_getTransactionByHash`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactionbyhash) ``which is a request to read information about our transaction given the hash \(a typical pattern when sending transactions\). To learn more about sending transactions, check out this tutorial on [sending transactions using Web3](../sending-txs.md).
+Here you’ll see a handful of JSON-RPC calls that Hardhat/Ethers made under the hood for us when we called the `.deploy()` function. Two important ones to call out here are [`eth_sendRawTransaction`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_sendrawtransaction), which is the request to actually write our contract onto the Ropsten chain, and [`eth_getTransactionByHash`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactionbyhash) \`\`which is a request to read information about our transaction given the hash \(a typical pattern when sending transactions\). To learn more about sending transactions, check out this tutorial on [sending transactions using Web3](../sending-txs.md).
 
 That’s all for part 1 of this tutorial, in part 2 we’ll actually [interact with our smart contract](interacting-with-a-smart-contract.md) by updated our initial message, and in part 3 we’ll [publish our smart contract to Etherscan](interacting-with-a-smart-contract.md) so everyone will know how to interact with it.
 
@@ -468,12 +468,12 @@ Every transaction sent from your virtual wallet requires a signature using your 
 
 Truffle's HDWalletProvider actually requires your mnemonic to send transactions rather than your private key. Your mnemonic is the seed phrase Metamask made you write down when you first created your account. If you've forgetten it, don't worry, you can follow these instructions to reveal it again.
 
-Providing your mnemonic rather than private key grants your project with permission to send transactions using your wallet accross _any network_ we instruct it to_,_ not just the Ropsten testnet that we're using for this tutorial. This doesn't mean we'll see a bunch of unauthorized transactions on mainnet, but we won't have to provide our mainnet private key if we wanted to send transactions over mainnet. 
+Providing your mnemonic rather than private key grants your project with permission to send transactions using your wallet accross _any network_ we instruct it to_,_ not just the Ropsten testnet that we're using for this tutorial. This doesn't mean we'll see a bunch of unauthorized transactions on mainnet, but we won't have to provide our mainnet private key if we wanted to send transactions over mainnet.
 
 > To learn more about sending transactions, check out [this tutorial](https://docs.alchemyapi.io/alchemy/tutorials/sending-transactions-using-web3-and-alchemy) on sending transactions using web3.
 
 {% hint style="info" %}
-**NOTE:** We'll be using dotenv to safely store our mnemonic and API key. This separates your private keys from source code and ensures no secret information will be included if you wish to share your code publicly. 
+**NOTE:** We'll be using dotenv to safely store our mnemonic and API key. This separates your private keys from source code and ensures no secret information will be included if you wish to share your code publicly.
 {% endhint %}
 
 First, install the dotenv package in your project directory:
@@ -498,7 +498,7 @@ MNEMONIC = "your-metamask-seed-phrase"
 
 The next step is to edit your **`truffle-config.js`** file to use **`HDWalletProvider`** and provide all the necessary configuration for deploying to ropsten.
 
-Truffle provides some comments in your file that explains how your config file works and how to do basic operations. Feel free to keep or delete them, we'll be starting from scratch here. 
+Truffle provides some comments in your file that explains how your config file works and how to do basic operations. Feel free to keep or delete them, we'll be starting from scratch here.
 
 Copy and paste the contents below into your **`truffle-config.js`** file:
 
@@ -566,7 +566,7 @@ module.exports = function(deployer) {
 
 ### Step 13: Deploy our Smart Contract <a id="step-12-deploy-our-smart-contract"></a>
 
-In order to deploy our smart contract to the Ethereum network, we will use truffle's migrations which are JavaScript files that help you deploy contracts to the Ethereum network. 
+In order to deploy our smart contract to the Ethereum network, we will use truffle's migrations which are JavaScript files that help you deploy contracts to the Ethereum network.
 
 To run your migrations, run the following command in your terminal:
 
@@ -639,5 +639,5 @@ Once this is finished without errors you will have deployed the contract, check 
 
 To understand what's going on under the hood using your Alchemy dashboard, check out [Step 16](./#step-16-deploy-our-contract) above! You might notice a difference in the number of transactions sent than using Hardhat, this is because Truffle has a different contract deploy function than the one we wrote using hardhat.
 
-That’s all for part 1 of this tutorial, in part 2 we’ll actually [interact with our smart contract](interacting-with-a-smart-contract.md) by updated our initial message, and in part 3 we’ll [publish our smart contract to Etherscan](interacting-with-a-smart-contract.md) so everyone will know how to interact with it. 
+That’s all for part 1 of this tutorial, in part 2 we’ll actually [interact with our smart contract](interacting-with-a-smart-contract.md) by updated our initial message, and in part 3 we’ll [publish our smart contract to Etherscan](interacting-with-a-smart-contract.md) so everyone will know how to interact with it.
 
