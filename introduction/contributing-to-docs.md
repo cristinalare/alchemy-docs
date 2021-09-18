@@ -45,7 +45,7 @@ If you do not have a specific contribution in mind but are generally interested 
   * Raise issues for other contributors to address
 
 * **Fix an existing issue**
-  * Navigate to &lt;issues link&gt; and pick off one of the existing issues to fix!
+  * Navigate to the [issues page on Github](https://github.com/alchemyplatform/alchemy-docs/issues) and pick off one of the existing issues to fix!
 
 ## Contribute Alchemy Docs: <a id="contribute-alchemy-docs"></a>
 
