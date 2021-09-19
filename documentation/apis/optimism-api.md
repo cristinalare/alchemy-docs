@@ -14,7 +14,7 @@ For more information on the Optimism, JSON-RPC check out the[ Optimism Wiki](htt
 
 ## Mainnet vs. Testnet
 
-There are two networks on Polygon: Mainnet and Kovan testnet. The endpoints are as follows:
+There are two networks on Optimism: Mainnet and Kovan testnet. The endpoints are as follows:
 
 * **Mainnet:** `https://opt-mainnet.g.alchemy.com/v2/your-api-key`
 * **Kovan:**  `https://opt-kovan.g.alchemy.com/v2/your-api-key`
