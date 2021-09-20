@@ -74,26 +74,23 @@ You can easily mine faux-Ether or request it from a faucet:
 
 Check out more info about Ropsten on the [GitHub](https://github.com/ethereum/ropsten).
 
-## Arbitrum Testnet
+## Arbitrum
 
 ### [Mainnet](https://developer.offchainlabs.com/docs/developer_quickstart)
 
 Arbitrum currently has one testnet on connected to Ethereum's Kovan testnet \([described ](choosing-a-network.md#kovan)[above](choosing-a-network.md#kovan)\). This operates exactly the same as Arbitrum mainnet but is built as a smart contract on Kovan instead of on Ethtereum mainnet. It is currently under development and will be released shortly.
 
 * Network Name: Arbitrum Mainnet V1
-* New RPC URL: [https://arb1.arbitrum.io/rpc](https://arb1.arbitrum.io/rpc)
 * ChainID: 0xa4b1
 * Symbol: ETH
 * Block Explorer URL: [https://explorer.arbitrum.io](https://explorer.arbitrum.io)
 
-### [Kovan](https://developer.offchainlabs.com/docs/public_testnet)
+### [Rinkeby](https://developer.offchainlabs.com/docs/public_testnet)
 
-Arbitrum currently has one testnet on connected to Ethereum's Kovan testnet \([described ](choosing-a-network.md#kovan)[above](choosing-a-network.md#kovan)\). This operates exactly the same as Arbitrum mainnet but is built as a smart contract on Kovan instead of on Ethtereum mainnet. It is currently under development and will be released shortly.
+Arbitrum currently has one testnet on connected to Ethereum's Rinkeby testnet. This operates exactly the same as Arbitrum mainnet but is built as a smart contract on Rinkeby instead of on Ethtereum mainnet.
 
-* Network Name: Arbitrum Testnet V6
-* New RPC URL: [https://kovan5.arbitrum.io/rpc](https://kovan5.arbitrum.io/rpc)
-* ChainID: 144545313136048
+* Network Name: Arbitrum Testnet
+* ChainID: 421611
 * Symbol: ETH
-* Block Explorer URL: [https://explorer5.arbitrum.io/\#/](https://explorer5.arbitrum.io/#/)
-* Faucet: [https://github.com/kovan-testnet/faucet](https://github.com/kovan-testnet/faucet.)
+* Block Explorer URL: [https://rinkeby-explorer.arbitrum.io/\#/](https://rinkeby-explorer.arbitrum.io/#/)
 
