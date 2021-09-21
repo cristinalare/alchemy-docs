@@ -109,7 +109,7 @@ Approve the package.json, and we’re good to go!
 
 Hardhat is a development environment to compile, deploy, test, and debug your Ethereum software. It helps developers when building smart contracts and dApps locally before deploying to the live chain.
 
-Inside our `my-nft` project run:
+Navigate to the terminal and make sure you're inside the `my-nft` project folder, then run:
 
 ```text
 npm install --save-dev hardhat
