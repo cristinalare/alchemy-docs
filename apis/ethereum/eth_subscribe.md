@@ -211,10 +211,10 @@ When a transaction that was previously part of the canonical chain isn’t part 
 {% hint style="info" %}
 **NOTE:**
 
-* If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../../../guides/using-websockets.md#1-alchemy_newfullpendingtransactions)
+* If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../../guides/using-websockets.md#1-alchemy_newfullpendingtransactions)
 * If you want pending transactions for a specific address, check out the Enhanced API 
 
-  \`\`[`alchemy_filteredNewFullPendingTransactions`](../../../guides/using-websockets.md#2-alchemy_filterednewfullpendingtransactions)\`\`
+  \`\`[`alchemy_filteredNewFullPendingTransactions`](../../guides/using-websockets.md#2-alchemy_filterednewfullpendingtransactions)\`\`
 {% endhint %}
 
 **Parameters**

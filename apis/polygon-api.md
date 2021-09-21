@@ -1264,7 +1264,7 @@ Result
 
 ### eth\_getCode
 
-Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address). 
+Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address). 
 
 #### Parameters
 
@@ -1559,14 +1559,14 @@ Result
 
 ### eth\_getLogs
 
-Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../../guides/eth_getlogs.md) page. 
+Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../guides/eth_getlogs.md) page. 
 
 {% hint style="warning" %}
 **NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**no limit on the response size**_. 
 
 If you absolutely need to query larger block ranges, please contact us over [discord](https://alchemy.com/discord) or at support@alchemy.com. We can open access to larger block ranges based on your use case.
 
-_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../../guides/using-websockets.md) _to push new logs to you when they are available._ 
+_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../guides/using-websockets.md) _to push new logs to you when they are available._ 
 {% endhint %}
 
 #### Parameters
@@ -2967,10 +2967,10 @@ When a transaction that was previously part of the canonical chain isn’t part 
 {% hint style="info" %}
 **NOTE:**
 
-* If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../../guides/using-websockets.md#1-alchemy_newfullpendingtransactions)
+* If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../guides/using-websockets.md#1-alchemy_newfullpendingtransactions)
 * If you want pending transactions for a specific address, check out the Enhanced API 
 
-  \`\`[`alchemy_filteredNewFullPendingTransactions`](../../guides/using-websockets.md#2-alchemy_filterednewfullpendingtransactions)\`\`
+  \`\`[`alchemy_filteredNewFullPendingTransactions`](../guides/using-websockets.md#2-alchemy_filterednewfullpendingtransactions)\`\`
 {% endhint %}
 
 **Parameters**
@@ -3132,132 +3132,132 @@ Result
 }
 ```
 
-## Trace API
+## Debug API
 
-### trace\_transaction 
+### debug\_traceTransaction
 
-Returns all traces of given transaction.
+The `traceTransaction` debugging method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
 
-#### **Parameters**
+The `traceTransaction` debugging method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
 
-1. `Hash` - Transaction hash
+### Parameters 
 
-```bash
-params: ["0x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3"]
-```
+### Parameters 
 
-#### **Returns**
+In addition to the hash of the transaction you may give it a secondary _optional_ argument, which specifies the options for this specific call. The possible options are:
 
-* `Array` - Traces of given transaction
+In addition to the hash of the transaction you may give it a secondary _optional_ argument, which specifies the options for this specific call. The possible options are:
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_transaction%22%2C%22paramValues%22%3A%5B%220x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3%22%5D%7D)\*\*\*\*
+* `disableStorage`: `BOOL`. Setting this to true will disable storage capture \(default = false\).
+* `disableMemory`: `BOOL`. Setting this to true will disable memory capture \(default = false\).
+* `disableStack`: `BOOL`. Setting this to true will disable stack capture \(default = false\).
+* `tracer`: `STRING`. Setting this will enable JavaScript-based transaction tracing, described below. If set, the previous four arguments will be ignored.
+* `timeout`: `STRING`. Overrides the default timeout of 5 seconds for JavaScript-based tracing calls. Valid values are described [here](https://golang.org/pkg/time/#ParseDuration).
+* `disableStorage`: `BOOL`. Setting this to true will disable storage capture \(default = false\).
+* `disableMemory`: `BOOL`. Setting this to true will disable memory capture \(default = false\).
+* `disableStack`: `BOOL`. Setting this to true will disable stack capture \(default = false\).
+* `tracer`: `STRING`. Setting this will enable JavaScript-based transaction tracing, described below. If set, the previous four arguments will be ignored.
+* `timeout`: `STRING`. Overrides the default timeout of 5 seconds for JavaScript-based tracing calls. Valid values are described [here](https://golang.org/pkg/time/#ParseDuration).
+
+| Client  | Method Invocation |
+| :--- | :--- |
+| Go | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
+| Console | `debug.traceTransaction(txHash, [options])` |
+| RPC | `{"method": "debug_traceTransaction", "params": [txHash, {}]}` |
+
+| Client  | Method Invocation |
+| :--- | :--- |
+| Go | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
+| Console | `debug.traceTransaction(txHash, [options])` |
+| RPC | `{"method": "debug_traceTransaction", "params": [txHash, {}]}` |
+
+### **Example**
+
+### **Example**
 
 Request
 
-{% tabs %}
-{% tab title="Curl" %}
-```bash
-curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
--X POST \
--H "Content-Type: application/json" \
--d '{"method":"trace_transaction","params":["0x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3"],"id":1,"jsonrpc":"2.0"}'
-```
-{% endtab %}
+Request
 
-{% tab title="Postman" %}
-```http
-URL: curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
-RequestType: POST
-Body: 
-{
-    "jsonrpc":"2.0",
-    "method":"trace_transaction",
-    "params":["0x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3"],
-    "id":1
-}
+```javascript
+debug.traceTransaction("0x2059dd53ecac9827faad14d364f9e04b1d5fe5b506e3acc886eff7a6f88a696a")
 ```
-{% endtab %}
-{% endtabs %}
 
-Response
+```javascript
+debug.traceTransaction("0x2059dd53ecac9827faad14d364f9e04b1d5fe5b506e3acc886eff7a6f88a696a")
+```
+
+Result
+
+Result
 
 ```javascript
 {
-  "jsonrpc": "2.0",
-  "result": [
-    {
-      "action": {
-        "callType": "call",
-        "from": "0x83806d539d4ea1c140489a06660319c9a303f874",
-        "gas": "0x1a1f8",
-        "input": "0x",
-        "to": "0x1c39ba39e4735cb65978d4db400ddd70a72dc750",
-        "value": "0x7a16c911b4d00000"
-      },
-      "blockHash": "0x7eb25504e4c202cf3d62fd585d3e238f592c780cca82dacb2ed3cb5b38883add",
-      "blockNumber": 3068185,
-      "result": {
-        "gasUsed": "0x2982",
-        "output": "0x"
-      },
-      "subtraces": 2,
-      "traceAddress": [],
-      "transactionHash": "0x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3",
-      "transactionPosition": 2,
-      "type": "call"
-    },
-    {
-      "action": {
-        "callType": "call",
-        "from": "0x1c39ba39e4735cb65978d4db400ddd70a72dc750",
-        "gas": "0x13e99",
-        "input": "0x16c72721",
-        "to": "0x2bd2326c993dfaef84f696526064ff22eba5b362",
-        "value": "0x0"
-      },
-      "blockHash": "0x7eb25504e4c202cf3d62fd585d3e238f592c780cca82dacb2ed3cb5b38883add",
-      "blockNumber": 3068185,
-      "result": {
-        "gasUsed": "0x183",
-        "output": "0x0000000000000000000000000000000000000000000000000000000000000001"
-      },
-      "subtraces": 0,
-      "traceAddress": [
-        0
-      ],
-      "transactionHash": "0x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3",
-      "transactionPosition": 2,
-      "type": "call"
-    },
-    {
-      "action": {
-        "callType": "call",
-        "from": "0x1c39ba39e4735cb65978d4db400ddd70a72dc750",
-        "gas": "0x8fc",
-        "input": "0x",
-        "to": "0x70faa28a6b8d6829a4b1e649d26ec9a2a39ba413",
-        "value": "0x7a16c911b4d00000"
-      },
-      "blockHash": "0x7eb25504e4c202cf3d62fd585d3e238f592c780cca82dacb2ed3cb5b38883add",
-      "blockNumber": 3068185,
-      "result": {
-        "gasUsed": "0x0",
-        "output": "0x"
-      },
-      "subtraces": 0,
-      "traceAddress": [
-        1
-      ],
-      "transactionHash": "0x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3",
-      "transactionPosition": 2,
-      "type": "call"
-    }
-  ],
-  "id": 0
-}
+  gas: 85301,
+  returnValue: "",
+  structLogs: [{
+      depth: 1,
+      error: "",
+      gas: 162106,
+      gasCost: 3,
+      memory: null,
+      op: "PUSH1",
+      pc: 0,
+      stack: [],
+      storage: {}
+  },
+    /* snip */
+  {
+      depth: 1,
+      error: "",
+      gas: 100000,
+      gasCost: 0,
+      memory: ["0000000000000000000000000000000000000000000000000000000000000006", "0000000000000000000000000000000000000000000000000000000000000000", "0000000000000000000000000000000000000000000000000000000000000060"],
+      op: "STOP",
+      pc: 120,
+      stack: ["00000000000000000000000000000000000000000000000000000000d67cbec9"],
+      storage: {
+        0000000000000000000000000000000000000000000000000000000000000004: "8241fa522772837f0d05511f20caa6da1d5a3209000000000000000400000001",
+        0000000000000000000000000000000000000000000000000000000000000006: "0000000000000000000000000000000000000000000000000000000000000001",
+        f652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d3f: "00000000000000000000000002e816afc1b5c0f39852131959d946eb3b07b5ad"
+      }
+  }]
+```
+
+```javascript
+{
+  gas: 85301,
+  returnValue: "",
+  structLogs: [{
+      depth: 1,
+      error: "",
+      gas: 162106,
+      gasCost: 3,
+      memory: null,
+      op: "PUSH1",
+      pc: 0,
+      stack: [],
+      storage: {}
+  },
+    /* snip */
+  {
+      depth: 1,
+      error: "",
+      gas: 100000,
+      gasCost: 0,
+      memory: ["0000000000000000000000000000000000000000000000000000000000000006", "0000000000000000000000000000000000000000000000000000000000000000", "0000000000000000000000000000000000000000000000000000000000000060"],
+      op: "STOP",
+      pc: 120,
+      stack: ["00000000000000000000000000000000000000000000000000000000d67cbec9"],
+      storage: {
+        0000000000000000000000000000000000000000000000000000000000000004: "8241fa522772837f0d05511f20caa6da1d5a3209000000000000000400000001",
+        0000000000000000000000000000000000000000000000000000000000000006: "0000000000000000000000000000000000000000000000000000000000000001",
+        f652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d3f: "00000000000000000000000002e816afc1b5c0f39852131959d946eb3b07b5ad"
+      }
+  }]
 ```
 
 {% hint style="warning" %}
-Block, and Debug APIs under Enhanced APIs are not currently supported by Alchmey for Polygon.
+Block, and Trace APIs under Enhanced APIs are not currently supported by Alchemy for Polygon.
 {% endhint %}
 

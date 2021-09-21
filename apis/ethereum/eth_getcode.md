@@ -4,7 +4,7 @@ description: Returns code at a given address.
 
 # eth\_getCode
 
-This method can be used to [distinguish between contract addresses and wallet addresses](../../../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address). 
+This method can be used to [distinguish between contract addresses and wallet addresses](../../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address). 
 
 ### Parameters
 
