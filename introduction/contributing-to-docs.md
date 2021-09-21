@@ -4,6 +4,8 @@ description: Instructions for contributing to Alchemy's Open Source Docs
 
 # 🤝Contributing to these Docs
 
+Github Repository: [https://github.com/alchemyplatform/alchemy-docs](https://github.com/alchemyplatform/alchemy-docs) 
+
 ## Why Contribute? <a id="why-contribute"></a>
 
 Web3 was built to make traditionally inaccessible industries, knowledge, and power, widely available to everyone - no matter what. However, this bold mission comes at a cost of complexity. It can be extremely challenging to break into the web3 space as a developer due to the intricate nature of blockchain technology.
