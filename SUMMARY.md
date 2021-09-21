@@ -62,6 +62,8 @@
   * [eth\_blockNumber](apis/arbitrum/eth_blocknumber.md)
 * [Polygon API](apis/polygon-api.md)
 * [Optimism API](apis/optimism-api.md)
+* [Flow Docs](https://docs.alchemy.com/flow/)
+* [Crypto.org Docs](https://docs.alchemy.com/cro/)
 
 ## Documentation
 
@@ -126,7 +128,4 @@
 * [📚 Blockchain Glossary](resources/blockchain-glossary.md)
 
 ## Other Chains
-
-* [Flow Docs](https://docs.alchemy.com/flow/)
-* [Crypto.org Docs](https://docs.alchemy.com/cro/)
 
