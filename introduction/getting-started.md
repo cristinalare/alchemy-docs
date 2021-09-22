@@ -78,9 +78,7 @@ Results:
 
 ## 3.🤝Set up Alchemy as your Client  
 
-Below you will find how to set up or switch your current provider to Alchemy for Alchemy Web3, Web3.js, Web3.py, Web3j, and Ether.js. . 
-
-You may use other instantiations of the Web3 client and use the Alchemy URL of your choosing with a one-line configuration change. You will need to install web3 first with `npm install web3`.
+Below you will find how to set up or switch your current provider to Alchemy for Alchemy Web3, Web3.js, Web3.py, Web3j, and Ether.js. .  
 
 {% hint style="warning" %}
 **If you have an existing client,** change your current node provider URL to an Alchemy URL with your API key: "https://eth-mainnet.alchemyapi.io/v2/your-api-key"

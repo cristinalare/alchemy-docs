@@ -4,13 +4,13 @@ description: Instructions for contributing to Alchemy's Open Source Docs
 
 # 🤝Contributing to these Docs
 
-Github Repository: [https://github.com/alchemyplatform/alchemy-docs](https://github.com/alchemyplatform/alchemy-docs) 
+Github Repository: [https://github.com/alchemyplatform/alchemy-docs](https://github.com/alchemyplatform/alchemy-docs)
 
 ## Why Contribute? <a id="why-contribute"></a>
 
 Web3 was built to make traditionally inaccessible industries, knowledge, and power, widely available to everyone - no matter what. However, this bold mission comes at a cost of complexity. It can be extremely challenging to break into the web3 space as a developer due to the intricate nature of blockchain technology.
 
-This is where documentation comes in. We need resources, guides, and tutorials from the beginner to the expert level, that teaches people how to build things. No one is more qualified to do this than the builders themselves. 
+This is where documentation comes in. We need resources, guides, and tutorials from the beginner to the expert level, that teaches people how to build things. No one is more qualified to do this than the builders themselves.
 
 Almost everyone who has built in web3 has, at one point or another, felt frustrated with the lack of resources or explanations when developing, ranging from deploying your first smart contract to creating complex defi tools. However, those same developers oftentimes persevere and figure out how to build it anyways. If this is you, come write a tutorial about it! Odds are, hundreds of other developers felt the same way and gave up - you have an extremely unique opportunity to massively impact their experience, and get rewarded for doing so.
 
@@ -22,30 +22,26 @@ Yes, we are giving out rewards for people who contribute! These include but are 
 * Free Alchemy Swag
 * Twitter shout out from the Alchemy account
 
-_\*Note: The type of award given will be determined on a case-by-case basis_ 
+_\*Note: The type of award given will be determined on a case-by-case basis_
 
 ## Identifying An Area to Contribute: <a id="identifying-an-area-to-contribute"></a>
 
-If you have a specific contribution in mind, confirm whether the contribution is appropriate by first reaching out to an admin in the [Alchemy Discord group](https://alchemy.com/discord) directly. 
+If you have a specific contribution in mind, confirm whether the contribution is appropriate by first reaching out to an admin in the [Alchemy Discord group](https://alchemy.com/discord) directly.
 
 If you do not have a specific contribution in mind but are generally interested in adding to the open-source community, we are looking for everything ranging from edits, updates to outdated commands, to how-to guides/tutorials. Here's a non-exhaustive list of potential areas for you to explore:
 
 * **Developer Content Projects** 🦾
   * How-to guides/tutorials
-
     * ex: How to monitor pending transactions
 * **General Content Projects 📝**
   * Articles on new features, use cases, and new crypto content
-
     * ex: [https://blog.alchemy.com/blog/eip-1559](https://blog.alchemy.com/blog/eip-1559)
 * **Maintenance Projects 🛠️**
-
   * Maintain tutorials/docs to keep them up-to-date
     * If you get to a command in a tutorial that's out of date or has been replaced with a new best practice- update it!
   * Find and fix typos
   * Add additional helpful context / tips
   * Raise issues for other contributors to address
-
 * **Fix an existing issue**
   * Navigate to the [issues page on Github](https://github.com/alchemyplatform/alchemy-docs/issues) and pick off one of the existing issues to fix!
 
@@ -58,7 +54,7 @@ There are three ways to contribute to the [Alchemy Docs:](https://github.com/alc
 3. [Submit an issue](contributing-to-docs.md#submitting-issues)
 
 {% hint style="info" %}
-**NOTE:** If you _****_want your Github to be featured on the Alchemy Docs for your contributions, please submit a pull request with your changes
+**NOTE:** If you \__\*\*_\_want your Github to be featured on the Alchemy Docs for your contributions, please submit a pull request with your changes
 {% endhint %}
 
 ### 1. Make a Pull Request with Changes <a id="make-a-pull-request-with-changes"></a>
@@ -105,7 +101,7 @@ If you notice any particular bugs, mistakes, or unclear components in published 
 
 For example, if you wanted to submit an issue with [https://github.com/alchemyplatform/Alchemy-Notify-Tutorial](https://github.com/alchemyplatform/Alchemy-Notify-Tutorial), you would navigate to [https://github.com/alchemyplatform/Alchemy-Notify-Tutorial/issues](https://github.com/alchemyplatform/Alchemy-Notify-Tutorial/issues) and submit an issue through the UI.
 
- \( Don't forget to raise an appropriate flag for the issue at hand!\)
+\( Don't forget to raise an appropriate flag for the issue at hand!\)
 
 #### For issues that cannot be easily conveyed through the Github issues tab, please reach out to the Community Maintainers through [Discord](https://alchemy.com/discord) or email.
 

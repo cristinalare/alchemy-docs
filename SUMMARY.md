@@ -127,5 +127,3 @@
 * [⛓️ Blockchain 101](resources/blockchain-101.md)
 * [📚 Blockchain Glossary](resources/blockchain-glossary.md)
 
-## Other Chains
-
