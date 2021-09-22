@@ -72,7 +72,7 @@ Using HTTPS:
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 
 // Using HTTPS
-const web3 = createAlchemyWeb3("https://eth-mainnet.alchemyapi.io/v2/demo");
+const web3 = createAlchemyWeb3("https://eth-mainnet.alchemyapi.io/<api-key>");
 ```
 
 Using WebSockets:
