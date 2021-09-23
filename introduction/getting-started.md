@@ -90,74 +90,128 @@ Below you will find how to set up or switch your current provider to Alchemy for
 
 ### Alchemy Web3
 
-There are tons of Web3 libraries you can integrate with Alchemy, however, we recommend using [Alchemy Web3](../documentation/alchemy-web3/), a drop-in replacement for web3.js, built and configured to work seamlessly with Alchemy. This provides multiple advantages such as automatic retries and robust WebSocket support.
+There are tons of Web3 libraries you can integrate with Alchemy, however, we recommend using [Alchemy Web3](notion://www.notion.so/alchemy/documentation/alchemy-web3), a drop-in replacement for web3.js, built and configured to work seamlessly with Alchemy. This provides multiple advantages such as automatic retries and robust WebSocket support.
 
-To install AlchemyWeb3.js, navigate to your project directory and run:
+To install AlchemyWeb3.js, you want to create a project, and then navigate to your project directory to run the installation. Let's go ahead and do that! Once we're in our home directory, let's execute the following:
 
 With Yarn:
 
-```text
+```bash
+mkdir your-project-name
+cd your-project-name
 yarn add @alch/alchemy-web3
 ```
 
 With NPM:
 
-```text
+```bash
+mkdir your-project-name
+cd your-project-name
+npm init   # (or npm init --yes)
 npm install @alch/alchemy-web3
 ```
 
-To interact with Alchemy's node infrastructure, run in NodeJS or add this to a JavaScript file:
+{% hint style="info" %}
+You might get warnings/errors, but no need to worry about them — they're harmless!
+{% endhint %}
 
-```javascript
-const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-const web3 = createAlchemyWeb3("https://eth-mainnet.alchemyapi.io/v2/your-api-key");
+To interact with Alchemy's node infrastructure, let's go ahead and send a request!
+
+### **1. From your** [**command line**](https://www.computerhope.com/jargon/c/commandi.htm)**, create a new project directory and `cd` into it:**
+
+```bash
+mkdir web3-example
+cd web3-example
 ```
 
-{% hint style="info" %}
-For a more detailed explanation of import functions in JavaScript, [read this](https://gist.github.com/dphilipson/77872c24350a2e1b591917ae746d3438)!
-{% endhint %}
+### **2. Install the Alchemy Web3 dependency if you have not already:**
+
+You can use any [web3 library](https://docs.alchemy.com/alchemy/introduction/getting-started#other-web3-libraries) of your choosing, however there are tons of benefits to using [Alchemy Web3](https://docs.alchemy.com/alchemy/documentation/alchemy-web3)!
+
+```bash
+npm install @alch/alchemy-web3
+```
+
+### **3. Create a file named `index.js` and add the following contents:**
+
+Hint: You should ultimately replace `<api-key>` with your Alchemy HTTP API key.
+
+```javascript
+async function main() {
+ const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+ const web3 = createAlchemyWeb3("https://eth-mainnet.alchemyapi.io/<api-key>");
+ const blockNumber = await web3.eth.getBlockNumber();
+ console.log("The latest block number is " + blockNumber);
+}
+main();
+```
+
+Unfamiliar with the async stuff? Check out this [Medium post](https://medium.com/better-programming/understanding-async-await-in-javascript-1d81bb079b2c).
+
+### **4. Run it using node**
+
+```bash
+node index.js
+```
+
+### **5. You should now see the latest block number output in your console!**
+
+```bash
+The latest block number is 11043912
+```
+
+Woo! Congrats! You just wrote your first web3 script using Alchemy and sent your first request your Alchemy API endpoint 🎉
+
+The project associated with your API key should now look like this on the dashboard:
+
+![](../.gitbook/assets/alchemy-tutorial-result1.png)
+
+![](../.gitbook/assets/alchemy-tutorial-result2%20%281%29.png)
 
 ### Other Web3 Libraries 
 
 To use the any of the libraries below, you will need to install web3 first with `npm install web3` . Once you've installed web3, add any one of the below code snippets to a new JavaScript, Python, or Java file \(depending on which library you choose\). 
 
-#### Web3.js 
+Check out the documentation for each library:
 
-See the [official documentation](https://web3js.readthedocs.io/en/v1.2.9/) for quick start guides and more information.
+* [Web3.js](https://web3js.readthedocs.io/en/v1.2.9/)
+* [Web3.py](https://web3py.readthedocs.io/en/stable/)
+* [Web3j](https://docs.web3j.io/)
+* [Ethers.js](https://docs.ethers.io/v5/) 
 
+Now you can add any one of the below code snippets to your new file depending on your respective library!
+
+{% tabs %}
+{% tab title="Web3.js" %}
 ```javascript
 // JavaScript: web3.js
 const Web3 = require('web3');
 const web3 = new Web3("https://eth-mainnet.alchemyapi.io/v2/your-api-key");
 ```
+{% endtab %}
 
-#### Web3.py
-
-See the [official documentation](https://web3py.readthedocs.io/en/stable/) for quick start guides and more information.
-
+{% tab title="Web3.py" %}
 ```python
 # Python: web3.py
 web3 = Web3(Web3.HTTPProvider("https://eth-mainnet.alchemyapi.io/v2/your-api-key"));
 ```
+{% endtab %}
 
-#### Web3j
-
-See the [official documentation](https://docs.web3j.io/) for quick start guides and more information.
-
+{% tab title="Web3j" %}
 ```java
 // Java: web3j
 Web3j web3 = Web3j.build(new HttpService("https://eth-mainnet.alchemyapi.io/v2/your-api-key"));
 ```
+{% endtab %}
 
-### Ethers.js 
-
-See the [official documentation](https://docs.ethers.io/v5/) for quick start guides and more information.
-
+{% tab title="Ethers.js" %}
 ```javascript
 // Ethers.js
 const url = "https://eth-mainnet.alchemyapi.io/v2/your-api-key";
 const customHttpProvider = new ethers.providers.JsonRpcProvider(url);
 ```
+{% endtab %}
+{% endtabs %}
 
 ## 4. 💻 Start Building! 
 
