@@ -65,7 +65,9 @@ curl https://eth-mainnet.alchemyapi.io/v2/demo \
 ```
 
 {% hint style="warning" %}
-Replace [https://eth-mainnet.alchemyapi.io/v2/demo](https://eth-mainnet.alchemyapi.io/jsonrpc/demo) with your own API key [https://eth-mainnet.alchemyapi.io/v2/your-api-key](https://eth-mainnet.alchemyapi.io/jsonrpc/your-api-key). 
+Want to send requests to your own app instead of our public demo?
+
+Replace [https://eth-mainnet.alchemyapi.io/v2/demo](https://eth-mainnet.alchemyapi.io/jsonrpc/demo) with your own API key [https://eth-mainnet.alchemyapi.io/v2/your-api-key](https://eth-mainnet.alchemyapi.io/jsonrpc/your-api-key).
 {% endhint %}
 
 Results:
