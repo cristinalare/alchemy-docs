@@ -11,7 +11,7 @@ If you want general information on Ethereum 2.0, we recommend checking out [ethe
 
 You can use Alchemy to support your Eth2 project by running a [beacon node](https://ethereum.org/en/eth2/get-involved/#clients) or running a [validator](https://ethereum.org/en/eth2/staking/#gatsby-focus-wrapper) \(note if you want to run a validator you'll have to also run a node to interact with the beacon chain\). A beacon node simply maintains a view of the [beacon chain](https://ethereum.org/en/eth2/beacon-chain/) and [shard chain](https://ethereum.org/en/eth2/shard-chains/), while validators actively mine and validate new blocks \([earning rewards in the process](https://ethereum.org/en/eth2/staking/)\). In order to become a validator you have to [stake 32 Eth](https://launchpad.ethereum.org/overview). You can learn more about staking on [ethereum.org](https://ethereum.org/en/eth2/staking/) and on [EthHub](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/proof-of-stake/).
 
-There are a handful of [beacon node clients](https://ethereum.org/en/eth2/get-involved/#clients) to choose from. This guide will show you how to set up your keys, initiate your staking transaction and then setup you node/validator for either a [Prysm node](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-node-or-validator-with-prysm) or a [Teku node.](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-node-or-validator-with-prysm/~/settings/integrations) The setup process should is necessary for other node clients!
+There are a handful of [beacon node clients](https://ethereum.org/en/eth2/get-involved/#clients) to choose from. This guide will show you how to set up your keys, initiate your staking transaction and then setup you node/validator for either a [Prysm node](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-node-or-validator-with-prysm) or a [Teku node.](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/eth2-staking-teku) The setup process should is necessary for other node clients!
 
 {% hint style="info" %}
 **Note:** If you are just getting started it is highly recommended to run an Eth2 testnode prior to jumping into mainnet. This guide will walk you through using the **Goerli test network**.
@@ -49,7 +49,7 @@ If you want to run your own node, you can view the options for the various Eth1 
 
 ## 3. Choosing your Eth2 client
 
-There are four major Eth2 clients [which can be found here](https://ethereum.org/en/eth2/get-involved/#clients). You can find guides on how to configure Alchemy with [Prysm](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-node-or-validator-with-prysm) and [Teku](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-validator-with-teku/).
+There are four major Eth2 clients [which can be found here](https://ethereum.org/en/eth2/get-involved/#clients). You can find guides on how to configure Alchemy with [Prysm](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-node-or-validator-with-prysm) and [Teku](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/eth2-staking-teku).
 
 ![Eth 2.0 Clients](../../.gitbook/assets/image%20%2829%29.png)
 
@@ -140,7 +140,7 @@ Review the requirements and click continue. When ready, submit your transaction 
 Congrats! You have successfully submitted your initial deposit to the beacon chain. The final step is to set up your Eth 2.0 client! Alchemy has guides on how to set up both Prysm and Teku:
 
 * [Setting up an Eth 2.0 Node or Validator with Prysm ](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-node-or-validator-with-prysm)
-* [Setting up an Eth 2.0 Validator with Teku](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-validator-with-teku)
+* [Setting up an Eth 2.0 Validator with Teku](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/eth2-staking-teku)
 
 
 
