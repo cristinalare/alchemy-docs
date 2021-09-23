@@ -27,7 +27,7 @@ npm install @alch/alchemy-web3
 ### 3. Create a file named `index.js` and add the following contents:
 
 {% hint style="warning" %}
-You should ultimately replace `demo` with your Alchemy HTTP API key. 
+You should ultimately replace `<api-key>` with your Alchemy HTTP API key. 
 {% endhint %}
 
 ```javascript
