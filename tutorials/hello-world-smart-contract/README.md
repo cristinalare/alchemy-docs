@@ -8,7 +8,7 @@ description: >-
 
 _Estimated time to complete this guide: ~15 minutes_
 
-If you are new to blockchain development and don’t know where to start, or if you just want to understand how to deploy and interact with smart contracts, this guide is for you. We will walk through creating and deploying a simple smart contract on the Ropsten test network using a virtual wallet, \([Metamask](https://metamask.io/)\), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org/) and [Truffle](https://www.trufflesuite.com/), and [Alchemy](https://dashboard.alchemyapi.io/signup?referral=affiliate:df70d561-e6cf-4922-b101-e2bb27c00a15) \(don’t worry if you don’t understand what any of this means yet, we will explain it!\).
+If you are new to blockchain development and don’t know where to start, or if you just want to understand how to deploy and interact with smart contracts, this guide is for you. We will walk through creating and deploying a simple smart contract on the Ropsten test network using a virtual wallet \([Metamask](https://metamask.io/)\), [Solidity](https://docs.soliditylang.org/en/v0.8.0/), [Hardhat](https://hardhat.org/) and [Truffle](https://www.trufflesuite.com/), and [Alchemy](https://dashboard.alchemyapi.io/signup?referral=affiliate:df70d561-e6cf-4922-b101-e2bb27c00a15) \(don’t worry if you don’t understand what any of this means yet, we will explain it!\).
 
 In part 2 of this tutorial we’ll go through how we can interact with our smart contract once it’s deployed, and in part 3 we’ll cover how to publish it on Etherscan.
 
@@ -17,7 +17,7 @@ If you have questions at any point feel free to reach out in the [Alchemy Discor
 {% hint style="info" %}
 ### Hardhat vs Truffle
 
-There are two versions of this tutorial: one using Hardhat and one using Truffle. They are both development environments for building on Ethereum and have similar functionality so it's totally up to you to decide which you want to use. Hardhat is the newer kid on the block and tends to be a bit cleaner/easier to use, they also have lots of plugins to make it more customizable.
+There are two versions of this tutorial: one using **Hardhat** and one using **Truffle**. They are both development environments for building on Ethereum and have similar functionality so it's totally up to you to decide which you want to use. Hardhat is the newer kid on the block and tends to be a bit cleaner/easier to use, they also have lots of plugins to make it more customizable.
 {% endhint %}
 
 ## Create and Deploy your Smart Contract using Hardhat
@@ -56,7 +56,7 @@ In order to deploy our smart contract to the test network, we’ll need some fak
 
 To double check our balance is there, let’s make an [eth\_getBalance](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_getbalance) request using [Alchemy’s composer tool](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%22%22%2C%22latest%22%5D%7D). This will return the amount of Eth in our wallet. Check out [this video](https://youtu.be/r6sjRxBZJuU%20) for instructions on how to use the composer tool!
 
-After you input your Metamask account address and click “Send Request”, you should see a response like this:
+After you input your Metamask account address and click “Send Request”, you should see a response that looks like this:
 
 ```text
 {"jsonrpc": "2.0", "id": 0, "result": "0x2B5E3AF16B1880000"}
@@ -79,8 +79,8 @@ cd hello-world
 
 Now that we’re inside our project folder, we’ll use `npm init` to initialize the project. If you don’t already have npm installed, follow [these instructions](https://docs.alchemyapi.io/alchemy/guides/alchemy-for-macs#1-install-nodejs-and-npm) \(we’ll also need Node.js so download that too!\).
 
-```text
-npm init
+```bash
+npm init # (or npm init --yes)
 ```
 
 It doesn’t really matter how you answer the installation questions, here is how we did it for reference:
@@ -127,7 +127,7 @@ Check out this page for more details on [installation instructions](https://hard
 
 ### Step 8: Create Hardhat project
 
-Inside our project folder run:
+Inside our `hello-world` project folder, run:
 
 ```text
 npx hardhat
@@ -153,11 +153,11 @@ Create a sample project
 Quit
 ```
 
-This will generate a `hardhat.config.js` file for us which is where we’ll specify all of the set up for our project \(on step 13\).
+This will generate a `hardhat.config.js` file for us, which is where we’ll specify all of the set up for our project \(on step 13\).
 
 ### Step 9: Add project folders
 
-To keep our project organized we’ll create two new folders. Navigate to the root directory of your project in your command line and type:
+To keep our project organized we’ll create two new folders. Navigate to the root directory of your `hello-world` project in your command line and type:
 
 ```text
 mkdir contracts
@@ -169,7 +169,7 @@ mkdir scripts
 
 ### Step 10: Write our contract
 
-You might be asking yourself, when the heck are we going to write code?? Well, here we are, on step 10.
+You might be asking yourself, when the heck are we going to write code?? Well, here we are, on Step 10 😄
 
 Open up the hello-world project in your favorite editor \(we like [VSCode](https://code.visualstudio.com/)\). Smart contracts are written in a language called Solidity which is what we will use to write our HelloWorld.sol smart contract.‌
 

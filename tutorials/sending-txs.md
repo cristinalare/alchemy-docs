@@ -88,16 +88,22 @@ npm install @alch/alchemy-web3
 
 We'll use a .env file to safely store our API key and private key.
 
+{% hint style="info" %}
+We make a .env file to securely store private environmental variables in our local machine that we may access from other files \(some of which we can make public\).
+
+If you want to check out how `dotenv` actually works in the context of a conventional NodeJS server file, check out this helpful [video](https://www.youtube.com/watch?v=5WFyhsnU4Ik)!
+{% endhint %}
+
 ```bash
 npm install dotenv --save
 ```
 
 ### 6. Create the .env file  
 
-Create a .env file in your project directory and add the following \(replacing "`your-api-key`" and "`your-private-key`"\)
+Create a .env file \(make sure the file is literally just named `.env`, nothing more\) in your project directory and add the following \(replacing `your-api-key` and `your-private-key`, keeping both within the quotation marks\):
 
 * To find your Alchemy API URL, navigate to the app details page of the app you just created on your dashboard, click "View Key" in the top right corner, and grab the HTTP URL. 
-* To find your private key using Metamask, check out this [guide](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key). 
+* To find your private key using Metamask, check out this [guide](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
 
 ```bash
 API_URL = "https://eth-rinkeby.alchemyapi.io/v2/your-api-key"
@@ -152,7 +158,7 @@ Now, before we jump into running this code, let's talk about some of the compone
   * `to`: This is the address we want to send Eth to. In this case, we are sending Eth back to the [Rinkeby faucet](https://faucet.rinkeby.io/) we initially requested from. 
   * `value`: This is the amount we wish to send, specified in wei where 10^18 wei = 1 ETH
   * `gas`: There are many ways to determine the right amount of gas to include with your transaction. Alchemy even has a [gas price webhook](../guides/using-notify.md#address-activity-1) to notify you when the gas price falls within a certain threshold. For mainnet transactions, it's good practice to check a gas estimator like [Eth Gas Station](https://ethgasstation.info/) to determine the right amount of gas to include. 21000 is the minimum amount of gas an operation on Ethereum will use, so to ensure our transaction will be executed we put 30000 here.
-  * `maxFeePerGas`: This is the amount you are willing to pay per gas for the transaction to execute. Since EIP 1559 this field or the `maxPriorityFeePerGas` field is required.
+  * `maxFeePerGas`: This is the amount you are willing to pay per gas for the transaction to execute. Since EIP 1559, this field or the `maxPriorityFeePerGas` field is required.
   * `nonce`: see above nonce definition. Nonce starts counting from zero. 
   * \[OPTIONAL\] `data`: Used for sending additional information with your transfer, or calling a smart contract, not required for balance transfers, check out the note below. 
 * `signedTx`: To sign our transaction object we will use the `signTransaction` method with our `PRIVATE_KEY`
