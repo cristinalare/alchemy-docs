@@ -173,13 +173,13 @@ You might be asking yourself, when the heck are we going to write code?? Well, h
 
 Open up the hello-world project in your favorite editor \(we like [VSCode](https://code.visualstudio.com/)\). Smart contracts are written in a language called Solidity which is what we will use to write our HelloWorld.sol smart contract.‌
 
-1. Navigate to the “contracts” folder and create a new file called HelloWorld.sol
+1. Navigate to the “contracts” folder and create a new file called `HelloWorld.sol`
 2. Below is a sample Hello World smart contract from the [Ethereum Foundation](https://ethereum.org/en/) that we will be using for this tutorial. Copy and paste in the contents below into your HelloWorld.sol file, and be sure to read the comments to understand what this contract does:
 
 ```text
 // Specifies the version of Solidity, using semantic versioning.
 // Learn more: https://solidity.readthedocs.io/en/v0.5.10/layout-of-source-files.html#pragma
-pragma solidity ^0.7.3;
+pragma solidity >=0.7.3;
 
 // Defines a contract named `HelloWorld`.
 // A contract is a collection of functions and data (its state). Once deployed, a contract resides at a specific address on the Ethereum blockchain. Learn more: https://solidity.readthedocs.io/en/v0.5.10/structure-of-a-contract.html
@@ -254,7 +254,7 @@ Hardhat makes it super easy to integrate [Plugins](https://hardhat.org/plugins/)
 
 In your project directory type:
 
-```text
+```bash
 npm install --save-dev @nomiclabs/hardhat-ethers "ethers@^5.0.0"
 ```
 
@@ -266,7 +266,7 @@ We’ve added several dependencies and plugins so far, now we need to update `ha
 
 Update your `hardhat.config.js` to look like this:
 
-```text
+```javascript
 /**
 * @type import('hardhat/config').HardhatUserConfig
 */
@@ -295,7 +295,7 @@ To make sure everything is working so far, let’s compile our contract. The `co
 
 From the command line run:
 
-```text
+```bash
 npx hardhat compile
 ```
 
@@ -307,7 +307,7 @@ Now that our contract is written and our configuration file is good to go, it’
 
 Navigate to the `scripts/` folder and create a new file called `deploy.js` , adding the following contents to it:
 
-```text
+```javascript
 async function main() {
    const HelloWorld = await ethers.getContractFactory("HelloWorld");
 
@@ -326,29 +326,29 @@ main()
 
 Hardhat does an amazing job of explaining what each of these lines of code does in their [Contracts tutorial](https://hardhat.org/tutorial/testing-contracts.html#writing-tests), we’ve adopted their explanations here.
 
-```text
+```javascript
 const HelloWorld = await ethers.getContractFactory("HelloWorld");
 ```
 
-A `ContractFactory` in ethers.js is an abstraction used to deploy new smart contracts, so `HelloWorld` here is a factory for instances of our hello world contract. When using the `hardhat-ethers` plugin `ContractFactory` and `Contract` instances are connected to the first signer by default.
+A `ContractFactory` in ethers.js is an abstraction used to deploy new smart contracts, so `HelloWorld` here is a [factory](https://en.wikipedia.org/wiki/Factory_%28object-oriented_programming%29) for instances of our hello world contract. When using the `hardhat-ethers` plugin `ContractFactory` and `Contract`, instances are connected to the first signer \(owner\) by default.
 
-```text
+```javascript
 const hello_world = await HelloWorld.deploy();
 ```
 
-Calling `deploy()` on a `ContractFactory` will start the deployment, and return a `Promise` that resolves to a `Contract`. This is the object that has a method for each of our smart contract functions.
+Calling `deploy()` on a `ContractFactory` will start the deployment, and return a `Promise` that resolves to a `Contract` object. This is the object that has a method for each of our smart contract functions.
 
 ### Step 16: Deploy our contract
 
 We’re finally ready to deploy our smart contract! Navigate to the command line and run:
 
-```text
+```bash
 npx hardhat run scripts/deploy.js --network ropsten
 ```
 
 You should then see something like:
 
-```text
+```bash
 Contract deployed to address: 0x6cd7d44516a20882cEa2DE9f205bF401c0d23570
 ```
 
@@ -426,7 +426,7 @@ Open up the hello-world project in your favorite editor \(we like [VSCode](https
 ```text
 // Specifies the version of Solidity, using semantic versioning.
 // Learn more: https://solidity.readthedocs.io/en/v0.5.10/layout-of-source-files.html#pragma
-pragma solidity ^0.5.2;
+pragma solidity >=0.5.2;
 
 // Defines a contract named `HelloWorld`.
 // A contract is a collection of functions and data (its state).
