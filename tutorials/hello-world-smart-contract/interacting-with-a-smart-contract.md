@@ -247,8 +247,6 @@ main();
 
 Finally, we can call `updateMessage` with our new message by making an `await` call in `main` for `updateMessage` with your `newMessage.` 
 
-Then run `node scripts/contract-interact.js` in your terminal.
-
 ```javascript
 require('dotenv').config();
 const API_URL = process.env.API_URL;
@@ -300,6 +298,8 @@ async function main() {
 
 main();
 ```
+
+Then run `node scripts/contract-interact.js` in your terminal.
 
 You should see a response that looks like:
 
