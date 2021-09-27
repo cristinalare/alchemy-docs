@@ -352,6 +352,8 @@ You should then see something like:
 Contract deployed to address: 0x6cd7d44516a20882cEa2DE9f205bF401c0d23570
 ```
 
+**Please copy and paste this address to save it somewhere**, as we will be using this address for later tutorials, so you don't want to lose it.
+
 If we go to the [Ropsten etherscan](https://ropsten.etherscan.io/) and search for our contract address we should able to see that it has been deployed successfully. The transaction will look something like this:
 
 ![](../../.gitbook/assets/etherscan-contract.png)
