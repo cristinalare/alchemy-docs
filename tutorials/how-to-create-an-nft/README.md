@@ -33,7 +33,7 @@ Once you’ve created an Alchemy account, you can generate an API key by creatin
 
 1. Name your app \(we chose "My First NFT!"\), offer a short description, select “Staging” for the Environment \(used for your app bookkeeping\), and choose “Ropsten” for your network. 
 
-![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/jFpUacfvT5qV052WW_aFjA00.png)
+![](../../.gitbook/assets/create-app.png)
 
 1. Click “Create app” and that’s it! Your app should appear in the table below. 
 
