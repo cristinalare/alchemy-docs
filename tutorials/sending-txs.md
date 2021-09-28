@@ -195,6 +195,8 @@ From there you can view your transaction on Etherscan by clicking on the icon ci
 
 ### Yippieeee! You just sent your first Ethereum transaction using Alchemy 🎉
 
+Once you complete this tutorial, let us know how your experience was or if you have any feedback by tagging us on Twitter [@alchemyplatform](https://twitter.com/AlchemyPlatform)!
+
 _For feedback and suggestions about this guide, please message Elan on Alchemy's_ [_Discord_](https://discord.gg/A39JVCM)_!_ 
 
 _Not sure what to do next? As a final test of your skills, get your hands dirty with some solidity programming by implementing our_ [_Hello World Smart Contract_](hello-world-smart-contract/) _tutorial._ 

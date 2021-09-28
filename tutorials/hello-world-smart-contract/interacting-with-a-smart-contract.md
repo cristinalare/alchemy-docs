@@ -24,7 +24,7 @@ npm install @alch/alchemy-web3
 
 ### Step 2: Create a contract-interact.js file
 
-Inside your `scripts/`folder for the hardhat tutorial, or your home directory for the [Truffle turorial](./#create-and-deploy-your-smart-contract-using-truffle), create a `contract-interact.js` file and add the following lines of code:
+Inside your `scripts/`folder for the hardhat tutorial, or your home directory for the [Truffle tutorial](./#create-and-deploy-your-smart-contract-using-truffle), create a `contract-interact.js` file and add the following lines of code:
 
 ```javascript
 require('dotenv').config();
@@ -330,4 +330,6 @@ The message is: Hello Drupe!
 ```
 
 And that's it! You've now deployed AND interacted with an Ethereum smart contract. If you'd like to publish your contract to Etherscan so that anyone will know how to interact with it, check out [part 3: submitting your smart contract to etherscan](submitting-your-smart-contract-to-etherscan.md)! 🎉
+
+Once you complete this tutorial, let us know how your experience was or if you have any feedback by tagging us on Twitter [@alchemyplatform](https://twitter.com/AlchemyPlatform)!
 
