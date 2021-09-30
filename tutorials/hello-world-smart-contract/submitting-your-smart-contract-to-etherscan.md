@@ -239,3 +239,5 @@ When you navigate to the link provided in your terminal, you should be able to s
 
 **Wahooo - you did it champ! Now anyone can call or write to your smart contract! We can't wait to see what you build next!**🎉
 
+Once you complete this tutorial, let us know how your experience was or if you have any feedback by tagging us on Twitter [@alchemyplatform](https://twitter.com/AlchemyPlatform)!
+
