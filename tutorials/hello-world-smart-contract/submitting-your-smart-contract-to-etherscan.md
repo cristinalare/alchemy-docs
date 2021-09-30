@@ -127,7 +127,7 @@ Congrats! Your smart contract code should be on Etherescan! Check out [Step 4](s
 Skip this section if you deployed your smart contract with HardHat.
 {% endhint %}
 
-#### Step 2.1: Install the `truffle-plugin-verify` plugin 
+#### Step 3.1: Install the `truffle-plugin-verify` plugin 
 
 We need the `truffle-plugin-verify` plugin to automatically verify your truffle smart contract's source code and ABI on Etherscan. In your project directory run:
 
@@ -215,7 +215,7 @@ module.exports = {
 };
 ```
 
-#### Step 2.2 Verify your smart contract on Etherscan!
+#### Step 3.2 Verify your smart contract on Etherscan!
 
 Last but not least, run the following command in your terminal:
 
