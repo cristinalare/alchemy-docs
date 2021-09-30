@@ -299,7 +299,13 @@ async function main() {
 main();
 ```
 
-Then run `node scripts/contract-interact.js` in your terminal.
+Then run
+
+```javascript
+node scripts/contract-interact.js
+```
+
+in your terminal.
 
 You should see a response that looks like:
 
