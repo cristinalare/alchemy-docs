@@ -59,7 +59,7 @@ ETHERSCAN_API_KEY = "your-etherscan-key"
 ### Step 2: HardHat-deployed smart contracts
 
 {% hint style="warning" %}
-This is where our steps diverge for HardHat and Truffle deployed smart contracts, as they require different plugins. Skip to the _Step 2: Truffle-deployed smart contracts_ section if you deployed your contract using Truffle.
+This is where our steps diverge for HardHat and Truffle deployed smart contracts, as they require different plugins. Skip to the _Step 3: Truffle-deployed smart contracts_ section if you deployed your contract using Truffle.
 {% endhint %}
 
 #### Step 2.1 Install the [`hardhat-etherscan`](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html) plugin
