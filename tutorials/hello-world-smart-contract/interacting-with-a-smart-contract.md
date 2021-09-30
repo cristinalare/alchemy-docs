@@ -72,7 +72,7 @@ In order to interact with our contract we need to create an instance of it in ou
 Next we will use the web3 [contract method](https://web3js.readthedocs.io/en/v1.2.0/web3-eth-contract.html?highlight=constructor#web3-eth-contract) to create our contract using the ABI and address:
 
 ```javascript
-const contractAddress = "0x70c86b8d660eBd0adef24E9ACcb389BFb6611B2b";
+const contractAddress = "0x6cd7d44516a20882cEa2DE9f205bF401c0d23570";
 const helloWorldContract = new web3.eth.Contract(contract.abi, contractAddress);
 ```
 
@@ -159,7 +159,7 @@ const web3 = createAlchemyWeb3(API_URL);
 
 // const contract = require("./build/contracts/HelloWorld.json"); // for Truffle 
 const contract = require("../artifacts/contracts/HelloWorld.sol/HelloWorld.json"); // for Hardhat
-const contractAddress = "0x0d6261a5D3102b565B75Fc680B64093820a17612";
+const contractAddress = "0x6cd7d44516a20882cEa2DE9f205bF401c0d23570";
 const helloWorldContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function updateMessage(newMessage) {
@@ -203,7 +203,7 @@ const web3 = createAlchemyWeb3(API_URL);
 
 // const contract = require("./build/contracts/HelloWorld.json"); // for Truffle 
 const contract = require("../artifacts/contracts/HelloWorld.sol/HelloWorld.json"); // for Hardhat
-const contractAddress = "0x0d6261a5D3102b565B75Fc680B64093820a17612";
+const contractAddress = "0x6cd7d44516a20882cEa2DE9f205bF401c0d23570";
 const helloWorldContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function updateMessage(newMessage) {
@@ -258,7 +258,7 @@ const web3 = createAlchemyWeb3(API_URL);
 
 // const contract = require("./build/contracts/HelloWorld.json"); // for Truffle 
 const contract = require("../artifacts/contracts/HelloWorld.sol/HelloWorld.json"); // for Hardhat
-const contractAddress = "0x0d6261a5D3102b565B75Fc680B64093820a17612";
+const contractAddress = "0x6cd7d44516a20882cEa2DE9f205bF401c0d23570";
 const helloWorldContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function updateMessage(newMessage) {
