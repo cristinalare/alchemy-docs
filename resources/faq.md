@@ -54,7 +54,7 @@ You can! While we don't allow a single email to be on multiple teams due to UX c
 
 ## Are there limits on my getLogs requests? <a id="are-there-limits-on-my-get-logs-requests"></a>
 
-In order to ensure maximum reliability for your calls, you can make [`eth_getLogs`](https://docs.alchemyapi.io/documentation/alchemy-api-reference/json-rpc#eth_getlogs) requests with up to a _**2K block range**_ and _**no limit on the response size**_. You can also request _**any block range**_ with a cap of _**10K logs in the response**_.
+In order to ensure maximum reliability for your calls, you can make [`eth_getLogs`](https://docs.alchemyapi.io/documentation/alchemy-api-reference/json-rpc#eth_getlogs) requests with up to a _**2K block range**_ and _**a 150MB limit  on the response size**_. You can also request _**any block range**_ with a cap of _**10K logs in the response**_.
 
 If you need to pull logs frequently, we recommend [using WebSockets](https:///guides/using-websockets) to push new logs to you when they are available.
 
