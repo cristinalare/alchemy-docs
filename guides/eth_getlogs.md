@@ -7,7 +7,7 @@ description: >-
 
 # 🤿 Deep Dive into eth\_getLogs
 
-New to `eth_getLogs` or want to learn more information about it? You are in the right place. `eth_getLogs` has many beneficial use cases that developers are often times unaware of. It also has some extreme vulnerabilities that can have huge consequences if you don't use it correctly. This page is a deep dive into the capabilities of `eth_getLogs` to help you improve your usage and understanding of this method! For details about the request/response specifications for `eth_getLogs`, check out our [JSON-RPC reference page](../apis/ethereum/#eth_getlogs). 
+New to `eth_getLogs` or want to learn more information about it? You are in the right place. `eth_getLogs` has many beneficial use cases that developers are often times unaware of. It also has some extreme vulnerabilities that can have huge consequences if you don't use it correctly. This page is a deep dive into the capabilities of `eth_getLogs` to help you improve your usage and understanding of this method! For details about the request/response specifications for `eth_getLogs`, check out our [JSON-RPC reference page. ](../apis/ethereum/eth_getlogs.md)
 
 ## What are Logs? <a id="what-are-logs"></a>
 

@@ -21,7 +21,7 @@ There are two networks on Polygon: Mainnet and Mumbai testnet. The endpoints are
 
 ## 📦 Retrieving Block
 
-Calls related to retrieving blocks and block information. 
+Calls related to retrieving blocks and block information.
 
 ### eth\_blockNumber
 
@@ -269,7 +269,7 @@ Result
 
 ## 🧾 Reading Transactions
 
-Calls for reading transactions. 
+Calls for reading transactions.
 
 ### eth\_getTransactionByHash
 
@@ -277,7 +277,7 @@ Returns the information about a transaction requested by transaction hash. In th
 
 #### Parameters
 
-`DATA`, 32 Bytes - hash of a transaction 
+`DATA`, 32 Bytes - hash of a transaction
 
 ```javascript
 params: [
@@ -416,9 +416,9 @@ Result
 
 ### eth\_getTransactionReceipt
 
-Returns the receipt of a transaction by transaction hash. 
+Returns the receipt of a transaction by transaction hash.
 
-This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](ethereum/#eth_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions. 
+This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](ethereum/#eth_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions.
 
 This call is also commonly used to get the contract address for a contract creation tx.
 
@@ -428,7 +428,7 @@ This call is also commonly used to get the contract address for a contract creat
 
 #### Parameters
 
-`DATA`, 32 Bytes - hash of a transaction 
+`DATA`, 32 Bytes - hash of a transaction
 
 ```javascript
 params: [ 
@@ -641,9 +641,9 @@ Returns information about a transaction by block hash and transaction index posi
 
 #### Parameters
 
-`DATA`, 32 Bytes - hash of a block. 
+`DATA`, 32 Bytes - hash of a block.
 
-`QUANTITY` - integer of the transaction index position. 
+`QUANTITY` - integer of the transaction index position.
 
 ```javascript
 params: [ 
@@ -913,7 +913,6 @@ Result
         }
     ]
 }
-
 ```
 
 ### bor\_getCurrentProposer
@@ -970,7 +969,7 @@ Result
 Returns the root hash given a block range
 
 {% hint style="warning" %}
- The current supported maximum block range for **`bor_getRootHash`** is **`32767`**
+The current supported maximum block range for **`bor_getRootHash`** is **`32767`**
 {% endhint %}
 
 #### Parameters
@@ -980,7 +979,7 @@ Returns the root hash given a block range
 
 #### Returns
 
-`HASH` 
+`HASH`
 
 Request
 
@@ -1017,7 +1016,6 @@ Result
     "id": 1,
     "result": "04b073e17b7186ab4daae17c5e2cc2d5a729cffd102cede41ee458a2d5573994"
 }
-
 ```
 
 ### eth\_getRootHash
@@ -1035,7 +1033,7 @@ The current supported maximum block range for **`eth_getRootHash`** is **`32767`
 
 #### Returns
 
-`HASH` 
+`HASH`
 
 Request
 
@@ -1072,7 +1070,6 @@ Result
     "id": 1,
     "result": "04b073e17b7186ab4daae17c5e2cc2d5a729cffd102cede41ee458a2d5573994"
 }
-
 ```
 
 ### eth\_getSignersAtHash
@@ -1085,7 +1082,7 @@ Returns all signs given a blockhash
 
 #### Returns
 
-`HASH` 
+`HASH`
 
 Request
 
@@ -1396,10 +1393,9 @@ Result
 }
 ```
 
+## ✍ Writing Transactions
 
-## ✍ Writing Transactions 
-
-Call to write to the blockchain. 
+Call to write to the blockchain.
 
 ### eth\_sendRawTransaction
 
@@ -1411,7 +1407,7 @@ Alchemy does not store keys, so transactions sent via Alchemy must be signed ahe
 
 #### Parameters
 
-`DATA`, The signed transaction data. 
+`DATA`, The signed transaction data.
 
 ```javascript
 params: ["0x29adbbaf99a3f97b2baefa11e865cf9d74435716ef8618caaa388619f5ae7d8e5d2cadab0cd2f5becd4ebf7d48f5584c9e414c2a4a6ea2bc6ea8f02dbf5675cd01"]
@@ -1419,12 +1415,12 @@ params: ["0x29adbbaf99a3f97b2baefa11e865cf9d74435716ef8618caaa388619f5ae7d8e5d2c
 
 #### Returns
 
-`DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available. 
+`DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
 Use [`eth_getTransactionReceipt`](ethereum/#eth_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
 
 {% hint style="danger" %}
-**Note:** Since `eth_sendRawTransaction` is a request used for writing to the blockchain and changes its state, it is impossible to execute the same request twice. This means if you were to copy the example given below you will not get the expected response. 
+**Note:** Since `eth_sendRawTransaction` is a request used for writing to the blockchain and changes its state, it is impossible to execute the same request twice. This means if you were to copy the example given below you will not get the expected response.
 {% endhint %}
 
 Request
@@ -1464,13 +1460,13 @@ Result
 }
 ```
 
-## 📂 Account Information 
+## 📂 Account Information
 
-Calls to get information about an account. 
+Calls to get information about an account.
 
 ### eth\_getBalance
 
-Returns the balance of the account of a given address. 
+Returns the balance of the account of a given address.
 
 #### Parameters
 
@@ -1486,7 +1482,7 @@ params: [
 
 #### Returns
 
-`QUANTITY` - integer of the current balance for the given address in wei. 
+`QUANTITY` - integer of the current balance for the given address in wei.
 
 Request
 
@@ -1527,7 +1523,7 @@ Result
 
 ### eth\_getCode
 
-Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address). 
+Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address).
 
 #### Parameters
 
@@ -1584,7 +1580,7 @@ Result
 
 ### eth\_getStorageAt
 
-Returns the value from a storage position at a given address, or in other words, returns the state of the contract's storage, which may not be exposed via the contract's methods. 
+Returns the value from a storage position at a given address, or in other words, returns the state of the contract's storage, which may not be exposed via the contract's methods.
 
 #### Parameters
 
@@ -1655,7 +1651,7 @@ Result
 
 ### eth\_getProof
 
-Returns the account and storage values of the specified account including the Merkle-proof. This call can be used to verify that the data you are pulling from is not tampered with. 
+Returns the account and storage values of the specified account including the Merkle-proof. This call can be used to verify that the data you are pulling from is not tampered with.
 
 #### **Parameters**
 
@@ -1740,12 +1736,12 @@ Result
 
 ### eth\_call
 
-Executes a new message call immediately without creating a transaction on the block chain. 
+Executes a new message call immediately without creating a transaction on the block chain.
 
-This is one of the most commonly used API calls. It is used to read from the blockchain which includes executing smart contracts, but does not publish anything to the blockchain. This call does not consume any Ether. 
+This is one of the most commonly used API calls. It is used to read from the blockchain which includes executing smart contracts, but does not publish anything to the blockchain. This call does not consume any Ether.
 
 {% hint style="warning" %}
-Starting from [Geth 1.9.13](https://github.com/ethereum/go-ethereum/pull/20783), `eth_call`will check the balance of the sender \(to make sure that the sender has enough gas to complete the request\) before executing the call. This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the call as if it were a transaction. 
+Starting from [Geth 1.9.13](https://github.com/ethereum/go-ethereum/pull/20783), `eth_call`will check the balance of the sender \(to make sure that the sender has enough gas to complete the request\) before executing the call. This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the call as if it were a transaction.
 {% endhint %}
 
 #### Parameters
@@ -1760,7 +1756,7 @@ Starting from [Geth 1.9.13](https://github.com/ethereum/go-ethereum/pull/20783),
 * `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending" \(see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter)\), OR the `blockHash` \(in accordance with [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898)\) **Note: the parameter is an object instead of a string and should be specified as: `{"blockHash": "0x<some-hash>"}.`** Learn more [here](https://eips.ethereum.org/EIPS/eip-1898).
 
 {% hint style="danger" %}
-**Note:** `eth_call` has a timeout restriction at the node level. Batching multiple `eth_call`  together on-chain using pre-deployed smart contracts might result in unexpected timeouts that cause none of your calls to complete. Instead, consider serializing these calls, or using smaller batches if they fail with a node error code. 
+**Note:** `eth_call` has a timeout restriction at the node level. Batching multiple `eth_call` together on-chain using pre-deployed smart contracts might result in unexpected timeouts that cause none of your calls to complete. Instead, consider serializing these calls, or using smaller batches if they fail with a node error code.
 {% endhint %}
 
 ```javascript
@@ -1822,14 +1818,14 @@ Result
 
 ### eth\_getLogs
 
-Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../guides/eth_getlogs.md) page. 
+Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../guides/eth_getlogs.md) page.
 
 {% hint style="warning" %}
-**NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**no limit on the response size**_. 
+**NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**no limit on the response size**_.
 
 If you absolutely need to query larger block ranges, please contact us over [discord](https://alchemy.com/discord) or at support@alchemy.com. We can open access to larger block ranges based on your use case.
 
-_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../guides/using-websockets.md) _to push new logs to you when they are available._ 
+_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../guides/using-websockets.md) _to push new logs to you when they are available._
 {% endhint %}
 
 #### Parameters
@@ -1872,11 +1868,11 @@ Pending example!
 
 ## ⛓ Chain Information
 
-Calls to receive information about the current blockchain. 
+Calls to receive information about the current blockchain.
 
 ### eth\_gasPrice
 
-Returns the current price per gas in wei. 
+Returns the current price per gas in wei.
 
 {% hint style="info" %}
 There may be slight disrepancies due to calculation differences between this method and the [matic gas station](https://gasstation-mainnet.matic.network/).
@@ -1888,7 +1884,7 @@ none
 
 #### Returns
 
-`QUANTITY` - integer of the current gas price in wei. 
+`QUANTITY` - integer of the current gas price in wei.
 
 Request
 
@@ -1929,7 +1925,7 @@ Result
 
 ### eth\_estimateGas
 
-Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. 
+Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain.
 
 {% hint style="info" %}
 **Note:** The estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance. Estimates are served directly from nodes, we're not doing anything special to the value so the rest of the network is likely seeing the same.
@@ -1949,7 +1945,7 @@ Generates and returns an estimate of how much gas is necessary to allow the tran
 {% hint style="warning" %}
 **NOTE**
 
-* `eth_estimateGas` ****will check the balance of the sender \(to make sure that the sender has enough gas to complete the request\). This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the transaction.
+* `eth_estimateGas` _\*\*_will check the balance of the sender \(to make sure that the sender has enough gas to complete the request\). This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the transaction.
 * If no `gas` is specified geth uses the block gas limit from the pending block as an upper bound. As a result the returned estimate might not be enough to executed the call/transaction when the amount of actual gas needed is higher than the pending block gas limit.
 {% endhint %}
 
@@ -2047,7 +2043,6 @@ Result
     "id": 83,
     "result": "0x89"
 }
-
 ```
 
 ### net\_version
@@ -2180,7 +2175,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash) 
+See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash)
 
 Request
 
@@ -2209,7 +2204,7 @@ Body:
 {% endtab %}
 {% endtabs %}
 
-Result 
+Result
 
 ```javascript
 {
@@ -2244,7 +2239,7 @@ Returns information about an uncle of a block by hash and uncle index position.
 
 #### Parameters
 
-* `QUANTITY|TAG` - a block number, or the string "earliest", "latest" or "pending", as in the 
+* `QUANTITY|TAG` - a block number, or the string "earliest", "latest" or "pending", as in the
 
   [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
 
@@ -2259,7 +2254,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash) 
+See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash)
 
 Request
 
@@ -2429,12 +2424,12 @@ Result
 
 ## 🔦 Filters
 
-Calls related to creating, getting, and reading from filters. 
+Calls related to creating, getting, and reading from filters.
 
 Eth filters expose the same information as the [`eth_subscribe`](ethereum/#eth_subscribe) methods, except that updates are received by polling rather than receiving pushes. A user may create a filter than repeatedly call `eth_getFilterChanges`on it, each time receiving events that have occurred since the last time `eth_getFilterChanges`was called \(or since the filter was created if this is the first time `eth_getFilterChanges`is being called.
 
 {% hint style="warning" %}
-**Note**: Filters expire after 5 minutes of inactivity, so several of the example requests below will return`"filter not found"` if you try and call them. 
+**Note**: Filters expire after 5 minutes of inactivity, so several of the example requests below will return`"filter not found"` if you try and call them.
 {% endhint %}
 
 ### eth\_getFilterChanges
@@ -2530,7 +2525,7 @@ Result
 
 ### eth\_getFilterLogs
 
-Returns an array of all logs matching filter with given id. Can compute the same results with an `eth_getLogs` call \(see hint below\). 
+Returns an array of all logs matching filter with given id. Can compute the same results with an `eth_getLogs` call \(see hint below\).
 
 {% hint style="warning" %}
 This method only works for filters creates with [`eth_newFilter`](ethereum/#eth_newfilter)not for filters created using [`eth_newBlockFilter`](ethereum/#eth_newblockfilter) or [`eth_newPendingTransactionFilter`](ethereum/#eth_newpendingtransactionfilter), which will return `"filter not found".`
@@ -2669,7 +2664,7 @@ Result
 
 ### eth\_newFilter
 
-Creates a filter object, based on filter options, to notify when the state changes \(logs\). Unlike `eth_newBlockFilter`which notifies you of **all** new ****blocks, you can pass in filter options to track new logs matching the topics specified.  ****
+Creates a filter object, based on filter options, to notify when the state changes \(logs\). Unlike `eth_newBlockFilter`which notifies you of **all** new **blocks, you can pass in filter options to track new logs matching the topics specified.** 
 
 To check if the state has changed, call [`eth_getFilterChanges.`](ethereum/#eth_getfilterchanges)\`\`
 
@@ -2913,7 +2908,7 @@ Returns Keccak-256 \(_not_ the standardized SHA3-256\) of the given data.
 1. `DATA` - the data in hex form to convert into a SHA3 hash
 
 {% hint style="warning" %}
-**Note:** web3\_sha3 takes in a hexidecimal number, not a direct string. So, if you wanted to convert "hello world" to it's Keccak-256 hash you would need to input the hex number for "hello world", which is "68656c6c6f20776f726c64". 
+**Note:** web3\_sha3 takes in a hexidecimal number, not a direct string. So, if you wanted to convert "hello world" to it's Keccak-256 hash you would need to input the hex number for "hello world", which is "68656c6c6f20776f726c64".
 {% endhint %}
 
 ```bash
@@ -2969,14 +2964,14 @@ Geth v1.4 and later support subscribing using JSON-RPC notifications. This allow
 
 It works by subscribing to particular events where the node will return a subscription id. For each event that matches the subscription, a notification with relevant data is sent together with the subscription id.
 
-Below are several methods used for retrieving real time events. 
+Below are several methods used for retrieving real time events.
 
 ### eth\_syncing
 
-Returns an object with data about the sync status or `false`if the node is fully synced. 
+Returns an object with data about the sync status or `false`if the node is fully synced.
 
 {% hint style="success" %}
-**Note**: Your response from `eth_syncing` will likely return false because Alchemy only supports nodes in production that are completed synced. 
+**Note**: Your response from `eth_syncing` will likely return false because Alchemy only supports nodes in production that are completed synced.
 {% endhint %}
 
 #### **Parameters**
@@ -3030,14 +3025,14 @@ Response
 
 ### eth\_subscribe
 
-If successful this returns the subscription id. Subscriptions are creates with a regular RPC call with `eth_subscribe` as method and the subscription name as first parameter. 
+If successful this returns the subscription id. Subscriptions are creates with a regular RPC call with `eth_subscribe` as method and the subscription name as first parameter.
 
 #### Parameters <a id="parameters"></a>
 
 1. subscription name
 2. optional arguments \([see below](ethereum/#optional-arguments)\)
 
-#### **Returns** 
+#### **Returns**
 
 If successful this returns the subscription id.
 
@@ -3082,11 +3077,11 @@ Result
 }
 ```
 
-#### Optional Arguments: 
+#### Optional Arguments:
 
 #### 1. newHeads <a id="newheads"></a>
 
-Fires a notification each time a new header is appended to the chain, including chain reorganizations. 
+Fires a notification each time a new header is appended to the chain, including chain reorganizations.
 
 In case of a chain reorganization the subscription will emit all new headers for the new chain. Therefore the subscription can emit multiple headers on the same height.
 
@@ -3223,7 +3218,7 @@ Result
 
 #### 3. newPendingTransactions
 
-Returns the hash for all transactions that are added to the pending state. 
+Returns the hash for all transactions that are added to the pending state.
 
 When a transaction that was previously part of the canonical chain isn’t part of the new canonical chain after a reorganization its again emitted.
 
@@ -3231,7 +3226,7 @@ When a transaction that was previously part of the canonical chain isn’t part 
 **NOTE:**
 
 * If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../guides/using-websockets.md#1-alchemy_newfullpendingtransactions)
-* If you want pending transactions for a specific address, check out the Enhanced API 
+* If you want pending transactions for a specific address, check out the Enhanced API
 
   \`\`[`alchemy_filteredNewFullPendingTransactions`](../guides/using-websockets.md#2-alchemy_filterednewfullpendingtransactions)\`\`
 {% endhint %}
@@ -3403,9 +3398,9 @@ The `traceTransaction` debugging method will attempt to run the transaction in t
 
 The `traceTransaction` debugging method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
 
-### Parameters 
+### Parameters
 
-### Parameters 
+### Parameters
 
 In addition to the hash of the transaction you may give it a secondary _optional_ argument, which specifies the options for this specific call. The possible options are:
 
@@ -3422,13 +3417,13 @@ In addition to the hash of the transaction you may give it a secondary _optional
 * `tracer`: `STRING`. Setting this will enable JavaScript-based transaction tracing, described below. If set, the previous four arguments will be ignored.
 * `timeout`: `STRING`. Overrides the default timeout of 5 seconds for JavaScript-based tracing calls. Valid values are described [here](https://golang.org/pkg/time/#ParseDuration).
 
-| Client  | Method Invocation |
+| Client | Method Invocation |
 | :--- | :--- |
 | Go | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
 | Console | `debug.traceTransaction(txHash, [options])` |
 | RPC | `{"method": "debug_traceTransaction", "params": [txHash, {}]}` |
 
-| Client  | Method Invocation |
+| Client | Method Invocation |
 | :--- | :--- |
 | Go | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
 | Console | `debug.traceTransaction(txHash, [options])` |
