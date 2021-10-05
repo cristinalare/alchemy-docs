@@ -24,6 +24,12 @@ We're obsessed with providing the most developer-friendly experience across our 
 | eth\_unsubscribe | 10 |
 | eth\_feeHistory | 10 |
 | eth\_maxPriorityFeePerGas | 10 |
+| eth\_createAccessList | 10 |
+| bor\_getAuthor | 10 |
+| bor\_getCurrentProposer | 10 |
+| bor\_getCurrentValidators | 10 |
+| bor\_getRootHash | 10 |
+| bor\_getSignersAtHash | 10 |
 | eth\_getTransactionReceipt | 15 |
 | eth\_getUncleByBlockHashAndIndex | 15 |
 | eth\_getUncleByBlockNumberAndIndex | 15 |
@@ -52,6 +58,11 @@ We're obsessed with providing the most developer-friendly experience across our 
 | eth\_getBlockByHash | 21 |
 | trace\_block | 24 |
 | parity\_getBlockReceipts | 24 |
+| erigon\_forks | 24 |
+| erigon\_getHeaderByHash | 24 |
+| erigon\_getHeaderByNumber | 24 |
+| erigon\_getLogsByHash | 24 |
+| erigon\_issuance | 24 |
 | eth\_getTransactionCount | 26 |
 | eth\_call | 26 |
 | alchemy\_getTokenBalances | 26 |
