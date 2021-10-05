@@ -107,7 +107,7 @@ Let's say some Contract has a `Transfer(address,address,uint256)`method defined 
 
 **Here are the safety nets Alchemy has in place for large `eth_getLogs` requests:**
 
-You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**no limit on the response size**_. You can also request _**any block range**_ with a cap of _**10K logs in the response**_. 
+You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**150MB limit on the response size**_. You can also request _**any block range**_ with a cap of _**10K logs in the response**_. 
 
 _If you need to pull logs frequently, we recommend_ [_using WebSockets_](using-websockets.md) _to push new logs to you when they are available._  
 {% endhint %}
