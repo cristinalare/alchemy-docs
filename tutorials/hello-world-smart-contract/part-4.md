@@ -284,7 +284,7 @@ Then, install the [dotenv](https://www.npmjs.com/package/dotenv) package in your
 npm install dotenv --save
 ```
 
-For our dApp, **we'll be using our Websockets API key** instead of our HTML API key, as it will allow us to set up a listener that detects when the message stored in the smart contract changes.
+For our dApp, **we'll be using our Websockets API key** instead of our HTTP API key, as it will allow us to set up a listener that detects when the message stored in the smart contract changes.
 
 ![Copy the websockets url](../../.gitbook/assets/hehe.gif)
 
