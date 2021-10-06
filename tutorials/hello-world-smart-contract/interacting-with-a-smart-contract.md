@@ -102,7 +102,7 @@ Congrats! You've just successfully read smart contract data from the Ethereum bl
 
 ### Step 6: Update the message 
 
-Now instead of just reading the message, we'll update the messaged saved in our smart contract using the `update` function. ‌
+Now instead of just reading the message, we'll update the message saved in our smart contract using the `update` function. ‌
 
 In order to do so we'll need to create a transaction, sign it, and send it inside another async function that we'll call`updateMessage(newMessage)`. This can be pretty confusing when you first get started so we'll split it up into multiple steps. 
 
