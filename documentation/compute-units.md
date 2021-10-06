@@ -90,7 +90,7 @@ Each subscription type is priced identically, per byte:
 | :--- | :--- |
 | 1 byte | .04 |
 
-On average, a typical webhook or WebSocket subscription event is about 1000 bytes, so would consume 40 compute units. Note that this can vary significantly based on the specific event delivered \([`alchemy_newFullPendingTransactions`](../guides/using-websockets.md#alchemy_newfullpendingtransactions) subscription type has a much higher compute unit cost than others\). 
+On average, a typical webhook or WebSocket subscription event is about 1000 bytes, so would consume 40 compute units. Note that this can vary significantly based on the specific event delivered \([`alchemy_newFullPendingTransactions`](../guides/using-websockets.md#1-alchemy_newfullpendingtransactions) subscription type has a much higher compute unit cost than others\). 
 
 ## On-Demand Compute \(Growth Tier Only\)
 
