@@ -605,7 +605,7 @@ Navigate to the `connectWalletPressed` function in `HelloWorld.js`, and update i
 ```
 {% endcode %}
 
-Notice how most of our functionality is abstracted away from our `HelloWorld.js` component from the `interact.js` file? This is so we comply with the M-V-C paradigm!
+Notice how most of our functionality is abstracted away to our `HelloWorld.js` component from the `interact.js` file? This is so we comply with the M-V-C paradigm!
 
 In `connectWalletPressed`, we simply make an await call to our imported `connectWallet` function, and using its response, we update our `status` and `walletAddress` variables via their state hooks.
 
