@@ -687,7 +687,7 @@ useEffect(async () => {
     addSmartContractListener();
 
     const {address, status} = await getCurrentWalletConnected();
-    setWallet(address)
+    setWallet(address);
     setStatus(status); 
 
 }, []);
