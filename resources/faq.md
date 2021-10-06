@@ -74,9 +74,13 @@ Alchemy's servers are currently located on US East, however we serve production 
 
 Alchemy currently supports Geth and OpenEthereum node clients.
 
-## How do I know the latest block is accurate? 
+## How do I know the latest block is accurate? Do you prevent against reorgs?
 
-Great question! We've spent years developing an enhanced infrastructure and distributed node system to get the most consensus on the canonical block in the fastest amount of time. We'll only publish information if it's agreed upon by many of our nodes. 
+We've spent years developing an enhanced infrastructure and distributed node system to get the most consensus on the canonical block in the fastest amount of time. We'll only publish information if it's agreed upon by many of our nodes. This provides extra data consistency and reliability to your calls, as well as bring benefits as it relates to reorgs.
+
+To guarantee data consistency, we like to ensure that a certain percentage of our nodes know about a given block before exposing it to our users. One example where this could go wrong on another provider is if you requested the latest block and got back block n. Now you want to query some data about block n in another request. A simple load balanced system would just direct you to any node that is available to serve your request. So what can happen is it gets directed to that node and it only knows about block n - 1 or n - 2. In that case, you will not get the data you are looking for \(or the data could be stale\) and that’s where you run into data consistency issues. With our system, we always make sure there is a node to serve your request and that you get back the data you were looking for!
+
+The reason this can indirectly help with reorgs is that we will make sure your request is directed to a node which has a latest block that a significant portion of our nodes agree upon. This not only helps with consistency as described above but also can help prevent reorgs. If a given block has been broadcasted to these nodes, then it’s much less likely it will see a reorg in the future. However, there’s still a possibility you can encounter a reorg, especially if a much larger one happens \(which is rare\). So if you care about reorgs a ton, it’s still something that is worth adding extra protection for on your end.
 
 ## Do you support compressed response payloads? <a id="do-you-support-compressed-response-payloads"></a>
 
