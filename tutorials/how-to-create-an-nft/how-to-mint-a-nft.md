@@ -8,6 +8,10 @@ description: >-
 
 _Estimated time to complete this guide: ~10 minutes_
 
+{% hint style="warning" %}
+If you've already completed  "How to Mint an NFT with Ethers.js \(option 2\)", you do not need to complete this tutorial!
+{% endhint %}
+
 "Minting an NFT" is the act of publishing a unique instance of your ERC721 token on the blockchain. Now that we successfully [deployed a smart contract to the Ropsten network in Part I](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract) of this NFT tutorial series, let's flex our web3 skills and mint an NFT!
 
 At the end of this tutorial, you'll be able to mint as many NFTs as you'd like with this code —let's get started!

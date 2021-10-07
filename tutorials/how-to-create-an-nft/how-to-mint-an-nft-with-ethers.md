@@ -7,7 +7,12 @@ description: >-
 
 # 🪄How to Mint an NFT with Ethers.js \(option 2\)
 
-_Estimated time to complete this guide: ~10 minutes_
+_Estimated time to complete this guide: ~10 minutes_  
+
+
+{% hint style="warning" %}
+If you've already completed "How to Mint an NFT Using Web3.js \(option 1\)", you can skip this tutorial!
+{% endhint %}
 
 In [another tutorial](how-to-mint-a-nft.md), we learned how to mint an NFT using Web3 and the [OpenZeppelin contracts library](https://docs.openzeppelin.com/contracts/erc721). In this exercise, we're going to walk you through an alternative implementation using version 4 of the [OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/erc721) as well as the [Ethers.js](https://docs.ethers.io/) Ethereum library instead of Web3.
 
