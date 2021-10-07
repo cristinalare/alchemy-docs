@@ -5,7 +5,7 @@ description: >-
   We'll also explore basic test setup.
 ---
 
-# 🪄How to Mint an NFT with Ethers.js
+# 🪄How to Mint an NFT with Ethers.js \(option 2\)
 
 _Estimated time to complete this guide: ~10 minutes_
 
