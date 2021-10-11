@@ -12,7 +12,7 @@ none
 
 `String` - The current client version
 
-### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22web3_clientVersion%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
+### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22web3\_clientVersion%22%2C%22paramValues%22%3A%5B%5D%7D)****
 
 Request
 
@@ -50,4 +50,3 @@ Result
   "result": "Geth/v1.9.15-stable-0f77f34b/linux-amd64/go1.14.4"
 }
 ```
-

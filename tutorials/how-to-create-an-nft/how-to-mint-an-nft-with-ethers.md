@@ -5,16 +5,16 @@ description: >-
   We'll also explore basic test setup.
 ---
 
-# 🪄How to Mint an NFT with Ethers.js \(option 2\)
+# 🏗 How to Mint an NFT with Ethers.js (option 2)
 
-_Estimated time to complete this guide: ~10 minutes_  
-
+_Estimated time to complete this guide: \~10 minutes_\
+__
 
 {% hint style="warning" %}
-If you've already completed "How to Mint an NFT Using Web3.js \(option 1\)", you can skip this tutorial!
+If you've already completed "How to Mint an NFT Using Web3.js (option 1)", you can skip this tutorial!
 {% endhint %}
 
-In [another tutorial](how-to-mint-a-nft.md), we learned how to mint an NFT using Web3 and the [OpenZeppelin contracts library](https://docs.openzeppelin.com/contracts/erc721). In this exercise, we're going to walk you through an alternative implementation using version 4 of the [OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/erc721) as well as the [Ethers.js](https://docs.ethers.io/) Ethereum library instead of Web3.
+In [another tutorial](how-to-mint-a-nft.md), we learned how to mint an NFT using Web3 and the [OpenZeppelin contracts library](https://docs.openzeppelin.com/contracts/erc721). In this exercise, we're going to walk you through an alternative implementation using version 4 of the [OpenZeppelin library](https://docs.openzeppelin.com/contracts/4.x/erc721) as well as the [Ethers.js](https://docs.ethers.io) Ethereum library instead of Web3.
 
 We'll also cover the basics of testing your contract with [Hardhat and Waffle](https://hardhat.org/plugins/nomiclabs-hardhat-waffle.html). For this tutorial I'm using Yarn, but you can use npm/npx if you prefer.
 
@@ -30,7 +30,7 @@ As a reminder, "minting an NFT" is the act of publishing a unique instance of yo
 
 OpenZeppelin is library for secure smart contract development. You simply inherit their implementations of popular standards such as ERC20 or ERC721, and extend the behavior to your needs. We're going to put this file at `contracts/MyNFT.sol`.
 
-```text
+```
 // Contract based on https://docs.openzeppelin.com/contracts/4.x/erc721
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -159,7 +159,7 @@ export function getWallet(): ethers.Wallet {
 
 Under your `test` directory, create these files. Note that these tests are not comprehensive. They test a small subset of the ERC721 functionality offered by the OpenZeppelin library, and are intended to provide you with the building blocks to create more robust tests.
 
-`test/MyNFT.spec.ts` \(unit tests\)
+`test/MyNFT.spec.ts` (unit tests)
 
 ```typescript
 import { ethers, waffle } from "hardhat";
@@ -240,7 +240,7 @@ describe("MyNFT", () => {
 });
 ```
 
-`tasks.spec.ts` \(integration specs\)
+`tasks.spec.ts` (integration specs)
 
 ```typescript
 import { deployTestContract, getTestWallet } from "./test-helper";
@@ -347,9 +347,9 @@ Note the conditional to only invoke dotenv if we're not running tests. You might
 
 ## Running Our Tasks
 
-Now that we've put these files in place, we can run `hardhat` to see our tasks \(excluding the built-in tasks for brevity\).
+Now that we've put these files in place, we can run `hardhat` to see our tasks (excluding the built-in tasks for brevity).
 
-```text
+```
 AVAILABLE TASKS:
 
   deploy-contract    Deploy NFT contract
@@ -358,7 +358,7 @@ AVAILABLE TASKS:
 
 Forget the arguments to your task? No problem.
 
-```text
+```
 $ hardhat help deploy-contract
 
 Usage: hardhat [GLOBAL OPTIONS] deploy-contract
@@ -370,7 +370,7 @@ deploy-contract: Deploy NFT contract
 
 To run our tests, we run `hardhat test`.
 
-```text
+```
   mintNft
     ✓ calls through and returns the transaction object (60ms)
 
@@ -392,4 +392,3 @@ To run our tests, we run `hardhat test`.
 ## Summary
 
 In this tutorial, we've created a firm foundation for a well tested NFT infrastructure based on Solidity. The wallet provided by `waffle.provider.getWallets()` links to a local fake [Hardhat Network](https://hardhat.org/hardhat-network/) account that [conveniently comes preloaded](https://hardhat.org/hardhat-network/reference/#initial-state) with an eth balance that we can use to fund our test transactions.
-

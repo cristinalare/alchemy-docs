@@ -6,23 +6,23 @@ description: >-
 
 # 🚀 Getting Started
 
-👋 _**New to Alchemy? Get access to Alchemy for free**_ [_**here**_](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5)_**.**_
+:wave: _**New to Alchemy? Get access to Alchemy for free **_[_**here**_](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5)_**.**_
 
-_Estimated time to complete this guide: &lt; 10 minutes ****_
+_Estimated time to complete this guide: < 10 minutes** **_
 
-## 📋 Steps to get started with Alchemy
+## :clipboard: Steps to get started with Alchemy
 
-This guide assumes you already have an [Alchemy account](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5) and access to our [Dashboard](https://dashboard.alchemyapi.io/).  
+This guide assumes you already have an [Alchemy account](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5) and access to our [Dashboard](https://dashboard.alchemyapi.io).  
 
-**1**. 🔑 Create an Alchemy key 
+**1**. :key: Create an Alchemy key 
 
-**2**. ✍ Make a request 
+**2**. :writing_hand: Make a request 
 
-**3**. 🤝 Set up Alchemy as your client
+**3**. :handshake: Set up Alchemy as your client
 
-4. 💻 Start building!
+4\. :computer: Start building!
 
-## 1.🔑Create an Alchemy Key
+## 1.:key:Create an Alchemy Key
 
 To use Alchemy's products, you need an API key to authenticate your requests.
 
@@ -34,17 +34,17 @@ Or follow the written steps below:
 
 First navigate to the "create app" button in the "Apps" tab. 
 
-![](../.gitbook/assets/screen-shot-2020-11-01-at-6.53.45-pm.png)
+![](<../.gitbook/assets/Screen Shot 2020-11-01 at 6.53.45 PM.png>)
 
 Fill in the details under "Create App" to get your new key. You can also see apps you previously made and those made by your team here. Pull existing keys by clicking on "View Key" for any app.
 
-![](../.gitbook/assets/create-app-details.png)
+![](<../.gitbook/assets/Create App Details.png>)
 
 You can also pull existing API keys by hovering over "Apps" and selecting one. You can "View Key" here, as well as "Edit App" to whitelist specific domains, see several developer tools, and view analytics.
 
-![](../.gitbook/assets/ezgif.com-gif-maker-1-.gif)
+![](<../.gitbook/assets/ezgif.com-gif-maker (1).gif>)
 
-## 2.✍Make a Request 
+## 2.:writing_hand:Make a Request 
 
 You can interact with Alchemy's Ethereum infrastructure provider using JSON-RPC and your [command line](https://www.computerhope.com/jargon/c/commandi.htm).
 
@@ -78,14 +78,14 @@ Results:
   "result": "0x09184e72a000" // 10000000000000 }
 ```
 
-## 3.🤝Set up Alchemy as your Client  
+## 3.:handshake:Set up Alchemy as your Client  
 
 Below you will find how to set up or switch your current provider to Alchemy for Alchemy Web3, Web3.js, Web3.py, Web3j, and Ether.js. .  
 
 {% hint style="warning" %}
 **If you have an existing client,** change your current node provider URL to an Alchemy URL with your API key: "https://eth-mainnet.alchemyapi.io/v2/your-api-key"
 
-**Note:** The scripts below need to be run in a **node context** or **saved in a file**, not run from the command line. 
+**Note: **The scripts below need to be run in a **node context** or **saved in a file**, not run from the command line. 
 {% endhint %}
 
 ### Alchemy Web3
@@ -117,7 +117,7 @@ You might get warnings/errors, but no need to worry about them — they're harml
 
 To interact with Alchemy's node infrastructure, let's go ahead and send a request!
 
-### **1. From your** [**command line**](https://www.computerhope.com/jargon/c/commandi.htm)**, create a new project directory and `cd` into it:**
+### **1. From your **[**command line**](https://www.computerhope.com/jargon/c/commandi.htm)**, create a new project directory and `cd` into it:**
 
 ```bash
 mkdir web3-example
@@ -164,19 +164,19 @@ Woo! Congrats! You just wrote your first web3 script using Alchemy and sent your
 
 The project associated with your API key should now look like this on the dashboard:
 
-![](../.gitbook/assets/alchemy-tutorial-result1.png)
+![](<../.gitbook/assets/Alchemy Tutorial Result1.png>)
 
-![](../.gitbook/assets/alchemy-tutorial-result2%20%281%29.png)
+![](<../.gitbook/assets/Alchemy Tutorial Result2 (1).png>)
 
 ### Other Web3 Libraries 
 
-To use the any of the libraries below, you will need to install web3 first with `npm install web3` . Once you've installed web3, add any one of the below code snippets to a new JavaScript, Python, or Java file \(depending on which library you choose\). 
+To use the any of the libraries below, you will need to install web3 first with `npm install web3` . Once you've installed web3, add any one of the below code snippets to a new JavaScript, Python, or Java file (depending on which library you choose). 
 
 Check out the documentation for each library:
 
 * [Web3.js](https://web3js.readthedocs.io/en/v1.2.9/)
 * [Web3.py](https://web3py.readthedocs.io/en/stable/)
-* [Web3j](https://docs.web3j.io/)
+* [Web3j](https://docs.web3j.io)
 * [Ethers.js](https://docs.ethers.io/v5/) 
 
 Now you can add any one of the below code snippets to your new file depending on your respective library!
@@ -213,7 +213,7 @@ const customHttpProvider = new ethers.providers.JsonRpcProvider(url);
 {% endtab %}
 {% endtabs %}
 
-## 4. 💻 Start Building! 
+## 4. :computer: Start Building! 
 
 Don't know where to start? Check out these four tutorials to get more familiar with Alchemy and blockchain development:
 
@@ -223,4 +223,3 @@ Don't know where to start? Check out these four tutorials to get more familiar w
 4. Try deploying your first [smart contract ](../tutorials/hello-world-smart-contract/)and get your hands dirty with some solidity programming
 
 Once you complete this tutorial, let us know how your experience was or if you have any feedback by tagging us on Twitter [@alchemyplatform](https://twitter.com/AlchemyPlatform)!
-

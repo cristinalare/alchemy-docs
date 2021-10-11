@@ -9,7 +9,7 @@ description: Returns Keccak-256 (not the standardized SHA3-256) of the given dat
 1. `DATA` - the data in hex form to convert into a SHA3 hash
 
 {% hint style="warning" %}
-**Note:** web3\_sha3 takes in a hexidecimal number, not a direct string. So, if you wanted to convert "hello world" to it's Keccak-256 hash you would need to input the hex number for "hello world", which is "68656c6c6f20776f726c64". 
+**Note: **web3\_sha3 takes in a hexidecimal number, not a direct string. So, if you wanted to convert "hello world" to it's Keccak-256 hash you would need to input the hex number for "hello world", which is "68656c6c6f20776f726c64". 
 {% endhint %}
 
 ```bash
@@ -22,7 +22,7 @@ params: [
 
 `DATA` - The SHA3 result of the given string.
 
-### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22web3_sha3%22%2C%22paramValues%22%3A%5B%220x68656c6c6f20776f726c64%22%5D%7D)\*\*\*\*
+### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22web3\_sha3%22%2C%22paramValues%22%3A%5B%220x68656c6c6f20776f726c64%22%5D%7D)****
 
 Request
 
@@ -61,5 +61,4 @@ Result
 }
 ```
 
-## 
-
+##

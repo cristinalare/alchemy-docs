@@ -4,18 +4,20 @@ description: All the possible HTTP requests you can make when using the Notify A
 
 # Notify API
 
-_**Want to learn more about Alchemy Notify? Check out this**_ [_**guide on using Alchemy Notify and webhooks**_](../../guides/using-notify.md)_**:**_
+_**Want to learn more about Alchemy Notify? Check out this **_[_**guide on using Alchemy Notify and webhooks**_](../../guides/using-notify.md)_**:**_
 
-{% page-ref page="../../guides/using-notify.md" %}
+{% content-ref url="../../guides/using-notify.md" %}
+[using-notify.md](../../guides/using-notify.md)
+{% endcontent-ref %}
 
 We recommend using this Notify API to automate the creation of webhooks and when dealing with Address Activity Webhooks for **10+ addresses,** otherwise, you can easily create webhooks from the [dashboard](https://dashboard.alchemyapi.io/notify)!
 
 {% hint style="info" %}
-## `Note on API Parameters` 
+## `Note on API Parameters `
 
 #### `X-Alchemy-Token`
 
-Your Alchemy authentication token \(`X-Alchemy-Token`\) can be found in the upper right corner of your dashboard [Notify page](https://dashboard.alchemyapi.io/notify) under the "AUTH TOKEN" button.
+Your Alchemy authentication token (`X-Alchemy-Token`) can be found in the upper right corner of your dashboard [Notify page](https://dashboard.alchemyapi.io/notify) under the "AUTH TOKEN" button.
 
 #### `app_id`
 
@@ -32,33 +34,19 @@ Each type of webhook is represented as a different integer:
 
 #### `webhook_id`
 
-This is a unique identifier for the webhook. You can find the webhook\_id by first getting all your webhooks using the endpoint below, then looking at the parameter `"id"` for the specific webhook you want. 
+This is a unique identifier for the webhook. You can find the webhook_id by first getting all your webhooks using the endpoint below, then looking at the parameter `"id"` for the specific webhook you want. 
 {% endhint %}
 
-{% api-method method="get" host="https://dashboard.alchemyapi.io" path="/api/team-webhooks" %}
-{% api-method-summary %}
-Get all webhooks
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://dashboard.alchemyapi.io" path="/api/team-webhooks" method="get" summary="Get all webhooks" %}
+{% swagger-description %}
 This endpoint allows you to get all webhooks from every app on your team.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="X-Alchemy-Token" type="string" required=true %}
-Alchemy Auth token to use the Notify API \(see note above\).
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% swagger-parameter in="header" name="X-Alchemy-Token" type="string" %}
+Alchemy Auth token to use the Notify API (see note above).
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Sample Response:   
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Sample Response:   " %}
 ```
 {
     "data": [
@@ -91,82 +79,105 @@ Sample Response:
     ]
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 #### Example Request
 
-```text
+```
 curl https://dashboard.alchemyapi.io/api/team-webhooks \
 -X GET \
 -H "X-Alchemy-Token":"your-X-Alchemy-Token"
 ```
 
-{% api-method method="post" host="https://dashboard.alchemyapi.io" path="/api/create-webhook" %}
-{% api-method-summary %}
-Create webhook
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://dashboard.alchemyapi.io" path="/api/create-webhook" method="post" summary="Create webhook" %}
+{% swagger-description %}
 This endpoint allows you to create a webhook.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="X-Alchemy-Token" type="string" required=true %}
-Alchemy Auth token to use the Notify API \(see note above for how to find it\)
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% swagger-parameter in="header" name="X-Alchemy-Token" type="string" %}
+Alchemy Auth token to use the Notify API (see note above for how to find it)
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="app\_id" type="string" required=true %}
+{% swagger-parameter in="body" name="app_id" type="string" %}
 App Id. See note above on where to find it.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="webhook\_type" type="integer" required=true %}
-An Integer representing webhook type.  
-Dropped Transactions: 1  
-Mined Transactions: 2  
-Address Activity: 4  
-Gas Price: 5  
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="webhook_type" type="integer" %}
+An Integer representing webhook type.
 
-{% api-method-parameter name="webhook\_url" type="string" required=true %}
+\
+
+
+Dropped Transactions: 1
+
+\
+
+
+Mined Transactions: 2
+
+\
+
+
+Address Activity: 4
+
+\
+
+
+Gas Price: 5
+
+\
+
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="webhook_url" type="string" %}
 URL where requests should be sent.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="addresses" type="array" required=false %}
+{% swagger-parameter in="body" name="addresses" type="array" %}
 List of addresses you want to track. For address activity webhooks only.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="gas\_price\_low" type="integer" required=false %}
-If the gas price \(in 10x gwei\) is lower than this threshold, send a notification every minute. For gas price webhooks only.
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="gas_price_low" type="integer" %}
+If the gas price (in 10x gwei) is lower than this threshold, send a notification every minute. For gas price webhooks only.
+{% endswagger-parameter %}
 
-{% api-method-parameter name="gas\_price\_high" type="integer" required=false %}
-If the gas price \(in 10x gwei\) is higher than this threshold, send a notification every minute. For gas price webhooks only.
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="gas_price_high" type="integer" %}
+If the gas price (in 10x gwei) is higher than this threshold, send a notification every minute. For gas price webhooks only.
+{% endswagger-parameter %}
 
-{% api-method-parameter name="gas\_price\_type" type="integer" required=false %}
-Selects the metric to be used as the threshold price.   
-SAFE\_LOW = 0  
-AVERAGE = 1  
-FAST = 2  
-FASTEST = 3  
+{% swagger-parameter in="body" name="gas_price_type" type="integer" %}
+Selects the metric to be used as the threshold price. 
+
+\
+
+
+SAFE_LOW = 0
+
+\
+
+
+AVERAGE = 1
+
+\
+
+
+FAST = 2
+
+\
+
+
+FASTEST = 3
+
+\
+
+
 For gas price webhooks only.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Sample response.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Sample response." %}
 ```
 {
   "data": {
@@ -184,253 +195,174 @@ Sample response.
   }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 #### Example Request 
 
 Here is an example request for creating a dropped transaction webhook
 
-```text
+```
 curl https://dashboard.alchemyapi.io/api/create-webhook \
 -X POST \
 -H "X-Alchemy-Token":"your-X-Alchemy-Token" \
 -d '{"app_id":"your-app_id","webhook_type":1,"webhook_url":"https://webhook.site/7bf2c41e-846e-45a7-8c17-556dd7f5103c"}'
 ```
 
-{% api-method method="patch" host="https://dashboard.alchemyapi.io" path="/api/update-webhook-addresses" %}
-{% api-method-summary %}
-Add/remove webhook addresses 
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://dashboard.alchemyapi.io" path="/api/update-webhook-addresses" method="patch" summary="Add/remove webhook addresses " %}
+{% swagger-description %}
 Add or remove addresses from a specific webhook. 
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="X-Alchemy-Token" type="string" required=true %}
+{% swagger-parameter in="header" name="X-Alchemy-Token" type="string" %}
 Alchemy Auth token to use the Notify API
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="webhook\_id" type="number" required=true %}
+{% swagger-parameter in="body" name="webhook_id" type="number" %}
 Identifier for the webhook. See note above on how to find it.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="addresses\_to\_add" type="array" required=true %}
-List of addresses to add, use \[\] if none.
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="addresses_to_add" type="array" %}
+List of addresses to add, use [] if none.
+{% endswagger-parameter %}
 
-{% api-method-parameter name="addresses\_to\_remove" type="array" required=true %}
-List of addresses to remove, use \[\] if none.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="body" name="addresses_to_remove" type="array" %}
+List of addresses to remove, use [] if none.
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 **Example Request**
 
-```text
+```
 curl https://dashboard.alchemyapi.io/api/update-webhook-addresses \
 -X PATCH \
 -H "X-Alchemy-Token":"your-X-Alchemy-Token" \ 
 -d '{"webhook_id":27,"addresses_to_add":["0xfdb16996831753d5331ff813c29a93c76834a0ad","0x48ea66f94518534ecbc863fbf521896d52b025d9", "0x6f8d0c2a2c3a189803f5c6482c88be46a55058c1"], "addresses_to_remove":[]}'
 ```
 
-{% api-method method="put" host="https://dashboard.alchemyapi.io" path="/api/update-webhook" %}
-{% api-method-summary %}
+{% swagger baseUrl="https://dashboard.alchemyapi.io" path="/api/update-webhook" method="put" summary="" %}
+{% swagger-description %}
 
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
+{% swagger-parameter in="path" name="" type="string" %}
 
-{% endapi-method-description %}
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="put" host="https://dashboard.alchemyapi.io" path="/api/update-webhook-addresses" %}
-{% api-method-summary %}
-Update webhook addresses
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://dashboard.alchemyapi.io" path="/api/update-webhook-addresses" method="put" summary="Update webhook addresses" %}
+{% swagger-description %}
 Used to update webhook addresses, replacing any existing addresses. 
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="X-Alchemy-Token" type="string" required=true %}
+{% swagger-parameter in="header" name="X-Alchemy-Token" type="string" %}
 Alchemy Auth token to use the Notify API
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="webhook\_id" type="integer" required=true %}
+{% swagger-parameter in="body" name="webhook_id" type="integer" %}
 Identifier for the webhook. See note above on how to find it.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="addresses" type="array" required=true %}
+{% swagger-parameter in="body" name="addresses" type="array" %}
 New list of addresses to track. This replaces any existing addresses.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 #### Example Request 
 
-```text
+```
 curl https://dashboard.alchemyapi.io/api/update-webhook-addresses \
 -X PUT \
 -H "X-Alchemy-Token":"your-X-Alchemy-Token" \ 
 -d '{"webhook_id":104,"addresses":["0x6f8d0c2a2c3a189803f5c6482c88be46a55058c1","0xfdb16996831753d5331ff813c29a93c76834a0ad"]}'
 ```
 
-{% api-method method="put" host="https://dashboard.alchemyapi.io" path="/api/update-webhook" %}
-{% api-method-summary %}
+{% swagger baseUrl="https://dashboard.alchemyapi.io" path="/api/update-webhook" method="put" summary="" %}
+{% swagger-description %}
+Allows you to set active status of webhooks to 
 
-{% endapi-method-summary %}
+`active`
 
-{% api-method-description %}
-Allows you to set active status of webhooks to `active` or `inactive`. 
-{% endapi-method-description %}
+ or 
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="X-Alchemy-Token" type="string" required=true %}
+`inactive`
+
+. 
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="X-Alchemy-Token" type="string" %}
 Alchemy Auth token to use the Notify API
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="webhook\_id" type="integer" required=true %}
+{% swagger-parameter in="body" name="webhook_id" type="integer" %}
 Identifier for the webhook. See note above on how to find it
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="is\_active" type="boolean" required=true %}
-True - set webhook to active state  
+{% swagger-parameter in="body" name="is_active" type="boolean" %}
+True - set webhook to active state
+
+\
+
+
 False - set webhook to inactive state
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 #### Example Request
 
-```text
+```
 curl https://dashboard.alchemyapi.io/api/update-webhook \
 -X PUT \
 -H "X-Alchemy-Token":"your-X-Alchemy-Token" \ 
 -d '{"webhook_id":104,"is_active":False}'
 ```
 
-{% api-method method="delete" host="https://dashboard.alchemyapi.io" path="/api/delete-webhook" %}
-{% api-method-summary %}
-Delete webhook
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://dashboard.alchemyapi.io" path="/api/delete-webhook" method="delete" summary="Delete webhook" %}
+{% swagger-description %}
 Delete a webhook.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="X-Alchemy-Token" type="string" required=true %}
+{% swagger-parameter in="header" name="X-Alchemy-Token" type="string" %}
 Auth token for Notify API
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="webhook\_id" type="integer" required=true %}
+{% swagger-parameter in="body" name="webhook_id" type="integer" %}
 Identifier for the webhook. See note above on how to find it.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 #### Example Request
 
-```text
+```
 curl https://dashboard.alchemyapi.io/api/delete-webhook?webhook_id=104 \
 -X DELETE \
 -H "X-Alchemy-Token":"your-X-Alchemy-Token" \
@@ -440,13 +372,13 @@ curl https://dashboard.alchemyapi.io/api/delete-webhook?webhook_id=104 \
 
 To see in depth explanations for each of the Alchemy Notify webhooks check out the [Using Webhooks](../../guides/using-notify.md) guide. 
 
-### Mined Transaction <a id="mined-transactions"></a>
+### Mined Transaction <a href="mined-transactions" id="mined-transactions"></a>
 
 The Mined Transaction Webhook is used to notify your app anytime a transaction sent through your API key gets successfully mined. This is extremely useful if you want to notify customers the moment their transactions goes through.
 
 #### Example Response
 
-```text
+```
 {
   "app": "Demo", 
   "network": "MAINNET",
@@ -471,13 +403,13 @@ The Mined Transaction Webhook is used to notify your app anytime a transaction s
 }
 ```
 
-### Dropped Transactions <a id="dropped-transactions"></a>
+### Dropped Transactions <a href="dropped-transactions" id="dropped-transactions"></a>
 
 The Dropped Transactions Webhook is used to notify your app anytime a transaction send through your API key gets dropped.
 
 #### Example Response
 
-```text
+```
 {
   "app": "Alchemy Mainnet",
   "network": "MAINNET",
@@ -502,7 +434,7 @@ The Dropped Transactions Webhook is used to notify your app anytime a transactio
 }
 ```
 
-### Address Activity <a id="address-activity"></a>
+### Address Activity <a href="address-activity" id="address-activity"></a>
 
 The Address Activity Webhook allows you to track all ETH, ERC20 and ERC721 [transfer events](../../guides/eth_getlogs.md#what-are-transfers) for as many Ethereum addresses as you'd like. This provides your app with real-time state changes when an address sends or receives tokens. 
 
@@ -512,7 +444,7 @@ If you are looking for historical activity, check out the [Transfers API](transf
 
 **Example Response**
 
-```text
+```
 {
   "app": "Test webhooks",
   "network": "MAINNET",
@@ -585,13 +517,13 @@ If you are looking for historical activity, check out the [Transfers API](transf
 
 ### Gas Price
 
-The Gas Price Webhook allows you to receive a notification every minute when the Mainnet gas price rises above or drops below a certain threshold that you can select. It works by pulling the current gas prices from [ETH Gas Station](https://ethgasstation.info/) every minute.
+The Gas Price Webhook allows you to receive a notification every minute when the Mainnet gas price rises above or drops below a certain threshold that you can select. It works by pulling the current gas prices from [ETH Gas Station](https://ethgasstation.info) every minute.
 
 Gas prices typically fall in a range, where a lower gas price means that the transaction will take longer to be mined, and a higher gas price means that the transaction will be mined more quickly. The Execution Speed metric allows you to specify a metric in that range that you would like to receive notifications, corresponding to ETH Gas Station's [Price Type metric documented here](https://docs.ethgasstation.info/gas-price). For example, selecting an Average Execution Speed means that you will receive notifications when a gas price typically mined in under 5 minutes rises above or drops below your selected threshold
 
 **Example Response**
 
-```text
+```
 {
   "app": "Alchemy Mainnet",
   "network": "MAINNET",
@@ -614,5 +546,6 @@ Gas prices typically fall in a range, where a lower gas price means that the tra
 
 For instructions on how to set up webhooks from the dashboard check out the page below:
 
-{% page-ref page="../../guides/using-notify.md" %}
-
+{% content-ref url="../../guides/using-notify.md" %}
+[using-notify.md](../../guides/using-notify.md)
+{% endcontent-ref %}

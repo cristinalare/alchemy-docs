@@ -7,10 +7,10 @@ description: >-
 # Token API
 
 {% hint style="info" %}
-Unless otherwise specified, Alchemy methods will return decoded values in their responses \(e.g., for token decimals, 18 will be returned instead of "0x12"\). We plan to eventually normalize all methods in our enhanced API to return decoded values.
+Unless otherwise specified, Alchemy methods will return decoded values in their responses (e.g., for token decimals, 18 will be returned instead of "0x12"). We plan to eventually normalize all methods in our enhanced API to return decoded values.
 {% endhint %}
 
-## alchemy\_getTokenAllowance
+## alchemy_getTokenAllowance
 
 #### Details
 
@@ -66,7 +66,7 @@ Result
 }
 ```
 
-## alchemy\_getTokenBalances
+## alchemy_getTokenBalances
 
 #### Details
 
@@ -81,7 +81,7 @@ This method returns hex encoded values in the `tokenBalance` fields.
 1. `DATA`, 20 Bytes - The address for which token balances will be checked
 2. One of:
    1. `Array` - A list of contract addresses 
-   2. The `String`"DEFAULT\_TOKENS" - denotes a query for the top 100 tokens by 24 hour volume 
+   2. The `String`"DEFAULT_TOKENS" - denotes a query for the top 100 tokens by 24 hour volume 
 
 #### Returns
 
@@ -135,13 +135,13 @@ Result
 }
 ```
 
-## alchemy\_getTokenMetadata
+## alchemy_getTokenMetadata
 
 #### Details
 
-Returns metadata \(name, symbol, decimals, logo\) for a given token contract address.
+Returns metadata (name, symbol, decimals, logo) for a given token contract address.
 
-`name` ,`symbol`and`decimals`are optional methods in the ERC-20 token standard. Therefore, not all contracts will respond correctly to calls requesting this information. While the incorrectness or absence of`name` and `symbol`can be an inconvenience, having the correct `decimals`is absolutely crucial in displaying token balances or converting user inputs accurately when communicating with the contract.
+`name` ,`symbol`and`decimals`are optional methods in the ERC-20 token standard. Therefore, not all contracts will respond correctly to calls requesting this information. While the incorrectness or absence of`name `and `symbol`can be an inconvenience, having the correct `decimals`is absolutely crucial in displaying token balances or converting user inputs accurately when communicating with the contract.
 
 Alchemy maintains a regularly updated database of contract metadata, with values gathered and intelligently merged from the contracts themselves along with several other sources. Alchemy is therefore able to provide clean, accurate, up-to-date metadata for contracts that may be missing any of these methods or have changed their name or symbol since contract publication.
 
@@ -203,4 +203,3 @@ Result
   }
 }
 ```
-

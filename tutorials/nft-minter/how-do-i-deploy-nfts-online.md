@@ -2,7 +2,7 @@
 description: Guide for deploying your NFT minter to a live website
 ---
 
-# 🖥️ How to Build an NFT Website
+# 🛠 How to Build an NFT Website
 
 ## How to Know When You're Ready to Deploy to a Live Site
 
@@ -22,9 +22,9 @@ When deploying your code online, developers first need to choose an online web h
 
 Here are a few services that are commonly used for consumer-grade web applications:
 
-* [Heroku](https://www.heroku.com/) 
-* [DigitalOcean](https://www.digitalocean.com/) 
-* [PythonAnywhere](https://www.pythonanywhere.com/) 
+* [Heroku](https://www.heroku.com) 
+* [DigitalOcean](https://www.digitalocean.com) 
+* [PythonAnywhere](https://www.pythonanywhere.com) 
 
 {% hint style="info" %}
 **NOTE:** All of these services listed above offer varying free tiers to get you up and running as quickly as possible!
@@ -40,9 +40,9 @@ However, there are few areas that will likely be different from your experience 
 
 #### Creating Environment Variables
 
-Normally, environment variables are stored in a `.env` file on our local machine.  With some online web hosting services, this is not the case.  As an example, in Heroku, we define Heroku-specific environment variables through the Heroku command-line interface.  To set an environment variable on Heroku for your Alchemy Key for instance, we would run the following command: 
+Normally, environment variables are stored in a `.env `file on our local machine.  With some online web hosting services, this is not the case.  As an example, in Heroku, we define Heroku-specific environment variables through the Heroku command-line interface.  To set an environment variable on Heroku for your Alchemy Key for instance, we would run the following command: 
 
-```text
+```
 heroku config:set KEY="<YOUR ALCHEMY KEY>"
 ```
 
@@ -50,7 +50,7 @@ Then, to confirm that it is properly configured, you can view environment variab
 
 If configured correctly, your Heroku environment variables should look similar to this:
 
-![](https://gblobscdn.gitbook.com/assets%2F-MB17w56kk7ZnRMWdqOL%2F-MfdCP_qKo19vw3OqEXG%2F-MfdEFNE3pdGil4pzl6Z%2Fimg.PNG?alt=media&token=9a5cea16-9d51-4e90-b77a-fabda56b14f4)
+![](https://gblobscdn.gitbook.com/assets%2F-MB17w56kk7ZnRMWdqOL%2F-MfdCP_qKo19vw3OqEXG%2F-MfdEFNE3pdGil4pzl6Z%2Fimg.PNG?alt=media\&token=9a5cea16-9d51-4e90-b77a-fabda56b14f4)
 
 For other web hosting services, this setup process might look different.  For instance, with Digital Ocean, you can even create environment variables within your account's dashboard UI!  
 
@@ -61,6 +61,5 @@ While many web hosting services offer sufficient uptime for dashboards/scripts, 
 If you want your cloud-hosted dashboards/scripts to stay awake for a longer period of time, you may need to pay for more computational allowance or regularly run scheduled jobs at regular intervals to ensure you have full uptime
 
 {% hint style="info" %}
-If you are using Heroku, look at pre-built methods for keeping your apps awake such as [Hero-Kaffeine](https://kaffeine.herokuapp.com/), which will regularly send your Heroku app a GET request, or [Heroku's built-in scheduler](https://devcenter.heroku.com/articles/scheduler).  
+If you are using Heroku, look at pre-built methods for keeping your apps awake such as [Hero-Kaffeine](https://kaffeine.herokuapp.com), which will regularly send your Heroku app a GET request, or [Heroku's built-in scheduler](https://devcenter.heroku.com/articles/scheduler).  
 {% endhint %}
-

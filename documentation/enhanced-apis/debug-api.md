@@ -7,13 +7,13 @@ description: >-
 # Debug API
 
 {% hint style="warning" %}
-**Note:** Alchemy is the only service that provides access to this Debug API method due to its high maintenance costs and specialized infrastructure. For this reason, it's currently only available to Alchemy users in Growth and Enterprise tiers. You can upgrade your plan [here](https://dashboard.alchemyapi.io/settings/billing) to access it. 
+**Note: **Alchemy is the only service that provides access to this Debug API method due to its high maintenance costs and specialized infrastructure. For this reason, it's currently only available to Alchemy users in Growth and Enterprise tiers. You can upgrade your plan [here](https://dashboard.alchemyapi.io/settings/billing) to access it. 
 {% endhint %}
 
-## debug\_traceTransaction
+## debug_traceTransaction
 
 {% hint style="danger" %}
-Our current debug\_traceTransaction method only works on the following networks:
+Our current debug_traceTransaction method only works on the following networks:
 
 * Ethereum Rinkeby
 * Polygon Mainnet
@@ -25,17 +25,17 @@ The `traceTransaction` debugging method will attempt to run the transaction in t
 
 In addition to the hash of the transaction you may give it a secondary _optional_ argument, which specifies the options for this specific call. The possible options are:
 
-* `disableStorage`: `BOOL`. Setting this to true will disable storage capture \(default = false\).
-* `disableMemory`: `BOOL`. Setting this to true will disable memory capture \(default = false\).
-* `disableStack`: `BOOL`. Setting this to true will disable stack capture \(default = false\).
+* `disableStorage`: `BOOL`. Setting this to true will disable storage capture (default = false).
+* `disableMemory`: `BOOL`. Setting this to true will disable memory capture (default = false).
+* `disableStack`: `BOOL`. Setting this to true will disable stack capture (default = false).
 * `tracer`: `STRING`. Setting this will enable JavaScript-based transaction tracing, described below. If set, the previous four arguments will be ignored.
 * `timeout`: `STRING`. Overrides the default timeout of 5 seconds for JavaScript-based tracing calls. Valid values are described [here](https://golang.org/pkg/time/#ParseDuration).
 
-| Client  | Method Invocation |
-| :--- | :--- |
-| Go | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
-| Console | `debug.traceTransaction(txHash, [options])` |
-| RPC | `{"method": "debug_traceTransaction", "params": [txHash, {}]}` |
+| Client  | Method Invocation                                                                            |
+| ------- | -------------------------------------------------------------------------------------------- |
+| Go      | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
+| Console | `debug.traceTransaction(txHash, [options])`                                                  |
+| RPC     | `{"method": "debug_traceTransaction", "params": [txHash, {}]}`                               |
 
 ### **Example**
 
@@ -82,7 +82,7 @@ Result
 
 ### **JavaScript-based tracing**
 
-Specifying the `tracer` option in the second argument enables JavaScript-based tracing. In this mode, `tracer` is interpreted as a JavaScript expression that is expected to evaluate to an object with \(at least\) two methods, named `step` and `result`.
+Specifying the `tracer` option in the second argument enables JavaScript-based tracing. In this mode, `tracer` is interpreted as a JavaScript expression that is expected to evaluate to an object with (at least) two methods, named `step` and `result`.
 
 `step`is a function that takes two arguments, log and db, and is called for each step of the EVM, or when an error occurs, as the specified transaction is traced.
 
@@ -93,7 +93,7 @@ Specifying the `tracer` option in the second argument enables JavaScript-based t
 * `gas`: Number, the amount of gas remaining
 * `gasPrice`: Number, the cost in wei of each unit of gas
 * `memory`: Object, a structure representing the contract's memory space
-* `stack`: array\[big.Int\], the EVM execution stack
+* `stack`: array\[big.Int], the EVM execution stack
 * `depth`: The execution depth
 * `account`: The address of the account executing the current operation
 * `err`: If an error occurred, information about the error
@@ -129,7 +129,7 @@ function(log) {
 
 `log.stack` has the following methods:
 
-* `peek(idx)` - returns the idx-th element from the top of the stack \(0 is the topmost element\) as a big.Int
+* `peek(idx)` - returns the idx-th element from the top of the stack (0 is the topmost element) as a big.Int
 * `length()` - returns the number of elements in the stack
 
 `db` has the following methods:
@@ -151,4 +151,3 @@ Usage example, returns the top element of the stack at each CALL opcode only:
 ```javascript
 debug.traceTransaction(txhash, {tracer: '{data: [], step: function(log) { if(log.op.toString() == "CALL") this.data.push(log.stack.peek(0)); }, result: function() { return this.data; }}'});
 ```
-

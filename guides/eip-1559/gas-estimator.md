@@ -8,28 +8,28 @@ description: >-
 
 Many apps like to offer users the option to set their own gas fee bids with a "slow" "average" and "fast" option. In this article we will take a look at how you might go about building these options with the `eth_feeHistory` API post London fork. We will also discuss the `eth_maxPriorityFeePerGas` method and replicate the calculation it performs. Then we will discuss how you might productionize such a calculator.
 
-### Why are we doing this? <a id="why-are-we-doing-this"></a>
+### Why are we doing this? <a href="why-are-we-doing-this" id="why-are-we-doing-this"></a>
 
 Before diving into implementation, let's discuss why we should bother at all. Before the London fork, the gas price calculators only needed to look at the gas price of transactions in previous blocks to determine what the spread of bids should look like for the current block. Post London fork, the gas prices are split into base fees and priority fees. Since the base fee is a fixed rate set by the protocol, the only bid that we need to estimate is what to bid for priority fee. Thus, the calculators need to be updated.
 
-### The two important metrics <a id="the-two-important-metrics"></a>
+### The two important metrics <a href="the-two-important-metrics" id="the-two-important-metrics"></a>
 
 Our first pass at building a fee calculator will look at the past X blocks and ask two questions about them:
 
-\(1\) How full was this block?
+(1) How full was this block?
 
-\(2\) How much did transactions have to bid to be included in this block?
+(2) How much did transactions have to bid to be included in this block?
 
 These are the two relevant pieces of information to determine how much we should bid to be included in the pending block. So before we build, let's understand these metrics a bit more in-depth. Here is a call to the `eth_feeHistory` API and it's result:
 
-```text
+```
 const historicalBlocks = 4;
 web3.eth.getFeeHistory(historicalBlocks, "pending", [25, 50, 75]).then(console.log);
 ```
 
 The above call means, "Give me the fee history information starting from the pending block and looking backward 4 blocks. For each block also give me the 25th, 50th, and 75th percentiles of priority fees for transactions in the block". The raw result looks like this:
 
-```text
+```
 {
   oldestBlock: 12966149,
   reward: [
@@ -54,9 +54,9 @@ The above call means, "Give me the fee history information starting from the pen
 }
 ```
 
-To make things easier, let's create a formatter that turns these hex strings into numbers and also groups the results by block. For completion's sake, here is our formatter \(feel free to ignore and move on\):
+To make things easier, let's create a formatter that turns these hex strings into numbers and also groups the results by block. For completion's sake, here is our formatter (feel free to ignore and move on):
 
-```text
+```
 function formatFeeHistory(result, includePending) {
   let blockNum = result.oldestBlock;
   let index = 0;
@@ -85,7 +85,7 @@ function formatFeeHistory(result, includePending) {
 
 Now when we run the `eth_feeHistory` results through the formatter:
 
-```text
+```
 const historicalBlocks = 4;
 web3.eth.getFeeHistory(historicalBlocks, "pending", [25, 50, 75]).then((feeHistory) => {
   const blocks = formatFeeHistory(feeHistory, false);
@@ -95,7 +95,7 @@ web3.eth.getFeeHistory(historicalBlocks, "pending", [25, 50, 75]).then((feeHisto
 
 We get:
 
-```text
+```
 [
   {
     number: 12966164,
@@ -130,29 +130,29 @@ Great! Now let's return to our two metrics. Each block has a `gasUsedRatio`. Thi
 
 The other metric we wanted to know was how much a transaction had to bid to be included in the block. Looking in the `priorityFeePerGas` field, you can see that for block 12966164 the 25% percentile of transactions spent 34222993160 in priority fees, while the 75% percentile spent 63222993160 in priority fees. That's almost a 2x increase! The spread can be pretty drastic.
 
-### Relationship between `gasUsedRatio` and `baseFeePerGas` <a id="relationship-between-gas-used-ratio-and-base-fee-per-gas"></a>
+### Relationship between `gasUsedRatio` and `baseFeePerGas` <a href="relationship-between-gas-used-ratio-and-base-fee-per-gas" id="relationship-between-gas-used-ratio-and-base-fee-per-gas"></a>
 
 Before we move on, let's take a moment to understand this extremely important relationship. The relationship between `gasUsedRatio` and `baseFeePerGas` is literally the crux of EIP 1559 and the London fork.
 
-Notice in the output above that block 12966164 is almost completely full, with a `gasUsedRatio` of over 99%. It has a `baseFeePerGas` of 315777006840. The very next block \(12966165\) has a `baseFeePerGas` of 354635947504, an increase of approximately 12%.
+Notice in the output above that block 12966164 is almost completely full, with a `gasUsedRatio` of over 99%. It has a `baseFeePerGas` of 315777006840. The very next block (12966165) has a `baseFeePerGas` of 354635947504, an increase of approximately 12%.
 
-This is the purpose of EIP 1559. Whenever a block is over half full, the network will increase the base fee of the next block. When a block is less than half full, the network will decrease the base fee. Notice that block 12966165 has a `gasUsedRatio` of approximately 23%, which means the subsequent block \(12966166\) has a lower base fee.
+This is the purpose of EIP 1559. Whenever a block is over half full, the network will increase the base fee of the next block. When a block is less than half full, the network will decrease the base fee. Notice that block 12966165 has a `gasUsedRatio` of approximately 23%, which means the subsequent block (12966166) has a lower base fee.
 
 Great! Now that we've seen that in action let's move on with our fee estimator.
 
-### Building the estimate <a id="building-the-estimate"></a>
+### Building the estimate <a href="building-the-estimate" id="building-the-estimate"></a>
 
 We now have a handle on our two metrics: `gasUsedRatio` and `priorityFeePerGas` for historical blocks. Let's use them to create an estimate.
 
-When creating an estimate we need to determine \(a\) how far back in time to look and \(b\) what percentiles of priority fees to look at.
+When creating an estimate we need to determine (a) how far back in time to look and (b) what percentiles of priority fees to look at.
 
-For \(a\) let's do 4 blocks, since that will be approximately 1 minute of time. A nice round number.
+For (a) let's do 4 blocks, since that will be approximately 1 minute of time. A nice round number.
 
-For \(b\) Recall that the spread of fees paid in a block can be quite high, so it's very possible that a bid on the lower end will get accepted, particularly if the recent blocks haven't been overly full. Let's be optimistic! Let's target the 10th percentile.
+For (b) Recall that the spread of fees paid in a block can be quite high, so it's very possible that a bid on the lower end will get accepted, particularly if the recent blocks haven't been overly full. Let's be optimistic! Let's target the 10th percentile.
 
 OK here we go!
 
-```text
+```
 const historicalBlocks = 4;
 web3.eth.getFeeHistory(historicalBlocks, "pending", [10]).then((feeHistory) => {
   const blocks = formatFeeHistory(feeHistory, false);
@@ -164,19 +164,19 @@ web3.eth.getFeeHistory(historicalBlocks, "pending", [10]).then((feeHistory) => {
 
 Note that we are taking the average of the 10th percentile priority fee across all the blocks. This gives the output:
 
-```text
+```
 Manual estimate: 9296204634
 ```
 
 You can now include this estimate in the `maxPriorityFeePerGas` field on your transaction and you've got a decent chance of being included in the block.
 
-### Comparing our estimate to `eth_maxPriorityFeePerGas` <a id="comparing-our-estimate-to-eth-max-priority-fee-per-gas"></a>
+### Comparing our estimate to `eth_maxPriorityFeePerGas` <a href="comparing-our-estimate-to-eth-max-priority-fee-per-gas" id="comparing-our-estimate-to-eth-max-priority-fee-per-gas"></a>
 
 It was fun to build our own estimate, but now let's see how this compares to the official estimate provided by geth through the `eth_maxPriorityFeePerGas` method.
 
 Geth looks 20 blocks behind and only considers the cheapest 3 transactions for each block, choosing the 60th percentile. That is a bit more custom than what `eth_feeHistory` exposes to us, but we'll do our best. I suspect the bottom 3 transactions would be approximately in the 1st percentile of priority fees, so here is our attempt at replication:
 
-```text
+```
 const historicalBlocks = 20;
 web3.eth.getFeeHistory(historicalBlocks, "pending", [1]).then((feeHistory) => {
   const blocks = formatFeeHistory(feeHistory, false);
@@ -189,18 +189,18 @@ web3.eth.getMaxPriorityFeePerGas().then((f) => console.log("Geth estimate:  ", N
 
 And our output
 
-```text
+```
 Manual estimate: 3518856089
 Geth estimate:   2375124957
 ```
 
 Not bad!
 
-### Giving a full estimate to users <a id="giving-a-full-estimate-to-users"></a>
+### Giving a full estimate to users <a href="giving-a-full-estimate-to-users" id="giving-a-full-estimate-to-users"></a>
 
 Thus far we have only built an estimate of the priority fee, which is the tip paid to miners. Pre-London fork, however, users have grown accustomed to receiving an estimate of the full fee they are paying, not just the tip. So let's include the base fee in our estimate calculations:
 
-```text
+```
 const historicalBlocks = 20;
 web3.eth.getFeeHistory(historicalBlocks, "pending", [1]).then((feeHistory) => {
   const blocks = formatFeeHistory(feeHistory, false);
@@ -216,17 +216,17 @@ web3.eth.getFeeHistory(historicalBlocks, "pending", [1]).then((feeHistory) => {
 
 With output
 
-```text
+```
 Manual estimate: 80868015872
 ```
 
-To get the full estimate we are fetching the `baseFeePerGas` from the pending block, which is already known by the network. Then we add the tip on top of that. This is the full value \(in Wei\) that we can present to the end user. You might want to convert that to Gwei first, since that's normally what users see.
+To get the full estimate we are fetching the `baseFeePerGas` from the pending block, which is already known by the network. Then we add the tip on top of that. This is the full value (in Wei) that we can present to the end user. You might want to convert that to Gwei first, since that's normally what users see.
 
-### Presenting three options <a id="presenting-three-options"></a>
+### Presenting three options <a href="presenting-three-options" id="presenting-three-options"></a>
 
 It's time to finish up the estimator! Users are accustomed to having three options: slow, average, and fast. We can accomplish this by providing our `eth_feeHistory` call with 3 percentiles. Since we are doing the 1st percentile on the "slow" end, let's do the 99th percentile on the "fast" end, and of course "average" refers to the 50th percentile. So here we go!
 
-```text
+```
 function avg(arr) {
   const sum = arr.reduce((a, v) => a + v);
   return Math.round(sum/arr.length);
@@ -253,21 +253,21 @@ web3.eth.getFeeHistory(historicalBlocks, "pending", [1, 50, 99]).then((feeHistor
 
 With output:
 
-```text
+```
 Manual estimate: { slow: 61058837759, average: 70591575352, fast: 170359703066 }
 ```
 
 Alright! Now you can present options to your users.
 
-### Productionizing your estimator <a id="productionizing-your-estimator"></a>
+### Productionizing your estimator <a href="productionizing-your-estimator" id="productionizing-your-estimator"></a>
 
 Well that was fun, but this code would not be particularly viable in production. Running these calculations every time we need an estimate is not practical for an application that might be serving thousands of transactions per second.
 
 Geth consults what's known as an "Oracle", basically a software actor who's only job it is to keep track of historical blocks and keep the gas estimates up to date. Then geth will simply ask the oracle "what is the current estimate" and get back an immediate response. If you plan on building your own estimator I suggest you do the same.
 
-### Some ideas for the reader <a id="some-ideas-for-the-reader"></a>
+### Some ideas for the reader <a href="some-ideas-for-the-reader" id="some-ideas-for-the-reader"></a>
 
-Nobody knows the full implications of EIP 1559 yet and there is _**a ton**_ of room for innovation. In particular, gas fee estimation is far from a science. The knobs we've been given by the `eth_feeHistory` API are nice, but they don't tell the full story \(as we've seen\). Just look at the spread of fees within a single block! There is a ton of cost saving potential for better fee estimation.
+Nobody knows the full implications of EIP 1559 yet and there is _**a ton**_ of room for innovation. In particular, gas fee estimation is far from a science. The knobs we've been given by the `eth_feeHistory` API are nice, but they don't tell the full story (as we've seen). Just look at the spread of fees within a single block! There is a ton of cost saving potential for better fee estimation.
 
 For instance, we just built an estimator based on _historical_ data. But really, all we are trying to do is choose the lowest possible bid while still being in the top 4,000 transaction bids in the block.
 
@@ -281,5 +281,4 @@ Another interesting area for fee "protection" would be to look at spikes in the 
 
 Similarly what happens when a block is completely full and then the next one is empty? There was so much potential to submit cheap tips! In any case, thanks for reading all the way through 🎉
 
-**If you're interested in learning more, or have feedback, suggestions, or questions, reach out to us in** [**Discord**](https://alchemy.com/discord)**! Get started with Alchemy today by** [**signing up for free**](https://alchemy.com/?r=affiliate:5494a54b-6ae1-4d33-9016-c331c0dcdc1f)**.**
-
+**If you're interested in learning more, or have feedback, suggestions, or questions, reach out to us in **[**Discord**](https://alchemy.com/discord)**! Get started with Alchemy today by **[**signing up for free**](https://alchemy.com/?r=affiliate:5494a54b-6ae1-4d33-9016-c331c0dcdc1f)**.**

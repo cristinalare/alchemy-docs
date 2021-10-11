@@ -2,13 +2,15 @@
 description: Returns the receipt of a transaction by transaction hash.
 ---
 
-# eth\_getTransactionReceipt
+# eth_getTransactionReceipt
 
 This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](./#eth_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions.
 
 This call is also commonly used to get the contract address for a contract creation tx.
 
 {% hint style="warning" %}
+**Note:** the receipt is not available for pending transactions.
+{% endhint %}
 
 ### Parameters
 
@@ -38,8 +40,8 @@ params: [
 
 It also returns either:
 
-* `root` : `DATA` 32 bytes of post-transaction stateroot \(pre Byzantium\)
-* `status`: `QUANTITY` either 1 \(success\) or 0 \(failure\)
+* `root` : `DATA` 32 bytes of post-transaction stateroot (pre Byzantium)
+* `status`: `QUANTITY` either 1 (success) or 0 (failure)
 
 **Example**
 
@@ -109,4 +111,3 @@ Result
   }
 }
 ```
-

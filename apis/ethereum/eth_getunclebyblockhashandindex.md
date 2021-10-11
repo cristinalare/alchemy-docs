@@ -4,14 +4,13 @@ description: >-
   position.
 ---
 
-# eth\_getUncleByBlockHashAndIndex
+# eth_getUncleByBlockHashAndIndex
 
 ### Parameters
 
-* `QUANTITY|TAG` - a block number, or the string "earliest", "latest" or "pending", as in the 
+*   `QUANTITY|TAG` - a block number, or the string "earliest", "latest" or "pending", as in the 
 
-  [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
-
+    [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
 * `QUANTITY` - the uncle's index position.
 
 ```javascript
@@ -26,7 +25,7 @@ params: [
 See [`eth_getBlockByHash`](./#eth_getblockbyhash) 
 
 {% hint style="warning" %}
-**NOTE:** The return does not contain a list of transactions in the uncle block, to get this, make another request to [eth\_getBlockByHash](eth_getblockbyhash.md) _or_ [eth\_getBlockByNumber](eth_getblockbynumber.md)
+**NOTE: **The return does not contain a list of transactions in the uncle block, to get this, make another request to [eth_getBlockByHash](eth_getblockbyhash.md)_ or _[eth_getBlockByNumber](eth_getblockbynumber.md)
 {% endhint %}
 
 ### [Example](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getUncleByBlockHashAndIndex%22%2C%22paramValues%22%3A%5B%220xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35%22%2C%220x0%22%5D%7D)
@@ -87,5 +86,4 @@ Result
 }
 ```
 
-### 
-
+###

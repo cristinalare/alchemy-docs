@@ -4,12 +4,12 @@ description: >-
   same results with an eth_getLogs call (see hint below).
 ---
 
-# eth\_getFilterLogs
+# eth_getFilterLogs
 
 {% hint style="warning" %}
 This method only works for filters creates with [`eth_newFilter`](./#eth_newfilter)not for filters created using [`eth_newBlockFilter`](./#eth_newblockfilter) or [`eth_newPendingTransactionFilter`](./#eth_newpendingtransactionfilter), which will return `"filter not found".`
 
-### eth\_getLogs vs. eth\_getFilterLogs
+### eth_getLogs vs. eth_getFilterLogs
 
 These two computations will return the same results:
 
@@ -29,9 +29,9 @@ params: [
 
 ### **Returns**
 
-See [`eth_getFilterChanges`](./#eth_getfilterchanges)\`\`
+See [`eth_getFilterChanges`](./#eth_getfilterchanges)``
 
-### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getFilterLogs%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
+### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getFilterLogs%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)****
 
 Request
 
@@ -90,5 +90,4 @@ Result
 }
 ```
 
-### 
-
+###

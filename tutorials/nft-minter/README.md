@@ -15,7 +15,7 @@ By building an NFT minter—a simple UI where you can input a link to your digit
 * Call smart contract methods from your frontend
 * Sign transactions using Metamask
 
-In this tutorial, we will be using [React](https://reactjs.org/) as our frontend framework. Because this tutorial is primarily focused on Web3 development, we won't be spending much time breaking down React fundamentals. Instead, we'll be focusing on bringing functionality to our project
+In this tutorial, we will be using [React](https://reactjs.org) as our frontend framework. Because this tutorial is primarily focused on Web3 development, we won't be spending much time breaking down React fundamentals. Instead, we'll be focusing on bringing functionality to our project
 
 {% hint style="info" %}
 As a prerequisite, you should have a beginner-level understanding of React—know how components, props, useState/useEffect, and basic function calling works. If you've never heard of any of those terms before, you may want to check out this [Intro to React tutorial](https://reactjs.org/tutorial/tutorial.html). For the more visual learners, we highly recommend this excellent [Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) video series by Net Ninja.
@@ -38,14 +38,16 @@ The biggest difference between the two NFT smart contact standards is that ERC-1
 Usually, this minting function requires you to pass in two variables as parameters, first the `recipient`, which specifies the address that will receive your freshly minted NFT, and second the NFT's `tokenURI` , a string that resolves to a JSON document describing the NFT's metadata.
 
 {% hint style="info" %}
-An NFT's metadata is really what brings it to life, allowing it to have properties, such as a name, description, image \(or different digital asset\), and other attributes. Here's [an example of a tokenURI](https://gateway.pinata.cloud/ipfs/QmSvBcb4tjdFpajGJhbFAWeK3JAxCdNQLQtr6ZdiSi42V2), which contains an NFT's metadata.
+An NFT's metadata is really what brings it to life, allowing it to have properties, such as a name, description, image (or different digital asset), and other attributes. Here's [an example of a tokenURI](https://gateway.pinata.cloud/ipfs/QmSvBcb4tjdFpajGJhbFAWeK3JAxCdNQLQtr6ZdiSi42V2), which contains an NFT's metadata.
 {% endhint %}
 
 In this tutorial, we're going to focus on part 2, calling an existing NFT's smart contract minting function using our React UI.
 
 [Here's a link](https://ropsten.etherscan.io/address/0x4C4a07F737Bf57F6632B6CAB089B78f62385aCaE) to the ERC-721 NFT smart contract we will be calling in this tutorial. If you'd like to learn how we made it, we highly recommend that you check out our other tutorial, ["How to Create an NFT."](https://docs.alchemyapi.io/alchemy/tutorials/how-to-create-an-nft)
 
-{% page-ref page="../how-to-create-an-nft/" %}
+{% content-ref url="../how-to-create-an-nft/" %}
+[how-to-create-an-nft](../how-to-create-an-nft/)
+{% endcontent-ref %}
 
 Cool, now that we understand how making an NFT works, let's clone our starter files!
 
@@ -59,12 +61,12 @@ Don't know how to clone a repository? Check out [this guide](https://docs.github
 
 When you open this cloned `nft-minter-tutorial` repository, you'll notice that it contains two folders: `minter-starter-files` and `nft-minter`.
 
-* `minter-starter-files`contains the starter files \(essentially the React UI\) for this project. In this tutorial, **we will be working in this directory**, as you learn how to bring this UI to life by connecting it to your Ethereum wallet and an NFT smart contract.
+* `minter-starter-files`contains the starter files (essentially the React UI) for this project. In this tutorial, **we will be working in this directory**, as you learn how to bring this UI to life by connecting it to your Ethereum wallet and an NFT smart contract.
 * `nft-minter` contains the entire completed tutorial and is there for you as a **reference** **if you get stuck.**
 
-Next open your copy of `minter-starter-files`in to your favorite code editor \(at Alchemy, we we're big fans of [VSCode](https://code.visualstudio.com/download)\), and then navigate into your `src` folder:
+Next open your copy of `minter-starter-files`in to your favorite code editor (at Alchemy, we we're big fans of [VSCode](https://code.visualstudio.com/download)), and then navigate into your `src` folder:
 
-![We will work inside the &quot;src&quot; folder](https://static.slab.com/prod/uploads/7adb25ff/posts/images/RQXRr70mP174PjsKQI_jMKuq.png)
+![We will work inside the "src" folder](https://static.slab.com/prod/uploads/7adb25ff/posts/images/RQXRr70mP174PjsKQI_jMKuq.png)
 
 All of the code we'll write will live under the `src` folder. We'll be editing the `Minter.js` component and writing additional javascript files to give our project Web3 functionality.
 
@@ -89,11 +91,11 @@ Once those have finished installing, run `npm start` in your terminal:
 npm start
 ```
 
-Doing so should open [http://localhost:3000/](http://localhost:3000/) in your browser, where you'll see the frontend for our project. It should consist of 3 fields: a place to input a link to your NFT's asset, enter the name of your NFT, and provide a description.
+Doing so should open [http://localhost:3000/](http://localhost:3000) in your browser, where you'll see the frontend for our project. It should consist of 3 fields: a place to input a link to your NFT's asset, enter the name of your NFT, and provide a description.
 
 ![What your UI should look like](https://static.slab.com/prod/uploads/7adb25ff/posts/images/PNrbdLnNM6OriGE32N25TGSl.png)
 
-If you try clicking "Connect Wallet" or "Mint NFT" buttons, you'll notice they don't work—that's because we still need to program their functionality! :\)
+If you try clicking "Connect Wallet" or "Mint NFT" buttons, you'll notice they don't work—that's because we still need to program their functionality! :)
 
 ### The `Minter.js` component
 
@@ -142,7 +144,7 @@ After the state variables, you'll see three un-implemented functions: `useEffect
   };
 ```
 
-* [`useEffect`](https://reactjs.org/docs/hooks-effect.html)- this is a React hook that is called after your component is rendered.  Because it has an empty array `[]` prop passed into it \(see line 3\),  it will only be called on the component's _first_ render. Here we'll call our wallet listener and another wallet function to update our UI to reflect whether a wallet is already connected. 
+* [`useEffect`](https://reactjs.org/docs/hooks-effect.html)- this is a React hook that is called after your component is rendered.  Because it has an empty array `[]` prop passed into it (see line 3),  it will only be called on the component's _first_ render. Here we'll call our wallet listener and another wallet function to update our UI to reflect whether a wallet is already connected. 
 * `connectWalletPressed`- this function will be called to connect the user's Metamask wallet to our dApp.
 * `onMintPressed` - this function will be called to mint the user's NFT.
 
@@ -216,19 +218,19 @@ For users to be able to interact with your smart contract they will need to conn
 
 For this tutorial, we’ll use Metamask, a virtual wallet in the browser used to manage your Ethereum account address. If you want to understand more about how transactions on Ethereum work, check out [this page](https://ethereum.org/en/developers/docs/transactions/) from the Ethereum foundation.
 
-You can download and create a Metamask account for free [here](https://metamask.io/download.html). When you are creating an account, or if you already have an account, make sure to switch over to the “Ropsten Test Network” in the upper right \(so that we’re not dealing with real money\).
+You can download and create a Metamask account for free [here](https://metamask.io/download.html). When you are creating an account, or if you already have an account, make sure to switch over to the “Ropsten Test Network” in the upper right (so that we’re not dealing with real money).
 
-![Sample Metamask wallet](../../.gitbook/assets/image%20%2814%29.png)
+![Sample Metamask wallet](<../../.gitbook/assets/image (6).png>)
 
-### Add ether from a Faucet <a id="step-4-add-ether-from-a-faucet"></a>
+### Add ether from a Faucet <a href="step-4-add-ether-from-a-faucet" id="step-4-add-ether-from-a-faucet"></a>
 
-In order to mint our NFTs \(or sign any transactions on the Ethereum blockchain\), we’ll need some fake Eth. To get Eth you can go to the [Ropsten faucet](https://faucet.ropsten.be/) and enter your Ropsten account address, then click “Send Ropsten Eth.” You should see Eth in your Metamask account soon after!
+In order to mint our NFTs (or sign any transactions on the Ethereum blockchain), we’ll need some fake Eth. To get Eth you can go to the [Ropsten faucet](https://faucet.ropsten.be) and enter your Ropsten account address, then click “Send Ropsten Eth.” You should see Eth in your Metamask account soon after!
 
-### Check your Balance <a id="step-5-check-your-balance"></a>
+### Check your Balance <a href="step-5-check-your-balance" id="step-5-check-your-balance"></a>
 
-To double check our balance is there, let’s make an [eth\_getBalance](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_getbalance) request using [Alchemy’s composer tool](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%22%22%2C%22latest%22%5D%7D). This will return the amount of Eth in our wallet. After you input your Metamask account address and click “Send Request”, you should see a response like this:
+To double check our balance is there, let’s make an [eth_getBalance](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_getbalance) request using [Alchemy’s composer tool](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%22%22%2C%22latest%22%5D%7D). This will return the amount of Eth in our wallet. After you input your Metamask account address and click “Send Request”, you should see a response like this:
 
-```text
+```
 {"jsonrpc": "2.0", "id": 0, "result": "0xde0b6b3a7640000"}
 ```
 
@@ -242,7 +244,7 @@ Phew! Our fake money is all there! 🤑
 
 Now that our Metamask wallet is set up, let's connect our dApp to it!
 
-Because we want to prescribe to the [M-V-C](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) paradigm, we're going to create a separate file that contains our functions to manage the logic, data, and rules of our dApp, and then pass those functions to our frontend \(our Minter.js component\).
+Because we want to prescribe to the [M-V-C](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) paradigm, we're going to create a separate file that contains our functions to manage the logic, data, and rules of our dApp, and then pass those functions to our frontend (our Minter.js component).
 
 ### The `connectWallet` function
 
@@ -308,10 +310,10 @@ Now if `window.ethereum` _is_ present, then that's when things get interesting.
 
 Using a try/catch loop, we'll try to connect to Metamask by calling[`window.ethereum.request({ method: "eth_requestAccounts" });`](https://docs.metamask.io/guide/rpc-api.html#eth-requestaccounts) Calling this function will open up Metamask in the browser, whereby the user will be prompted to connect their wallet to your dApp.
 
-* If the user chooses to connect, `method: "eth_requestAccounts"`  will return an array that contains all of the user's account addresses that are connected to the dApp. Altogether, our `connectWallet` function will return a JSON object that contains the _first_ `address` in this array \(see line 9\) and a `status` message that prompts the user to write a message to the smart contract.
+* If the user chooses to connect, `method: "eth_requestAccounts"`  will return an array that contains all of the user's account addresses that are connected to the dApp. Altogether, our `connectWallet` function will return a JSON object that contains the _first_ `address` in this array (see line 9) and a `status` message that prompts the user to write a message to the smart contract.
 * If the user rejects the connection, then the JSON object will contain an empty string for the `address` returned and a `status` message that reflects that the user rejected the connection.
 
-### Add `connectWallet` function to your `Minter.js` UI Component <a id="import-connect-wallet-pressed-into-minter-jss-connect-wallet-function"></a>
+### Add `connectWallet` function to your `Minter.js` UI Component <a href="import-connect-wallet-pressed-into-minter-jss-connect-wallet-function" id="import-connect-wallet-pressed-into-minter-jss-connect-wallet-function"></a>
 
 Now that we've written this `connectWallet` function, let's connect it to our `Minter.js.` component.
 
@@ -345,9 +347,9 @@ Notice how most of our functionality is abstracted away from our `Minter.js` com
 
 In `connectWalletPressed`, we simply make an await call to our imported `connectWallet` function, and using its response, we update our `status` and `walletAddress` variables via their state hooks.
 
-Now, let's save both files \(`Minter.js` and `interact.js`\) and test out our UI so far.
+Now, let's save both files (`Minter.js` and `interact.js`) and test out our UI so far.
 
-Open your browser on the [http://localhost:3000/](http://localhost:3000/) page, and press the "Connect Wallet" button on the top right of the page.
+Open your browser on the [http://localhost:3000/](http://localhost:3000) page, and press the "Connect Wallet" button on the top right of the page.
 
 If you have Metamask installed, you should be prompted to connect your wallet to your dApp. Accept the invitation to connect.
 
@@ -472,7 +474,7 @@ function addWalletListener() {
 
 Let's quickly break down what's happening here:
 
-* First, our function checks if `window.ethereum` is enabled \(i.e. Metamask is installed\).
+* First, our function checks if `window.ethereum` is enabled (i.e. Metamask is installed).
   * If it's not, we simply set our `status`  state variable to a JSX string that prompts the user to install Metamask.
   * If it is enabled, we set up the listener `window.ethereum.on("accountsChanged")` on line 3 that listens for state changes in the Metamask wallet, which include when the user connects an additional account to the dApp, switches accounts, or disconnects an account. If there is at least one account connected, the `walletAddress` state variable is updated as the first account in the `accounts` array returned by the listener. Otherwise, `walletAddress` is set as an empty string. 
 
@@ -498,13 +500,13 @@ We're going to need to configure this metadata as a JSON object and store it, so
 
 The text in the "Link to Asset", "Name", "Description" fields will comprise the different properties of our NFT's metadata. We'll format this metadata as a JSON object, but there are a couple options for where we can store this JSON object:
 
-* We could store it on the Ethereum blockchain; however, doing so would be SUPER expensive \(we're talking upwards of hundreds of dollars\) due to the nature of Ethereum. ❌
+* We could store it on the Ethereum blockchain; however, doing so would be SUPER expensive (we're talking upwards of hundreds of dollars) due to the nature of Ethereum. ❌
 * We could store it on a centralized server, like AWS or Firebase. But that would defeat our decentralization ethos. ❌
 * We could use IPFS, a decentralized protocol and peer-to-peer network for storing and sharing data in a distributed file system. As this protocol is decentralized and free, it is our best option! ✅
 
-To store our metadata on IPFS, we will use [Pinata](https://pinata.cloud/), a convenient IPFS API and toolkit. In the next step, we'll explain exactly how to do this!
+To store our metadata on IPFS, we will use [Pinata](https://pinata.cloud), a convenient IPFS API and toolkit. In the next step, we'll explain exactly how to do this!
 
-## Step 6: Use [Pinata](https://pinata.cloud/) to pin your metadata to IPFS
+## Step 6: Use [Pinata](https://pinata.cloud) to pin your metadata to IPFS
 
 If you don't have a Pinata account, sign up for a free account [here](https://pinata.cloud/signup) and complete the steps to verify your email and account.
 
@@ -512,7 +514,7 @@ If you don't have a Pinata account, sign up for a free account [here](https://pi
 
 Navigate to the [https://pinata.cloud/keys](https://pinata.cloud/keys) page, then select the "New Key" button at the top, set the Admin widget as enabled, and name your key.
 
-![Create your Pinata API key](https://static.slab.com/prod/uploads/7adb25ff/posts/images/J__0NjUkj_6BObi1Q4Q3eRe6.png)
+![Create your Pinata API key](https://static.slab.com/prod/uploads/7adb25ff/posts/images/J\_\_0NjUkj\_6BObi1Q4Q3eRe6.png)
 
 You'll then be shown a popup with your API info. Make sure to put this somewhere safe.
 
@@ -524,9 +526,9 @@ Now that our key is set up, let's add it to our project so we can use it.
 
 We can safely store our Pinata key and secret in an environment file. Let's install the [dotenv package](https://www.npmjs.com/package/dotenv) in your project directory.
 
-Open up a new tab in your terminal \(separate from the one running local host\) and make sure you are in the `minter-starter-files` folder, then run the following command in your terminal:
+Open up a new tab in your terminal (separate from the one running local host) and make sure you are in the `minter-starter-files` folder, then run the following command in your terminal:
 
-```text
+```
 npm install dotenv --save
 ```
 
@@ -536,11 +538,11 @@ Next, create a `.env` file in the root directory of your `minter-starter-files` 
 vim .env
 ```
 
-This will pop open your `.env` file in vim \(a text editor\). To save it hit "esc" + ":" + "q" on your keyboard in that order.
+This will pop open your `.env` file in vim (a text editor). To save it hit "esc" + ":" + "q" on your keyboard in that order.
 
 Next, in VSCode, navigate to your `.env` file and add your Pinata API key and API secret to it, like so:
 
-```text
+```
 REACT_APP_PINATA_KEY = <pinata-api-key>
 REACT_APP_PINATA_SECRET = <pinata-api-secret>
 ```
@@ -630,7 +632,7 @@ Navigate to the “Create App” page in your Alchemy Dashboard by hovering over
 
 ![Create a new app](https://static.slab.com/prod/uploads/7adb25ff/posts/images/avF_wnWdWxL9X9YtBm8FO8bw.png)
 
-Name your app \(we chose "My First NFT!"\), offer a short description, select “Staging” for the Environment \(used for your app bookkeeping\), and choose “Ropsten” for your network.
+Name your app (we chose "My First NFT!"), offer a short description, select “Staging” for the Environment (used for your app bookkeeping), and choose “Ropsten” for your network.
 
 ![Configure your app details](https://static.slab.com/prod/uploads/7adb25ff/posts/images/jFpUacfvT5qV052WW_aFjA00.png)
 
@@ -642,7 +644,7 @@ Awesome so now that we've created our HTTP Alchemy API URL, copy it to your clip
 
 …and then let's add it to our `.env` file. Altogether, your .env file should look like this:
 
-```text
+```
 REACT_APP_PINATA_KEY = <pinata-key>
 REACT_APP_PINATA_SECRET = <pinata-secret>
 REACT_APP_ALCHEMY_KEY = https://eth-ropsten.alchemyapi.io/v2/<alchemy-key>
@@ -654,7 +656,7 @@ Now that we have our contract ABI and our Alchemy API key, we're ready to load o
 
 First, if you don't have it already, you'll need to install [Alchemy Web3](https://github.com/alchemyplatform/alchemy-web3) by navigating to the home directory: `nft-minter-tutorial`in the terminal:
 
-```text
+```
 cd ..
 npm install @alch/alchemy-web3
 ```
@@ -690,7 +692,7 @@ Once we have both of those, we're ready to start coding our mint function!
 
 Inside your `interact.js` file, let's define our function, `mintNFT` , which eponymously will mint our NFT.
 
-Because we will be making numerous asynchronous calls \(to Pinata to pin our metadata to IPFS, Alchemy Web3 to load our smart contract, and Metamask to sign our transactions\), our function will also be asynchronous.
+Because we will be making numerous asynchronous calls (to Pinata to pin our metadata to IPFS, Alchemy Web3 to load our smart contract, and Metamask to sign our transactions), our function will also be asynchronous.
 
 The three inputs to our function will be the `url` of our digital asset, `name`, and `description`. Add the following function signature below the `connectWallet` function:
 
@@ -802,10 +804,10 @@ The last thing to add in our `mintNFT` function is our Ethereum transaction:
 If you're already familiar with Ethereum transactions, you'll notice that the structure is pretty similar to what you've seen.
 
 * First, we set up our transactions parameters.
-  * `to` specifies the recipient address \(our smart contract\)
-  * `from` specifies the signer of the transaction \(the user's connected address to Metamask: `window.ethereum.selectedAddress`\)
+  * `to` specifies the recipient address (our smart contract)
+  * `from` specifies the signer of the transaction (the user's connected address to Metamask: `window.ethereum.selectedAddress`)
   * `data`  contains the call to our smart contract `mintNFT` method, which receives our  `tokenURI` and the user's wallet address, `window.ethereum.selectedAddress`, as inputs
-* Then, we make an await call, `window.ethereum.request,` where we ask Metamask to sign the transaction. Notice, in this request, we're specifying our eth method \(eth\_SentTransaction\) and passing in our `transactionParameters`. At this point, Metamask will open up in the browser, and prompt the user to sign or reject the transaction.
+* Then, we make an await call, `window.ethereum.request,` where we ask Metamask to sign the transaction. Notice, in this request, we're specifying our eth method (eth_SentTransaction) and passing in our `transactionParameters`. At this point, Metamask will open up in the browser, and prompt the user to sign or reject the transaction.
   * If the transaction is successful, the function will return a JSON object where the boolean `success` is set to true and the `status` string prompts the user to check out Etherscan for more information about their transaction.
   * If the transaction fails, the function will return a JSON object where the `success` boolean is set to false, and the `status` string relays the error message.
 
@@ -891,7 +893,9 @@ const onMintPressed = async () => {
 
 Ready to take your project live for users to interact with? Check out the tutorial below for deploying your Minter to a live website:
 
-{% page-ref page="how-do-i-deploy-nfts-online.md" %}
+{% content-ref url="how-do-i-deploy-nfts-online.md" %}
+[how-do-i-deploy-nfts-online.md](how-do-i-deploy-nfts-online.md)
+{% endcontent-ref %}
 
 One last step...
 
@@ -911,9 +915,10 @@ And, as always, if you have any questions, we're here to help in the [Alchemy Di
 
 Ready to mint an NFT using your minter? Check out this demo video!
 
-{% embed url="https://www.youtube.com/watch?v=mmrO6\_5-hRU" caption="NFT Minter Demo" %}
+{% embed url="https://www.youtube.com/watch?v=mmrO6_5-hRU" %}
+NFT Minter Demo
+{% endembed %}
 
 {% hint style="info" %}
-**NOTE:** The transactions sent through Metamask will use Metamask's default provider \(not necessarily your Alchemy endpoint\). If you'd like to send those transactions through Alchemy to unlock debugging tools and the [Alchemy Notify ](../../introduction/core-products/alchemy-notify.md)suite, check out [this guide](../../guides/connecting-metamask-to-alchemy.md) for connecting Metamask to Alchemy.
+**NOTE:** The transactions sent through Metamask will use Metamask's default provider (not necessarily your Alchemy endpoint). If you'd like to send those transactions through Alchemy to unlock debugging tools and the [Alchemy Notify ](../../introduction/core-products/alchemy-notify.md)suite, check out [this guide](../../guides/connecting-metamask-to-alchemy.md) for connecting Metamask to Alchemy.
 {% endhint %}
-

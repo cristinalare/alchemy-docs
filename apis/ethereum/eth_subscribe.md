@@ -5,21 +5,21 @@ description: >-
   first parameter.
 ---
 
-# eth\_subscribe
+# eth_subscribe
 
 ### Parameters
 
 1. subscription name
-2. optional arguments \([see below](./#optional-arguments)\)
+2. optional arguments ([see below](./#optional-arguments))
 
-### **Returns** 
+### **Returns **
 
 If successful this returns the subscription id.
 
 ### Example
 
 {% hint style="info" %}
-**NOTE**: `eth_subscribe` requests cannot be replicated in the [composer](https://composer.alchemyapi.io/) tool
+**NOTE**: `eth_subscribe` requests cannot be replicated in the [composer](https://composer.alchemyapi.io) tool
 {% endhint %}
 
 Request
@@ -141,9 +141,9 @@ In case of a chain reorganization previous sent logs that are on the old chain w
 
 **Parameters**
 
-1. `object` with the following \(optional\) fields
-   * **address**, either an address or an array of addresses. Only logs that are created from these addresses are returned \(optional\)
-   * **topics**, only logs which match the specified topics \(optional\)
+1. `object` with the following (optional) fields
+   * **address**, either an address or an array of addresses. Only logs that are created from these addresses are returned (optional)
+   * **topics**, only logs which match the specified topics (optional)
 
 **Example**
 
@@ -212,9 +212,9 @@ When a transaction that was previously part of the canonical chain isn’t part 
 **NOTE:**
 
 * If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../../guides/using-websockets.md#1-alchemy_newfullpendingtransactions)
-* If you want pending transactions for a specific address, check out the Enhanced API 
+*   If you want pending transactions for a specific address, check out the Enhanced API 
 
-  \`\`[`alchemy_filteredNewFullPendingTransactions`](../../guides/using-websockets.md#2-alchemy_filterednewfullpendingtransactions)\`\`
+    ``[`alchemy_filteredNewFullPendingTransactions`](../../guides/using-websockets.md#2-alchemy_filterednewfullpendingtransactions)``
 {% endhint %}
 
 **Parameters**
@@ -270,7 +270,7 @@ Result
 
 ### 4. syncing
 
-Indicates when the node starts or stops synchronizing. The result can either be a boolean indicating that the synchronization has started \(true\), finished \(false\) or an object with various progress indicators.
+Indicates when the node starts or stops synchronizing. The result can either be a boolean indicating that the synchronization has started (true), finished (false) or an object with various progress indicators.
 
 **Parameters**
 
@@ -329,5 +329,4 @@ Result
 }
 ```
 
-### 
-
+###

@@ -2,9 +2,11 @@
 description: Returns a list of addresses owned by client.
 ---
 
-# eth\_accounts
+# eth_accounts
 
 {% hint style="warning" %}
+Since Alchemy does not store keys, this will always return empty.
+{% endhint %}
 
 ### **Parameters**
 
@@ -52,4 +54,3 @@ Result
   "result": []
 }
 ```
-
