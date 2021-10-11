@@ -14,8 +14,8 @@ Use these docs to learn more about Alchemy's core products, explore guides, and 
 
 Jump into our API Reference pages, from the Ethereum Standard JSON-RPC API, to Arbitrum's Layer 2 API, and to our exclusive Enhanced APIs.
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="apis/ethereum/" %}
+[ethereum](apis/ethereum/)
 {% endcontent-ref %}
 
 ## 🤷 What is Alchemy?
