@@ -109,7 +109,7 @@ Now we have two files in our folder, one with a `json` extension and one with a 
 
 We'll then create a folder called `teku` in our `validator_keys` directory. In this teku folder, we'll create a subfolder called `validator` and then create two new folders underneath validator. One called `keys` and one called `passwords`. The `.json` keys file will go in the keys folder and the `.txt` file will go into the passwords folder like below:
 
-![](<../../.gitbook/assets/Screen Shot 2021-09-02 at 11.44.19 AM.png>)
+![](../../.gitbook/assets/screen-shot-2021-09-02-at-11.44.19-am.png)
 
 Finally, we'll copy the **absolute path ** of our teku folder by running:
 

@@ -189,7 +189,7 @@ Open up the [Mempool page](https://dashboard.alchemyapi.io/mempool) in your Alch
 
 To view the details of your transaction once you've found it, select the tx hash, which should take you to a view that looks like this:
 
-![View your transaction on the Alchemy Mempool Watcher](<../.gitbook/assets/Screen Shot 2021-08-02 at 8.50.18 PM.png>)
+![View your transaction on the Alchemy Mempool Watcher](../.gitbook/assets/screen-shot-2021-08-02-at-8.50.18-pm.png)
 
 From there you can view your transaction on Etherscan by clicking on the icon circled in red!
 

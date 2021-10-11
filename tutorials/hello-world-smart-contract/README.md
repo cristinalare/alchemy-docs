@@ -32,11 +32,11 @@ Once you’ve created an Alchemy account, you can generate an API key by creatin
 
 Navigate to the “Create App” page in your Alchemy Dashboard by hovering over “Apps” in the nav bar and clicking “Create App”
 
-![](<../../.gitbook/assets/Screen Shot 2021-03-03 at 8.38.51 AM.png>)
+![](../../.gitbook/assets/screen-shot-2021-03-03-at-8.38.51-am.png)
 
 Name your app “Hello World”, offer a short description, select “Staging” for the Environment (used for your app bookkeeping), and choose “Ropsten” for your network.
 
-![Double check that you're selecting the Roptsen testnet!](<../../.gitbook/assets/1\_cYZZlzwL5Y6pwpb5HSi1tQ (1).png>)
+![Double check that you're selecting the Roptsen testnet!](<../../.gitbook/assets/1\_cyzzlzwl5y6pwpb5hsi1tq (1).png>)
 
 Click “Create app” and that’s it! Your app should appear in the table below.
 
@@ -235,7 +235,7 @@ Your environment file must be named `.env` or it won't be recognized as an envir
 * Follow [these instructions](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) to export your private key
 * See below to get HTTP Alchemy API URL
 
-![](<../../.gitbook/assets/get alchemy api key.gif>)
+![](../../.gitbook/assets/get-alchemy-api-key.gif)
 
 Your `.env` should look like this:
 
@@ -356,17 +356,17 @@ Contract deployed to address: 0x6cd7d44516a20882cEa2DE9f205bF401c0d23570
 
 If we go to the [Ropsten etherscan](https://ropsten.etherscan.io) and search for our contract address we should able to see that it has been deployed successfully. The transaction will look something like this:
 
-![](<../../.gitbook/assets/etherscan contract.png>)
+![](../../.gitbook/assets/etherscan-contract.png)
 
 The `From` address should match your Metamask account address and the To address will say “Contract Creation” but if we click into the transaction we’ll see our contract address in the `To` field:
 
-![](<../../.gitbook/assets/etherscan transaction.png>)
+![](../../.gitbook/assets/etherscan-transaction.png)
 
 Congrats! You just deployed a smart contract to the Ethereum chain 🎉
 
 To understand what’s going on under the hood, let’s navigate to the Explorer tab in our [Alchemy dashboard ](https://dashboard.alchemyapi.io/explorer). If you have multiple Alchemy apps make sure to filter by app and select “Hello World”.
 
-![](<../../.gitbook/assets/hello world explorer.png>)
+![](../../.gitbook/assets/hello-world-explorer.png)
 
 Here you’ll see a handful of JSON-RPC calls that Hardhat/Ethers made under the hood for us when we called the `.deploy()` function. Two important ones to call out here are [`eth_sendRawTransaction`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_sendrawtransaction), which is the request to actually write our contract onto the Ropsten chain, and [`eth_getTransactionByHash`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactionbyhash) which is a request to read information about our transaction given the hash (a typical pattern when sending transactions). To learn more about sending transactions, check out this tutorial on [sending transactions using Web3](../sending-txs.md).
 

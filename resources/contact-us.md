@@ -14,13 +14,13 @@ Join our [community discord](https://discord.com/invite/mMGsVgd) for person-to-p
 
 Join the community using this [link](https://discord.com/invite/mMGsVgd), or from your [Alchemy dashboard](https://dashboard.alchemyapi.io) by clicking on the "Get Support" button in the bottom right corner:
 
-![Dashboard Discord Support Button](<../.gitbook/assets/Screen Shot 2020-08-26 at 4.18.03 PM.png>)
+![Dashboard Discord Support Button](../.gitbook/assets/screen-shot-2020-08-26-at-4.18.03-pm.png)
 
 ## Telegram 
 
 Telegram is supported for Enterprise tier Alchemy users, you can find your unique telegram link in the bottom right corner of your [Alchemy Dashboard](https://dashboard.alchemyapi.io). 
 
-![Dashboard Telegram Support Button](<../.gitbook/assets/Screen Shot 2020-08-26 at 4.23.48 PM.png>)
+![Dashboard Telegram Support Button](../.gitbook/assets/screen-shot-2020-08-26-at-4.23.48-pm.png)
 
 ## Support Ticket 
 

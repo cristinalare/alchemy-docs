@@ -25,7 +25,7 @@ Every contract has an associated ABI, if you use [Truffle](https://www.trufflesu
 
 You can find the ABI for a specific contract by going to [Etherscan](https://etherscan.io) and pasting in the `address` field of the contract in the search bar, then clicking on the "contract" tab and scrolling down to "Contract ABI". See below for guidance:
 
-![](<../.gitbook/assets/etherscan contract abi.gif>)
+![](../.gitbook/assets/etherscan-contract-abi.gif)
 
 Here is part of the contract ABI for the contract with address `0xb59f67A8BfF5d8Cd03f6AC17265c550Ed8F33907`, which we will be using in our example. Here we have just included the two `events` listed in this ABI: the `"Transfer"` event, and the `"NewOwner"` event, but you can see the full contract ABI [here](https://etherscan.io/address/0xb59f67a8bff5d8cd03f6ac17265c550ed8f33907#code).
 

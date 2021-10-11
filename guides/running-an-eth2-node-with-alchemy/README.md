@@ -41,19 +41,19 @@ Some notable advisories:
 
 Complete the checklist until you get to the confirmation step.
 
-![Confirmation page on the Ethereum 2.0 Launchpad](<../../.gitbook/assets/Screen Shot 2021-08-25 at 5.12.13 PM.png>)
+![Confirmation page on the Ethereum 2.0 Launchpad](../../.gitbook/assets/screen-shot-2021-08-25-at-5.12.13-pm.png)
 
 ## 2. Choose your Eth1 client
 
 If you want to run your own node, you can view the options for the various Eth1 providers and set up your node. **Luckily, if you use Alchemy **as your Eth1 provider and completely skip this step. 😃
 
-![Eth 1,](<../../.gitbook/assets/image (36) (1) (1).png>)
+![Eth 1,](<../../.gitbook/assets/image (36) (1).png>)
 
 ## 3. Choosing your Eth2 client
 
 There are four major Eth2 clients [which can be found here](https://ethereum.org/en/eth2/get-involved/#clients). You can find guides on how to configure Alchemy with [Prysm](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/setting-up-an-eth-2.0-node-or-validator-with-prysm) and [Teku](https://docs.alchemy.com/alchemy/guides/running-an-eth2-node-with-alchemy/eth2-staking-teku).
 
-![Eth 2.0 Clients](<../../.gitbook/assets/image (31).png>)
+![Eth 2.0 Clients](<../../.gitbook/assets/image (29).png>)
 
 ## 4. Generating your key pairs
 
@@ -63,7 +63,7 @@ There are four major Eth2 clients [which can be found here](https://ethereum.org
 
 You're going to want the latest release. Download the binary that is appropriate for your operating system. 
 
-![eth2deposit-cli binary choices for Mac, Linux, and Windows](<../../.gitbook/assets/Choose package.jpg>)
+![eth2deposit-cli binary choices for Mac, Linux, and Windows](../../.gitbook/assets/choose-package.jpg)
 
 * Extract the downloaded file.
 * Navigate to this folder using your terminal / powershell.
@@ -86,7 +86,7 @@ For Windows:
 
 On some Macs, you may get a warning that `deposit` can't be opened because the developer cannot be verified. [Follow apple's instructions ](https://support.apple.com/en-us/HT202491)on installing applications from unverified developers. Re-run the command after allowing access to the application.
 
-![All 'deposit' to be run even if it is not an identified developer by selecting 'Allow Anyway'](<../../.gitbook/assets/image (32).png>)
+![All 'deposit' to be run even if it is not an identified developer by selecting 'Allow Anyway'](<../../.gitbook/assets/image (37).png>)
 
 Select your language. Press **enter** to default to english. Then enter a passphrase that can unlock your keys. Remember to keep this password!
 
@@ -115,27 +115,27 @@ Press any key when you have written down your mnemonic.
 
 Next paste your mnemonic into the terminal input. On success, you will see a Rhino and the output location of your keys! Keep track of this location as it will be helpful when setting up your Eth 2.0 client.
 
-![Successful generation of your keys](<../../.gitbook/assets/image (33).png>)
+![Successful generation of your keys](<../../.gitbook/assets/image (31).png>)
 
 ## 5. Submit your keys to launchpage
 
 Upload your validator keys to  [launch pad](https://prater.launchpad.ethereum.org/en/upload-deposit-data). If you generated keys on the wrong network, the launchpad will prevent you from progressing. You can switch the network you are on by click on the top right corner.
 
-![Successful upload of validator keys](<../../.gitbook/assets/Screen Shot 2021-08-25 at 5.56.12 PM.png>)
+![Successful upload of validator keys](../../.gitbook/assets/screen-shot-2021-08-25-at-5.56.12-pm.png)
 
 ## 6. Submit your keys to launchpad
 
 Connect your wallet to launchpad. In this demo, we will be using metamask. Switch your network to **Goerli. **If you are on the right network and the required 32 Eth, you will be able to proceed. If you need Goerli test ether, you can get 35 Eth [from the public faucet](https://faucet.goerli.mudit.blog). 
 
-![Connecting your wallet and validating 32 Eth requirement](<../../.gitbook/assets/image (35).png>)
+![Connecting your wallet and validating 32 Eth requirement](<../../.gitbook/assets/image (38).png>)
 
 ## ** 7. Send your deposit**
 
 Review the requirements and click continue. When ready, submit your transaction to the beacon chain!
 
-![Successful submission of initial deposit for beacon chain](<../../.gitbook/assets/image (36).png>)
+![Successful submission of initial deposit for beacon chain](<../../.gitbook/assets/image (35).png>)
 
-![Success message after sending deposit](<../../.gitbook/assets/image (37).png>)
+![Success message after sending deposit](<../../.gitbook/assets/image (39).png>)
 
 ## 8. Set up Eth 2.0 client 
 

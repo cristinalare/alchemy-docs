@@ -36,7 +36,7 @@ When you want a more detailed view, come to the Explorer to get a breakdown of y
 
 When you send a transaction, you can check its status in our mempool. We've sent a transaction from your Demo App, so you can start to play around with this feature. What is the status of that transaction: mined, pending,  or dropped? 
 
-![](<../.gitbook/assets/mem (1).gif>)
+![](../.gitbook/assets/mem.gif)
 
 {% hint style="info" %}
 **Don't see anything from the demo app in the mempool? **See if you can dig through the explorer to find out why (Hint: that transaction may already be known). **Is your transaction pending? **This can often happen if gas isn't sufficient (Hint: gas prices could be high)

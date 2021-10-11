@@ -50,22 +50,22 @@ Alchemy monitor provides you with the data you need, and has the following benef
 
 Instantly check on the high-level health of all your apps in one place, including requests per second, response time, and error rates. 
 
-![](<../../.gitbook/assets/Screen Shot 2020-07-17 at 2.58.56 PM.png>)
+![](../../.gitbook/assets/screen-shot-2020-07-17-at-2.58.56-pm.png)
 
 ### :chart_with_upwards_trend: Usage Analytics
 
 Review specific app usage over time, compare and contrast production and staging, or two different apps completely, and even deep dive into app usage by method.
 
-![](<../../.gitbook/assets/Screen Shot 2020-07-17 at 3.01.04 PM.png>)
+![](../../.gitbook/assets/screen-shot-2020-07-17-at-3.01.04-pm.png)
 
 ### :map: User Insights 
 
 Gain invaluable insights on your user behavior with aggregated geographic, traffic, and activity data without compromising privacy or security.
 
-![](<../../.gitbook/assets/Screen Shot 2020-07-17 at 3.02.09 PM.png>)
+![](../../.gitbook/assets/screen-shot-2020-07-17-at-3.02.09-pm.png)
 
 ### :bell: Alerts and Digests
 
 Receive automated alerts whenever your app hits errors and needs your attention. Plus, get a daily report of key health metrics so you never lose touch with performance.
 
-![](<../../.gitbook/assets/Screen Shot 2020-07-17 at 3.02.47 PM.png>)
+![](../../.gitbook/assets/screen-shot-2020-07-17-at-3.02.47-pm.png)

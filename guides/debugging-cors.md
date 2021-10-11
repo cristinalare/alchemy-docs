@@ -12,9 +12,9 @@ CORS issues happen when the browser does not trust the endpoint that it is tryin
 
 Here are some samples of what a CORS problem might look like for your users. Always encourage them to send screenshots or copy-paste snippets of their browser console.
 
-![](<../.gitbook/assets/Image from iOS.jpg>)
+![](../.gitbook/assets/image-from-ios.jpg)
 
-![](<../.gitbook/assets/Image from iOS (1) (1).jpg>)
+![](<../.gitbook/assets/image-from-ios-1- (1).jpg>)
 
 ## Some causes and fixes
 

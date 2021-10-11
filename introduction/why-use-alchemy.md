@@ -48,7 +48,7 @@ Trust us, you don't want to be doing this.
 
 Alchemy's core products are here to eliminate the pains of self-hosting nodes, in addition to providing world-class developer tools. 
 
-![](<../.gitbook/assets/Screen Shot 2020-07-20 at 9.33.44 AM.png>)
+![](../.gitbook/assets/screen-shot-2020-07-20-at-9.33.44-am.png)
 
 ### [Alchemy Supernode](core-products/alchemy-supernode.md)
 

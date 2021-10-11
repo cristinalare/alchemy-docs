@@ -44,24 +44,24 @@ Alchemy Build lets you easily investigate bugs in your blockchain product with t
 
 Instantly search through millions of historical requests to find specific bugs, performance optimizations, or patterns of errors.
 
-![Explorer Feature](<../../.gitbook/assets/Screen Shot 2020-07-09 at 10.37.02 AM.png>)
+![Explorer Feature](../../.gitbook/assets/screen-shot-2020-07-09-at-10.37.02-am.png)
 
 ### :dizzy_face: Mempool Visualizer 
 
 View the real-time state of transactions in the Mempool in order to identify delayed, stuck, or dropped transactions.
 
-![Mempool Visualizer Feature](<../../.gitbook/assets/Screen Shot 2020-07-09 at 10.38.46 AM.png>)
+![Mempool Visualizer Feature](../../.gitbook/assets/screen-shot-2020-07-09-at-10.38.46-am.png)
 
 ### :pencil2: Composer
 
 Make JSON-RPC calls directly from the dashboard in order to prototype and fix failing requests or explore the behavior of new methods.
 
-![Composer Feature](<../../.gitbook/assets/Screen Shot 2020-07-09 at 10.40.08 AM.png>)
+![Composer Feature](../../.gitbook/assets/screen-shot-2020-07-09-at-10.40.08-am.png)
 
 ### :lady_beetle: Debug Toolkit
 
 Quickly scan recent requests and recent errors, plus a real-time query visualizer to help you debug faster than ever.
 
-![Debug Toolkit Feature](<../../.gitbook/assets/Screen Shot 2020-07-09 at 10.40.54 AM.png>)
+![Debug Toolkit Feature](../../.gitbook/assets/screen-shot-2020-07-09-at-10.40.54-am.png)
 
 ###

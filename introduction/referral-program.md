@@ -24,11 +24,11 @@ All you have to do is share out your link to your network. Tweet, post on your d
 
 You can find your referral link by clicking the button in the dashboard nav bar below: 
 
-![](<../.gitbook/assets/referral (1).gif>)
+![](../.gitbook/assets/referral-1-.gif)
 
 You can also find your referral link by clicking on your profile icon in the top right corner, selecting the "Settings" tab and clicking on the "Referral Link" button in the top right.
 
-![](<../.gitbook/assets/referral gif.gif>)
+![](../.gitbook/assets/referral-gif.gif)
 
 
 

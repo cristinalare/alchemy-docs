@@ -34,15 +34,15 @@ Or follow the written steps below:
 
 First navigate to the "create app" button in the "Apps" tab. 
 
-![](<../.gitbook/assets/Screen Shot 2020-11-01 at 6.53.45 PM.png>)
+![](../.gitbook/assets/screen-shot-2020-11-01-at-6.53.45-pm.png)
 
 Fill in the details under "Create App" to get your new key. You can also see apps you previously made and those made by your team here. Pull existing keys by clicking on "View Key" for any app.
 
-![](<../.gitbook/assets/Create App Details.png>)
+![](../.gitbook/assets/create-app-details.png)
 
 You can also pull existing API keys by hovering over "Apps" and selecting one. You can "View Key" here, as well as "Edit App" to whitelist specific domains, see several developer tools, and view analytics.
 
-![](<../.gitbook/assets/ezgif.com-gif-maker (1).gif>)
+![](../.gitbook/assets/ezgif.com-gif-maker-1-.gif)
 
 ## 2.:writing_hand:Make a Request 
 
@@ -164,9 +164,9 @@ Woo! Congrats! You just wrote your first web3 script using Alchemy and sent your
 
 The project associated with your API key should now look like this on the dashboard:
 
-![](<../.gitbook/assets/Alchemy Tutorial Result1.png>)
+![](../.gitbook/assets/alchemy-tutorial-result1.png)
 
-![](<../.gitbook/assets/Alchemy Tutorial Result2 (1).png>)
+![](<../.gitbook/assets/alchemy-tutorial-result2 (1).png>)
 
 ### Other Web3 Libraries 
 

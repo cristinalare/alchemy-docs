@@ -63,7 +63,7 @@ In this tutorial, we utilize Heroku for hosting a server and website; if you cho
 
 * Download [Heroku-CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) based on your OS.  Make sure you download the correct version based on what kind of computer environment you are using!
 
-![https://devcenter.heroku.com/articles/heroku-cli#download-and-install](<../.gitbook/assets/image (24).png>)
+![https://devcenter.heroku.com/articles/heroku-cli#download-and-install](<../.gitbook/assets/image (2).png>)
 
 * After installation, navigate into the file that you just git cloned and run the following command in your command line to login to your Heroku account.
 
@@ -73,7 +73,7 @@ heroku login
 
 Follow the commands to login into your Heroku account. If you don't have a Heroku account, you can [sign up for one](https://www.heroku.com) for free!   
 
-![](<../.gitbook/assets/image (22).png>)
+![](<../.gitbook/assets/image (28).png>)
 
 * Let's confirm that you have downloaded the correct version of Node. In your command line run: 
 
@@ -83,7 +83,7 @@ node --version
 
 After running the command, you will either see a version number appear or you will instead get an error message telling you that you do not have Node installed.  
 
-![](<../.gitbook/assets/image (21).png>)
+![](<../.gitbook/assets/image (24).png>)
 
 Note that Heroku requires users to have any version of Node greater than 10 installed. If you don’t have it or have an older version, [install a more recent version of Node](https://nodejs.org/en/download/). 
 
@@ -107,7 +107,7 @@ heroku create
 
 You should then see something like this pop up:
 
-![](<../.gitbook/assets/image (19).png>)
+![](<../.gitbook/assets/image (26).png>)
 
 Make sure you take note of the URL that pops up **`http://xxxxxxxxx.herokuapp.com/`. **We'll be using it since it's the URL of our sample dashboard!
 
@@ -178,7 +178,7 @@ You've set up your API key!  To confirm that it is properly configured, you can 
 
 Your Heroku environment variables should look similar to this:
 
-![](../.gitbook/assets/img.PNG)
+![](../.gitbook/assets/img.png)
 
 ### **5. Deploy Heroku App!**
 
@@ -554,7 +554,7 @@ ETH from the sale lands back in the Gitcoin multi-sig and will be used for the E
 
 After deploying this webapp in your desired environment, it should look like the following!
 
-![](<../.gitbook/assets/image (7) (2) (2) (1) (2) (2) (2) (2) (2).png>)
+![](<../.gitbook/assets/image (7) (2) (2) (1) (2) (2) (2) (2) (1).png>)
 
 This is a simple example, but there are many ways you can expand on this to build dashboards and dApp for your users.  
 

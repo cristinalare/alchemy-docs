@@ -52,7 +52,7 @@ Alchemy Supernode is a new kind of infrastructure for decentralized applications
 
 Alchemy Supernode's innovative architecture for web3 scales every piece of node functionality with dedicated distributed systems, and maintains real-time data correctness with a proprietary coordinator service. 
 
-![Supernode Architecture](<../../.gitbook/assets/supernode architecture .png>)
+![Supernode Architecture](../../.gitbook/assets/supernode-architecture-.png)
 
 ## Features 
 
@@ -66,13 +66,13 @@ Eliminate unexpected crashes by ensuring data is always correct, real-time, and 
 
 Achieve best-in-class uptime, protected by highly available infrastructure, instead of suffering from high latency and downtime by using nodes directly.
 
-![](<../../.gitbook/assets/supernode uptime.png>)
+![](../../.gitbook/assets/supernode-uptime.png)
 
 ### Infinite Scalability  
 
 Scale your infrastructure quickly and seamlessly so that you can spend more time shipping products and delighting users.
 
-![](<../../.gitbook/assets/supernode scalability.png>)
+![](../../.gitbook/assets/supernode-scalability.png)
 
 ### Enhanced APIs
 
@@ -88,4 +88,4 @@ Check out out full suite of Enhanced APIs here:
 
 Switch to the most powerful infrastructure engine for blockchain with a single line of code. Run your app on Alchemy Supernode in 5 minutes or less.
 
-![](<../../.gitbook/assets/supernode instant on.png>)
+![](../../.gitbook/assets/supernode-instant-on.png)

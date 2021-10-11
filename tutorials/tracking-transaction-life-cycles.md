@@ -81,7 +81,7 @@ In this tutorial, we utilize Heroku for hosting a server and website; if you cho
 
 * Download [Heroku-CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) based on your OS.  Make sure you download the correct version based on what kind of computer environment you are using!
 
-![https://devcenter.heroku.com/articles/heroku-cli#download-and-install](<../.gitbook/assets/image (24).png>)
+![https://devcenter.heroku.com/articles/heroku-cli#download-and-install](<../.gitbook/assets/image (2).png>)
 
 * After installation, navigate into the file that you just git cloned and run the following command in your command line to login to your Heroku account.
 
@@ -91,7 +91,7 @@ heroku login
 
 Follow the commands to login into your Heroku account. If you don't have a Heroku account, you can [sign up for one](https://www.heroku.com) for free!   
 
-![](<../.gitbook/assets/image (22).png>)
+![](<../.gitbook/assets/image (28).png>)
 
 * Let's confirm that you have downloaded the correct version of Node. In your command line run: 
 
@@ -101,7 +101,7 @@ node --version
 
 After running the command, you will either see a version number appear or you will instead get an error message telling you that you do not have Node installed.  
 
-![](<../.gitbook/assets/image (21).png>)
+![](<../.gitbook/assets/image (24).png>)
 
 Note that Heroku requires users to have any version of Node greater than 10 installed. If you don’t have it or have an older version, [install a more recent version of Node](https://nodejs.org/en/download/). 
 
@@ -125,7 +125,7 @@ heroku create
 
 You should then see something like this pop up:
 
-![](<../.gitbook/assets/image (19).png>)
+![](<../.gitbook/assets/image (26).png>)
 
 Make sure you take note of the URL that pops up **`http://xxxxxxxxx.herokuapp.com/`. **We'll be using it since it's the URL of our sample dashboard!
 
@@ -139,11 +139,11 @@ Twilio is an online SMS and voice provider that allows users to send text messag
 
  If you are new to Twilio, sign up for a[ trial account](https://www.twilio.com/try-twilio). With your trial account, you'll have enough credits to power your SMS notifications!  Once you've signed up, head over to your [Console](https://www.twilio.com/console) and grab your Account SID and your Auth Token. You'll need both of these to use the Twilio API.
 
-![](<../.gitbook/assets/image (25).png>)
+![](<../.gitbook/assets/image (21).png>)
 
 Once you have a Twilio account,  note that sending messages through Twilio requires a Twilio phone number with SMS capabilities. If you don’t currently own a Twilio phone number with SMS capabilities, you’ll need to buy one with your provided credits. After navigating to the [Buy a Number page](https://www.twilio.com/console/phone-numbers/search), check the 'SMS' box and click 'Search' to find/buy a number that works for you!
 
-![](<../.gitbook/assets/image (26).png>)
+![](../.gitbook/assets/image.png)
 
 Keep track of your Twilio Account SID, Auth Token, and phone number.  It will come in handy soon!
 
@@ -300,11 +300,11 @@ With that, we have pushed all changes to Heroku and our app is live!
 
 To test the app and check on its status, log in to Heroku and navigate the logs for your deployed webapp.
 
-![](<../.gitbook/assets/image (28).png>)
+![](<../.gitbook/assets/image (7).png>)
 
 The log should look like the following! Both a `worker` and `web` file should be running.
 
-![](<../.gitbook/assets/image (27).png>)
+![](<../.gitbook/assets/image (32).png>)
 
 And now, with everything in place, you can test out your dApp!  
 
@@ -314,7 +314,7 @@ Load up your MetaMask wallet and make a transfer of testnet ETH from the wallet 
 
 Upon making the transaction, you should receive a text message stating its pending status.  
 
-![](<../.gitbook/assets/image (29).png>)
+![](<../.gitbook/assets/image (30).png>)
 
 Similarly, upon miner confirmation, the Heroku webapp also send an SMS alert with the change in transaction status!
 
@@ -760,7 +760,7 @@ Now, we're in the final steps!  With custom hosting solutions, you have the free
 
 If you are able to have command line access to your files, take a look at the CLI readouts and make sure that they resemble the following start-up process for the scripts.
 
-![](<../.gitbook/assets/image (27).png>)
+![](<../.gitbook/assets/image (32).png>)
 
 And now, with everything in place, you can test out your dApp!  
 

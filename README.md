@@ -12,7 +12,7 @@ Use these docs to learn more about Alchemy's core products, explore guides, and 
 
 ## 📖 API Reference
 
-Jump into our API Reference pages, from the Ethereum Standard JSON-RPC API, to Arbitrum's Layer 2 API, and to our exclusive Enhanced APIs.
+Jump into our API Reference pages, spanning all of our supported chains: the Ethereum Standard JSON-RPC API, our Layer 2 APIs for Optimism, Polygon, and Arbitrum, and our exclusive Enhanced APIs for Flow and Crypto.org. 
 
 {% content-ref url="apis/ethereum/" %}
 [ethereum](apis/ethereum/)
@@ -24,7 +24,7 @@ Alchemy is a blockchain developer platform focused on making Ethereum developmen
 
 Our platform supports 70% of the top Ethereum applications, including the top blockchain companies in the world:
 
-![](<.gitbook/assets/Screen Shot 2020-07-21 at 1.53.00 PM.png>)
+![](.gitbook/assets/screen-shot-2020-07-21-at-1.53.00-pm.png)
 
 Our product is used by millions of users per week across 99% of all countries, bringing in of billions of dollars in annual volume.
 

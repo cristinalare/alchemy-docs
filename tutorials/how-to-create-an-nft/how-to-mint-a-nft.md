@@ -236,7 +236,7 @@ Here's how to get the hashcode:
 Double check that the hashcode you copied links to your **metadata.json** by loading [https://gateway.pinata.cloud/ipfs/\<metadata-hash-code>](https://gateway.pinata.cloud/ipfs/%3Chash-code%3E) into a separate window. The page should look similar to the screenshot below:
 {% endhint %}
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (1).png>)
 
 Altogether, your code should look something like this:
 

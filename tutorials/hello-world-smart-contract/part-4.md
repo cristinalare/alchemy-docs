@@ -42,7 +42,7 @@ When you open this cloned `hello-world-part-four` repository, you'll notice that
 
 Next, open your copy of `starter-files` to your favorite code editor (at Alchemy, we we're big fans of [VSCode](https://code.visualstudio.com/download)), and then navigate into your `src` folder:
 
-![The "src" folder](<../../.gitbook/assets/image (8).png>)
+![The "src" folder](<../../.gitbook/assets/image (17).png>)
 
 All of the code we'll write will live under the `src` folder. We'll be editing the `HelloWorld.js` component and the `util/interact.js` javascript files to give our project Web3 functionality.
 
@@ -69,7 +69,7 @@ npm start
 
 Doing so should open [http://localhost:3000/](http://localhost:3000) in your browser, where you'll see the frontend for our project. It should consist of one field (a place to update the message stored in your smart contract), a "Connect Wallet" button, and an "Update" button.
 
-![What your UI should look like](<../../.gitbook/assets/image (10).png>)
+![What your UI should look like](<../../.gitbook/assets/image (16).png>)
 
 If you try clicking "Connect Wallet" or "Update" buttons, you'll notice that they don't work—that's because we still need to program their functionality! :)
 
@@ -325,7 +325,7 @@ It's ABI can be found [here](https://ropsten.etherscan.io/address/0x6f3f635a9762
 
 A contract ABI is necessary for specifying which function a contract will invoke as well ensuring that the function will return data in the format you're expecting. Once we've copied our contract ABI, let's save it as a JSON file called `contract-abi.json` in your `src` directory.
 
-![Your contract-abi.json should be stored in your src folder.](<../../.gitbook/assets/image (13).png>)
+![Your contract-abi.json should be stored in your src folder.](<../../.gitbook/assets/image (22).png>)
 
 Armed with our contract address, ABI, and Alchemy Web3 endpoint, we can use the [contract method](https://web3js.readthedocs.io/en/v1.2.0/web3-eth-contract.html?highlight=constructor#web3-eth-contract) to load an instance of our smart contract. Import your contract ABI into the `interact.js` file and add your contract address.
 
@@ -401,7 +401,7 @@ Before we dive into our listener, let's check out what we have so far! Save your
 
 You'll notice that the current message no longer says "No connection to the network." Instead it reflects the message stored in the smart contract. Sick!
 
-![Your UI should now reflect the message stored in the smart contract](<../../.gitbook/assets/image (14).png>)
+![Your UI should now reflect the message stored in the smart contract](<../../.gitbook/assets/image (12).png>)
 
 Now speaking of that listener...
 
@@ -502,7 +502,7 @@ If you want to understand more about how transactions on Ethereum work, check ou
 
 You can download and create a Metamask account for free [here](https://metamask.io/download.html). When you are creating an account, or if you already have an account, make sure to switch over to the “Ropsten Test Network” in the upper right (so that we’re not dealing with real money).
 
-![Sample Metamask Wallet](<../../.gitbook/assets/image (17).png>)
+![Sample Metamask Wallet](<../../.gitbook/assets/image (4).png>)
 
 ### Add ether from a Faucet <a href="step-4-add-ether-from-a-faucet" id="step-4-add-ether-from-a-faucet"></a>
 
@@ -619,7 +619,7 @@ You should see that the wallet button now reflects that your address is connecte
 
 Next, try refreshing the page... this is strange. Our wallet button is prompting us to connect Metamask, even though it is already connected...
 
-![The problem on page reload](<../../.gitbook/assets/the problem.gif>)
+![The problem on page reload](../../.gitbook/assets/the-problem.gif)
 
 However, have no fear! We easily can address that (get it? 😅) by implementing `getCurrentWalletConnected`, which will check if an address is already connected to our dApp and update our UI accordingly!
 

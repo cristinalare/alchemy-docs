@@ -220,7 +220,7 @@ For this tutorial, we’ll use Metamask, a virtual wallet in the browser used to
 
 You can download and create a Metamask account for free [here](https://metamask.io/download.html). When you are creating an account, or if you already have an account, make sure to switch over to the “Ropsten Test Network” in the upper right (so that we’re not dealing with real money).
 
-![Sample Metamask wallet](<../../.gitbook/assets/image (6).png>)
+![Sample Metamask wallet](<../../.gitbook/assets/image (14).png>)
 
 ### Add ether from a Faucet <a href="step-4-add-ether-from-a-faucet" id="step-4-add-ether-from-a-faucet"></a>
 

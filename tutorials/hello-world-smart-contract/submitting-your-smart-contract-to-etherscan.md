@@ -25,15 +25,15 @@ If you don't have an Etherscan account, first sign up using this [link](https://
 
 Once logged in, press your username on the top right, and select the "My profile" button:
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (8).png>)
 
 Next, navigate to the "API-KEYs" button on the left tab bar. Then press the "Add" button, name your app whatever you wish (we chose `hello-world`), and then select continue.
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (6).png>)
 
 Once you've followed the steps above, you should be able to view your new API key, which we've highlighted in red below. Copy this API key to your clipboard.
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (18).png>)
 
 Now, let's update your `.env `file to include your Etherscan API Key. 
 
@@ -235,7 +235,7 @@ Successfully verified 1 contract(s).
 
 When you navigate to the link provided in your terminal, you should be able to see your smart contract code and ABI published on Etherscan!
 
-![](<../../.gitbook/assets/image (4).png>)
+![](<../../.gitbook/assets/image (13).png>)
 
 **Wahooo - you did it champ! Now anyone can call or write to your smart contract! We can't wait to see what you build next!**:tada:
 

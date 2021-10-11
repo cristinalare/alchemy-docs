@@ -298,7 +298,7 @@ If you want to make your webhooks extra secure, you can verify that they origina
 
 Navigate to the top right corner of your [Notify page](https://dashboard.alchemyapi.io/notify) to copy your "Auth Token".
 
-![](<../.gitbook/assets/Screen Shot 2021-04-19 at 3.00.20 PM.png>)
+![](../.gitbook/assets/screen-shot-2021-04-19-at-3.00.20-pm.png)
 
 #### 2. Validate the signature received 
 
