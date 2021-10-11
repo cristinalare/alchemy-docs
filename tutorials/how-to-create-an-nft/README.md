@@ -203,7 +203,9 @@ contract MyNFT is ERC721, Ownable {
 
 1. Because we are inheriting classes from the OpenZepplin contracts library, in your command line run the following to install the library into our folder:
 
-`textnpm install @openzeppelin/contracts@3.1.0-solc-0.7`
+```text
+npm install @openzeppelin/contracts@3.1.0-solc-0.7
+```
 
 So, what does this code _do_ exactly? Let's break it down, line by line.
 
