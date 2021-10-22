@@ -196,7 +196,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth\_getblockbyhash)
+See [`eth_getBlockByHash`](../ethereum/#eth\_getblockbyhash)
 
 #### [Example](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getBlockByNumber%22%2C%22paramValues%22%3A%5B%220x1b4%22%2Ctrue%5D%7D)
 
@@ -412,7 +412,7 @@ Result
 
 Returns the receipt of a transaction by transaction hash.&#x20;
 
-This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](ethereum/#eth\_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions.&#x20;
+This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions.&#x20;
 
 This call is also commonly used to get the contract address for a contract creation tx.
 
@@ -653,7 +653,7 @@ params: [
 
 #### Returns
 
-See [`eth_getTransactionByHash`](ethereum/#eth\_gettransactionbyhash)``
+See [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash)``
 
 #### [Example](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getTransactionByBlockHashAndIndex%22%2C%22paramValues%22%3A%5B%220xc0f4906fea23cf6f3cce98cb44e8e1449e455b28d684dfa9ff65426495584de6%22%2C%220x0%22%5D%7D)
 
@@ -727,7 +727,7 @@ Returns information about a transaction by block number and transaction index po
 
 #### Returns
 
-See [`eth_getTransactionByHash`](ethereum/#eth\_gettransactionbyhash)``
+See [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash)``
 
 #### [Example](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getTransactionByBlockNumberAndIndex%22%2C%22paramValues%22%3A%5B%22latest%22%2C%220x0%22%5D%7D)
 
@@ -807,7 +807,7 @@ params: ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb97
 
 `DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.&#x20;
 
-Use [`eth_getTransactionReceipt`](ethereum/#eth\_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
+Use [`eth_getTransactionReceipt`](../ethereum/#eth\_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
 
 #### [Example](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_sendRawTransaction%22%2C%22paramValues%22%3A%5B%220xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675%22%5D%7D)
 
@@ -917,7 +917,7 @@ Result
 
 ### eth\_getCode
 
-Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address).&#x20;
+Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address).&#x20;
 
 #### Parameters
 
@@ -1246,14 +1246,14 @@ Result
 
 ### eth\_getLogs
 
-Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../guides/eth\_getlogs.md) page.&#x20;
+Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../../guides/eth\_getlogs.md) page.&#x20;
 
 {% hint style="warning" %}
 **NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**a 150MB limit on the response size**_.
 
 If you absolutely need to query larger block ranges, please contact us over [discord](https://alchemy.com/discord) or at support@alchemy.com. We can open access to larger block ranges based on your use case.
 
-_If you need to pull logs frequently, we recommend _[_using WebSockets_](../guides/using-websockets.md)_ to push new logs to you when they are available. _
+_If you need to pull logs frequently, we recommend _[_using WebSockets_](../../guides/using-websockets.md)_ to push new logs to you when they are available. _
 {% endhint %}
 
 #### Parameters
@@ -1271,7 +1271,7 @@ _If you need to pull logs frequently, we recommend _[_using WebSockets_](../guid
 * `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
 * `topics`: `Array` of `DATA`, - (optional) Array of 32 Bytes DATA topics.&#x20;
   * Topics are order-dependent. Each topic can also be an array of DATA with "or" options.&#x20;
-  * Check out more details on how to format topics in [eth\_newFilter](ethereum/#eth\_newfilter).
+  * Check out more details on how to format topics in [eth\_newFilter](../ethereum/#eth\_newfilter).
 * `blockHash`: `DATA`, 32 Bytes - (optional) With the addition of EIP-234 (Geth >= v1.8.13 or Parity >= v2.1.0), blockHash is a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash `blockHash`.** If blockHash is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.**
 
 ```javascript
@@ -1288,7 +1288,7 @@ params: [
 
 #### Returns
 
-See [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges)
+See [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)
 
 #### [Example](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getLogs%22%2C%22paramValues%22%3A%5B%7B%22address%22%3A%220xb59f67a8bff5d8cd03f6ac17265c550ed8f33907%22%2C%22topics%22%3A%22%5B%5C%220xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef%5C%22%5D%22%2C%22blockHash%22%3A%220x8243343df08b9751f5ca0c5f8c9c0460d8a9b6351066fae0acbd4d3e776de8bb%22%7D%5D%7D)
 
@@ -1591,7 +1591,7 @@ Result
 
 Calls related to creating, getting, and reading from filters.&#x20;
 
-Eth filters expose the same information as the [`eth_subscribe`](ethereum/#eth\_subscribe) methods, except that updates are received by polling rather than receiving pushes. A user may create a filter than repeatedly call `eth_getFilterChanges`on it, each time receiving events that have occurred since the last time `eth_getFilterChanges`was called (or since the filter was created if this is the first time `eth_getFilterChanges`is being called.
+Eth filters expose the same information as the [`eth_subscribe`](../ethereum/#eth\_subscribe) methods, except that updates are received by polling rather than receiving pushes. A user may create a filter than repeatedly call `eth_getFilterChanges`on it, each time receiving events that have occurred since the last time `eth_getFilterChanges`was called (or since the filter was created if this is the first time `eth_getFilterChanges`is being called.
 
 {% hint style="warning" %}
 **Note**: Filters expire after 5 minutes of inactivity, so several of the example requests below will return`"filter not found"` if you try and call them.&#x20;
@@ -1693,7 +1693,7 @@ Result
 Returns an array of all logs matching filter with given id. Can compute the same results with an `eth_getLogs` call (see hint below).&#x20;
 
 {% hint style="warning" %}
-This method only works for filters creates with [`eth_newFilter`](ethereum/#eth\_newfilter)not for filters created using [`eth_newBlockFilter`](ethereum/#eth\_newblockfilter) or [`eth_newPendingTransactionFilter`](ethereum/#eth\_newpendingtransactionfilter), which will return `"filter not found".`
+This method only works for filters creates with [`eth_newFilter`](../ethereum/#eth\_newfilter)not for filters created using [`eth_newBlockFilter`](../ethereum/#eth\_newblockfilter) or [`eth_newPendingTransactionFilter`](../ethereum/#eth\_newpendingtransactionfilter), which will return `"filter not found".`
 
 ### eth\_getLogs vs. eth\_getFilterLogs
 
@@ -1715,7 +1715,7 @@ params: [
 
 #### **Returns**
 
-See [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges)``
+See [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)``
 
 #### ****[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getFilterLogs%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)****
 
@@ -1778,7 +1778,7 @@ Result
 
 ### eth\_newBlockFilter
 
-Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges).
+Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges).
 
 #### **Parameters**
 
@@ -1831,7 +1831,7 @@ Result
 
 Creates a filter object, based on filter options, to notify when the state changes (logs). Unlike `eth_newBlockFilter`which notifies you of **all **new** **blocks, you can pass in filter options to track new logs matching the topics specified. ** **
 
-To check if the state has changed, call [`eth_getFilterChanges.`](ethereum/#eth\_getfilterchanges)``
+To check if the state has changed, call [`eth_getFilterChanges.`](../ethereum/#eth\_getfilterchanges)``
 
 {% hint style="info" %}
 #### A note on specifying topic filters:
@@ -1907,7 +1907,7 @@ Result
 
 ### eth\_uninstallFilter
 
-Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally, Filters timeout when they aren’t requested with [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges)for a period of time.
+Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally, Filters timeout when they aren’t requested with [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)for a period of time.
 
 #### **Parameters**
 
@@ -2091,7 +2091,7 @@ If successful this returns the subscription id. Subscriptions are creates with a
 #### Parameters <a href="parameters" id="parameters"></a>
 
 1. subscription name
-2. optional arguments ([see below](ethereum/#optional-arguments))
+2. optional arguments ([see below](../ethereum/#optional-arguments))
 
 #### **Returns **
 

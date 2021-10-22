@@ -58,7 +58,7 @@
   * [eth\_syncing](apis/ethereum/eth\_syncing.md)
   * [eth\_subscribe](apis/ethereum/eth\_subscribe.md)
   * [eth\_unsubscribe](apis/ethereum/eth\_unsubscribe.md)
-* [🌳 Arbitrum API](apis/arbitrum.md)
+* [🌳 Arbitrum API](apis/arbitrum/README.md)
 * [🧊 Polygon API](apis/polygon-api.md)
 * [✨ Optimism API](apis/optimism-api.md)
 * [🌊 Flow Docs](https://docs.alchemy.com/flow/)
