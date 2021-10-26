@@ -222,6 +222,12 @@ Additionally, we do not include any internal transfers with call type`delegateca
 }
 ```
 
+{% hint style="warning" %}
+#### **HINT: Missing transactions? **
+
+Double check that you are parsing the response payload correctly- remember, transactions are returned in a list! Transactions that are mined within the same block will be returned within the same `"activity"` list.` `
+{% endhint %}
+
 ### 4. Gas Price
 
 The Gas Price Webhook allows you to receive a notification every minute when the Mainnet gas price rises above or drops below a certain threshold that you can select. It works by pulling the current gas prices from [ETH Gas Station](https://ethgasstation.info) every minute.
