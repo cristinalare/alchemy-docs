@@ -9,9 +9,9 @@ description: >-
 
 ## WebSockets vs. HTTP
 
-Unlike HTTP, with WebSockets, you don't need to continuously make requests when you want specific information. WebSockets maintain a network connection for you (if done right) and listen for changes. 
+Unlike HTTP, with WebSockets, you don't need to continuously make requests when you want specific information. WebSockets maintain a network connection for you (if done right) and listen for changes.&#x20;
 
-As with any network connection, you should not assume that a WebSocket will remain open forever without interruption, but correctly handling dropped connections and reconnection by hand can be challenging to get right. Another downside of WebSockets is that you do not get HTTP status codes in the response, but only the error message. 
+As with any network connection, you should not assume that a WebSocket will remain open forever without interruption, but correctly handling dropped connections and reconnection by hand can be challenging to get right. Another downside of WebSockets is that you do not get HTTP status codes in the response, but only the error message.&#x20;
 
 {% hint style="info" %}
 [Alchemy Web3 ](../documentation/alchemy-web3/)automatically adds handling for WebSocket failures with no configuration necessary.
@@ -49,9 +49,13 @@ web3.eth.getBlockNumber().then(console.log);  // -> 7946893
 
 When connected by a WebSocket, you may use two additional methods: `eth_subscribe` and `eth_unsubscribe`. These methods will allow you to listen for particular events and be notified immediately.
 
-### eth_subscribe
+### eth\_subscribe
 
-Creates a new subscription for specified events. Learn more about `eth_subscribe` [here](../apis/ethereum/#eth_subscribe).  
+Creates a new subscription for specified events. Learn more about `eth_subscribe` [here](../apis/ethereum/#eth\_subscribe). &#x20;
+
+{% hint style="warning" %}
+There is a limit of 20,000 websocket connections per API Key as well as 1,000 parallel websocket subscriptions per websocket connection, creating a maximum of 20 million subscriptions per application.&#x20;
+{% endhint %}
 
 #### Parameters
 
@@ -69,21 +73,21 @@ The subscription ID. This ID will be attached to any received events, and can al
 While the subscription is active, you will receive events which are objects with the following fields:
 
 * `jsonrpc`: Always "2.0"
-* `method`: Always "eth_subscription"
+* `method`: Always "eth\_subscription"
 * `params`: An object with the following fields:
   * `subscription`: The subscription ID returned by the `eth_subscription` call which created this subscription.
   * `result`: An object whose contents vary depending on the type of subscription.
 
 ### Subscription types
 
-### **1. alchemy_newFullPendingTransactions **
+### **1. alchemy\_newFullPendingTransactions **
 
 {% hint style="warning" %}
-The `alchemy_newFullPendingTransactions`** **subscription type is a super costly to maintain and requires a large number of compute units since it emits full transaction information instead of just transaction hashes. We do not recommend keeping this subscription open for long periods of time for non-enterprise tier users. 
+The `alchemy_newFullPendingTransactions`** **subscription type is a super costly to maintain and requires a large number of compute units since it emits full transaction information instead of just transaction hashes. We do not recommend keeping this subscription open for long periods of time for non-enterprise tier users.&#x20;
 
 **NOTE: **
 
-* The naming of this subscription is different from the naming of the web3 subscription API, [`alchemy_fullPendingTransactions`](../documentation/alchemy-web3/enhanced-web3-api.md#web-3-eth-subscribe-alchemy_fullpendingtransactions).
+* The naming of this subscription is different from the naming of the web3 subscription API, [`alchemy_fullPendingTransactions`](../documentation/alchemy-web3/enhanced-web3-api.md#web-3-eth-subscribe-alchemy\_fullpendingtransactions).
 * This method is only supported on Ethereum networks and Polygon Mainnet.
 {% endhint %}
 
@@ -131,7 +135,7 @@ Result
 }
 ```
 
-### 2. alchemy_filteredNewFullPendingTransactions
+### 2. alchemy\_filteredNewFullPendingTransactions
 
 Returns the transaction information for all transactions that are added to the pending state that match a given filter. Currently supports an address filter, which will return transactions from or to the address.
 
@@ -324,7 +328,7 @@ When a chain reorganization occurs, logs which are part of blocks on the old cha
 1. An object with the following fields:
    * `adddress` (optional): either a string representing an address or an array of such strings.
      * Only logs created from one of these addresses will be emitted.
-   * `topics`: an array of topic specifiers. 
+   * `topics`: an array of topic specifiers.&#x20;
      * Each topic specifier is either `null`, a string representing a topic, or an array of strings.
      * Each position in the array which is not `null` restricts the emitted logs to only those who have one of the given topics in that position.
 
@@ -424,7 +428,7 @@ Result
 }
 ```
 
-### eth_unsubscribe
+### eth\_unsubscribe
 
 Cancels an existing subscription so that no further events are sent.
 

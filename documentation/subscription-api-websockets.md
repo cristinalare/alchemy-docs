@@ -16,6 +16,10 @@ To learn more about how to use websockets check out the guide below👇
 
 When connected by a WebSocket, you may use two additional methods: `eth_subscribe` and `eth_unsubscribe`. These methods will allow you to listen for particular events and be notified immediately.
 
+{% hint style="warning" %}
+There is a limit of 20,000 websocket connections per API Key as well as 1,000 parallel websocket subscriptions per websocket connection, creating a maximum of 20 million subscriptions per application.&#x20;
+{% endhint %}
+
 ## eth\_subscribe
 
 Creates a new subscription for specified events. Learn more about `eth_subscribe` [here](../apis/ethereum/#eth\_subscribe). &#x20;
