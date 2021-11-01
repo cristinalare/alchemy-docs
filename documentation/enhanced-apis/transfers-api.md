@@ -28,7 +28,7 @@ These are top level ethereum transactions that occur with a from address being a
 Event logs for ERC20 transfers.&#x20;
 
 {% hint style="info" %}
-**NOTE: **ERC20 Transfers are also included int he "`token`" category
+**NOTE: **ERC20 Transfers are also included in the "`token`" category
 {% endhint %}
 
 ### 3. ERC721 Transfers
@@ -36,7 +36,7 @@ Event logs for ERC20 transfers.&#x20;
 Event logs for ERC721 transfers.&#x20;
 
 {% hint style="info" %}
-**NOTE: **ERC721 Transfers are also included int he "`token`" category
+**NOTE: **ERC721 Transfers are also included in the "`token`" category
 {% endhint %}
 
 ### 4. ERC1155 Transfers&#x20;
