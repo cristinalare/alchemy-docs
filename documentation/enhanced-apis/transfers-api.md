@@ -68,7 +68,7 @@ Additionally, we do not include any **internal transfers with call type`delegate
     * `fromAddress`: from address (hex string). optional (default wildcard - any address)
     * `toAddress`: to address (hex string). optional (default wildcard - any address)
     * `contractAddresses`: list of contract addresses (hex strings) for `token `transfers. optional (default wildcard - any address)
-    * `category`: Optional array of categories (defaults to the following categories: \["`external`", "`internal`", "`token`"])
+    * `category`: Optional array of categories, can be any of the following: "`external`", "`internal`", "`token`", "`erc20`", "`erc721`", "`erc1155`" (defaults to the following categories: \["`external`", "`internal`", "`token`"])
     * `excludeZeroValue:` a`Boolean` to exclude transfers with zero value. optional (default `true`)
     * `maxCount`: max hex string number of results to return per call. optional (default and max`1000` or `0x3e8`)
     * `pageKey`: `uuid` for [pagination](transfers-api.md#pagination). optional. If more results are available, a uuid pageKey will be returned in the response. Pass that uuid into `pageKey` to fetch the next 1000 or `maxCount.`

@@ -111,9 +111,9 @@ There are three main types of transfers that are captured when receiving an addr
 
 These are top level Ethereum transactions that occur with a from address being an external (user created) address. External addresses have private keys and are accessed by users.&#x20;
 
-**2. Token Transfers (ERC20 or ERC721)**
+**2. Token Transfers (ERC20, ERC721, ERC1155)**
 
-These are event logs for any ERC20 and ERC721 transfer. &#x20;
+These are event logs for any ERC20, ERC721, and ERC1155 transfers. &#x20;
 
 **3. Internal Eth Transfers**
 
