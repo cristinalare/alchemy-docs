@@ -34,7 +34,7 @@ Each type of webhook is represented as a different integer:
 
 #### `webhook_id`
 
-This is a unique identifier for the webhook. You can find the webhook_id by first getting all your webhooks using the endpoint below, then looking at the parameter `"id"` for the specific webhook you want. 
+This is a unique identifier for the webhook. You can find the webhook\_id by first getting all your webhooks using the endpoint below, then looking at the parameter `"id"` for the specific webhook you want.&#x20;
 {% endhint %}
 
 {% swagger baseUrl="https://dashboard.alchemyapi.io" path="/api/team-webhooks" method="get" summary="Get all webhooks" %}
@@ -198,7 +198,7 @@ For gas price webhooks only.
 {% endswagger-response %}
 {% endswagger %}
 
-#### Example Request 
+#### Example Request&#x20;
 
 Here is an example request for creating a dropped transaction webhook
 
@@ -285,7 +285,7 @@ New list of addresses to track. This replaces any existing addresses.
 {% endswagger-response %}
 {% endswagger %}
 
-#### Example Request 
+#### Example Request&#x20;
 
 ```
 curl https://dashboard.alchemyapi.io/api/update-webhook-addresses \
@@ -370,7 +370,7 @@ curl https://dashboard.alchemyapi.io/api/delete-webhook?webhook_id=104 \
 
 ## Types of Webhooks
 
-To see in depth explanations for each of the Alchemy Notify webhooks check out the [Using Webhooks](../../guides/using-notify.md) guide. 
+To see in depth explanations for each of the Alchemy Notify webhooks check out the [Using Webhooks](../../guides/using-notify.md) guide.&#x20;
 
 ### Mined Transaction <a href="mined-transactions" id="mined-transactions"></a>
 
@@ -436,10 +436,14 @@ The Dropped Transactions Webhook is used to notify your app anytime a transactio
 
 ### Address Activity <a href="address-activity" id="address-activity"></a>
 
-The Address Activity Webhook allows you to track all ETH, ERC20 and ERC721 [transfer events](../../guides/eth_getlogs.md#what-are-transfers) for as many Ethereum addresses as you'd like. This provides your app with real-time state changes when an address sends or receives tokens. 
+The Address Activity Webhook allows you to track all ETH, ERC20 and ERC721 [transfer events](../../guides/eth\_getlogs.md#what-are-transfers) for as many Ethereum addresses as you'd like. This provides your app with real-time state changes when an address sends or receives tokens. For more details on this API specification check out the page below.
+
+{% content-ref url="../../guides/using-notify.md" %}
+[using-notify.md](../../guides/using-notify.md)
+{% endcontent-ref %}
 
 {% hint style="info" %}
-If you are looking for historical activity, check out the [Transfers API](transfers-api.md)! 
+If you are looking for historical activity, check out the [Transfers API](transfers-api.md)!&#x20;
 {% endhint %}
 
 **Example Response**
