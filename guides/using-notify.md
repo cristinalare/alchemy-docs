@@ -144,6 +144,7 @@ Additionally, we do not include any internal transfers with call type`delegateca
   * `address`: contract address (hex string). `null` if `external` or `internal` transfer
   * `decimal`: contract decimal (hex string). `null` if not defined in the contract and not available from other sources.
 * `typeTraceAddress`: the type of internal transfer (`call`, `staticcall`, `create`, `suicide`) followed by the trace address (ex. `call_0_1`).`null` if not internal transfer. (note you can use this as a unique id for internal transfers since they will have the same parent hash)
+* `log` : log emitted for this transfer event
 
 **Example Response**
 
@@ -155,20 +156,36 @@ Additionally, we do not include any internal transfers with call type`delegateca
   "timestamp": null,
   "activity": [
     {
-      "fromAddress": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
-      "toAddress": "0x9314941c11d6dee1d7bf93113eb74d4718949f3b",
-      "blockNum": "0xbe09fb",
-      "category": "token",
-      "hash": "0x96bba899ebae1af0808421db6c2e78f78488ef4aa3f676f941ba72df10df3023",
-      "value": 0.3727,
+      "blockNum": "0xcec92a",
+      "hash": "0xbcbbd7c7de7b835939fb14d4ebe4d31ea6167f4c27c6f0940bb3fa1a90867abe",
+      "fromAddress": "0x86005b57be708e031ea60acf9d3852377e74a6c9",
+      "toAddress": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": 0.1,
       "erc721TokenId": null,
+      "erc1155Metadata": null,
       "asset": "WETH",
+      "category": "token",
       "rawContract": {
-        "rawValue": "0x000000000000000000000000000000000000000000000000052c18ace3c9c000",
+        "rawValue": "0x000000000000000000000000000000000000000000000000016345785d8a0000",
         "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
         "decimals": 18
       },
-      "typeTraceAddress": null
+      "typeTraceAddress": null,
+      "log": {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000086005b57be708e031ea60acf9d3852377e74a6c9",
+          "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000016345785d8a0000",
+        "blockNumber": "0xcec92a",
+        "transactionHash": "0xbcbbd7c7de7b835939fb14d4ebe4d31ea6167f4c27c6f0940bb3fa1a90867abe",
+        "transactionIndex": "0x4",
+        "blockHash": "0xb75dbed0d0c362fad4171c0e6bebb6e14288b871c02b82a3fc97ca8e05ed2fe2",
+        "logIndex": "0x11",
+        "removed": false
+      }
     },
     {
       "fromAddress": "0xca92a49187edce00ba235634b4ca13e89abb33fe",
@@ -185,6 +202,7 @@ Additionally, we do not include any internal transfers with call type`delegateca
         "decimals": null
       }
       "typeTraceAddress": null
+      "log": null
     },
     {
       "blockNum": "0xbe09fa",
@@ -201,6 +219,7 @@ Additionally, we do not include any internal transfers with call type`delegateca
         "address": null,
         "decimals": 18
       }
+      "log": null
     },
     {
       "fromAddress": "0x38f22e75642b91568ba9bdbf94c9c843b38f2721",
@@ -217,6 +236,7 @@ Additionally, we do not include any internal transfers with call type`delegateca
         "decimals": 18
       },
       "typeTraceAddress": null
+      "log": null
     },
   ]
 }

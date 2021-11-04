@@ -456,18 +456,35 @@ If you are looking for historical activity, check out the [Transfers API](transf
   "timestamp": null,
   "activity": [
     {
-      "fromAddress": "0x861919405ff21a566ae33702d508ed0bfce13afc",
-      "toAddress": "0xfdb16996831753d5331ff813c29a93c76834a0ad",
-      "blockNum": "0xa4a152",
-      "hash": "0x903b87c128044b6142dcb8e0df52d43a2c916fb7510a4105e9874c53f764ee1f",
-      "category": "token",
-      "value": 21000,
+      "blockNum": "0xcec92a",
+      "hash": "0xbcbbd7c7de7b835939fb14d4ebe4d31ea6167f4c27c6f0940bb3fa1a90867abe",
+      "fromAddress": "0x86005b57be708e031ea60acf9d3852377e74a6c9",
+      "toAddress": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": 0.1,
       "erc721TokenId": null,
-      "asset": "USDT",
+      "erc1155Metadata": null,
+      "asset": "WETH",
+      "category": "token",
       "rawContract": {
-        "rawValue": "0x00000000000000000000000000000000000000000000000000000004e3b29200",
-        "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-        "decimals": 6
+        "rawValue": "0x000000000000000000000000000000000000000000000000016345785d8a0000",
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "decimals": 18
+      },
+      "typeTraceAddress": null,
+      "log": {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000086005b57be708e031ea60acf9d3852377e74a6c9",
+          "0x0000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000016345785d8a0000",
+        "blockNumber": "0xcec92a",
+        "transactionHash": "0xbcbbd7c7de7b835939fb14d4ebe4d31ea6167f4c27c6f0940bb3fa1a90867abe",
+        "transactionIndex": "0x4",
+        "blockHash": "0xb75dbed0d0c362fad4171c0e6bebb6e14288b871c02b82a3fc97ca8e05ed2fe2",
+        "logIndex": "0x11",
+        "removed": false
       }
     },
     {
@@ -484,37 +501,43 @@ If you are looking for historical activity, check out the [Transfers API](transf
         "address": "0x4c4a07f737bf57f6632b6cab089b78f62385acae",
         "decimals": null
       }
+      "typeTraceAddress": null
+      "log": null
     },
     {
-      "blockNum": "0xb66d94",
-      "hash": "0x3e6b62f0baf022f6fbaeee0af0fa1697d7803812df61eceae8a864589f720e4c",
-      "fromAddress": "0x8df6084e3b84a65ab9dd2325b5422e5debd8944a",
-      "toAddress": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
-      "value": 0.344928650665591,
-      "erc721TokenId": null,
+      "blockNum": "0xbe09fa",
+      "hash": "0x1635135c035cd81320e444f4dd88296f408ee7305c3e07f7863e3142d017ec45",
+      "fromAddress": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "toAddress": "0xe592427a0aece92de3edee1f18e0157c05861564",
+      "value": 0.33974794305157613,
       "asset": "ETH",
       "category": "internal",
+      "erc721TokenId": null,
+      "typeTraceAddress": "call_1_1_0",
       "rawContract": {
-        "rawValue": "0x4c96ec7bfc700b4",
+        "rawValue": "0x4b706f442c2433c",
         "address": null,
         "decimals": 18
       }
+      "log": null
     },
     {
-      "fromAddress": "0x2d0f2bbdf6b967dbea7ee453228e754cf85e6f7d",
-      "toAddress": "0x4abb08c611955f41f2f7bfca22d95e6aab43713a",
-      "blockNum": "0x16a31f6",
-      "hash": "0x5c4194bbcd6f4a7ee704a46b2f07eb9e8f1cbabb762a88ec0b219309c1485d3e",
+      "fromAddress": "0x38f22e75642b91568ba9bdbf94c9c843b38f2721",
+      "toAddress": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "blockNum": "0xbe09fb",
+      "hash": "0x9ff35291bcc0a1b359c1360c8a9f7eef0d7c48a1db5d0520aedebf2c8a8e3eb6",
       "category": "external",
-      "value": 0,
+      "value": 0.2,
       "erc721TokenId": null,
       "asset": "ETH",
       "rawContract": {
-        "rawValue": "0x0",
+        "rawValue": "0x2c68af0bb140000",
         "address": null,
         "decimals": 18
-      }
-    }
+      },
+      "typeTraceAddress": null
+      "log": null
+    },
   ]
 }
 ```
