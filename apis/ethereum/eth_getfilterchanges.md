@@ -4,7 +4,7 @@ description: >-
   since last poll.
 ---
 
-# eth_getFilterChanges
+# eth\_getFilterChanges
 
 ### Parameters
 
@@ -20,6 +20,10 @@ params: [
 
 `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
 
+{% hint style="info" %}
+**NOTE: **`eth_getFilterChanges` only returns logs since the filter was **created**, regardless of the block passed in to create the filter. To get logs ranging from a specific block you should use [`eth_getLogs`](eth\_getlogs.md)` .`
+{% endhint %}
+
 * For filters created with `eth_newBlockFilter` the return are block hashes (`DATA`, 32 Bytes), e.g. `["0x3454645634534..."]`.
 * For filters created with `eth_newPendingTransactionFilter`  the return are transaction hashes (`DATA`, 32 Bytes), e.g. `["0x6345343454645..."]`.
 * For filters created with `eth_newFilter` logs are objects with following params:
@@ -31,10 +35,10 @@ params: [
   * `blockNumber`: `QUANTITY` - the block number where this log was in. `null` when its pending. `null` when its pending log.
   * `address`: `DATA`, 20 Bytes - address from which this log originated.
   * `data`: `DATA` - contains one or more 32 Bytes non-indexed arguments of the log.
-  * `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. 
+  * `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments.&#x20;
     * In _solidity_: The first topic is the _hash_ of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except you declare the event with the `anonymous` specifier.
 
-### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getFilterChanges%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)****
+### ****[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getFilterChanges%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)****
 
 Request
 

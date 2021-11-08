@@ -6,7 +6,9 @@ description: >-
 
 # 💸 Connecting Metamask to Alchemy
 
-Metamask uses a default node provider to display and send transactions for your account If you'd like to switch this over to Alchemy to be able to see your transactions in your Alchemy dashboard and use Alchemy specific features and tools, integrate your Metamsk account in _two steps_. **NOTE: **This does not mean that Alchemy will have access to your private keys or wallet! 
+For a video ver
+
+Metamask uses a default node provider to display and send transactions for your account If you'd like to switch this over to Alchemy to be able to see your transactions in your Alchemy dashboard and use Alchemy specific features and tools, integrate your Metamsk account in _two steps_. **NOTE: **This does not mean that Alchemy will have access to your private keys or wallet!&#x20;
 
 #### 1. Navigate to your Metamask wallet and click the network dropdown at the top, selecting "Custom RPC" at the bottom
 
