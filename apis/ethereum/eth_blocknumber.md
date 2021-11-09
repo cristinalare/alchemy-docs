@@ -12,9 +12,9 @@ none
 
 `QUANTITY` - integer of the current block number the client is on.
 
-## [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
+## [Example](eth\_blocknumber.md#parameters)
 
-Try out an example request using [the Alchemy Composer tool](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)!
+Try out an example request using [the Alchemy Composer tool](https://composer.alchemyapi.io/?composer\_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth\_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)!
 
 Or check out the example below:
 
@@ -54,4 +54,3 @@ Body:
   "result": "0xa1c054"
 }
 ```
-

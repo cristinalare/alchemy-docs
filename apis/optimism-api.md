@@ -4,7 +4,7 @@ description: >-
   with Alchemy.
 ---
 
-# ✨ Optimism API
+# Optimism API
 
 {% hint style="warning" %}
 **IMPORTANT:** In order to deploy to Optimism, users have to apply to be whitelisted. [Click here](https://community.optimism.io/docs/developers/l2/deploy.html) for more information from the Optimism documentation, and use [this form](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS\_svfQoPkn35o\_cc4HUVnLlXN2BHmPw/viewform) to apply.

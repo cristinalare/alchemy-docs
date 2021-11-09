@@ -4,7 +4,7 @@ description: >-
   with Alchemy.
 ---
 
-# 🧊 Polygon API
+# Polygon API
 
 For more information on Polygon's API check out the [official documentation](https://docs.matic.network).
 
@@ -207,7 +207,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth\_getblockbyhash)
+See [`eth_getBlockByHash`](../ethereum/#eth\_getblockbyhash)
 
 Request
 
@@ -418,7 +418,7 @@ Result
 
 Returns the receipt of a transaction by transaction hash.
 
-This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](ethereum/#eth\_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions.
+This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions.
 
 This call is also commonly used to get the contract address for a contract creation tx.
 
@@ -654,7 +654,7 @@ params: [
 
 #### Returns
 
-See [`eth_getTransactionByHash`](ethereum/#eth\_gettransactionbyhash)\`\`
+See [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash)\`\`
 
 Request
 
@@ -727,7 +727,7 @@ Returns information about a transaction by block number and transaction index po
 
 #### Returns
 
-See [`eth_getTransactionByHash`](ethereum/#eth\_gettransactionbyhash)\`\`
+See [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash)\`\`
 
 Request
 
@@ -1417,7 +1417,7 @@ params: ["0x29adbbaf99a3f97b2baefa11e865cf9d74435716ef8618caaa388619f5ae7d8e5d2c
 
 `DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [`eth_getTransactionReceipt`](ethereum/#eth\_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
+Use [`eth_getTransactionReceipt`](../ethereum/#eth\_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
 
 {% hint style="danger" %}
 **Note:** Since `eth_sendRawTransaction` is a request used for writing to the blockchain and changes its state, it is impossible to execute the same request twice. This means if you were to copy the example given below you will not get the expected response.
@@ -1523,7 +1523,7 @@ Result
 
 ### eth\_getCode
 
-Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address).
+Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address).
 
 #### Parameters
 
@@ -1656,16 +1656,16 @@ Returns the account and storage values of the specified account including the Me
 #### **Parameters**
 
 1. `DATA`, 20 Bytes - address of the account.
-2. `ARRAY`, 32 Bytes - array of storage-keys which should be proofed and included. See[`eth_getStorageAt`](ethereum/#eth\_getstorageat)
+2. `ARRAY`, 32 Bytes - array of storage-keys which should be proofed and included. See[`eth_getStorageAt`](../ethereum/#eth\_getstorageat)
 3. `QUANTITY|TAG` - integer block number, or the string `"latest"` or `"earliest"`, see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter)
 
 #### **Returns**
 
 `Object` - A account object:
 
-* `balance`: `QUANTITY` - the balance of the account. See[`eth_getBalance`](ethereum/#eth\_getbalance)
+* `balance`: `QUANTITY` - the balance of the account. See[`eth_getBalance`](../ethereum/#eth\_getbalance)
 * `codeHash`: `DATA`, 32 Bytes - hash of the code of the account. For a simple Account without code it will return `"0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"`
-* `nonce`: `QUANTITY`, - nonce of the account. See [`eth_getTransactionCount`](ethereum/#eth\_gettransactioncount)\`\`
+* `nonce`: `QUANTITY`, - nonce of the account. See [`eth_getTransactionCount`](../ethereum/#eth\_gettransactioncount)\`\`
 * `storageHash`: `DATA`, 32 Bytes - SHA3 of the StorageRoot. All storage will deliver a MerkleProof starting with this rootHash.
 * `accountProof`: `ARRAY` - Array of rlp-serialized MerkleTree-Nodes, starting with the stateRoot-Node, following the path of the SHA3 (address) as key.
 * `storageProof`: `ARRAY` - Array of storage-entries as requested. Each entry is a object with these properties:
@@ -1818,14 +1818,14 @@ Result
 
 ### eth\_getLogs
 
-Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../guides/eth\_getlogs.md) page.
+Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../../guides/eth\_getlogs.md) page.
 
 {% hint style="warning" %}
 **NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and_**150MB limit on the response size**_.
 
 If you absolutely need to query larger block ranges, please contact us over [discord](https://alchemy.com/discord) or at support@alchemy.com. We can open access to larger block ranges based on your use case.
 
-_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../guides/using-websockets.md) _to push new logs to you when they are available._
+_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../../guides/using-websockets.md) _to push new logs to you when they are available._
 {% endhint %}
 
 #### Parameters
@@ -1843,7 +1843,7 @@ _If you need to pull logs frequently, we recommend_ [_using WebSockets_](../guid
 * `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
 * `topics`: `Array` of `DATA`, - (optional) Array of 32 Bytes DATA topics.&#x20;
   * Topics are order-dependent. Each topic can also be an array of DATA with "or" options.&#x20;
-  * Check out more details on how to format topics in [eth\_newFilter](ethereum/#eth\_newfilter).
+  * Check out more details on how to format topics in [eth\_newFilter](../ethereum/#eth\_newfilter).
 * `blockHash`: `DATA`, 32 Bytes - (optional) With the addition of EIP-234 (Geth >= v1.8.13 or Parity >= v2.1.0), blockHash is a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash `blockHash`. **If blockHash is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.**
 
 ```javascript
@@ -1860,7 +1860,7 @@ params: [
 
 #### Returns
 
-See [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges)
+See [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)
 
 {% hint style="info" %}
 Pending example!
@@ -2175,7 +2175,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth\_getblockbyhash)
+See [`eth_getBlockByHash`](../ethereum/#eth\_getblockbyhash)
 
 Request
 
@@ -2253,7 +2253,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth\_getblockbyhash)
+See [`eth_getBlockByHash`](../ethereum/#eth\_getblockbyhash)
 
 Request
 
@@ -2425,7 +2425,7 @@ Result
 
 Calls related to creating, getting, and reading from filters.
 
-Eth filters expose the same information as the [`eth_subscribe`](ethereum/#eth\_subscribe) methods, except that updates are received by polling rather than receiving pushes. A user may create a filter than repeatedly call `eth_getFilterChanges`on it, each time receiving events that have occurred since the last time `eth_getFilterChanges`was called (or since the filter was created if this is the first time `eth_getFilterChanges`is being called.
+Eth filters expose the same information as the [`eth_subscribe`](../ethereum/#eth\_subscribe) methods, except that updates are received by polling rather than receiving pushes. A user may create a filter than repeatedly call `eth_getFilterChanges`on it, each time receiving events that have occurred since the last time `eth_getFilterChanges`was called (or since the filter was created if this is the first time `eth_getFilterChanges`is being called.
 
 {% hint style="warning" %}
 **Note**: Filters expire after 5 minutes of inactivity, so several of the example requests below will return`"filter not found"` if you try and call them.
@@ -2527,7 +2527,7 @@ Result
 Returns an array of all logs matching filter with given id. Can compute the same results with an `eth_getLogs` call (see hint below).
 
 {% hint style="warning" %}
-This method only works for filters creates with [`eth_newFilter`](ethereum/#eth\_newfilter)not for filters created using [`eth_newBlockFilter`](ethereum/#eth\_newblockfilter) or [`eth_newPendingTransactionFilter`](ethereum/#eth\_newpendingtransactionfilter), which will return `"filter not found".`
+This method only works for filters creates with [`eth_newFilter`](../ethereum/#eth\_newfilter)not for filters created using [`eth_newBlockFilter`](../ethereum/#eth\_newblockfilter) or [`eth_newPendingTransactionFilter`](../ethereum/#eth\_newpendingtransactionfilter), which will return `"filter not found".`
 
 ### eth\_getLogs vs. eth\_getFilterLogs
 
@@ -2549,7 +2549,7 @@ params: [
 
 #### **Returns**
 
-See [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges)\`\`
+See [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)\`\`
 
 #### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getFilterLogs%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
 
@@ -2612,7 +2612,7 @@ Result
 
 ### eth\_newBlockFilter
 
-Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges).
+Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges).
 
 #### **Parameters**
 
@@ -2665,7 +2665,7 @@ Result
 
 Creates a filter object, based on filter options, to notify when the state changes (logs). Unlike `eth_newBlockFilter`which notifies you of **all** new **blocks, you can pass in filter options to track new logs matching the topics specified. **
 
-To check if the state has changed, call [`eth_getFilterChanges.`](ethereum/#eth\_getfilterchanges)\`\`
+To check if the state has changed, call [`eth_getFilterChanges.`](../ethereum/#eth\_getfilterchanges)\`\`
 
 {% hint style="info" %}
 #### A note on specifying topic filters:
@@ -2741,7 +2741,7 @@ Result
 
 ### eth\_newPendingTransactionFilter
 
-Creates a filter in the node, to notify when new pending transactions arrive.To check if the state has changed, call [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges)\`\`
+Creates a filter in the node, to notify when new pending transactions arrive.To check if the state has changed, call [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)\`\`
 
 #### **Parameters**
 
@@ -2792,7 +2792,7 @@ Result
 
 ### eth\_uninstallFilter
 
-Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally, Filters timeout when they aren’t requested with [`eth_getFilterChanges`](ethereum/#eth\_getfilterchanges)for a period of time.
+Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally, Filters timeout when they aren’t requested with [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)for a period of time.
 
 #### **Parameters**
 
@@ -3029,7 +3029,7 @@ If successful this returns the subscription id. Subscriptions are creates with a
 #### Parameters <a href="parameters" id="parameters"></a>
 
 1. subscription name
-2. optional arguments ([see below](ethereum/#optional-arguments))
+2. optional arguments ([see below](../ethereum/#optional-arguments))
 
 #### **Returns**
 
@@ -3224,10 +3224,10 @@ When a transaction that was previously part of the canonical chain isn’t part 
 {% hint style="info" %}
 **NOTE:**
 
-* If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../guides/using-websockets.md#1-alchemy\_newfullpendingtransactions)
+* If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../../guides/using-websockets.md#1-alchemy\_newfullpendingtransactions)
 *   If you want pending transactions for a specific address, check out the Enhanced API
 
-    \`\`[`alchemy_filteredNewFullPendingTransactions`](../guides/using-websockets.md#2-alchemy\_filterednewfullpendingtransactions)\`\`
+    \`\`[`alchemy_filteredNewFullPendingTransactions`](../../guides/using-websockets.md#2-alchemy\_filterednewfullpendingtransactions)\`\`
 {% endhint %}
 
 **Parameters**
