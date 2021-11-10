@@ -1,8 +1,10 @@
 ---
-description: API for fetching all transactions in a particular block.
+description: >-
+  Alchemy provides access to OpenEthereum's Parity API which exposes additional
+  Parity-only methods.
 ---
 
-# Block API
+# Parity API
 
 ## `parity_getBlockReceipts`
 
@@ -12,7 +14,7 @@ Get receipts from all transactions from particular block, instead of fetching th
 
 1. `Quantity` or `Tag` - integer of a block number, or the string `'earliest'`, `'latest'` or `'pending'`, as in the default block parameter.
 
-```text
+```
 params: ["0x8D2B29"]
 ```
 
@@ -37,7 +39,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 **Response**
 
-```text
+```
 {
   "id": 1,
   "jsonrpc": "2.0",
@@ -77,4 +79,3 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
   ]
 }
 ```
-

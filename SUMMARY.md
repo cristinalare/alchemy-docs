@@ -114,7 +114,7 @@
 
 * [⚡ Enhanced APIs](documentation/enhanced-apis/README.md)
   * [Transfers API](documentation/enhanced-apis/transfers-api.md)
-  * [Block API](documentation/enhanced-apis/block-api-beta.md)
+  * [Parity API](documentation/enhanced-apis/block-api-beta.md)
   * [Notify API](documentation/enhanced-apis/notify-api.md)
   * [Token API](documentation/enhanced-apis/token-api.md)
   * [Trace API](documentation/enhanced-apis/trace-api.md)
