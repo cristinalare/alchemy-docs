@@ -30,6 +30,6 @@ MetaMask uses a default node provider to display and send transactions for your 
 | Kovan Test Network      | [https://eth-kovan.alchemyapi.io/v2/](https://eth-kovan.alchemyapi.io/v2/)\<api key>             | 42       | [https://kovan.etherscan.io/](https://kovan.etherscan.io)     | ETH               |
 | Polygon (Matic) Mainnet | [https://polygon-mainnet.g.alchemy.com/v2/](https://polygon-mainnet.g.alchemy.com/v2/)\<api key> | 137      | [https://polygonscan.com/](https://polygonscan.com)           | MATIC             |
 
-![User-uploaded Image](https://static.slab.com/prod/uploads/7adb25ff/posts/images/WNz15jQyO\_5blxxahnJUr2U-.png)
+![Example Polygon Configuration](<../.gitbook/assets/Screen Shot 2021-11-15 at 10.07.44 AM.png>) ![Example Ethereum Mainnet Configuration](<../.gitbook/assets/Screen Shot 2021-11-15 at 10.11.10 AM.png>)
 
 And thats it! Your MetaMask is now hooked up to Alchemy 🎉 You've now unlocked game changing tools like the [Mempool Visualizer](../introduction/core-products/alchemy-build.md#mempool-visualizer) (where you can view all your transactions as they are being mined), [Alchemy Notify](../introduction/core-products/alchemy-notify.md) (receive notifications about address activity, dropped/mined transactions, etc.), and more!
