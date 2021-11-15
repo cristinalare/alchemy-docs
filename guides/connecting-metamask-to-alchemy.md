@@ -4,13 +4,17 @@ description: >-
   endpoint!
 ---
 
-# 💸 Connecting MetaMask to Alchemy
+# 💸 How to Speed Up MetaMask Transactions
 
-For a video version, check this out:
+MetaMask uses a default node provider to display and send transactions for your account. Because the node provider does not allocate dedicated resources to each user, it may be slow sometimes, i.e. for transaction broadcasting.
+
+Alchemy provides a much better experience when it is used as your MetaMask RPC provider. If you'd like to switch this over to Alchemy to be able to see your transactions in your Alchemy dashboard and use Alchemy specific features and tools, this doc will show you how to integrate your MetaMask account in _two easy steps_.
+
+**NOTE: **This does not mean that Alchemy will have access to your private keys or wallet!&#x20;
+
+For a video version of this doc, check this out:
 
 {% embed url="https://www.youtube.com/watch?v=VUkhkSgMtdk" %}
-
-MetaMask uses a default node provider to display and send transactions for your account If you'd like to switch this over to Alchemy to be able to see your transactions in your Alchemy dashboard and use Alchemy specific features and tools, integrate your MetaMask account in _two steps_. **NOTE: **This does not mean that Alchemy will have access to your private keys or wallet!&#x20;
 
 #### 1. Navigate to your MetaMask wallet and click the network dropdown at the top, selecting "Custom RPC" at the bottom
 

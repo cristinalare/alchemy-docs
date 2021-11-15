@@ -156,7 +156,7 @@
 * [🔈 Using WebSockets](guides/using-websockets.md)
 * [📋 Dashboard Walkthrough](guides/demo-app.md)
 * [🤿 Deep Dive into eth\_getLogs](guides/eth\_getlogs.md)
-* [💸 Connecting MetaMask to Alchemy](guides/connecting-metamask-to-alchemy.md)
+* [💸 How to Speed Up MetaMask Transactions](guides/connecting-metamask-to-alchemy.md)
 * [🍎 Alchemy Set-up for Macs](guides/alchemy-for-macs.md)
 * [🌐 Choosing a Network](guides/choosing-a-network.md)
 * [🚦 Rate Limits](guides/rate-limits.md)
