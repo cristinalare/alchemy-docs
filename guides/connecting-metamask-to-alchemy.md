@@ -21,14 +21,14 @@ MetaMask uses a default node provider to display and send transactions for your 
 * Make sure you use the correct Alchemy API URL for your desired network
 * Alchemy supported chains:
 
-| Network                 | RPC Base URL                                                                                     | Chain ID | Block Explorer URL                                            | Symbol (optional) |   |
-| ----------------------- | ------------------------------------------------------------------------------------------------ | -------- | ------------------------------------------------------------- | ----------------- | - |
-| Ethereum Mainnet        | [https://eth-mainnet.alchemyapi.io/v2/](https://eth-mainnet.alchemyapi.io/v2/)\<api key>         | 1        | [https://etherscan.io/](https://etherscan.io)                 | ETH               |   |
-| Ropsten Test Network    | [https://eth-ropsten.alchemyapi.io/v2/](https://eth-ropsten.alchemyapi.io/v2/)\<api key>         | 3        | [https://ropsten.etherscan.io/](https://ropsten.etherscan.io) | ETH               |   |
-| Rinkeby Test Network    | [https://eth-rinkeby.alchemyapi.io/v2/](https://eth-rinkeby.alchemyapi.io/v2/)\<api key>         | 4        | [https://rinkeby.etherscan.io/](https://rinkeby.etherscan.io) | ETH               |   |
-| Goerli Test Network     | [https://eth-goerli.alchemyapi.io/v2/](https://eth-goerli.alchemyapi.io/v2/)\<api key>           | 5        | [https://goerli.etherscan.io/](https://goerli.etherscan.io)   | ETH               |   |
-| Kovan Test Network      | [https://eth-kovan.alchemyapi.io/v2/](https://eth-kovan.alchemyapi.io/v2/)\<api key>             | 42       | [https://kovan.etherscan.io/](https://kovan.etherscan.io)     | ETH               |   |
-| Polygon (Matic) Mainnet | [https://polygon-mainnet.g.alchemy.com/v2/](https://polygon-mainnet.g.alchemy.com/v2/)\<api key> | 137      | [https://polygonscan.com/](https://polygonscan.com)           | MATIC             |   |
+| Network                 | RPC Base URL                                                                                     | Chain ID | Block Explorer URL                                            | Symbol (optional) |
+| ----------------------- | ------------------------------------------------------------------------------------------------ | -------- | ------------------------------------------------------------- | ----------------- |
+| Ethereum Mainnet        | [https://eth-mainnet.alchemyapi.io/v2/](https://eth-mainnet.alchemyapi.io/v2/)\<api key>         | 1        | [https://etherscan.io/](https://etherscan.io)                 | ETH               |
+| Ropsten Test Network    | [https://eth-ropsten.alchemyapi.io/v2/](https://eth-ropsten.alchemyapi.io/v2/)\<api key>         | 3        | [https://ropsten.etherscan.io/](https://ropsten.etherscan.io) | ETH               |
+| Rinkeby Test Network    | [https://eth-rinkeby.alchemyapi.io/v2/](https://eth-rinkeby.alchemyapi.io/v2/)\<api key>         | 4        | [https://rinkeby.etherscan.io/](https://rinkeby.etherscan.io) | ETH               |
+| Goerli Test Network     | [https://eth-goerli.alchemyapi.io/v2/](https://eth-goerli.alchemyapi.io/v2/)\<api key>           | 5        | [https://goerli.etherscan.io/](https://goerli.etherscan.io)   | ETH               |
+| Kovan Test Network      | [https://eth-kovan.alchemyapi.io/v2/](https://eth-kovan.alchemyapi.io/v2/)\<api key>             | 42       | [https://kovan.etherscan.io/](https://kovan.etherscan.io)     | ETH               |
+| Polygon (Matic) Mainnet | [https://polygon-mainnet.g.alchemy.com/v2/](https://polygon-mainnet.g.alchemy.com/v2/)\<api key> | 137      | [https://polygonscan.com/](https://polygonscan.com)           | MATIC             |
 
 ![User-uploaded Image](https://static.slab.com/prod/uploads/7adb25ff/posts/images/WNz15jQyO\_5blxxahnJUr2U-.png)
 
