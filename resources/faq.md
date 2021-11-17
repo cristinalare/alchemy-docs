@@ -34,7 +34,7 @@ Generally "already known" means the transaction is on the node and is in a pendi
 
 ## Can you change the 5s timeout:`execution aborted (timeout = 5s)`?
 
-Unfortunately, this is a fixed timeout configured by geth so we are unable to change it. This typically occurs with expensive or heavy `eth_calls` . The best workaround is to break up your eth_call into smaller bites to ensure they don't get timed out. 
+Unfortunately, this is a fixed timeout configured by geth so we are unable to change it. This typically occurs with expensive or heavy `eth_calls` . The best workaround is to break up your eth\_call into smaller bites to ensure they don't get timed out.&#x20;
 
 ## What happens if I run into my capacity limit? <a href="what-happens-if-i-run-into-my-capacity-limit" id="what-happens-if-i-run-into-my-capacity-limit"></a>
 
@@ -46,7 +46,7 @@ Archive data is free and available for all of our customers, no additional set u
 
 ## How do I get the timestamp for a transaction?
 
-A transaction object will have a block number associated with it, the block number is Ethereum's measure of time, however, if you want a standard timestamp you can easily get that by making a call to [`eth_getBlockByNumber`](../apis/ethereum/#eth_getblockbynumber) and specifying the `blockNumber` field. Here is an [example request](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D). If you only have the transaction hash, you can get the full object by making a request to [`eth_getTransactionByHash`](../apis/ethereum/#eth_gettransactionbyhash).
+A transaction object will have a block number associated with it, the block number is Ethereum's measure of time, however, if you want a standard timestamp you can easily get that by making a call to [`eth_getBlockByNumber`](../apis/ethereum/#eth\_getblockbynumber) and specifying the `blockNumber` field. Here is an [example request](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D). If you only have the transaction hash, you can get the full object by making a request to [`eth_getTransactionByHash`](../apis/ethereum/#eth\_gettransactionbyhash).
 
 ## Why can't I invite a user who is already on a team? <a href="why-cant-i-invite-a-user-who-is-already-on-a-team" id="why-cant-i-invite-a-user-who-is-already-on-a-team"></a>
 
@@ -54,7 +54,7 @@ You can! While we don't allow a single email to be on multiple teams due to UX c
 
 ## Are there limits on my getLogs requests? <a href="are-there-limits-on-my-get-logs-requests" id="are-there-limits-on-my-get-logs-requests"></a>
 
-In order to ensure maximum reliability for your calls, you can make [`eth_getLogs`](https://docs.alchemyapi.io/documentation/alchemy-api-reference/json-rpc#eth_getlogs) requests with up to a _**2K block range**_ and _**a 150MB limit  on the response size**_. You can also request _**any block range**_ with a cap of _**10K logs in the response**_.
+In order to ensure maximum reliability for your calls, you can make [`eth_getLogs`](https://docs.alchemyapi.io/documentation/alchemy-api-reference/json-rpc#eth\_getlogs) requests with up to a _**2K block range**_ and _**a 150MB limit  on the response size**_. You can also request _**any block range**_ with a cap of _**10K logs in the response**_.
 
 If you need to pull logs frequently, we recommend [using WebSockets](https://guides/using-websockets) to push new logs to you when they are available.
 
@@ -94,19 +94,19 @@ You can see a breakdown of each method and its associated compute unit [here](ht
 
 ## How do I distinguish between a contract address and a wallet address? <a href="how-do-i-distinguish-between-a-contract-address-and-a-wallet-address" id="how-do-i-distinguish-between-a-contract-address-and-a-wallet-address"></a>
 
-A super easy way to distinguish between these two addresses is by calling [eth_getCode](https://alchemyapi/s/alchemy/documentation/alchemy-api-reference/json-rpc#eth_getcode), which will return contract code if it's a contract and nothing if it's a wallet. Here's an example of both using our composer tool:
+A super easy way to distinguish between these two addresses is by calling [eth\_getCode](https://alchemyapi/s/alchemy/documentation/alchemy-api-reference/json-rpc#eth\_getcode), which will return contract code if it's a contract and nothing if it's a wallet. Here's an example of both using our composer tool:
 
-* [**0x Contract Address**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getCode%22%2C%22paramValues%22%3A%5B%220xe41d2489571d322189246dafa5ebde1f4699f498%22%2C%22latest%22%5D%7D)
-* [**Vitalik's Wallet Address**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getCode%22%2C%22paramValues%22%3A%5B%220xAb5801a7D398351b8bE11C439e05C5B3259aeC9B%22%2C%22latest%22%5D%7D)
+* [**0x Contract Address**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getCode%22%2C%22paramValues%22%3A%5B%220xe41d2489571d322189246dafa5ebde1f4699f498%22%2C%22latest%22%5D%7D)
+* [**Vitalik's Wallet Address**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getCode%22%2C%22paramValues%22%3A%5B%220xAb5801a7D398351b8bE11C439e05C5B3259aeC9B%22%2C%22latest%22%5D%7D)
 
 ## What are best practices for avoiding re-orgs when calling JSON-RPC methods? <a href="how-do-i-distinguish-between-a-contract-address-and-a-wallet-address" id="how-do-i-distinguish-between-a-contract-address-and-a-wallet-address"></a>
 
-Alchemy supports [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898), which adds `blockHash` to all JSON-RPC methods that accept a default block parameter. By allowing methods with a block number parameter to also accept a block hash parameter, EIP-1898 protects against re-orgs. 
+Alchemy supports [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898), which adds `blockHash` to all JSON-RPC methods that accept a default block parameter. By allowing methods with a block number parameter to also accept a block hash parameter, EIP-1898 protects against re-orgs.&#x20;
 
-For instance, if a user executes `eth_call` for block number 10000, but the network undergoes a re-org causing the block 10000 to change, it is unclear if the call evaluated at the old block or the new one. 
+For instance, if a user executes `eth_call` for block number 10000, but the network undergoes a re-org causing the block 10000 to change, it is unclear if the call evaluated at the old block or the new one.&#x20;
 
 {% hint style="info" %}
-**Example: **`eth_getBalance `  
+**Example: **`eth_getBalance ` &#x20;
 {% endhint %}
 
 | Non EIP-1898 Param                              | EIP-1898 Param                                              |
@@ -115,7 +115,7 @@ For instance, if a user executes `eth_call` for block number 10000, but the netw
 
 ## How many requests are included in Alchemy free tier and growth tier?
 
-The Alchemy free tier includes **\~4,000,000 requests **each month** **with **free archive data access** and the growth tier (with capped capacity)** **includes **\~6,000,000 requests **each month also with **free archive data access. **However, Alchemy uses a [compute unit model](../documentation/compute-units.md) instead of request limiting so this number will fluctuate depending on which requests you're making. 
+The Alchemy free tier includes **\~4,000,000 requests **each month** **with **free archive data access** and the growth tier (with capped capacity)** **includes **\~6,000,000 requests **each month also with **free archive data access. **However, Alchemy uses a [compute unit model](../documentation/compute-units.md) instead of request limiting so this number will fluctuate depending on which requests you're making.&#x20;
 
 ## Size of a request header field exceeds server limit
 
@@ -126,6 +126,10 @@ You may not always know exactly what headers you are sending in an API call. If 
 As an example, the Honeycomb Trace wrapper will add extremely large `X-Honeycomb-Trace` headers to every request you send. This will show up on our end as `Request header exceeds LimitRequestFieldSize: X-Honeycomb-Trace` and will be returned to you as a `Size of a request header field exceeds server limits` error.
 
 In general you should avoid such global wrappers. If you want to trace a request then add the headers as-needed.
+
+## How is latency / response time measured?
+
+The latency figures you see in your dashboard measure the time it takes your request to execute on the server side, so from the moment we receive it to the moment we return it back to you. The entire roundtrip would have to be measured on the client side.
 
 ## My question isn't here, where can I get help? <a href="my-question-isnt-here-where-can-i-get-help" id="my-question-isnt-here-where-can-i-get-help"></a>
 
