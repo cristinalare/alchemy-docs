@@ -124,6 +124,7 @@
   * [Enhanced Web3 API](documentation/alchemy-web3/enhanced-web3-api.md)
 * [❗ Error Reference](documentation/error-reference.md)
 * [🔩 Compute Units (CUs)](documentation/compute-units.md)
+* [ℹ Feature Support By Chain](documentation/feature-support-by-chain.md)
 
 ## Tutorials
 
