@@ -140,7 +140,7 @@ Result
 Returns the transaction information for all transactions that are added to the pending state that match a given filter. Currently supports an address filter, which will return transactions from or to the address.
 
 {% hint style="warning" %}
-**NOTE: **This method is only supported on Ethereum networks and Polygon Mainnet.
+**NOTE: **This method is only supported on Ethereum and Polygon networks (Mainnet and Mumbai).
 {% endhint %}
 
 **Example**
