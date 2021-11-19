@@ -14,7 +14,7 @@ In Ethereum, a blockchain is a sequence of blocks validated by the proof-of-work
 
 ### **Address**
 
-An address is the representation of a public key belonging to a particular user. Addresses are essentially contracts that can receive or send transactions on the blockchain. Note that in practice, the address is technically the hash of a public key (he rightmost 160 bits of a Keccak hash of an ECDSA public key).
+An address is the representation of a public key belonging to a particular user. Addresses are essentially contracts that can receive or send transactions on the blockchain. Note that in practice, the address is technically the hash of a public key (the rightmost 160 bits of a Keccak hash of an ECDSA public key).
 
 ### **Transaction**
 
@@ -26,7 +26,7 @@ A block is a package of data that contains zero or more transactions; the hash o
 
 ### **State**
 
-A state is the set of data that that represents information currently relevant to applications on the chain. A blockchain network strictly needs to keep track of the state of the chain. 
+A state is the set of data that represents information currently relevant to applications on the chain. A blockchain network strictly needs to keep track of the state of the chain. 
 
 In a currency, this is simply balances; in more complex applications this could refer to other data structures that the application in question needs to keep track of (e.g. who has what domain name, what is the status of a given contract, etc). 
 
@@ -245,7 +245,7 @@ A public key encryption is a special kind of encryption where there is a process
 
 ### **Digital Signature**
 
-A digital signature is a virtual signing algorithm is a process by which a user can produce a short string of data called a “signature” of a document using a private key. With this signature, the corresponding public key, and the relevant document, anyone can verify that:
+A digital signature is a virtual signing algorithm in a process by which a user can produce a short string of data called a “signature” of a document using a private key. With this signature, the corresponding public key, and the relevant document, anyone can verify that:
 
 1. The document was “signed” by the owner of that particular private key.
 2. The document was not changed after it was signed.
@@ -345,14 +345,14 @@ Data availability is the property of a state that any node connected to the netw
 
 ### **Tight Coupling**
 
-Chains A and B are tightly coupled if both:
+Chains A and B are tightly coupled if:
 
 1. Any state of A points to some state of B (and vice versa)
 2. A state of A should not be considered admissible unless both that state itself and the state of B that it points to are valid and data-available.
 
 ### **Loose Coupling**
 
-Chains A and B are loosely coupled if both:
+Chains A and B are loosely coupled if:
 
 1. Any state of A points to some state of B (and vice versa)
 2. They are **not** tightly coupled.
