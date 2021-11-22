@@ -2,7 +2,7 @@
 description: All of the Arbitrum JSON-RPC API methods that are supported by Alchemy.
 ---
 
-# 🌳 Arbitrum API
+# Arbitrum API
 
 For more information on Arbitrum's API check out the [official documentation](https://developer.offchainlabs.com/docs/developer\_quickstart).
 

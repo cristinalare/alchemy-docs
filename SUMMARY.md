@@ -14,6 +14,15 @@
 * [🤝 Contributing to these Docs](introduction/contributing-to-docs.md)
 * [💰 Referral Program](introduction/referral-program.md)
 
+## ✨ Enhanced APIs
+
+* [Transfers API (Tx History)](enhanced-apis/transfers-api.md)
+* [Token API](enhanced-apis/token-api.md)
+* [Parity API](enhanced-apis/block-api-beta.md)
+* [Notify API](enhanced-apis/notify-api.md)
+* [Debug API](enhanced-apis/debug-api.md)
+* [Trace API](enhanced-apis/trace-api.md)
+
 ## Chain APIs <a href="apis" id="apis"></a>
 
 * [Ethereum API](apis/ethereum/README.md)
@@ -109,22 +118,15 @@
 * [Optimism API](apis/optimism-api.md)
 * [Flow Docs](https://docs.alchemy.com/flow/)
 * [Crypto.org Docs](https://docs.alchemy.com/cro/)
+* [Feature Support By Chain](apis/feature-support-by-chain.md)
 
 ## Documentation
 
-* [⚡ Enhanced APIs](documentation/enhanced-apis/README.md)
-  * [Transfers API](documentation/enhanced-apis/transfers-api.md)
-  * [Parity API](documentation/enhanced-apis/block-api-beta.md)
-  * [Notify API](documentation/enhanced-apis/notify-api.md)
-  * [Token API](documentation/enhanced-apis/token-api.md)
-  * [Trace API](documentation/enhanced-apis/trace-api.md)
-  * [Debug API](documentation/enhanced-apis/debug-api.md)
 * [🔊 Subscription API (Websockets)](documentation/subscription-api-websockets.md)
 * [🪐 Alchemy Web3.js](documentation/alchemy-web3/README.md)
   * [Enhanced Web3 API](documentation/alchemy-web3/enhanced-web3-api.md)
 * [❗ Error Reference](documentation/error-reference.md)
 * [🔩 Compute Units (CUs)](documentation/compute-units.md)
-* [ℹ Feature Support By Chain](documentation/feature-support-by-chain.md)
 
 ## Tutorials
 
