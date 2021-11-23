@@ -12,7 +12,7 @@ By now, you have likely already created an NFT on your local machine via 🎨 [H
 
 ### 2. Infrastructure constraints on your local computing environment 
 
-For users with operating systems/hardware that do not natively support web3 packages/other dependencies needed to run Alchemy's NFT tutorials, deploying online on cloud computing providers may empower these users to compile and run code. Cloud services often provide an alternative for developers that will not require you to change your hardware, configure VMs, or add more infrastructure to your local environment. 
+For users with operating systems/hardware that do not natively support web3 packages/other dependencies needed to run Alchemy's NFT tutorials, deploying online on cloud computing providers may empower these users to compile and run code. Cloud services often provide an alternative for developers that will not require you to change your hardware, configure VMs, or add more infrastructures to your local environment. 
 
 ## Deploying Your Code to a Live Website
 
