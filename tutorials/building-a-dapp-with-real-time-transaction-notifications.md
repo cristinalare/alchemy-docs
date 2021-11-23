@@ -480,7 +480,7 @@ That’s all it takes! With a quick build and deploy, our dApp looks like this:\
 
 ![](https://lh5.googleusercontent.com/nuqJuJQfLEoU8ZGUfgIyrxYlsizbzwpvfT7j56yx7ecfFMjYCIWGOqEPuzux9Q_jVSoK1ZkDakUFunQCccaIySA_OqtSxQov2QCP9qO44pOPygjHH0PXdNUaBFGiXQav48kOjye5)
 
-Click “Enable Ethereum” to connect to MetaMask and select a wallet you want to connect to from the drop-down menu.e
+Click “Enable Ethereum” to connect to MetaMask and select a wallet you want to connect to from the drop-down menu.
 
 ![](https://lh6.googleusercontent.com/DTvb1Jk0H9lwPQ5JsCHzDcjRnwlJUC2icxI0lQxcST3lxv1x5PsCh4-KntAGLGpK9RUn-oeGrjW68Oh7x3QwZy16cdkRjNTQxKVxUFjlrwbpPxoAaq0pZBvX_S9mKa4AxDX44d4G)
 
