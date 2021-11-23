@@ -9,50 +9,50 @@ description: >-
 Parity Tracing API methods give Alchemy users access to the most detailed information about on-chain activity. For more information about use, see the [Parity/Open Ethereum Trace API Documentation](https://openethereum.github.io/JSONRPC-trace-module). 
 
 {% hint style="warning" %}
-**NOTE:** Alchemy is the only service that provides access to these Trace API methods due to their high maintenance costs and specialized infrastructure. For this reason, they are currently only available to Alchemy users in Growth and Enterprise tiers. You can upgrade your plan [here](https://dashboard.alchemyapi.io/settings/billing) to access them. 
+**NOTE: **Alchemy is the only service that provides access to these Trace API methods due to their high maintenance costs and specialized infrastructure. For this reason, they are currently only available to Alchemy users in Growth and Enterprise tiers. You can upgrade your plan [here](https://dashboard.alchemyapi.io/settings/billing) to access them. 
 {% endhint %}
 
 These API methods allow you to get a full _externality_ trace on any transaction executed throughout the Ethereum chain. Unlike the log filtering API, you are able to search and filter based only upon address information. Information returned includes the execution of all `CREATE,` `SUICIDE` and all variants of `CALL` together with input data, output data, gas usage, amount transferred and the success status of each individual action.
 
 {% hint style="info" %}
-**NOTE:** The Trace API is only supported on **Mainnet, Ropsten,** and **Kovan.** 
+**NOTE: **The Trace API is only supported on **Mainnet, Ropsten, **and** Kovan. **
 {% endhint %}
 
 ## Types of Traces 
 
-### Transaction Trace \(`trace`\)
+### Transaction Trace (`trace`)
 
 Basic trace of your transaction. 
 
-### Virtual Machine Execution Trace \(`vmTrace`\)
+### Virtual Machine Execution Trace (`vmTrace`)
 
 Provides a full trace of the VM’s state throughout the execution of the transaction, including for any subcalls.
 
-### State Difference \(`stateDiff`\)
+### State Difference (`stateDiff`)
 
 Provides information detailing all altered portions of the Ethereum state made due to the execution of the transaction.
 
-## trace\_call
+## trace_call
 
 Executes the given call and returns a number of possible traces for it.
 
 #### **Parameters**
 
 1. `Object` - Call options, same as [`eth_call`](../../apis/ethereum/#eth_call).
-   * `from`: `Address` - \(optional\) 20 Bytes - The address the transaction is send from.
-   * `to`: `Address` - \(optional when creating new contract\) 20 Bytes - The address the transaction is directed to.
-   * `gas`: `Quantity` - \(optional\) Integer formatted as a hex string of the gas provided for the transaction execution. eth\_call consumes zero gas, but this parameter may be needed by some executions.
-   * `gasPrice`: `Quantity` - \(optional\) Integer formatted as a hex string of the gas price used for each paid gas.
-   * `value`: `Quantity` - \(optional\) Integer formatted as a hex string of the value sent with this transaction.
-   * `data`: `Data` - \(optional\) 4 byte hash of the method signature followed by encoded parameters. For details see [Ethereum Contract ABI](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI).
+   * `from`: `Address` - (optional) 20 Bytes - The address the transaction is send from.
+   * `to`: `Address` - (optional when creating new contract) 20 Bytes - The address the transaction is directed to.
+   * `gas`: `Quantity` - (optional) Integer formatted as a hex string of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
+   * `gasPrice`: `Quantity` - (optional) Integer formatted as a hex string of the gas price used for each paid gas.
+   * `value`: `Quantity` - (optional) Integer formatted as a hex string of the value sent with this transaction.
+   * `data`: `Data` - (optional) 4 byte hash of the method signature followed by encoded parameters. For details see [Ethereum Contract ABI](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI).
 2. `Array` - Type of trace, one or more of: `"vmTrace"`, `"trace"`, `"stateDiff"`.
-3. `Quantity` or `Tag` - \(optional\) Integer of a block number, or the string `'earliest'` or `'latest'`.
+3. `Quantity` or `Tag` - (optional) Integer of a block number, or the string `'earliest'` or `'latest'`.
 
 #### **Returns**
 
 * `Array` - Block traces
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_call%22%2C%22paramValues%22%3A%5B%7B%22to%22%3A%220x1E0447b19BB6EcFdAe1e4AE1694b0C3659614e4e%22%2C%22from%22%3A%220x6f1FB6EFDf50F34bFA3F2bC0E5576EdD71631638%22%2C%22value%22%3A%220x0%22%2C%22data%22%3A%220xa67a6a45000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000%22%7D%2C%5B%22trace%22%5D%2C%22%22%5D%7D)\*\*\*\*
+#### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_call%22%2C%22paramValues%22%3A%5B%7B%22to%22%3A%220x1E0447b19BB6EcFdAe1e4AE1694b0C3659614e4e%22%2C%22from%22%3A%220x6f1FB6EFDf50F34bFA3F2bC0E5576EdD71631638%22%2C%22value%22%3A%220x0%22%2C%22data%22%3A%220xa67a6a45000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000%22%7D%2C%5B%22trace%22%5D%2C%22%22%5D%7D)****
 
 Request
 
@@ -124,14 +124,14 @@ Response
 }
 ```
 
-## trace\_callMany
+## trace_callMany
 
-Performs multiple call traces on top of the same block. i.e. transaction `n` will be executed on top of a pending block with all `n-1` transactions applied \(traced\) first. Allows to trace dependent transactions.
+Performs multiple call traces on top of the same block. i.e. transaction `n` will be executed on top of a pending block with all `n-1` transactions applied (traced) first. Allows to trace dependent transactions.
 
 #### **Parameters**
 
 1. `Array` - List of trace calls with the type of trace, one or more of: `"vmTrace"`, `"trace"`, `"stateDiff"`.
-2. `Quantity` or `Tag` - \(optional\) integer block number, or the string `'latest'`, `'earliest'` or `'pending'`, see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
+2. `Quantity` or `Tag` - (optional) integer block number, or the string `'latest'`, `'earliest'` or `'pending'`, see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
 
 ```bash
 params: [
@@ -245,7 +245,7 @@ Response
 }
 ```
 
-## trace\_rawTransaction
+## trace_rawTransaction
 
 Traces a call to `eth_sendRawTransaction` without making the call, returning the traces
 
@@ -318,7 +318,7 @@ Response
 }
 ```
 
-## trace\_replayBlockTransactions
+## trace_replayBlockTransactions
 
 Replays all transactions in a block returning the requested traces for each transaction.
 
@@ -338,7 +338,7 @@ params: [
 
 * `Array` - Block transactions traces.
 
-\*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_replayBlockTransactions%22%2C%22paramValues%22%3A%5B%220x2ed119%22%2C%5B%22trace%22%5D%5D%7D)\*\*\*\*
+****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_replayBlockTransactions%22%2C%22paramValues%22%3A%5B%220x2ed119%22%2C%5B%22trace%22%5D%5D%7D)****
 
 Request
 
@@ -431,7 +431,7 @@ Response
 }
 ```
 
-## trace\_replayTransaction
+## trace_replayTransaction
 
 Replays a transaction, returning the traces.
 
@@ -451,7 +451,7 @@ params: [
 
 * `Object` - Block traces.
 
-\*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_replayTransaction%22%2C%22paramValues%22%3A%5B%220x02d4a872e096445e80d05276ee756cefef7f3b376bcec14246469c0cd97dad8f%22%2C%5B%22trace%22%5D%5D%7D)\*\*\*\*
+****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_replayTransaction%22%2C%22paramValues%22%3A%5B%220x02d4a872e096445e80d05276ee756cefef7f3b376bcec14246469c0cd97dad8f%22%2C%5B%22trace%22%5D%5D%7D)****
 
 Request
 
@@ -513,7 +513,7 @@ Response
 }
 ```
 
-## trace\_block
+## trace_block
 
 Returns traces created at given block.
 
@@ -616,19 +616,19 @@ Response
 }
 ```
 
-## trace\_filter
+## trace_filter
 
 Returns traces matching given filter.
 
 **Parameters**
 
 1. `Object` - The filter object
-   * `fromBlock`: `Quantity` or `Tag` - \(optional\) From this block.
-   * `toBlock`: `Quantity` or `Tag` - \(optional\) To this block.
-   * `fromAddress`: `Array` - \(optional\) Sent from these addresses.
-   * `toAddress`: `Address` - \(optional\) Sent to these addresses.
-   * `after`: `Quantity` - \(optional\) The offset trace number
-   * `count`: `Quantity` - \(optional\) Integer number of traces to display in a batch.
+   * `fromBlock`: `Quantity` or `Tag` - (optional) From this block.
+   * `toBlock`: `Quantity` or `Tag` - (optional) To this block.
+   * `fromAddress`: `Array` - (optional) Sent from these addresses.
+   * `toAddress`: `Address` - (optional) Sent to these addresses.
+   * `after`: `Quantity` - (optional) The offset trace number
+   * `count`: `Quantity` - (optional) Integer number of traces to display in a batch.
 
 ```javascript
 params: [{
@@ -698,7 +698,7 @@ Response
 }
 ```
 
-## trace\_get
+## trace_get
 
 Returns trace at given position.
 
@@ -779,7 +779,7 @@ Response
 }
 ```
 
-## trace\_transaction 
+## trace_transaction 
 
 Returns all traces of given transaction.
 
@@ -795,7 +795,7 @@ params: ["0x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3"]
 
 * `Array` - Traces of given transaction
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_transaction%22%2C%22paramValues%22%3A%5B%220x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3%22%5D%7D)\*\*\*\*
+#### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22trace_transaction%22%2C%22paramValues%22%3A%5B%220x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3%22%5D%7D)****
 
 Request
 
@@ -901,4 +901,3 @@ Response
   "id": 0
 }
 ```
-

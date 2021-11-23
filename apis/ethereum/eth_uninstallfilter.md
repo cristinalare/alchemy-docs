@@ -5,7 +5,7 @@ description: >-
   eth_getFilterChangesfor a period of time.
 ---
 
-# eth\_uninstallFilter
+# eth_uninstallFilter
 
 ### **Parameters**
 
@@ -21,7 +21,7 @@ params: [
 
 `Boolean` - `true` if the filter was successfully uninstalled, otherwise `false`.
 
-### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_uninstallFilter%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
+### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_uninstallFilter%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)****
 
 Request
 
@@ -60,5 +60,4 @@ Result
 }
 ```
 
-## 
-
+##

@@ -4,7 +4,7 @@ description: >-
   To check if the state has changed, call eth_getFilterChanges.
 ---
 
-# eth\_newPendingTransactionFilter
+# eth_newPendingTransactionFilter
 
 ### **Parameters**
 
@@ -14,7 +14,7 @@ None
 
 `QUANTITY` - A filter id.
 
-### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_newPendingTransactionFilter%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
+### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_newPendingTransactionFilter%22%2C%22paramValues%22%3A%5B%5D%7D)****
 
 Request
 
@@ -53,5 +53,4 @@ Result
 }
 ```
 
-### 
-
+###

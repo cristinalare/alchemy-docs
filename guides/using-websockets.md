@@ -5,13 +5,13 @@ description: >-
   subscribing to events.
 ---
 
-# 🔈 Using WebSockets
+# Using WebSockets
 
 ## WebSockets vs. HTTP
 
-Unlike HTTP, with WebSockets, you don't need to continuously make requests when you want specific information. WebSockets maintain a network connection for you \(if done right\) and listen for changes. 
+Unlike HTTP, with WebSockets, you don't need to continuously make requests when you want specific information. WebSockets maintain a network connection for you (if done right) and listen for changes.&#x20;
 
-As with any network connection, you should not assume that a WebSocket will remain open forever without interruption, but correctly handling dropped connections and reconnection by hand can be challenging to get right. Another downside of WebSockets is that you do not get HTTP status codes in the response, but only the error message. 
+As with any network connection, you should not assume that a WebSocket will remain open forever without interruption, but correctly handling dropped connections and reconnection by hand can be challenging to get right. Another downside of WebSockets is that you do not get HTTP status codes in the response, but only the error message.&#x20;
 
 {% hint style="info" %}
 [Alchemy Web3 ](../documentation/alchemy-web3/)automatically adds handling for WebSocket failures with no configuration necessary.
@@ -34,7 +34,7 @@ To begin, open a WebSocket using the WebSocket URL for your app. You can find yo
 
 ![](../.gitbook/assets/websocket-key-copy.gif)
 
-Any of the APIs listed in the [Alchemy API Reference](../apis/ethereum/) or [Enhanced API](../documentation/enhanced-apis/token-api.md) can also be used via WebSocket. To do so, use the same payload that would be sent as the body of a POST request, but instead send that payload through the WebSocket.
+Any of the APIs listed in the [Alchemy API Reference](../apis/ethereum/) or [Enhanced API](../enhanced-apis/token-api.md) can also be used via WebSocket. To do so, use the same payload that would be sent as the body of a POST request, but instead send that payload through the WebSocket.
 
 ### With Web3
 
@@ -51,7 +51,11 @@ When connected by a WebSocket, you may use two additional methods: `eth_subscrib
 
 ### eth\_subscribe
 
-Creates a new subscription for specified events. Learn more about `eth_subscribe` [here](../apis/ethereum/#eth_subscribe).  
+Creates a new subscription for specified events. Learn more about `eth_subscribe` [here](../apis/ethereum/#eth\_subscribe). &#x20;
+
+{% hint style="warning" %}
+There is a limit of 20,000 websocket connections per API Key as well as 1,000 parallel websocket subscriptions per websocket connection, creating a maximum of 20 million subscriptions per application.&#x20;
+{% endhint %}
 
 #### Parameters
 
@@ -76,18 +80,18 @@ While the subscription is active, you will receive events which are objects with
 
 ### Subscription types
 
-### **1. alchemy\_newFullPendingTransactions** 
+### **1. alchemy\_newFullPendingTransactions **
 
 {% hint style="warning" %}
-The `alchemy_newFullPendingTransactions` ****subscription type is a super costly to maintain and requires a large number of compute units since it emits full transaction information instead of just transaction hashes. We do not recommend keeping this subscription open for long periods of time for non-enterprise tier users. 
+The `alchemy_newFullPendingTransactions`** **subscription type is a super costly to maintain and requires a large number of compute units since it emits full transaction information instead of just transaction hashes. We do not recommend keeping this subscription open for long periods of time for non-enterprise tier users.&#x20;
 
-**NOTE:** 
+**NOTE: **
 
-* The naming of this subscription is different from the naming of the web3 subscription API, [`alchemy_fullPendingTransactions`](../documentation/alchemy-web3/enhanced-web3-api.md#web-3-eth-subscribe-alchemy_fullpendingtransactions).
+* The naming of this subscription is different from the naming of the web3 subscription API, [`alchemy_fullPendingTransactions`](../documentation/alchemy-web3/enhanced-web3-api.md#web-3-eth-subscribe-alchemy\_fullpendingtransactions).
 * This method is only supported on Ethereum networks and Polygon Mainnet.
 {% endhint %}
 
-Returns the transaction information for all transactions that are added to the pending state. This subscription type subscribes to pending transactions, similar to the standard Web3 call `web3.eth.subscribe("pendingTransactions")`, but differs in that it emits full transaction information rather than just transaction hashes. ****
+Returns the transaction information for all transactions that are added to the pending state. This subscription type subscribes to pending transactions, similar to the standard Web3 call `web3.eth.subscribe("pendingTransactions")`, but differs in that it emits full transaction information rather than just transaction hashes.** **
 
 **Example**
 
@@ -136,7 +140,7 @@ Result
 Returns the transaction information for all transactions that are added to the pending state that match a given filter. Currently supports an address filter, which will return transactions from or to the address.
 
 {% hint style="warning" %}
-**NOTE:** This method is only supported on Ethereum networks and Polygon Mainnet.
+**NOTE: **This method is only supported on Ethereum and Polygon networks (Mainnet and Mumbai).
 {% endhint %}
 
 **Example**
@@ -188,7 +192,7 @@ Returns the hash for all transactions that are added to the pending state.
 When a transaction that was previously part of the canonical chain isn’t part of the new canonical chain after a reorganization its again emitted.
 
 {% hint style="warning" %}
-**NOTE:** This method is only supported on Ethereum networks and Polygon Mainnet.
+**NOTE: **This method is only supported on Ethereum networks and Polygon Mainnet.
 {% endhint %}
 
 **Parameters**
@@ -322,19 +326,19 @@ When a chain reorganization occurs, logs which are part of blocks on the old cha
 #### Parameters
 
 1. An object with the following fields:
-   * `adddress` \(optional\): either a string representing an address or an array of such strings.
+   * `adddress` (optional): either a string representing an address or an array of such strings.
      * Only logs created from one of these addresses will be emitted.
-   * `topics`: an array of topic specifiers. 
+   * `topics`: an array of topic specifiers.&#x20;
      * Each topic specifier is either `null`, a string representing a topic, or an array of strings.
      * Each position in the array which is not `null` restricts the emitted logs to only those who have one of the given topics in that position.
 
 Some examples of topic specifications:
 
 * `[]`: Any topics allowed.
-* `[A]`: A in first position \(and anything after\).
-* `[null, B]`: Anything in first position and B in second position \(and anything after\).
-* `[A, B]`: A in first position and B in second position \(and anything after\).
-* `[[A, B], [A, B]]`: \(A or B\) in first position and \(A or B\) in second position \(and anything after\).
+* `[A]`: A in first position (and anything after).
+* `[null, B]`: Anything in first position and B in second position (and anything after).
+* `[A, B]`: A in first position and B in second position (and anything after).
+* `[[A, B], [A, B]]`: (A or B) in first position and (A or B) in second position (and anything after).
 
 #### Example
 
@@ -381,7 +385,7 @@ Result
 
 ### 6. syncing
 
-Indicates when the node starts or stops synchronizing. The result can either be a boolean indicating that the synchronization has started \(true\), finished \(false\) or an object with various progress indicators.
+Indicates when the node starts or stops synchronizing. The result can either be a boolean indicating that the synchronization has started (true), finished (false) or an object with various progress indicators.
 
 **Parameters**
 
@@ -436,7 +440,7 @@ Cancels an existing subscription so that no further events are sent.
 
 `true` if a subscription was successfully cancelled, or `false` if no subscription existed with the given ID.
 
-#### Example <a id="example-1"></a>
+#### Example <a href="example-1" id="example-1"></a>
 
 Request
 
@@ -459,4 +463,3 @@ Result
     "result":true
 }
 ```
-

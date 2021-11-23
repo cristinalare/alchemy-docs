@@ -2,7 +2,7 @@
 description: Returns true if client is actively listening for network connections.
 ---
 
-# net\_listening
+# net_listening
 
 ### **Parameters**
 
@@ -12,7 +12,7 @@ none
 
 `Boolean` - `true` when listening, otherwise `false`.
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22net_listening%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
+#### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22net_listening%22%2C%22paramValues%22%3A%5B%5D%7D)****
 
 Request
 
@@ -50,4 +50,3 @@ Result
   "result":true
 }
 ```
-

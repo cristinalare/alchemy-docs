@@ -1,5 +1,5 @@
 ---
-description: Returns the number of the most recent block.
+description: Arbitrum API -Returns the number of the most recent block.
 ---
 
 # eth\_blockNumber
@@ -12,18 +12,18 @@ none
 
 `QUANTITY` - integer of the current block number the client is on.
 
-## [Example](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)
+## Example
 
-Try out an example request using [the Alchemy Composer tool](https://composer.alchemyapi.io?composer_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)!
+### [Alchemy Composer](https://composer.alchemyapi.io/?composer\_state=%7B%22chain%22%3A1%2C%22network%22%3A201%2C%22methodName%22%3A%22eth\_blockNumber%22%2C%22paramValues%22%3A%5B%5D%7D)
 
-Or check out the example below:
+The Alchemy Composer allows you to make a no-code example request via your browser. Try it out above!
 
 ### Request
 
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://arb-mainnet.g.alchemy.com/v2/your-api-key \
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":0}'
@@ -32,7 +32,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://arb-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -54,4 +54,3 @@ Body:
   "result": "0xa1c054"
 }
 ```
-

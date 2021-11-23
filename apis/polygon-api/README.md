@@ -6,10 +6,10 @@ description: >-
 
 # Polygon API
 
-For more information on Polygon's API check out the [official documentation](https://docs.matic.network/).
+For more information on Polygon's API check out the [official documentation](https://docs.matic.network).
 
 {% hint style="warning" %}
-**NOTE:** Not all standard Ethereum methods are supported by Polygon. Likewise, not all Polygon methods are currently supported on Alchemy. For the full list of supported Polygon methods, check out the [official documentation](https://docs.matic.network/).
+**NOTE:** Not all standard Ethereum methods are supported by Polygon. Likewise, not all Polygon methods are currently supported on Alchemy. For the full list of supported Polygon methods, check out the [official documentation](https://docs.matic.network).
 {% endhint %}
 
 ## Mainnet vs. Testnet
@@ -21,7 +21,7 @@ There are two networks on Polygon: Mainnet and Mumbai testnet. The endpoints are
 
 ## 📦 Retrieving Block
 
-Calls related to retrieving blocks and block information. 
+Calls related to retrieving blocks and block information.
 
 ### eth\_blockNumber
 
@@ -207,7 +207,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash)
+See [`eth_getBlockByHash`](../ethereum/#eth\_getblockbyhash)
 
 Request
 
@@ -269,7 +269,7 @@ Result
 
 ## 🧾 Reading Transactions
 
-Calls for reading transactions. 
+Calls for reading transactions.
 
 ### eth\_getTransactionByHash
 
@@ -277,7 +277,7 @@ Returns the information about a transaction requested by transaction hash. In th
 
 #### Parameters
 
-`DATA`, 32 Bytes - hash of a transaction 
+`DATA`, 32 Bytes - hash of a transaction
 
 ```javascript
 params: [
@@ -416,9 +416,9 @@ Result
 
 ### eth\_getTransactionReceipt
 
-Returns the receipt of a transaction by transaction hash. 
+Returns the receipt of a transaction by transaction hash.
 
-This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](ethereum/#eth_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions. 
+This can also be used to track the status of a transaction, since result will be null until the transaction is mined. However, unlike [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash) , which returns `null` for unknown transactions, and a non-null response with 3 null fields for a pending transaction, `eth_getTransactionReceipt` returns null for both pending and unknown transactions.
 
 This call is also commonly used to get the contract address for a contract creation tx.
 
@@ -428,7 +428,7 @@ This call is also commonly used to get the contract address for a contract creat
 
 #### Parameters
 
-`DATA`, 32 Bytes - hash of a transaction 
+`DATA`, 32 Bytes - hash of a transaction
 
 ```javascript
 params: [ 
@@ -454,8 +454,8 @@ params: [
 
 It also returns either:
 
-* `root` : `DATA` 32 bytes of post-transaction stateroot \(pre Byzantium\)
-* `status`: `QUANTITY` either 1 \(success\) or 0 \(failure\)
+* `root` : `DATA` 32 bytes of post-transaction stateroot (pre Byzantium)
+* `status`: `QUANTITY` either 1 (success) or 0 (failure)
 
 Request
 
@@ -531,13 +531,13 @@ Returns the number of transactions in a block matching the given block hash.
 
 #### Parameters
 
-* `DATA`, 32 Bytes - hash of a block.
+*   `DATA`, 32 Bytes - hash of a block.
 
-  ```javascript
-  params: [ 
-      '0xbb63603be7a656f34e7a8fa41cb610f33a6c9e74536159a7676fc00eed072d90' 
-  ]
-  ```
+    ```javascript
+    params: [ 
+        '0xbb63603be7a656f34e7a8fa41cb610f33a6c9e74536159a7676fc00eed072d90' 
+    ]
+    ```
 
 #### Returns
 
@@ -641,9 +641,9 @@ Returns information about a transaction by block hash and transaction index posi
 
 #### Parameters
 
-`DATA`, 32 Bytes - hash of a block. 
+`DATA`, 32 Bytes - hash of a block.
 
-`QUANTITY` - integer of the transaction index position. 
+`QUANTITY` - integer of the transaction index position.
 
 ```javascript
 params: [ 
@@ -654,7 +654,7 @@ params: [
 
 #### Returns
 
-See [`eth_getTransactionByHash`](ethereum/#eth_gettransactionbyhash)\`\`
+See [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash)\`\`
 
 Request
 
@@ -727,7 +727,7 @@ Returns information about a transaction by block number and transaction index po
 
 #### Returns
 
-See [`eth_getTransactionByHash`](ethereum/#eth_gettransactionbyhash)\`\`
+See [`eth_getTransactionByHash`](../ethereum/#eth\_gettransactionbyhash)\`\`
 
 Request
 
@@ -792,7 +792,7 @@ Returns address of Author
 
 #### Parameters
 
-* block number \(in hexadecimal format\)
+* block number (in hexadecimal format)
 
 #### Returns
 
@@ -913,7 +913,6 @@ Result
         }
     ]
 }
-
 ```
 
 ### bor\_getCurrentProposer
@@ -970,17 +969,17 @@ Result
 Returns the root hash given a block range
 
 {% hint style="warning" %}
- The current supported maximum block range for **`bor_getRootHash`** is **`32767`**
+The current supported maximum block range for **`bor_getRootHash`** is **`32767`**
 {% endhint %}
 
 #### Parameters
 
-* `from` block number \(in `int` format\)
-* `to` block number \(in `int` format\)
+* `from` block number (in `int` format)
+* `to` block number (in `int` format)
 
 #### Returns
 
-`HASH` 
+`HASH`
 
 Request
 
@@ -1017,7 +1016,6 @@ Result
     "id": 1,
     "result": "04b073e17b7186ab4daae17c5e2cc2d5a729cffd102cede41ee458a2d5573994"
 }
-
 ```
 
 ### eth\_getRootHash
@@ -1030,12 +1028,12 @@ The current supported maximum block range for **`eth_getRootHash`** is **`32767`
 
 #### Parameters
 
-* `from` block number \(in `int` format\)
-* `to` block number \(in `int` format\)
+* `from` block number (in `int` format)
+* `to` block number (in `int` format)
 
 #### Returns
 
-`HASH` 
+`HASH`
 
 Request
 
@@ -1072,7 +1070,6 @@ Result
     "id": 1,
     "result": "04b073e17b7186ab4daae17c5e2cc2d5a729cffd102cede41ee458a2d5573994"
 }
-
 ```
 
 ### eth\_getSignersAtHash
@@ -1081,11 +1078,11 @@ Returns all signs given a blockhash
 
 #### Parameters
 
-* `blockhash` 
+* `blockhash`&#x20;
 
 #### Returns
 
-`HASH` 
+`HASH`
 
 Request
 
@@ -1132,23 +1129,285 @@ Result
 }
 ```
 
+### eth\_getTransactionReceiptsByBlock
 
+Returns all transaction receipts for the given block number or hash
 
-## ✍ Writing Transactions 
+#### Parameters
 
-Call to write to the blockchain. 
+`block_number` in hex OR `block_hash`
+
+#### Returns
+
+Array of transaction receipt objects
+
+Request
+
+{% tabs %}
+{% tab title="Curl" %}
+```bash
+curl https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"jsonrpc":"2.0","method":"eth_getTransactionReceiptsByBlock","params":["0x989689"], "id":1}'
+```
+{% endtab %}
+
+{% tab title="Postman" %}
+```http
+URL: https://polygon-mainnet.g.alchemyapi.io/v2/your-api-key
+RequestType: POST
+Body: 
+{
+    "jsonrpc":"2.0",
+    "method":"eth_getTransactionReceiptsByBlock",
+    "params":["0x989689"], 
+    "id":1
+}
+```
+{% endtab %}
+{% endtabs %}
+
+Result
+
+```javascript
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": [
+    {
+      "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+      "blockNumber": "0x989689",
+      "contractAddress": null,
+      "cumulativeGasUsed": "0x63ee1",
+      "from": "0x7b5fc677cf27a807adf2ebcef72db3b935df6c0a",
+      "gasUsed": "0x63ee1",
+      "logs": [
+        {
+          "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x0000000000000000000000003d8a89a20aa73fba0f30d080e8120de9f9555724",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000007dd34dc0",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x0",
+          "removed": false
+        },
+        {
+          "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000003d8a89a20aa73fba0f30d080e8120de9f9555724",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000007dd34dc0",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x1",
+          "removed": false
+        },
+        {
+          "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x0000000000000000000000003d8a89a20aa73fba0f30d080e8120de9f9555724",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x2",
+          "removed": false
+        },
+        {
+          "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028",
+            "0x0000000000000000000000004d97dcd97ec945f40cf65f87097ace5ea0476045"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000007dd34dc0",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x3",
+          "removed": false
+        },
+        {
+          "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028",
+            "0x0000000000000000000000004d97dcd97ec945f40cf65f87097ace5ea0476045"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000007dd34dc0",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x4",
+          "removed": false
+        },
+        {
+          "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028",
+            "0x0000000000000000000000004d97dcd97ec945f40cf65f87097ace5ea0476045"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x5",
+          "removed": false
+        },
+        {
+          "address": "0x4d97dcd97ec945f40cf65f87097ace5ea0476045",
+          "topics": [
+            "0x4a39dc06d4c0dbc64b70af90fd698a233a518aa5d07e595d983b8c0526c8f7fb",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000239452b461f6d1a911080d87ceec9e2d988aa2533f71478dd340ea5b887011c808669b451aa838890f860952c26092f53231c81a4091fef087b29548325b0d7210000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000007dd34dc0000000000000000000000000000000000000000000000000000000007dd34dc0",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x6",
+          "removed": false
+        },
+        {
+          "address": "0x4d97dcd97ec945f40cf65f87097ace5ea0476045",
+          "topics": [
+            "0x2e6bb91f8cbcda0c93623c54d0403a43514fabc40084ec96b6d5379a74786298",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0xb6efcb062820c882a6a7c4753c1160fe7d00e46608c5b945e7881f091f2316e5"
+          ],
+          "data": "0x0000000000000000000000002791bca1f2de4661ed88a30c99a7a9449aa841740000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000007dd34dc0000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x7",
+          "removed": false
+        },
+        {
+          "address": "0x170f88be2538b8aca98a87c1b186ce5f773cc028",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x0000000000000000000000003d8a89a20aa73fba0f30d080e8120de9f9555724"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000005b7dfb2c",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x8",
+          "removed": false
+        },
+        {
+          "address": "0x4d97dcd97ec945f40cf65f87097ace5ea0476045",
+          "topics": [
+            "0x4a39dc06d4c0dbc64b70af90fd698a233a518aa5d07e595d983b8c0526c8f7fb",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028",
+            "0x000000000000000000000000170f88be2538b8aca98a87c1b186ce5f773cc028",
+            "0x0000000000000000000000003d8a89a20aa73fba0f30d080e8120de9f9555724"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000239452b461f6d1a911080d87ceec9e2d988aa2533f71478dd340ea5b887011c808669b451aa838890f860952c26092f53231c81a4091fef087b29548325b0d72100000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003b4c5777",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0x9",
+          "removed": false
+        },
+        {
+          "address": "0x170f88be2538b8aca98a87c1b186ce5f773cc028",
+          "topics": [
+            "0xec2dc3e5a3bb9aa0a1deb905d2bd23640d07f107e6ceb484024501aad964a951",
+            "0x0000000000000000000000003d8a89a20aa73fba0f30d080e8120de9f9555724"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000005b7dfb2c0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000007dd34dc0000000000000000000000000000000000000000000000000000000004286f649",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0xa",
+          "removed": false
+        },
+        {
+          "address": "0xd216153c06e857cd7f72665e0af1d7d82172f494",
+          "topics": [
+            "0xab74390d395916d9e0006298d47938a5def5d367054dcca78fa6ec84381f3f22",
+            "0x0000000000000000000000007b5fc677cf27a807adf2ebcef72db3b935df6c0a",
+            "0x000000000000000000000000671da88c76061a1f0683127a1c6e1dd1a79db621",
+            "0x000000000000000000000000ab45c5a4b0c941a2f231c04c3f49182e1a254052"
+          ],
+          "data": "0x34ee97910000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006d895ea20aa80",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0xb",
+          "removed": false
+        },
+        {
+          "address": "0x0000000000000000000000000000000000001010",
+          "topics": [
+            "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+            "0x0000000000000000000000000000000000000000000000000000000000001010",
+            "0x0000000000000000000000007b5fc677cf27a807adf2ebcef72db3b935df6c0a",
+            "0x000000000000000000000000c6869257205e20c2a43cb31345db534aecb49f6e"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000003a2ab85ead90000000000000000000000000000000000000000000000000203f61a3a8191a0aa0000000000000000000000000000000000000000000000004ea18c6904e776cc00000000000000000000000000000000000000000000000203f2778efba6c7aa0000000000000000000000000000000000000000000000004ea52f148ad24fcc",
+          "blockNumber": "0x989689",
+          "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+          "transactionIndex": "0x0",
+          "blockHash": "0x224c0c3153d6bf1f45f461053aee6cbf71e5b5209685c91d81c288b59c82fb47",
+          "logIndex": "0xc",
+          "removed": false
+        }
+      ],
+      "logsBloom": "0x0400000002000000000100000000000000000000000000001000000000104000000000000000000001000020200000001000800000000000001008014020004000000000001000000000000c000200840000000000000000202100000000000000000000020000000001000000000800000000000800000980100010000000002001000000000000000000000000000000100000020000000000000000000000220000000400000000000000008001000008000000000020000000000000004000000002000000000001000000000000000404000600000000100000100020000010008000002000040000000000000010000000000000008000100002100000",
+      "status": "0x1",
+      "to": "0xd216153c06e857cd7f72665e0af1d7d82172f494",
+      "transactionHash": "0x19a2ba50b19ee8ed28fb902fe8cd0a64b0f7a4fe01281e70e2387fdd00ffd5f0",
+      "transactionIndex": "0x0"
+    }
+  ]
+}
+```
+
+## ✍ Writing Transactions
+
+Call to write to the blockchain.
 
 ### eth\_sendRawTransaction
 
 Creates a new message call transaction or a contract creation for signed transactions.
 
 {% hint style="warning" %}
-Alchemy does not store keys, so transactions sent via Alchemy must be signed ahead of time using another provider like [ethers](https://docs.ethers.io/v5/api/signer/) \(via `eth_signTransaction`\) and sent with `eth_sendRawTransaction`.
+Alchemy does not store keys, so transactions sent via Alchemy must be signed ahead of time using another provider like [ethers](https://docs.ethers.io/v5/api/signer/) (via `eth_signTransaction`) and sent with `eth_sendRawTransaction`.
 {% endhint %}
 
 #### Parameters
 
-`DATA`, The signed transaction data. 
+`DATA`, The signed transaction data.
 
 ```javascript
 params: ["0x29adbbaf99a3f97b2baefa11e865cf9d74435716ef8618caaa388619f5ae7d8e5d2cadab0cd2f5becd4ebf7d48f5584c9e414c2a4a6ea2bc6ea8f02dbf5675cd01"]
@@ -1156,12 +1415,12 @@ params: ["0x29adbbaf99a3f97b2baefa11e865cf9d74435716ef8618caaa388619f5ae7d8e5d2c
 
 #### Returns
 
-`DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available. 
+`DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [`eth_getTransactionReceipt`](ethereum/#eth_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
+Use [`eth_getTransactionReceipt`](../ethereum/#eth\_gettransactionreceipt) to get the contract address after the transaction was mined when you created a contract.
 
 {% hint style="danger" %}
-**Note:** Since `eth_sendRawTransaction` is a request used for writing to the blockchain and changes its state, it is impossible to execute the same request twice. This means if you were to copy the example given below you will not get the expected response. 
+**Note:** Since `eth_sendRawTransaction` is a request used for writing to the blockchain and changes its state, it is impossible to execute the same request twice. This means if you were to copy the example given below you will not get the expected response.
 {% endhint %}
 
 Request
@@ -1201,13 +1460,13 @@ Result
 }
 ```
 
-## 📂 Account Information 
+## 📂 Account Information
 
-Calls to get information about an account. 
+Calls to get information about an account.
 
 ### eth\_getBalance
 
-Returns the balance of the account of a given address. 
+Returns the balance of the account of a given address.
 
 #### Parameters
 
@@ -1223,7 +1482,7 @@ params: [
 
 #### Returns
 
-`QUANTITY` - integer of the current balance for the given address in wei. 
+`QUANTITY` - integer of the current balance for the given address in wei.
 
 Request
 
@@ -1264,7 +1523,7 @@ Result
 
 ### eth\_getCode
 
-Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address). 
+Returns code at a given address. This method can be used to [distinguish between contract addresses and wallet addresses](../../resources/faq.md#how-do-i-distinguish-between-a-contract-address-and-a-wallet-address).
 
 #### Parameters
 
@@ -1321,7 +1580,7 @@ Result
 
 ### eth\_getStorageAt
 
-Returns the value from a storage position at a given address, or in other words, returns the state of the contract's storage, which may not be exposed via the contract's methods. 
+Returns the value from a storage position at a given address, or in other words, returns the state of the contract's storage, which may not be exposed via the contract's methods.
 
 #### Parameters
 
@@ -1392,27 +1651,27 @@ Result
 
 ### eth\_getProof
 
-Returns the account and storage values of the specified account including the Merkle-proof. This call can be used to verify that the data you are pulling from is not tampered with. 
+Returns the account and storage values of the specified account including the Merkle-proof. This call can be used to verify that the data you are pulling from is not tampered with.
 
 #### **Parameters**
 
 1. `DATA`, 20 Bytes - address of the account.
-2. `ARRAY`, 32 Bytes - array of storage-keys which should be proofed and included. See[`eth_getStorageAt`](ethereum/#eth_getstorageat)
+2. `ARRAY`, 32 Bytes - array of storage-keys which should be proofed and included. See[`eth_getStorageAt`](../ethereum/#eth\_getstorageat)
 3. `QUANTITY|TAG` - integer block number, or the string `"latest"` or `"earliest"`, see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter)
 
 #### **Returns**
 
 `Object` - A account object:
 
-* `balance`: `QUANTITY` - the balance of the account. See[`eth_getBalance`](ethereum/#eth_getbalance)
+* `balance`: `QUANTITY` - the balance of the account. See[`eth_getBalance`](../ethereum/#eth\_getbalance)
 * `codeHash`: `DATA`, 32 Bytes - hash of the code of the account. For a simple Account without code it will return `"0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"`
-* `nonce`: `QUANTITY`, - nonce of the account. See [`eth_getTransactionCount`](ethereum/#eth_gettransactioncount)\`\`
+* `nonce`: `QUANTITY`, - nonce of the account. See [`eth_getTransactionCount`](../ethereum/#eth\_gettransactioncount)\`\`
 * `storageHash`: `DATA`, 32 Bytes - SHA3 of the StorageRoot. All storage will deliver a MerkleProof starting with this rootHash.
-* `accountProof`: `ARRAY` - Array of rlp-serialized MerkleTree-Nodes, starting with the stateRoot-Node, following the path of the SHA3 \(address\) as key.
+* `accountProof`: `ARRAY` - Array of rlp-serialized MerkleTree-Nodes, starting with the stateRoot-Node, following the path of the SHA3 (address) as key.
 * `storageProof`: `ARRAY` - Array of storage-entries as requested. Each entry is a object with these properties:
   * `key`: `QUANTITY` - the requested storage key
   * `value`: `QUANTITY` - the storage value
-  * `proof`: `ARRAY` - Array of rlp-serialized MerkleTree-Nodes, starting with the storageHash-Node, following the path of the SHA3 \(key\) as path.
+  * `proof`: `ARRAY` - Array of rlp-serialized MerkleTree-Nodes, starting with the storageHash-Node, following the path of the SHA3 (key) as path.
 
 Request
 
@@ -1477,27 +1736,27 @@ Result
 
 ### eth\_call
 
-Executes a new message call immediately without creating a transaction on the block chain. 
+Executes a new message call immediately without creating a transaction on the block chain.
 
-This is one of the most commonly used API calls. It is used to read from the blockchain which includes executing smart contracts, but does not publish anything to the blockchain. This call does not consume any Ether. 
+This is one of the most commonly used API calls. It is used to read from the blockchain which includes executing smart contracts, but does not publish anything to the blockchain. This call does not consume any Ether.
 
 {% hint style="warning" %}
-Starting from [Geth 1.9.13](https://github.com/ethereum/go-ethereum/pull/20783), `eth_call`will check the balance of the sender \(to make sure that the sender has enough gas to complete the request\) before executing the call. This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the call as if it were a transaction. 
+Starting from [Geth 1.9.13](https://github.com/ethereum/go-ethereum/pull/20783), `eth_call`will check the balance of the sender (to make sure that the sender has enough gas to complete the request) before executing the call. This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the call as if it were a transaction.
 {% endhint %}
 
 #### Parameters
 
 * `Object` - The transaction call object
-  * `from`: `DATA`, 20 Bytes - \(optional\) The address the transaction is sent from.
+  * `from`: `DATA`, 20 Bytes - (optional) The address the transaction is sent from.
   * `to`: `DATA`, 20 Bytes - The address the transaction is directed to.
-  * `gas`: `QUANTITY` - \(optional\) Integer of the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions. 
-  * `gasPrice`: `QUANTITY` - \(optional\) Integer of the gasPrice used for each paid gas. **Note: most of our users \(95%+\) never set the `gasPrice` on eth\_call.**
-  * `value`: `QUANTITY` - \(optional\) Integer of the value sent with this transaction
-  * `data`: `DATA` - \(optional\) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI
-* `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending" \(see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter)\), OR the `blockHash` \(in accordance with [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898)\) **Note: the parameter is an object instead of a string and should be specified as: `{"blockHash": "0x<some-hash>"}.`** Learn more [here](https://eips.ethereum.org/EIPS/eip-1898).
+  * `gas`: `QUANTITY` - (optional) Integer of the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.&#x20;
+  * `gasPrice`: `QUANTITY` - (optional) Integer of the gasPrice used for each paid gas. **Note: most of our users (95%+) never set the `gasPrice` on eth\_call.**
+  * `value`: `QUANTITY` - (optional) Integer of the value sent with this transaction
+  * `data`: `DATA` - (optional) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI
+* `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending" (see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter)), OR the `blockHash` (in accordance with [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898)) **Note: the parameter is an object instead of a string and should be specified as: `{"blockHash": "0x<some-hash>"}.`** Learn more [here](https://eips.ethereum.org/EIPS/eip-1898).
 
 {% hint style="danger" %}
-**Note:** `eth_call` has a timeout restriction at the node level. Batching multiple `eth_call`  together on-chain using pre-deployed smart contracts might result in unexpected timeouts that cause none of your calls to complete. Instead, consider serializing these calls, or using smaller batches if they fail with a node error code. 
+**Note:** `eth_call` has a timeout restriction at the node level. Batching multiple `eth_call` together on-chain using pre-deployed smart contracts might result in unexpected timeouts that cause none of your calls to complete. Instead, consider serializing these calls, or using smaller batches if they fail with a node error code.
 {% endhint %}
 
 ```javascript
@@ -1559,33 +1818,33 @@ Result
 
 ### eth\_getLogs
 
-Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../guides/eth_getlogs.md) page. 
+Returns an array of all logs matching a given filter object. For more information about `eth_getLogs` check out our [Deep Dive into eth\_getLogs](../../guides/eth\_getlogs.md) page.
 
 {% hint style="warning" %}
-**NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and _**no limit on the response size**_. 
+**NOTE**: You can make `eth_getLogs` requests with up to a _**2K block range**_ and_**150MB limit on the response size**_.
 
 If you absolutely need to query larger block ranges, please contact us over [discord](https://alchemy.com/discord) or at support@alchemy.com. We can open access to larger block ranges based on your use case.
 
-_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../guides/using-websockets.md) _to push new logs to you when they are available._ 
+_If you need to pull logs frequently, we recommend_ [_using WebSockets_](../../guides/using-websockets.md) _to push new logs to you when they are available._
 {% endhint %}
 
 #### Parameters
 
 `Object` - The filter options:
 
-* `fromBlock`: `QUANTITY|TAG` - \(optional, default: "latest"\) Value:
+* `fromBlock`: `QUANTITY|TAG` - (optional, default: "latest") Value:
   * Integer block number
   * "latest" for the last mined block
   * "pending", "earliest" for not yet mined transactions.
-* `toBlock`: `QUANTITY|TAG` - \(optional, default: "latest"\) Value:
+* `toBlock`: `QUANTITY|TAG` - (optional, default: "latest") Value:
   * Integer block number
   * "latest" for the last mined block
   * "pending", "earliest" for not yet mined transactions.
-* `address`: `DATA|Array`, 20 Bytes - \(optional\) Contract address or a list of addresses from which logs should originate.
-* `topics`: `Array` of `DATA`, - \(optional\) Array of 32 Bytes DATA topics. 
-  * Topics are order-dependent. Each topic can also be an array of DATA with "or" options. 
-  * Check out more details on how to format topics in [eth\_newFilter](ethereum/#eth_newfilter).
-* `blockHash`: `DATA`, 32 Bytes - \(optional\) With the addition of EIP-234 \(Geth &gt;= v1.8.13 or Parity &gt;= v2.1.0\), blockHash is a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash `blockHash`. **If blockHash is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.**
+* `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
+* `topics`: `Array` of `DATA`, - (optional) Array of 32 Bytes DATA topics.&#x20;
+  * Topics are order-dependent. Each topic can also be an array of DATA with "or" options.&#x20;
+  * Check out more details on how to format topics in [eth\_newFilter](../ethereum/#eth\_newfilter).
+* `blockHash`: `DATA`, 32 Bytes - (optional) With the addition of EIP-234 (Geth >= v1.8.13 or Parity >= v2.1.0), blockHash is a new filter option which restricts the logs returned to the single block with the 32-byte hash blockHash. Using blockHash is equivalent to fromBlock = toBlock = the block number with hash `blockHash`. **If blockHash is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.**
 
 ```javascript
 params: [
@@ -1601,7 +1860,7 @@ params: [
 
 #### Returns
 
-See [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges)
+See [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)
 
 {% hint style="info" %}
 Pending example!
@@ -1609,14 +1868,14 @@ Pending example!
 
 ## ⛓ Chain Information
 
-Calls to receive information about the current blockchain. 
+Calls to receive information about the current blockchain.
 
 ### eth\_gasPrice
 
-Returns the current price per gas in wei. 
+Returns the current price per gas in wei.
 
 {% hint style="info" %}
-There may be slight disrepancies due to calculation differences between this method and the [matic gas station](https://gasstation-mainnet.matic.network/).
+There may be slight disrepancies due to calculation differences between this method and the [matic gas station](https://gasstation-mainnet.matic.network).
 {% endhint %}
 
 #### Parameters
@@ -1625,7 +1884,7 @@ none
 
 #### Returns
 
-`QUANTITY` - integer of the current gas price in wei. 
+`QUANTITY` - integer of the current gas price in wei.
 
 Request
 
@@ -1666,7 +1925,7 @@ Result
 
 ### eth\_estimateGas
 
-Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. 
+Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain.
 
 {% hint style="info" %}
 **Note:** The estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance. Estimates are served directly from nodes, we're not doing anything special to the value so the rest of the network is likely seeing the same.
@@ -1675,18 +1934,18 @@ Generates and returns an estimate of how much gas is necessary to allow the tran
 #### **Parameters**
 
 * `Object` - The transaction call object
-  * `from`: `DATA`, 20 Bytes - \(optional\) The address the transaction is sent from.
+  * `from`: `DATA`, 20 Bytes - (optional) The address the transaction is sent from.
   * `to`: `DATA`, 20 Bytes - The address the transaction is directed to.
-  * `gas`: `QUANTITY` - \(optional\) Integer of the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions. 
-  * `gasPrice`: `QUANTITY` - \(optional\) Integer of the gasPrice used for each paid gas. **Note: most of our users \(95%+\) never set the `gasPrice` on eth\_call.**
-  * `value`: `QUANTITY` - \(optional\) Integer of the value sent with this transaction
-  * `data`: `DATA` - \(optional\) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI
+  * `gas`: `QUANTITY` - (optional) Integer of the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.&#x20;
+  * `gasPrice`: `QUANTITY` - (optional) Integer of the gasPrice used for each paid gas. **Note: most of our users (95%+) never set the `gasPrice` on eth\_call.**
+  * `value`: `QUANTITY` - (optional) Integer of the value sent with this transaction
+  * `data`: `DATA` - (optional) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI
 * `QUANTITY|TAG` - integer block number, or the string "latest", "earliest" or "pending", see the [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
 
 {% hint style="warning" %}
 **NOTE**
 
-* `eth_estimateGas` ****will check the balance of the sender \(to make sure that the sender has enough gas to complete the request\). This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the transaction.
+* `eth_estimateGas` _\*\*_will check the balance of the sender (to make sure that the sender has enough gas to complete the request). This means that even though the call doesn't consume any gas, the `from` address must have enough gas to execute the transaction.
 * If no `gas` is specified geth uses the block gas limit from the pending block as an upper bound. As a result the returned estimate might not be enough to executed the call/transaction when the amount of actual gas needed is higher than the pending block gas limit.
 {% endhint %}
 
@@ -1784,7 +2043,6 @@ Result
     "id": 83,
     "result": "0x89"
 }
-
 ```
 
 ### net\_version
@@ -1800,7 +2058,7 @@ none
 `String` - The current network id.
 
 * `"1"`: Ethereum Mainnet
-* `"2"`: Morden Testnet \(deprecated\)
+* `"2"`: Morden Testnet (deprecated)
 * `"3"`: Ropsten Testnet
 * `"4"`: Rinkeby Testnet
 * `"42"`: Kovan Testnet
@@ -1917,7 +2175,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash) 
+See [`eth_getBlockByHash`](../ethereum/#eth\_getblockbyhash)
 
 Request
 
@@ -1946,7 +2204,7 @@ Body:
 {% endtab %}
 {% endtabs %}
 
-Result 
+Result
 
 ```javascript
 {
@@ -1981,10 +2239,9 @@ Returns information about an uncle of a block by hash and uncle index position.
 
 #### Parameters
 
-* `QUANTITY|TAG` - a block number, or the string "earliest", "latest" or "pending", as in the 
+*   `QUANTITY|TAG` - a block number, or the string "earliest", "latest" or "pending", as in the
 
-  [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
-
+    [default block parameter](https://eth.wiki/json-rpc/API#the-default-block-parameter).
 * `QUANTITY` - the uncle's index position.
 
 ```javascript
@@ -1996,7 +2253,7 @@ params: [
 
 #### Returns
 
-See [`eth_getBlockByHash`](ethereum/#eth_getblockbyhash) 
+See [`eth_getBlockByHash`](../ethereum/#eth\_getblockbyhash)
 
 Request
 
@@ -2166,12 +2423,12 @@ Result
 
 ## 🔦 Filters
 
-Calls related to creating, getting, and reading from filters. 
+Calls related to creating, getting, and reading from filters.
 
-Eth filters expose the same information as the [`eth_subscribe`](ethereum/#eth_subscribe) methods, except that updates are received by polling rather than receiving pushes. A user may create a filter than repeatedly call `eth_getFilterChanges`on it, each time receiving events that have occurred since the last time `eth_getFilterChanges`was called \(or since the filter was created if this is the first time `eth_getFilterChanges`is being called.
+Eth filters expose the same information as the [`eth_subscribe`](../ethereum/#eth\_subscribe) methods, except that updates are received by polling rather than receiving pushes. A user may create a filter than repeatedly call `eth_getFilterChanges`on it, each time receiving events that have occurred since the last time `eth_getFilterChanges`was called (or since the filter was created if this is the first time `eth_getFilterChanges`is being called.
 
 {% hint style="warning" %}
-**Note**: Filters expire after 5 minutes of inactivity, so several of the example requests below will return`"filter not found"` if you try and call them. 
+**Note**: Filters expire after 5 minutes of inactivity, so several of the example requests below will return`"filter not found"` if you try and call them.
 {% endhint %}
 
 ### eth\_getFilterChanges
@@ -2192,8 +2449,8 @@ params: [
 
 `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
 
-* For filters created with `eth_newBlockFilter` the return are block hashes \(`DATA`, 32 Bytes\), e.g. `["0x3454645634534..."]`.
-* For filters created with `eth_newPendingTransactionFilter`  the return are transaction hashes \(`DATA`, 32 Bytes\), e.g. `["0x6345343454645..."]`.
+* For filters created with `eth_newBlockFilter` the return are block hashes (`DATA`, 32 Bytes), e.g. `["0x3454645634534..."]`.
+* For filters created with `eth_newPendingTransactionFilter`  the return are transaction hashes (`DATA`, 32 Bytes), e.g. `["0x6345343454645..."]`.
 * For filters created with `eth_newFilter` logs are objects with following params:
   * `removed`: `TAG` - `true` when the log was removed, due to a chain reorganization. `false` if its a valid log.
   * `logIndex`: `QUANTITY` - integer of the log index position in the block. `null` when its pending log.
@@ -2203,10 +2460,10 @@ params: [
   * `blockNumber`: `QUANTITY` - the block number where this log was in. `null` when its pending. `null` when its pending log.
   * `address`: `DATA`, 20 Bytes - address from which this log originated.
   * `data`: `DATA` - contains one or more 32 Bytes non-indexed arguments of the log.
-  * `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. 
-    * In _solidity_: The first topic is the _hash_ of the signature of the event \(e.g. `Deposit(address,bytes32,uint256)`\), except you declare the event with the `anonymous` specifier.
+  * `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments.&#x20;
+    * In _solidity_: The first topic is the _hash_ of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except you declare the event with the `anonymous` specifier.
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getFilterChanges%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
+#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getFilterChanges%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
 
 Request
 
@@ -2267,10 +2524,10 @@ Result
 
 ### eth\_getFilterLogs
 
-Returns an array of all logs matching filter with given id. Can compute the same results with an `eth_getLogs` call \(see hint below\). 
+Returns an array of all logs matching filter with given id. Can compute the same results with an `eth_getLogs` call (see hint below).
 
 {% hint style="warning" %}
-This method only works for filters creates with [`eth_newFilter`](ethereum/#eth_newfilter)not for filters created using [`eth_newBlockFilter`](ethereum/#eth_newblockfilter) or [`eth_newPendingTransactionFilter`](ethereum/#eth_newpendingtransactionfilter), which will return `"filter not found".`
+This method only works for filters creates with [`eth_newFilter`](../ethereum/#eth\_newfilter)not for filters created using [`eth_newBlockFilter`](../ethereum/#eth\_newblockfilter) or [`eth_newPendingTransactionFilter`](../ethereum/#eth\_newpendingtransactionfilter), which will return `"filter not found".`
 
 ### eth\_getLogs vs. eth\_getFilterLogs
 
@@ -2292,9 +2549,9 @@ params: [
 
 #### **Returns**
 
-See [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges)\`\`
+See [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)\`\`
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getFilterLogs%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
+#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getFilterLogs%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
 
 Request
 
@@ -2355,7 +2612,7 @@ Result
 
 ### eth\_newBlockFilter
 
-Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges).
+Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges).
 
 #### **Parameters**
 
@@ -2365,7 +2622,7 @@ None
 
 `QUANTITY` - A filter id.
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_newBlockFilter%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
+#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_newBlockFilter%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
 
 Request
 
@@ -2406,29 +2663,29 @@ Result
 
 ### eth\_newFilter
 
-Creates a filter object, based on filter options, to notify when the state changes \(logs\). Unlike `eth_newBlockFilter`which notifies you of **all** new ****blocks, you can pass in filter options to track new logs matching the topics specified.  ****
+Creates a filter object, based on filter options, to notify when the state changes (logs). Unlike `eth_newBlockFilter`which notifies you of **all** new **blocks, you can pass in filter options to track new logs matching the topics specified. **
 
-To check if the state has changed, call [`eth_getFilterChanges.`](ethereum/#eth_getfilterchanges)\`\`
+To check if the state has changed, call [`eth_getFilterChanges.`](../ethereum/#eth\_getfilterchanges)\`\`
 
 {% hint style="info" %}
 #### A note on specifying topic filters:
 
-Topics are order-dependent. A transaction with a log with topics \[A, B\] will be matched by the following topic filters:
+Topics are order-dependent. A transaction with a log with topics \[A, B] will be matched by the following topic filters:
 
 * `[]` “anything”
-* `[A]` “A in first position \(and anything after\)”
-* `[null, B]` “anything in first position AND B in second position \(and anything after\)”
-* `[A, B]` “A in first position AND B in second position \(and anything after\)”
-* `[[A, B], [A, B]]` “\(A OR B\) in first position AND \(A OR B\) in second position \(and anything after\)”
+* `[A]` “A in first position (and anything after)”
+* `[null, B]` “anything in first position AND B in second position (and anything after)”
+* `[A, B]` “A in first position AND B in second position (and anything after)”
+* `[[A, B], [A, B]]` “(A OR B) in first position AND (A OR B) in second position (and anything after)”
 {% endhint %}
 
 #### **Parameters**
 
 * `Object` - The filter options:
-  1. `fromBlock`: `QUANTITY|TAG` - \(optional, default: `"latest"`\) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
-  2. `toBlock`: `QUANTITY|TAG` - \(optional, default: `"latest"`\) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
-  3. `address`: `DATA|Array`, 20 Bytes - \(optional\) Contract address or a list of addresses from which logs should originate.
-  4. `topics`: `Array of DATA`, - \(optional\) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with “or” options.
+  1. `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
+  2. `toBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
+  3. `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
+  4. `topics`: `Array of DATA`, - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with “or” options.
 
 ```javascript
 params: [{
@@ -2443,7 +2700,7 @@ params: [{
 
 `QUANTITY` - A filter id.
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_newFilter%22%2C%22paramValues%22%3A%5B%7B%22fromBlock%22%3A%220x1%22%2C%22toBlock%22%3A%220x2%22%2C%22address%22%3A%220x8888f1f195afa192cfee860698584c030f4c9db1%22%2C%22topics%22%3A%22%5B%5C%220x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b%5C%22%2C%20null%2C%20%5B%5C%220x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b%5C%22%2C%20%5C%220x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc%5C%22%5D%5D%22%7D%5D%7D)\*\*\*\*
+#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_newFilter%22%2C%22paramValues%22%3A%5B%7B%22fromBlock%22%3A%220x1%22%2C%22toBlock%22%3A%220x2%22%2C%22address%22%3A%220x8888f1f195afa192cfee860698584c030f4c9db1%22%2C%22topics%22%3A%22%5B%5C%220x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b%5C%22%2C%20null%2C%20%5B%5C%220x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b%5C%22%2C%20%5C%220x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc%5C%22%5D%5D%22%7D%5D%7D)\*\*\*\*
 
 Request
 
@@ -2484,7 +2741,7 @@ Result
 
 ### eth\_newPendingTransactionFilter
 
-Creates a filter in the node, to notify when new pending transactions arrive.To check if the state has changed, call [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges)\`\`
+Creates a filter in the node, to notify when new pending transactions arrive.To check if the state has changed, call [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)\`\`
 
 #### **Parameters**
 
@@ -2494,7 +2751,7 @@ None
 
 `QUANTITY` - A filter id.
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_newPendingTransactionFilter%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
+#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_newPendingTransactionFilter%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
 
 Request
 
@@ -2535,7 +2792,7 @@ Result
 
 ### eth\_uninstallFilter
 
-Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally, Filters timeout when they aren’t requested with [`eth_getFilterChanges`](ethereum/#eth_getfilterchanges)for a period of time.
+Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally, Filters timeout when they aren’t requested with [`eth_getFilterChanges`](../ethereum/#eth\_getfilterchanges)for a period of time.
 
 #### **Parameters**
 
@@ -2551,7 +2808,7 @@ params: [
 
 `Boolean` - `true` if the filter was successfully uninstalled, otherwise `false`.
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_uninstallFilter%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
+#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_uninstallFilter%22%2C%22paramValues%22%3A%5B%220xfe704947a3cd3ca12541458a4321c869%22%5D%7D)\*\*\*\*
 
 Request
 
@@ -2643,14 +2900,14 @@ Result
 
 ### web3\_sha3
 
-Returns Keccak-256 \(_not_ the standardized SHA3-256\) of the given data.
+Returns Keccak-256 (_not_ the standardized SHA3-256) of the given data.
 
 #### **Parameters**
 
 1. `DATA` - the data in hex form to convert into a SHA3 hash
 
 {% hint style="warning" %}
-**Note:** web3\_sha3 takes in a hexidecimal number, not a direct string. So, if you wanted to convert "hello world" to it's Keccak-256 hash you would need to input the hex number for "hello world", which is "68656c6c6f20776f726c64". 
+**Note:** web3\_sha3 takes in a hexidecimal number, not a direct string. So, if you wanted to convert "hello world" to it's Keccak-256 hash you would need to input the hex number for "hello world", which is "68656c6c6f20776f726c64".
 {% endhint %}
 
 ```bash
@@ -2706,14 +2963,14 @@ Geth v1.4 and later support subscribing using JSON-RPC notifications. This allow
 
 It works by subscribing to particular events where the node will return a subscription id. For each event that matches the subscription, a notification with relevant data is sent together with the subscription id.
 
-Below are several methods used for retrieving real time events. 
+Below are several methods used for retrieving real time events.
 
 ### eth\_syncing
 
-Returns an object with data about the sync status or `false`if the node is fully synced. 
+Returns an object with data about the sync status or `false`if the node is fully synced.
 
 {% hint style="success" %}
-**Note**: Your response from `eth_syncing` will likely return false because Alchemy only supports nodes in production that are completed synced. 
+**Note**: Your response from `eth_syncing` will likely return false because Alchemy only supports nodes in production that are completed synced.
 {% endhint %}
 
 #### **Parameters**
@@ -2724,7 +2981,7 @@ none
 
 `Object|Boolean`, An object with sync status data or `FALSE`, when not syncing:
 
-* `startingBlock`: `QUANTITY` - The block at which the import started \(will only be reset, after the sync reached his head\)
+* `startingBlock`: `QUANTITY` - The block at which the import started (will only be reset, after the sync reached his head)
 * `currentBlock`: `QUANTITY` - The current block, same as eth\_blockNumber
 * `highestBlock`: `QUANTITY` - The estimated highest block
 
@@ -2767,19 +3024,19 @@ Response
 
 ### eth\_subscribe
 
-If successful this returns the subscription id. Subscriptions are creates with a regular RPC call with `eth_subscribe` as method and the subscription name as first parameter. 
+If successful this returns the subscription id. Subscriptions are creates with a regular RPC call with `eth_subscribe` as method and the subscription name as first parameter.
 
-#### Parameters <a id="parameters"></a>
+#### Parameters <a href="parameters" id="parameters"></a>
 
 1. subscription name
-2. optional arguments \([see below](ethereum/#optional-arguments)\)
+2. optional arguments ([see below](../ethereum/#optional-arguments))
 
-#### **Returns** 
+#### **Returns**
 
 If successful this returns the subscription id.
 
 {% hint style="info" %}
-**NOTE**: `eth_subscribe` requests cannot be replicated in the [composer](https://composer.alchemyapi.io/) tool
+**NOTE**: `eth_subscribe` requests cannot be replicated in the [composer](https://composer.alchemyapi.io) tool
 {% endhint %}
 
 Request
@@ -2819,11 +3076,11 @@ Result
 }
 ```
 
-#### Optional Arguments: 
+#### Optional Arguments:
 
-#### 1. newHeads <a id="newheads"></a>
+#### 1. newHeads <a href="newheads" id="newheads"></a>
 
-Fires a notification each time a new header is appended to the chain, including chain reorganizations. 
+Fires a notification each time a new header is appended to the chain, including chain reorganizations.
 
 In case of a chain reorganization the subscription will emit all new headers for the new chain. Therefore the subscription can emit multiple headers on the same height.
 
@@ -2891,7 +3148,7 @@ Result
  }
 ```
 
-#### 2. logs <a id="logs"></a>
+#### 2. logs <a href="logs" id="logs"></a>
 
 Returns logs that are included in new imported blocks and match the given filter criteria.
 
@@ -2899,9 +3156,9 @@ In case of a chain reorganization previous sent logs that are on the old chain w
 
 **Parameters**
 
-1. `object` with the following \(optional\) fields
-   * **address**, either an address or an array of addresses. Only logs that are created from these addresses are returned \(optional\)
-   * **topics**, only logs which match the specified topics \(optional\)
+1. `object` with the following (optional) fields
+   * **address**, either an address or an array of addresses. Only logs that are created from these addresses are returned (optional)
+   * **topics**, only logs which match the specified topics (optional)
 
 Request
 
@@ -2960,17 +3217,17 @@ Result
 
 #### 3. newPendingTransactions
 
-Returns the hash for all transactions that are added to the pending state. 
+Returns the hash for all transactions that are added to the pending state.
 
 When a transaction that was previously part of the canonical chain isn’t part of the new canonical chain after a reorganization its again emitted.
 
 {% hint style="info" %}
 **NOTE:**
 
-* If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../guides/using-websockets.md#1-alchemy_newfullpendingtransactions)
-* If you want pending transactions for a specific address, check out the Enhanced API 
+* If you want the full transaction object instead of just the hash, check out the Enhanced API [`alchemy_newFullPendingTransactions`](../../guides/using-websockets.md#1-alchemy\_newfullpendingtransactions)
+*   If you want pending transactions for a specific address, check out the Enhanced API
 
-  \`\`[`alchemy_filteredNewFullPendingTransactions`](../guides/using-websockets.md#2-alchemy_filterednewfullpendingtransactions)\`\`
+    \`\`[`alchemy_filteredNewFullPendingTransactions`](../../guides/using-websockets.md#2-alchemy\_filterednewfullpendingtransactions)\`\`
 {% endhint %}
 
 **Parameters**
@@ -3026,7 +3283,7 @@ Result
 
 #### 4. syncing
 
-Indicates when the node starts or stops synchronizing. The result can either be a boolean indicating that the synchronization has started \(true\), finished \(false\) or an object with various progress indicators.
+Indicates when the node starts or stops synchronizing. The result can either be a boolean indicating that the synchronization has started (true), finished (false) or an object with various progress indicators.
 
 **Parameters**
 
@@ -3087,12 +3344,12 @@ Result
 
 Subscriptions are cancelled with a regular RPC call with `eth_unsubscribe` as method and the subscription id as first parameter. It returns a bool indicating if the subscription was cancelled successfully.
 
-#### Parameters <a id="parameters-1"></a>
+#### Parameters <a href="parameters-1" id="parameters-1"></a>
 
 1. subscription id
 
 {% hint style="info" %}
-**NOTE**: `eth_unsubscribe` requests cannot be replicated in the [composer](https://composer.alchemyapi.io/) tool
+**NOTE**: `eth_unsubscribe` requests cannot be replicated in the [composer](https://composer.alchemyapi.io) tool
 {% endhint %}
 
 Request
@@ -3140,36 +3397,36 @@ The `traceTransaction` debugging method will attempt to run the transaction in t
 
 The `traceTransaction` debugging method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
 
-### Parameters 
+### Parameters
 
-### Parameters 
-
-In addition to the hash of the transaction you may give it a secondary _optional_ argument, which specifies the options for this specific call. The possible options are:
+### Parameters
 
 In addition to the hash of the transaction you may give it a secondary _optional_ argument, which specifies the options for this specific call. The possible options are:
 
-* `disableStorage`: `BOOL`. Setting this to true will disable storage capture \(default = false\).
-* `disableMemory`: `BOOL`. Setting this to true will disable memory capture \(default = false\).
-* `disableStack`: `BOOL`. Setting this to true will disable stack capture \(default = false\).
+In addition to the hash of the transaction you may give it a secondary _optional_ argument, which specifies the options for this specific call. The possible options are:
+
+* `disableStorage`: `BOOL`. Setting this to true will disable storage capture (default = false).
+* `disableMemory`: `BOOL`. Setting this to true will disable memory capture (default = false).
+* `disableStack`: `BOOL`. Setting this to true will disable stack capture (default = false).
 * `tracer`: `STRING`. Setting this will enable JavaScript-based transaction tracing, described below. If set, the previous four arguments will be ignored.
 * `timeout`: `STRING`. Overrides the default timeout of 5 seconds for JavaScript-based tracing calls. Valid values are described [here](https://golang.org/pkg/time/#ParseDuration).
-* `disableStorage`: `BOOL`. Setting this to true will disable storage capture \(default = false\).
-* `disableMemory`: `BOOL`. Setting this to true will disable memory capture \(default = false\).
-* `disableStack`: `BOOL`. Setting this to true will disable stack capture \(default = false\).
+* `disableStorage`: `BOOL`. Setting this to true will disable storage capture (default = false).
+* `disableMemory`: `BOOL`. Setting this to true will disable memory capture (default = false).
+* `disableStack`: `BOOL`. Setting this to true will disable stack capture (default = false).
 * `tracer`: `STRING`. Setting this will enable JavaScript-based transaction tracing, described below. If set, the previous four arguments will be ignored.
 * `timeout`: `STRING`. Overrides the default timeout of 5 seconds for JavaScript-based tracing calls. Valid values are described [here](https://golang.org/pkg/time/#ParseDuration).
 
-| Client  | Method Invocation |
-| :--- | :--- |
-| Go | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
-| Console | `debug.traceTransaction(txHash, [options])` |
-| RPC | `{"method": "debug_traceTransaction", "params": [txHash, {}]}` |
+| Client  | Method Invocation                                                                            |
+| ------- | -------------------------------------------------------------------------------------------- |
+| Go      | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
+| Console | `debug.traceTransaction(txHash, [options])`                                                  |
+| RPC     | `{"method": "debug_traceTransaction", "params": [txHash, {}]}`                               |
 
-| Client  | Method Invocation |
-| :--- | :--- |
-| Go | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
-| Console | `debug.traceTransaction(txHash, [options])` |
-| RPC | `{"method": "debug_traceTransaction", "params": [txHash, {}]}` |
+| Client  | Method Invocation                                                                            |
+| ------- | -------------------------------------------------------------------------------------------- |
+| Go      | `debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)` |
+| Console | `debug.traceTransaction(txHash, [options])`                                                  |
+| RPC     | `{"method": "debug_traceTransaction", "params": [txHash, {}]}`                               |
 
 ### **Example**
 
@@ -3260,4 +3517,3 @@ Result
 {% hint style="warning" %}
 Block, and Trace APIs under Enhanced APIs are not currently supported by Alchemy for Polygon.
 {% endhint %}
-

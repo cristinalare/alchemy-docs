@@ -2,9 +2,11 @@
 description: Returns the current price per gas in wei.
 ---
 
-# eth\_gasPrice
+# eth_gasPrice
 
 {% hint style="info" %}
+If you are curious about the difference in gas price between this method and the [eth gas station](https://ethgasstation.info), check out this [GitHub issue](https://github.com/ethereum/go-ethereum/issues/15825).
+{% endhint %}
 
 ### Parameters
 
@@ -52,4 +54,3 @@ Result
   "result": "0x98bca5a00"
 }
 ```
-

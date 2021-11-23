@@ -2,7 +2,7 @@
 description: Returns the current network id.
 ---
 
-# net\_version
+# net_version
 
 #### **Parameters**
 
@@ -13,12 +13,12 @@ none
 `String` - The current network id.
 
 * `"1"`: Ethereum Mainnet
-* `"2"`: Morden Testnet \(deprecated\)
+* `"2"`: Morden Testnet (deprecated)
 * `"3"`: Ropsten Testnet
 * `"4"`: Rinkeby Testnet
 * `"42"`: Kovan Testnet
 
-#### \*\*\*\*[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22net_version%22%2C%22paramValues%22%3A%5B%5D%7D)\*\*\*\*
+#### ****[**Example**](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22net_version%22%2C%22paramValues%22%3A%5B%5D%7D)****
 
 Request
 
@@ -57,5 +57,4 @@ Result
 }
 ```
 
-### 
-
+###

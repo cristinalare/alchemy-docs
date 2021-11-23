@@ -4,9 +4,11 @@ description: >-
   transactions.
 ---
 
-# eth\_sendRawTransaction
+# eth_sendRawTransaction
 
 {% hint style="warning" %}
+Alchemy does not store keys, so transactions sent via Alchemy must be signed ahead of time using another provider like [ethers](https://docs.ethers.io/v5/api/signer/) (via `eth_signTransaction`) and sent with `eth_sendRawTransaction`.
+{% endhint %}
 
 ### Parameters
 
@@ -64,4 +66,3 @@ Result
   "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
 }
 ```
-
