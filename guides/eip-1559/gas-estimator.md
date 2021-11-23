@@ -4,7 +4,7 @@ description: >-
   EIP-1559 methods.
 ---
 
-# How to Build a Gas Fee Estimator using EIP-1559
+# 📊 How to Build a Gas Fee Estimator using EIP-1559
 
 Many apps like to offer users the option to set their own gas fee bids with a "slow" "average" and "fast" option. In this article we will take a look at how you might go about building these options with the `eth_feeHistory` API post London fork. We will also discuss the `eth_maxPriorityFeePerGas` method and replicate the calculation it performs. Then we will discuss how you might productionize such a calculator.
 

@@ -2,7 +2,7 @@
 description: If your users are experiencing CORS issues here's how to debug them
 ---
 
-# Debugging CORS problems for end-users
+# 🐛 Debugging CORS problems for end-users
 
 ## Overview
 

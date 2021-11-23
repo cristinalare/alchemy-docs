@@ -2,7 +2,7 @@
 description: Blockchain basics for developer topics.
 ---
 
-# Blockchain 101
+# ⛓ Blockchain 101
 
 This is Alchemy API's comprehensive guide to getting familiar with blockchain. There are tons of articles out there now, but this is a curated reading list (plus a few videos). We will cover blockchain basics from both technical and contextual perspectives.
 

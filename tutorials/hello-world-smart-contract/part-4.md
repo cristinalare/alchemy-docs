@@ -5,7 +5,7 @@ description: >-
   and Web3 tools.
 ---
 
-# Integrating Your Smart Contract with the Frontend
+# 📱 Integrating Your Smart Contract with the Frontend
 
 You'll need to have finished part 1 [creating and deploying a smart contract](./), part 2 [interacting with your smart contract](interacting-with-a-smart-contract.md), and part 3 [submitting your smart contract to Etherscan](https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract/submitting-your-smart-contract-to-etherscan) before starting part 4 below.
 

@@ -5,7 +5,7 @@ description: >-
   of them.
 ---
 
-# maxPriorityFeePerGas vs maxFeePerGas
+# 🧐 maxPriorityFeePerGas vs maxFeePerGas
 
 Sending a transaction on Ethereum post London fork uses these two new gas price fields: `maxFeePerGas` and [`maxPriorityFeePerGas`](../../apis/ethereum/eth\_maxpriorityfeepergas.md). We won't go into detail on the incentive theory behind fee markets here. Instead, we will dive into the difference between these two fields and when you might want to use one vs the other (or both).
 

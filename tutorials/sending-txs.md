@@ -2,7 +2,7 @@
 description: This is a beginners guide for sending Ethereum transactions using web3.
 ---
 
-# Sending Transactions Using Web3
+# 💸 Sending Transactions Using Web3
 
 There are three main steps in order to send a transaction to the Ethereum blockchain: create, sign, and broadcast. We'll go through all three, hopefully answering any questions you might have!  In this tutorial, we'll be using [Alchemy](https://dashboard.alchemyapi.io/signup?referral=affiliate:9efcc9a2-ef89-4a2b-a5f3-1dd52ad32c4c) to send our transactions to the Ethereum chain. You can [create a free Alchemy account here.](https://alchemy.com/?r=affiliate:9efcc9a2-ef89-4a2b-a5f3-1dd52ad32c4c)
 

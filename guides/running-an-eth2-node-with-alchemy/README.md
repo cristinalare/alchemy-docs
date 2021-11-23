@@ -5,7 +5,7 @@ description: >-
   continues to roll out!
 ---
 
-# Running an Eth2.0 Staking Node or Validator with Alchemy
+# 💎 Running an Eth2.0 Staking Node or Validator with Alchemy
 
 If you want general information on Ethereum 2.0, we recommend checking out [ethereum.org](https://ethereum.org/en/eth2/).
 

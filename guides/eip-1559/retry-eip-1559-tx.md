@@ -4,7 +4,7 @@ description: >-
   EIP-1559 methods.
 ---
 
-# Retrying an EIP 1559 transaction
+# 🔄 Retrying an EIP 1559 transaction
 
 When you submit a transaction with a gas price that is too low to be included in the block, the transaction can be pending for a very long time. You might then want to update the transaction's gas price in order to get it mined. This concept becomes a bit more complex when it comes to EIP 1559.
 

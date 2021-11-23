@@ -4,5 +4,5 @@ description: >-
   seamless as possible.
 ---
 
-# Core Products
+# 🎁 Core Products
 

@@ -4,7 +4,7 @@ description: >-
   first request, setup up Alchemy as your client, and get to building!
 ---
 
-# Getting Started
+# 🚀 Getting Started
 
 :wave: _**New to Alchemy? Get access to Alchemy for free **_[_**here**_](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5)_**.**_
 

@@ -2,7 +2,7 @@
 description: Various systems in place to support you through your developer experience.
 ---
 
-# Support
+# 👥 Support
 
 #### _**Get access to **_[_**Alchemy for free here**_](https://alchemy.com/?r=affiliate:e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5)_**.**_
 

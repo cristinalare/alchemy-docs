@@ -4,7 +4,7 @@ description: >-
   chains vs Layer 2 chains as well as Mainntet vs Testnets environments.
 ---
 
-# Choosing a Network
+# 🌐 Choosing a Network
 
 ## Layer 1 vs. Layer 2
 

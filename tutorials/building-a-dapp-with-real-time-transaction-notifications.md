@@ -2,7 +2,7 @@
 description: Tutorial for integrating transaction activity notifications into your dApp.
 ---
 
-# Building a dApp with Real-Time Transaction Notifications
+# 📱 Building a dApp with Real-Time Transaction Notifications
 
 dApps on Ethereum have come a long way over the last several years, both in popularity and in complexity. Unfortunately, the user experience of most dApps is still lacking in comparison to web2 applications.
 

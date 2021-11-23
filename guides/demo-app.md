@@ -4,7 +4,7 @@ description: >-
   the demo app to make sample requests to get you up and running!
 ---
 
-# Dashboard Walkthrough
+# 📋 Dashboard Walkthrough
 
 _This guide assumes you already have an Alchemy account and access to our _[_Dashboard_](https://dashboard.alchemyapi.io)_. _[_**Sign up for Alchemy for free here.**_](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5)_****_
 

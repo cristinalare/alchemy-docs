@@ -2,7 +2,7 @@
 description: Guide for deploying your NFT minter to a live website
 ---
 
-# How to Build an NFT Website
+# 🛠 How to Build an NFT Website
 
 ## How to Know When You're Ready to Deploy to a Live Site
 

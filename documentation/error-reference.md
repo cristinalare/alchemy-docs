@@ -4,7 +4,7 @@ description: >-
   codes.
 ---
 
-# Error Reference
+# ❗ Error Reference
 
 ## HTTP Status Codes
 

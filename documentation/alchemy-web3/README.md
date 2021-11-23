@@ -5,7 +5,7 @@ description: >-
   retries and robust WebSocket support.
 ---
 
-# Alchemy Web3.js
+# 🪐 Alchemy Web3.js
 
 #### _**Get access to **_[_**Alchemy for free here**_](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5)_**.**_
 

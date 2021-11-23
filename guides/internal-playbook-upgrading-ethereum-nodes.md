@@ -4,7 +4,7 @@ description: >-
   Ethereum nodes for our users 🚀
 ---
 
-# Internal Playbook: Upgrading Ethereum Nodes
+# ✅ Internal Playbook: Upgrading Ethereum Nodes
 
 {% hint style="info" %}
 **NOTE**: This guide was originally published on [Medium](https://medium.com/alchemy-api/the-alchemist-playbook-a-guide-to-upgrading-ethereum-nodes-123e0a47e5c3).&#x20;

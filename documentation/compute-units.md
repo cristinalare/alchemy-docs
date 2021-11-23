@@ -2,7 +2,7 @@
 description: Explanation for what Compute Units are and how we use them.
 ---
 
-# Compute Units (CUs)
+# 🔩 Compute Units (CUs)
 
 Compute units are a measure of the total computational resources your apps are using on Alchemy. You can think of this as how you would pay Amazon for compute usage on AWS. Some queries are lightweight and fast to run (e.g., eth\_blockNumber) and others can be more intense (e.g., large eth\_getLogs queries). Each method is assigned a quantity of compute units, derived from global average durations of each method.
 

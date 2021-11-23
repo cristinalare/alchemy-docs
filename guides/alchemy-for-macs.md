@@ -2,7 +2,7 @@
 description: Everything you need to get started using Alchemy on a Mac.
 ---
 
-# Alchemy Set-up for Macs
+# 🍎 Alchemy Set-up for Macs
 
 _**Get access to Alchemy for free **_[_**here**_](https://alchemy.com/?r=affiliate:186ee05a-043c-44a8-b3ee-e5a05c8dba04)_**.**_
 

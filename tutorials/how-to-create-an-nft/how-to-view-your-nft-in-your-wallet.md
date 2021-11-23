@@ -4,7 +4,7 @@ description: >-
   wallet.
 ---
 
-# How to View Your NFT in Your Mobile Wallet
+# 👛 How to View Your NFT in Your Mobile Wallet
 
 _Estimated time to complete this guide: \~3 minutes_
 

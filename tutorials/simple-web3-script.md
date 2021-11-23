@@ -5,7 +5,7 @@ description: >-
   Alchemy.
 ---
 
-# Simple Web3 Script
+# 👷 Simple Web3 Script
 
 _This guide assumes you've gone through the _[_getting started_](../introduction/getting-started.md)_ steps and have an _[_Alchemy account!_](https://alchemy.com/?r=affiliate:b92f4e01-cafb-4038-83f4-372a42df5171)__
 

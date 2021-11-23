@@ -2,7 +2,7 @@
 description: Guide for sending transactions using EIP-1559 methods
 ---
 
-# How to Send Transactions with EIP 1559
+# ⛽ How to Send Transactions with EIP 1559
 
 The London Hardfork introduced a new EIP that modifies how gas estimation and costs work for transactions on Ethereum.
 

@@ -4,7 +4,7 @@ description: >-
   and Ethereum node service.
 ---
 
-# Why Use Alchemy?
+# 🤔 Why Use Alchemy?
 
 #### _**Get access to **_[_**Alchemy for free here**_](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5)_**. **_
 

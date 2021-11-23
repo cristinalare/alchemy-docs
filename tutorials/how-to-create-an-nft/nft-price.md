@@ -2,7 +2,7 @@
 description: Guide for how to set a price on your NFT
 ---
 
-# How do I set a price on an NFT?
+# 💵 How do I set a price on an NFT?
 
 You've just created an NFT and you want to sell it to your fellow NFT enthusiasts. To do this, we have to put a price on the NFT, and there are two primary ways to attach a price:
 

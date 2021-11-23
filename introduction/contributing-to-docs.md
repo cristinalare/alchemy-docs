@@ -2,7 +2,7 @@
 description: Instructions for contributing to Alchemy's Open Source Docs
 ---
 
-# Contributing to these Docs
+# 🤝 Contributing to these Docs
 
 Github Repository: [https://github.com/alchemyplatform/alchemy-docs](https://github.com/alchemyplatform/alchemy-docs)
 

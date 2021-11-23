@@ -2,7 +2,7 @@
 description: Earn money for inviting your friends to sign up with Alchemy!
 ---
 
-# Referral Program
+# 💰 Referral Program
 
 The Alchemy referral program allows you to earn rewards for sharing Alchemy with new users! Find out how to participate below (benefits subject to change).&#x20;
 

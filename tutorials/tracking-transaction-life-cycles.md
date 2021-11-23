@@ -4,7 +4,7 @@ description: >-
   state on Ethereum: from the moment it is sent to the moment it gets mined.
 ---
 
-# Alchemy Notify Tutorial: Tracking Transaction Life Cycles
+# ♻ Alchemy Notify Tutorial: Tracking Transaction Life Cycles
 
 While dApps on Ethereum have become incredibly complex, one of the largest pain points for Ethereum users is the lack of transparency and clarity surrounding a transaction's life cycle.  Oftentimes, dApp users are left with uncertainty surrounding pending transactions, forcing them to constantly refresh block explorers or their wallet dashboards to check if their transactions have been confirmed/mined.&#x20;
 

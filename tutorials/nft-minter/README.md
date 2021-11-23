@@ -5,7 +5,7 @@ description: >-
   Metamask and Web3 tools.
 ---
 
-# NFT Minter Tutorial: How to Create a Full Stack DApp
+# 📝 NFT Minter Tutorial: How to Create a Full Stack DApp
 
 One of the greatest challenges for developers coming from a Web2 background is figuring out how to connect your smart contact to a frontend project and interact with it.
 
