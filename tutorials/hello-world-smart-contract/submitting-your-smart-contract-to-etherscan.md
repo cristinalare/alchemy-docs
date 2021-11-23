@@ -5,7 +5,7 @@ description: >-
   interact with it.
 ---
 
-# 📩 Submitting your Smart Contract to Etherscan
+# Submitting your Smart Contract to Etherscan
 
 You should have completed Part 1: [Creating and Deploying a Smart Contract](./), and Part 2:[ Interacting with Your Smart Contract](interacting-with-a-smart-contract.md) prior to starting this section below.
 

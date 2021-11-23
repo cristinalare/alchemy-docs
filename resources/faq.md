@@ -4,7 +4,7 @@ description: >-
   Feel free to submit questions at the bottom of this page.
 ---
 
-# ❓ FAQ
+# FAQ
 
 ## Is there an Alchemy token? <a href="is-there-an-alchemy-token" id="is-there-an-alchemy-token"></a>
 

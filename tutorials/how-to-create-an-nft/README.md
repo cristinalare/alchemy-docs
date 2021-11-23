@@ -5,7 +5,7 @@ description: >-
   (IPFS).
 ---
 
-# 🎨 How to Create an NFT Tutorial
+# How to Create an NFT Tutorial
 
 _Estimated time to complete this guide: \~15 minutes_
 

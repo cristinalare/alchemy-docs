@@ -2,9 +2,9 @@
 description: All words and definitions related to Blockchain and Ethereum.
 ---
 
-# 📚 Blockchain Glossary
+# Blockchain Glossary
 
-For more details check out the [Ethereum Wiki](https://eth.wiki/faqs/glossary) and the [Ethereum Book Glossary](https://cypherpunks-core.github.io/ethereumbook/glossary.html). 
+For more details check out the [Ethereum Wiki](https://eth.wiki/faqs/glossary) and the [Ethereum Book Glossary](https://cypherpunks-core.github.io/ethereumbook/glossary.html).
 
 ## Blockchains
 
@@ -26,13 +26,13 @@ A block is a package of data that contains zero or more transactions; the hash o
 
 ### **State**
 
-A state is the set of data that represents information currently relevant to applications on the chain. A blockchain network strictly needs to keep track of the state of the chain. 
+A state is the set of data that represents information currently relevant to applications on the chain. A blockchain network strictly needs to keep track of the state of the chain.
 
-In a currency, this is simply balances; in more complex applications this could refer to other data structures that the application in question needs to keep track of (e.g. who has what domain name, what is the status of a given contract, etc). 
+In a currency, this is simply balances; in more complex applications this could refer to other data structures that the application in question needs to keep track of (e.g. who has what domain name, what is the status of a given contract, etc).
 
-### Consensus 
+### Consensus
 
-When numerous nodes—usually most nodes on the network—all have the same blocks in their locally validated best blockchain they have achieved consensus. 
+When numerous nodes—usually most nodes on the network—all have the same blocks in their locally validated best blockchain they have achieved consensus.
 
 ### Post-state
 
@@ -48,15 +48,15 @@ An account is an object containing an address, balance, nonce, optional storage,
 
 ### **Proof of Work**
 
-Proof of Work is the concept of requiring a non-insignificant but feasible amount of effort to produce some result. In Bitcoin, Ethereum, and many other crypto-ledgers, this means finding a hash that is smaller than some target value. 
+Proof of Work is the concept of requiring a non-insignificant but feasible amount of effort to produce some result. In Bitcoin, Ethereum, and many other crypto-ledgers, this means finding a hash that is smaller than some target value.
 
-The reason this is necessary is that in a decentralized system anyone can produce blocks, so in order to prevent the network from being flooded with blocks, and to provide a way of measuring consensus behind a particular version of the blockchain, it must in some way be _hard_ to produce a block. 
+The reason this is necessary is that in a decentralized system anyone can produce blocks, so in order to prevent the network from being flooded with blocks, and to provide a way of measuring consensus behind a particular version of the blockchain, it must in some way be _hard_ to produce a block.
 
 Because hashes are pseudorandom, finding a block whose hash is less than `0000000100000000000000000000000000000000000000000000000000000000` takes an average of 4.3 billion attempts. In all such systems, the target value self-adjusts so that on average one node in the network finds a block every N minutes (eg. N = 10 for Bitcoin and 1 for Ethereum).
 
 ### **Proof of Work Nonce**
 
-A proof of work nonce is a technically meaningless (but super necessary) value in a block to show that the block satisfies the proof of work condition**.**
+A proof of work nonce is a technically meaningless (but super necessary) value in a block to show that the block satisfies the proof of work condition\*\*.\*\*
 
 ### **Mining**
 
@@ -74,9 +74,9 @@ A fork occurs when two blocks are generated pointing to the same block as their 
 
 A double spend is a deliberate fork, where a user with a large amount of mining power sends a transaction to purchase some product, then after receiving the product creates another transaction sending the same coins to themselves. The attacker then creates a block, at the same level as the block containing the original transaction but containing the second transaction instead, and starts mining on the fork. If the attacker has more than 50% of all mining power, the double spend is guaranteed to succeed eventually at any block depth. Below 50%, there is some probability of success, but it is usually only substantial at a depth up to about 2-5. For this reason, most cryptocurrency exchanges, gambling sites and financial services wait until six blocks have been produced (“six confirmations”) before accepting a payment.
 
-### **Light Client** 
+### **Light Client**
 
-A Light client is a client that downloads only a small part of the blockchain, allowing users of low-power or low-storage hardware like smartphones and laptops to maintain almost the same guarantee of security by  selectively downloading small parts of the state without needing to spend megabytes of bandwidth and gigabytes of storage on full blockchain validation and maintenance.
+A Light client is a client that downloads only a small part of the blockchain, allowing users of low-power or low-storage hardware like smartphones and laptops to maintain almost the same guarantee of security by selectively downloading small parts of the state without needing to spend megabytes of bandwidth and gigabytes of storage on full blockchain validation and maintenance.
 
 ### Web3
 
@@ -98,7 +98,7 @@ Serialization is the process of converting a data structure into a sequence of b
 
 ### **Merkle-Patricia tree** (or **trie**)
 
-A Merkle tree is a data structure which stores the state of every account. The trie is built by starting from each individual node, then splitting the nodes into groups of up to 16 and hashing each group, then making hashes of hashes and so forth until there is one final “root hash” for the entire trie. 
+A Merkle tree is a data structure which stores the state of every account. The trie is built by starting from each individual node, then splitting the nodes into groups of up to 16 and hashing each group, then making hashes of hashes and so forth until there is one final “root hash” for the entire trie.
 
 The trie has these important properties:
 
@@ -111,19 +111,19 @@ Merkle trees are also used to store the internal storage of accounts as well as 
 
 ### **Uncle**
 
-See **Ommer **below**, **the gender-neutral alternative to aunt/uncle.
+See \*\*Ommer **below**, \*\*the gender-neutral alternative to aunt/uncle.
 
 ### **Ommer**
 
-An ommer is a child of a parent of a parent of a block that is not the parent, or, in other words, a child of an ancestor that is not itself an ancestor. If A is an ommer of B, B is a **nibling** (niece/nephew) of A.** **When a miner finds a valid block, another miner may have published a competing block which is added to the tip of the blockchain. Unlike with Bitcoin, orphaned blocks in Ethereum can be included by newer blocks as ommers and receive a partial block reward.
+An ommer is a child of a parent of a parent of a block that is not the parent, or, in other words, a child of an ancestor that is not itself an ancestor. If A is an ommer of B, B is a **nibling** (niece/nephew) of A.\*\* \*\*When a miner finds a valid block, another miner may have published a competing block which is added to the tip of the blockchain. Unlike with Bitcoin, orphaned blocks in Ethereum can be included by newer blocks as ommers and receive a partial block reward.
 
 ### **Uncle Inclusion Mechanism**
 
 The Uncle inclusion mechanism allows a block to include its uncles. This ensures that miners that create blocks that do not quite get included into the main chain can still get rewarded.
 
-### **Account Nonce** 
+### **Account Nonce**
 
-An account nonce is a transaction counter in each account. This prevents replay attacks. For example, a transaction sending 20 coins from A to B can be replayed by B over and over to continually drain A’s balance, but the account nonce can prevent that. 
+An account nonce is a transaction counter in each account. This prevents replay attacks. For example, a transaction sending 20 coins from A to B can be replayed by B over and over to continually drain A’s balance, but the account nonce can prevent that.
 
 ### **EVM Code**
 
@@ -135,7 +135,7 @@ Data committed to the Ethereum Blockchain signed by an originating account, targ
 
 ### **Message**
 
-A message is a sort of “virtual transaction” sent by EVM code from one account to another. 
+A message is a sort of “virtual transaction” sent by EVM code from one account to another.
 
 It's important to note that “transactions” and “messages” in Ethereum are different. A “transaction” in Ethereum parlance specifically refers to a digitally signed piece of data, originating from a source other than executing EVM code, to be recorded in the blockchain. Every transaction triggers an associated message, but messages can also be sent by EVM code, in which case they are never represented in data anywhere.
 
@@ -147,7 +147,7 @@ Storage is a key/value database contained in each account, where keys and values
 
 An externally owned account is an account controlled by a private key. Externally owned accounts cannot contain EVM code.
 
-### **Contract** 
+### **Contract**
 
 A contract is an account which contains, and is controlled by EVM code. Contracts cannot be controlled by private keys directly, unless built into the EVM code, a contract has no owner once released.
 
@@ -169,13 +169,13 @@ The smallest denomination of ether. 10^18 wei = 1 ether.
 
 ### **Gas**
 
-Gas is a measurement roughly equivalent to computational steps. Every transaction is required to include a gas limit and a fee that it is willing to pay per gas; miners have the choice of including the transaction and collecting the fee or not. 
+Gas is a measurement roughly equivalent to computational steps. Every transaction is required to include a gas limit and a fee that it is willing to pay per gas; miners have the choice of including the transaction and collecting the fee or not.
 
 If the total number of gas used by the computation spawned by the transaction, including the original message and any sub-messages that may be triggered, is less than or equal to the gas limit, then the transaction processes. If the total gas exceeds the gas limit, then all changes are reverted, except that the transaction is still valid and the fee can still be collected by the miner. Every operation has a gas expenditure; for most operations it is \~3-10, although some expensive operations have expenditures up to 700 and a transaction itself has an expenditure of 21000.
 
 ### Bytecode
 
-Instructions or code expressed in numeric format such that a virtual machine can efficiently interpret it. 
+Instructions or code expressed in numeric format such that a virtual machine can efficiently interpret it.
 
 ### **Testnet**
 
@@ -205,7 +205,7 @@ A value used to generate the master private key and master chain code for an HD 
 
 Go Ethereum. One of the most prominent implementations of the Ethereum protocol, written in Go.
 
-## **Alchemy **
+## \*\*Alchemy \*\*
 
 ### **Compute Units (CUs)**
 
@@ -213,11 +213,11 @@ Compute units or CUs represent the cost associated with given API calls. See the
 
 ### **Rate Limit**
 
-Rate limit is the cap on FCUs permitted. See the [Rate Limit](../guides/rate-limits.md) page to learn more.  
+Rate limit is the cap on FCUs permitted. See the [Rate Limit](../documentation/rate-limits.md) page to learn more.
 
 ### **Alchemy Web3**
 
-Alchemy Web3 is a drop-in replacement for web3.js, built and configured to work seamlessly with Alchemy and provide multiple advantages such as automatic retries and robust WebSocket support. See the [Alchemy web3](../documentation/alchemy-web3/) page to learn more.  
+Alchemy Web3 is a drop-in replacement for web3.js, built and configured to work seamlessly with Alchemy and provide multiple advantages such as automatic retries and robust WebSocket support. See the [Alchemy web3](../documentation/alchemy-web3/) page to learn more.
 
 ## Cryptography
 
@@ -227,7 +227,7 @@ A process is computationally infeasible if it would take an impracticably long t
 
 ### **Hash**
 
-A hash function (or hash algorithm) is a process by which a piece of data of arbitrary size (could be anything; a piece of text, a picture, or even a list of other hashes) is processed into a small piece of data (usually 32 bytes). This smaller piece of data looks completely random and you cannot recover any meaningful information about the original data from it, however, it has the important property that the result of hashing one particular document is always the same. 
+A hash function (or hash algorithm) is a process by which a piece of data of arbitrary size (could be anything; a piece of text, a picture, or even a list of other hashes) is processed into a small piece of data (usually 32 bytes). This smaller piece of data looks completely random and you cannot recover any meaningful information about the original data from it, however, it has the important property that the result of hashing one particular document is always the same.
 
 Additionally, it is crucially important that it is computationally infeasible to find two documents that have the same hash. Generally, changing even one letter in a document will completely randomize the hash; for example, the SHA3 hash of “Saturday” is `c38bbc8e93c09f6ed3fe39b5135da91ad1a99d397ef16948606cdcbd14929f9d`, whereas the SHA3 hash of "Caturday" is `b4013c0eed56d5a0b448b02ec1d10dd18c1b3832068fbbdc65b98fa9b14b6dbf`. Hashes are usually used as a way of creating a globally agreed-upon identifier for a particular document that cannot be forged.
 
@@ -258,7 +258,7 @@ Note that this differs from traditional signatures where you can scribble extra 
 
 A smart contract is a computer protocol meant to streamline the process of contracts by digitally enforcing, verifying, or otherwise managing them. Given the nature of the blockchain, all of these transactions are visible and verifiable through the code itself. [Smart contracts were first proposed in 1994 by Nick Szabo, an early contributor to Bitcoin.](http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html)
 
-You can think of a smart contract like a vending machine; you give it enough money (gas) and it will process a transaction for you. 
+You can think of a smart contract like a vending machine; you give it enough money (gas) and it will process a transaction for you.
 
 ### **Trustless**
 
@@ -280,7 +280,7 @@ A method by which a cryptocurrency blockchain protocol aims to achieve distribut
 
 ### **Security Deposit**
 
-A security deposit is a quantity of ether that a user deposits into a mechanism (often a proof of stake consensus mechanism, though this can also be used for other applications) that a user  expects to be able to eventually withdraw and recover, but which can be taken away in the event of malfeasance from the user’s side.
+A security deposit is a quantity of ether that a user deposits into a mechanism (often a proof of stake consensus mechanism, though this can also be used for other applications) that a user expects to be able to eventually withdraw and recover, but which can be taken away in the event of malfeasance from the user’s side.
 
 ### **Validator**
 
@@ -290,8 +290,8 @@ A validator is a participant in proof of stake consensus. Validators need to sub
 
 A block or state can be considered _economically_ _finalized_ if a client has proof that either
 
-1.  The block is going to be part of the canonical chain forever or
-2.  Those actors that caused the block to get reverted are guaranteed to be economically penalized by an amount equal to at least $X.
+1. The block is going to be part of the canonical chain forever or
+2. Those actors that caused the block to get reverted are guaranteed to be economically penalized by an amount equal to at least $X.
 
 This value X is called the **cryptoeconomic security margin** of the finality mechanism.
 
@@ -305,7 +305,7 @@ Prepare and commit are two types of messages that validators can send in many ty
 
 ### **Fault**
 
-A fault is an action taken by a validator (or more generally, a participant in a mechanism) that they would not have taken had they correctly followed the protocol. 
+A fault is an action taken by a validator (or more generally, a participant in a mechanism) that they would not have taken had they correctly followed the protocol.
 
 ### **Liveness Fault**
 
@@ -337,7 +337,7 @@ See [https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-e
 
 ### **Validity**
 
-Validity is the property of a state that it is indeed the result of executing a valid history of transactions. 
+Validity is the property of a state that it is indeed the result of executing a valid history of transactions.
 
 ### **Data Availability**
 
@@ -373,14 +373,14 @@ Swarm is an upcoming P2P data storage protocol optimized for static web hosting.
 
 ### **Solidity**, **LLL**, **Serpent** and **Vyper**
 
-These are programming languages for writing contract code which can be compiled into EVM code. 
+These are programming languages for writing contract code which can be compiled into EVM code.
 
 * Serpent and Vyper are Python-like languages (the developer of the two currently recommends Vyper more)
-  * Serpent can also be compiled into LLL (Lisp Like Language) 
+  * Serpent can also be compiled into LLL (Lisp Like Language)
 * Solidity is a C+± like language (and is the most widely used)
 
 ### **PoC**
 
-Proof-of-concept, another name for a pre-launch release. 
+Proof-of-concept, another name for a pre-launch release.
 
-###  <a href="smart-contracts" id="smart-contracts"></a>
+### &#x20;<a href="smart-contracts" id="smart-contracts"></a>

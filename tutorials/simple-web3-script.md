@@ -5,7 +5,7 @@ description: >-
   Alchemy.
 ---
 
-# 👷 Simple Web3 Script
+# Simple Web3 Script
 
 _This guide assumes you've gone through the _[_getting started_](../introduction/getting-started.md)_ steps and have an _[_Alchemy account!_](https://alchemy.com/?r=affiliate:b92f4e01-cafb-4038-83f4-372a42df5171)__
 
@@ -18,7 +18,7 @@ cd web3-example
 
 ### 2. Install the Alchemy Web3 dependency if you have not already:
 
-You can use any [web3 library](../introduction/getting-started.md#other-web3-libraries) of your choosing, however there are tons of benefits to using [Alchemy Web3](../documentation/alchemy-web3/)! 
+You can use any [web3 library](../introduction/getting-started.md#other-web3-libraries) of your choosing, however there are tons of benefits to using [Alchemy Web3](../documentation/alchemy-web3/)!&#x20;
 
 ```
 npm install @alch/alchemy-web3
@@ -27,7 +27,7 @@ npm install @alch/alchemy-web3
 ### 3. Create a file named `index.js` and add the following contents:
 
 {% hint style="warning" %}
-You should ultimately replace `<api-key>` with your Alchemy HTTP API key. 
+You should ultimately replace `<api-key>` with your Alchemy HTTP API key.&#x20;
 {% endhint %}
 
 ```javascript
@@ -48,13 +48,13 @@ Unfamiliar with the async stuff? Check out this [Medium post](https://medium.com
 node index.js
 ```
 
-### 5. You should now see the latest block number output in your console! 
+### 5. You should now see the latest block number output in your console!&#x20;
 
 ```
 The latest block number is 11043912
 ```
 
-Woo! Congrats! You just wrote your first web3 script using Alchemy :tada: 
+Woo! Congrats! You just wrote your first web3 script using Alchemy :tada:&#x20;
 
 Once you complete this tutorial, let us know how your experience was or if you have any feedback by tagging us on Twitter [@alchemyplatform](https://twitter.com/AlchemyPlatform)!
 

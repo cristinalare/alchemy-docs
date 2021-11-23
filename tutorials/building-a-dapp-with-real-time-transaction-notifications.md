@@ -2,13 +2,13 @@
 description: Tutorial for integrating transaction activity notifications into your dApp.
 ---
 
-# 📱 Building a dApp with Real-Time Transaction Notifications
+# Building a dApp with Real-Time Transaction Notifications
 
 dApps on Ethereum have come a long way over the last several years, both in popularity and in complexity. Unfortunately, the user experience of most dApps is still lacking in comparison to web2 applications.
 
-One key piece missing is real-time notifications of events. Users need to know immediately when their trades execute, when their transactions fail, when their auction bid has been accepted, or when a wallet of interest has aped into some new token. Without these notifications, trades can be missed, critical actions are forgotten, and ultimately users end up abandoning your dApp. 
+One key piece missing is real-time notifications of events. Users need to know immediately when their trades execute, when their transactions fail, when their auction bid has been accepted, or when a wallet of interest has aped into some new token. Without these notifications, trades can be missed, critical actions are forgotten, and ultimately users end up abandoning your dApp.&#x20;
 
-Unfortunately, building these real-time notifications into your dApp has traditionally been complicated, time-consuming, and error-prone. But now with [Alchemy Notify](https://www.alchemy.com/notify), sending real-time push notifications to your users for critical events such as dropped transactions, mined transactions, wallet activity, and even gas price changes is straightforward, easy, and dependable. 
+Unfortunately, building these real-time notifications into your dApp has traditionally been complicated, time-consuming, and error-prone. But now with [Alchemy Notify](https://www.alchemy.com/notify), sending real-time push notifications to your users for critical events such as dropped transactions, mined transactions, wallet activity, and even gas price changes is straightforward, easy, and dependable.&#x20;
 
 In this tutorial, we’ll look at an example of how, with just a few lines of code, your dApp can integrate the 🔋 power of Alchemy Notify.
 
@@ -16,7 +16,7 @@ In this tutorial, we’ll look at an example of how, with just a few lines of co
 
 1. High level walkthrough of the example project
 2. Build the project using Heroku
-   1. Clone [Github Repo](https://github.com/pileofscraps/alchemy_notify.git) & Set Up Heroku 
+   1. Clone [Github Repo](https://github.com/pileofscraps/alchemy\_notify.git) & Set Up Heroku&#x20;
    2. Create a [free Alchemy account](https://alchemy.com/?r=affiliate:ba2189be-b27d-4ce9-9d52-78ce131fdc2d)
    3. Alchemy Notify API & Register Webhook Notifications
    4. Insert Alchemy Webhook Id and Auth Key
@@ -31,7 +31,7 @@ In this tutorial, we’ll look at an example of how, with just a few lines of co
 
 ### **Our Example**
 
-For our example, we’ll create a dApp that notifies users, in real-time, when activity happens on  specific Ethereum addresses. For our architecture, we’ll use [Express](http://expressjs.com) for our server, [WebSockets](https://docs.alchemy.com/alchemy/guides/using-websockets) to communicate between the client and server, and Alchemy Notify to monitor an address and send a push notification when there is activity on that address. 
+For our example, we’ll create a dApp that notifies users, in real-time, when activity happens on  specific Ethereum addresses. For our architecture, we’ll use [Express](http://expressjs.com) for our server, [WebSockets](https://docs.alchemy.com/alchemy/guides/using-websockets) to communicate between the client and server, and Alchemy Notify to monitor an address and send a push notification when there is activity on that address.&#x20;
 
 {% hint style="info" %}
 If you don't want to spend real (mainnet) Ethereum to try out this tutorial, you can follow the same process using a testnet, like Rinkeby, so that you can send transactions to and from your target address for testing without paying for gas ⛽
@@ -57,11 +57,11 @@ The “send a notification” flow looks like this:
 
 ## **Build Heroku-Serviced Project**
 
-### 1. Set Up Github Repo & Heroku 
+### 1. Set Up Github Repo & Heroku&#x20;
 
 In this tutorial, we utilize Heroku for hosting a server and website; if you choose to use heroku, be sure to follow all of the following steps.  (If you want to use another provider, see “Build Project From Scratch”)
 
-#### a) Make a clone of the existing [Github Repository](https://github.com/pileofscraps/alchemy_notify.git)
+#### a) Make a clone of the existing [Github Repository](https://github.com/pileofscraps/alchemy\_notify.git)
 
 ```
 git clone https://github.com/alchemyplatform/Alchemy-Notify-Tutorial
@@ -85,7 +85,7 @@ cd alchemy_notify
 First, let’s look at how notifications with Alchemy work. There are two ways to create and modify notifications: through the [Alchemy Notify dashboard](https://dashboard.alchemyapi.io/notify), and through the [Alchemy Notify API](https://docs.alchemy.com/alchemy/documentation/enhanced-apis/notify-api). For our example, we’ll work with both! Let’s start by looking at the dashboard.
 
 {% hint style="info" %}
-If you don’t already have one, you’ll first need to [create an account on Alchemy](https://alchemy.com/?r=affiliate:ba2189be-b27d-4ce9-9d52-78ce131fdc2d). The free version will work fine for getting started. 
+If you don’t already have one, you’ll first need to [create an account on Alchemy](https://alchemy.com/?r=affiliate:ba2189be-b27d-4ce9-9d52-78ce131fdc2d). The free version will work fine for getting started.&#x20;
 {% endhint %}
 
 Once you have an account, go to the dashboard and select “Notify” from the top menu. Here you’ll see the different kinds of notifications you can set up:
@@ -99,16 +99,16 @@ Once you have an account, go to the dashboard and select “Notify” from the t
 
 For our example, we’ll use the [Address Activity](https://docs.alchemy.com/alchemy/guides/using-notify#address-activity) notification, but you should be able to easily swap out any of the others for your own use case.
 
-In the dashboard you can create all of your notifications, add the addresses you want to monitor, and add the webhook URL that Alchemy should communicate with when that notification triggers. Alchemy sends all the relevant details to this webhook. Your server needs to simply create the webhook, receive the call, and process the information as needed. 
+In the dashboard you can create all of your notifications, add the addresses you want to monitor, and add the webhook URL that Alchemy should communicate with when that notification triggers. Alchemy sends all the relevant details to this webhook. Your server needs to simply create the webhook, receive the call, and process the information as needed.&#x20;
 
 #### **a) Create our example notification by clicking “Create Webhook” on Address Activity. **
 
-![](https://lh3.googleusercontent.com/50OU6kmnradfQun_O9I26kUV9Ife1WYDRpRm0pIXdOnb71244RpVVf-lZQgGITdjiVOhaP_z77gh8\_a-zw5xliEU3vRtmvIJOuYawX0CYZaPprR0suky4XnWzxc0nydn5QU6sqys)
+![](https://lh3.googleusercontent.com/50OU6kmnradfQun\_O9I26kUV9Ife1WYDRpRm0pIXdOnb71244RpVVf-lZQgGITdjiVOhaP\_z77gh8\_a-zw5xliEU3vRtmvIJOuYawX0CYZaPprR0suky4XnWzxc0nydn5QU6sqys)
 
 #### **b) Enter our webhook URL **
 
 * If using Heroku, see Step 1 for the http://xxxxxxxxx.herokuapp.com/ URL that was generated with heroku create
-* If doing from scratch, insert your custom webhook URL from whichever service provider you are using.  
+* If doing from scratch, insert your custom webhook URL from whichever service provider you are using. &#x20;
 
 #### **c) Enter a test Ethereum address (0xab5801a7d398351b8be11c439e05c5b3259aec9b) here for our setup. **
 
@@ -120,7 +120,7 @@ Make sure the app selected is on the Ethereum network you want to test on; if yo
 
 #### **e) Click “Create Webhook” and we’re done!**
 
-![](https://lh4.googleusercontent.com/woxlK123MzEXyYHi8y9Wcbp3aQ5AFIUbU2qUTDZO2I-BEYOxEctTLbUkZ0G367eRQUGs4wnW62ggMvIWegyTSXdtN1s73da_dDO2UjLYmqrdBKD7dDPNSG4s-Chwbn2MP6tDlLjC)
+![](https://lh4.googleusercontent.com/woxlK123MzEXyYHi8y9Wcbp3aQ5AFIUbU2qUTDZO2I-BEYOxEctTLbUkZ0G367eRQUGs4wnW62ggMvIWegyTSXdtN1s73da\_dDO2UjLYmqrdBKD7dDPNSG4s-Chwbn2MP6tDlLjC)
 
 ### **3. Insert Alchemy Webhook Id and Auth Key**
 
@@ -160,17 +160,17 @@ git push heroku master                // to push and deploy your heroku app
 
 Click “Enable Ethereum” to connect to MetaMask and select a wallet you want to connect to from the drop-down menu.
 
-![](https://lh6.googleusercontent.com/DTvb1Jk0H9lwPQ5JsCHzDcjRnwlJUC2icxI0lQxcST3lxv1x5PsCh4-KntAGLGpK9RUn-oeGrjW68Oh7x3QwZy16cdkRjNTQxKVxUFjlrwbpPxoAaq0pZBvX_S9mKa4AxDX44d4G)
+![](https://lh6.googleusercontent.com/DTvb1Jk0H9lwPQ5JsCHzDcjRnwlJUC2icxI0lQxcST3lxv1x5PsCh4-KntAGLGpK9RUn-oeGrjW68Oh7x3QwZy16cdkRjNTQxKVxUFjlrwbpPxoAaq0pZBvX\_S9mKa4AxDX44d4G)
 
 And now click “Enable Notifications on this address” to register our address:
 
-![](https://lh3.googleusercontent.com/g7QOrwgT4Nrlh1lt0gO4koX6wk3np1hXWq2ItnD4nhj_air5G7UnARo7lPJQh1oA07UzP_IkgpE5h8o-pUPqjLHLYQQrSz-7Yjw5MOcfbdy8tBN\_7yIpxbEk8ZYdmD1Ci2pLEMsL)
+![](https://lh3.googleusercontent.com/g7QOrwgT4Nrlh1lt0gO4koX6wk3np1hXWq2ItnD4nhj\_air5G7UnARo7lPJQh1oA07UzP\_IkgpE5h8o-pUPqjLHLYQQrSz-7Yjw5MOcfbdy8tBN\_7yIpxbEk8ZYdmD1Ci2pLEMsL)
 
 We can confirm in our Alchemy Dashboard that our wallet address has been added to the notification.
 
 ![](https://lh6.googleusercontent.com/QfkdEpWdISIjMCyKLxWZhLjfdE82qhDoKC-WGrzFmAsiB1V2jsO3lHDUOn76lcJ1AvDgIgbUszc3XWyqevFQqyRMfo4NHDbwZMspkMFWcR16RvAlVSQrti4BVsiNCLlzM5-b39dL)
 
-And now, with everything in place, you can test out your dApp!  
+And now, with everything in place, you can test out your dApp! &#x20;
 
 _🎉** Congratulations on your dApp deployment! Feel free to edit your app, change its behavior, or make the frontend more spiffy!**_
 
@@ -186,9 +186,9 @@ Our server will be a simple Express node.js server. It will do three things:
 
 1. Create a WebSocket server to communicate with the client
 2. Interact with the Alchemy API to set up/modify notifications
-3. Create a webhook URLto receive the real-time notifications from Alchemy 
+3. Create a webhook URLto receive the real-time notifications from Alchemy&#x20;
 
-This code, with some customization for your specific on-prem, AWS, or other hosting provider, can be run to power the tutorial. You will need to install express, path, socket.io, and node-fetch into your environment. 
+This code, with some customization for your specific on-prem, AWS, or other hosting provider, can be run to power the tutorial. You will need to install express, path, socket.io, and node-fetch into your environment.&#x20;
 
 First, we need to start our Express server and establish the routes for our client (index.html) and our Alchemy webhook. This Alchemy webhook allows Alchemy to send real-time notifications to our server.
 
@@ -257,9 +257,9 @@ io.on('connection', (socket) => {
 
 ### **6. Add Alchemy Notify API functionality.  **
 
-When we receive a client request to add an address, we use the Alchemy API to register the address with our Alchemy Notification. 
+When we receive a client request to add an address, we use the Alchemy API to register the address with our Alchemy Notification.&#x20;
 
-(Be sure to replace _**\<your alchemy token>**_ with your auth token found on the Alchemy Dashboard.) The _**webhook_id **_here is a unique ID provided by Alchemy when we create the webhook (in the next step).\
+(Be sure to replace _**\<your alchemy token>**_ with your auth token found on the Alchemy Dashboard.) The _**webhook\_id **_here is a unique ID provided by Alchemy when we create the webhook (in the next step).\
 ****
 
 ```
@@ -367,7 +367,7 @@ async function addAddress(new_address) {
 ```
 
 {% hint style="info" %}
-The webhook id and the alchemy auth token comes from the Alchemy UI which we use to create our webhook in the next step!  
+The webhook id and the alchemy auth token comes from the Alchemy UI which we use to create our webhook in the next step! &#x20;
 {% endhint %}
 
 ### **7. Complete **[**Steps 2 & 3**](https://docs.alchemy.com/alchemy/tutorials/building-a-dapp-with-real-time-transaction-notifications#2-alchemy-notify-api-and-register-webhook-notifications)** from the Heroku-Serviced Project. **
@@ -478,15 +478,15 @@ Here is the entire sample index.html client that we built:
 That’s all it takes! With a quick build and deploy, our dApp looks like this:\
 ****
 
-![](https://lh5.googleusercontent.com/nuqJuJQfLEoU8ZGUfgIyrxYlsizbzwpvfT7j56yx7ecfFMjYCIWGOqEPuzux9Q_jVSoK1ZkDakUFunQCccaIySA_OqtSxQov2QCP9qO44pOPygjHH0PXdNUaBFGiXQav48kOjye5)
+![](https://lh5.googleusercontent.com/nuqJuJQfLEoU8ZGUfgIyrxYlsizbzwpvfT7j56yx7ecfFMjYCIWGOqEPuzux9Q\_jVSoK1ZkDakUFunQCccaIySA\_OqtSxQov2QCP9qO44pOPygjHH0PXdNUaBFGiXQav48kOjye5)
 
 Click “Enable Ethereum” to connect to MetaMask and select a wallet you want to connect to from the drop-down menu.e
 
-![](https://lh6.googleusercontent.com/DTvb1Jk0H9lwPQ5JsCHzDcjRnwlJUC2icxI0lQxcST3lxv1x5PsCh4-KntAGLGpK9RUn-oeGrjW68Oh7x3QwZy16cdkRjNTQxKVxUFjlrwbpPxoAaq0pZBvX_S9mKa4AxDX44d4G)
+![](https://lh6.googleusercontent.com/DTvb1Jk0H9lwPQ5JsCHzDcjRnwlJUC2icxI0lQxcST3lxv1x5PsCh4-KntAGLGpK9RUn-oeGrjW68Oh7x3QwZy16cdkRjNTQxKVxUFjlrwbpPxoAaq0pZBvX\_S9mKa4AxDX44d4G)
 
 And now click “Enable Notifications on this address” to register our address:
 
-![](https://lh3.googleusercontent.com/g7QOrwgT4Nrlh1lt0gO4koX6wk3np1hXWq2ItnD4nhj_air5G7UnARo7lPJQh1oA07UzP_IkgpE5h8o-pUPqjLHLYQQrSz-7Yjw5MOcfbdy8tBN\_7yIpxbEk8ZYdmD1Ci2pLEMsL)
+![](https://lh3.googleusercontent.com/g7QOrwgT4Nrlh1lt0gO4koX6wk3np1hXWq2ItnD4nhj\_air5G7UnARo7lPJQh1oA07UzP\_IkgpE5h8o-pUPqjLHLYQQrSz-7Yjw5MOcfbdy8tBN\_7yIpxbEk8ZYdmD1Ci2pLEMsL)
 
 We can confirm in our Alchemy Dashboard that our wallet address has been added to the notification.
 
@@ -495,9 +495,9 @@ We can confirm in our Alchemy Dashboard that our wallet address has been added t
 And now, with everything in place, if we send a small amount of testnet ETH to our address, we get a notification from the client with all the necessary details!  Note that to use the app, you must first click “Enable Ethereum” and connect with your desired Metamask address.  Then, you must click “Enable Notifications”.  Then, the webhook’s messages will show up on your frontend!\
 ****
 
-![](https://lh3.googleusercontent.com/egp_nnpXE-jFvWY66ucZovACyUi3XgiTRb11uqLAifq1xM1-a5p1zT6Vbd4Iq08yJgai119-lzCqqbWQkbMQonHwFqryvC1xURSnc2EUYCmBaPEtu8engWXliCR0TvkSwx8L5pZb)
+![](https://lh3.googleusercontent.com/egp\_nnpXE-jFvWY66ucZovACyUi3XgiTRb11uqLAifq1xM1-a5p1zT6Vbd4Iq08yJgai119-lzCqqbWQkbMQonHwFqryvC1xURSnc2EUYCmBaPEtu8engWXliCR0TvkSwx8L5pZb)
 
-This is a simple example, but there are many ways you can expand on this to build a dApp that is real-time responsive for your users.  
+This is a simple example, but there are many ways you can expand on this to build a dApp that is real-time responsive for your users. &#x20;
 
 Fork 🍴, build 🏗️, and design 📝off this repo!
 

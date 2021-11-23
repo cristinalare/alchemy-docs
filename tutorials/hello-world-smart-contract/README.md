@@ -4,7 +4,7 @@ description: >-
   and deploy a smart contract on Ethereum.
 ---
 
-# 🌎 Hello World Smart Contract
+# Hello World Smart Contract
 
 _Estimated time to complete this guide: \~15 minutes_
 

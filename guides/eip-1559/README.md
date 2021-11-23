@@ -5,5 +5,5 @@ description: >-
   DApp.
 ---
 
-# 🍴 EIP-1559 Resource and Tutorial Hub
+# EIP-1559 Resource and Tutorial Hub
 

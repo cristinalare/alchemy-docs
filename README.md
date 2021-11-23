@@ -12,10 +12,14 @@ Use these docs to learn more about Alchemy's core products, explore guides, and 
 
 ## 📖 API Reference
 
-Jump into our API Reference pages, spanning all of our supported chains: the Ethereum Standard JSON-RPC API, our Layer 2 APIs for Optimism, Polygon, and Arbitrum, and our exclusive Enhanced APIs for Flow and Crypto.org. 
+Check out Alchemy's API Reference pages to understand how to use the [Enhanced APIs](broken-reference), a suite of higher level methods built to streamline your development workflow, and each of the chain specific endpoints for [Ethereum](apis/ethereum/), [Arbitrum](apis/arbitrum/), [Polygon](apis/polygon-api/), [Optimism](apis/optimism-api.md), [Flow](https://app.gitbook.com/o/-MB5OnTtI\_5pcZn7v2wm/s/-Mbe-myfcwH3hjIraizf/), and [Crypto.org](https://app.gitbook.com/o/-MB5OnTtI\_5pcZn7v2wm/s/-MR6M26d7HiK3wpCRH-V/)!
 
-{% content-ref url="apis/ethereum/" %}
-[ethereum](apis/ethereum/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ## 🤷 What is Alchemy?

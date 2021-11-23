@@ -5,11 +5,11 @@ description: >-
   retries and robust WebSocket support.
 ---
 
-# 🪐 Alchemy Web3.js
+# Alchemy Web3.js
 
 #### _**Get access to **_[_**Alchemy for free here**_](https://alchemy.com/?r=e68b2f77-7fc7-4ef7-8e9c-cdfea869b9b5)_**.**_
 
-## :wave: Introduction 
+## :wave: Introduction&#x20;
 
 [Alchemy Web3 ](https://github.com/alchemyplatform/alchemy-web3)is a wrapper around [Web3.js](https://web3js.readthedocs.io/en/v1.2.9/), providing enhanced API methods and other crucial benefits listed below. It is designed to require minimal configuration so you can start using it in your app right away.
 
@@ -32,11 +32,11 @@ If you use your WebSocket URL when initializing, then when you create subscripti
 * Unlike standard Web3, you will not permanently miss events which arrive while the backing WebSocket is temporarily down. Instead, you will receive these events as soon as the connection is reopened. Note that if the connection is down for more than 120 blocks (approximately 20 minutes), you may still miss some events that were not part of the most recent 120 blocks.
 * Compared to standard Web3, lowered rate of failure when sending requests over the WebSocket while the connection is down. Alchemy Web3 will attempt to send the requests once the connection is reopened. Note that it is still possible, with a lower likelihood, for outgoing requests to be lost, so you should still have error handling as with any network request.
 
-## Installation 
+## Installation&#x20;
 
 ### With a package manager
 
-Navigate to your project directory and run: 
+Navigate to your project directory and run:&#x20;
 
 #### With Yarn:
 

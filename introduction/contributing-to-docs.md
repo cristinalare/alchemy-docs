@@ -2,7 +2,7 @@
 description: Instructions for contributing to Alchemy's Open Source Docs
 ---
 
-# 🤝 Contributing to these Docs
+# Contributing to these Docs
 
 Github Repository: [https://github.com/alchemyplatform/alchemy-docs](https://github.com/alchemyplatform/alchemy-docs)
 
@@ -79,7 +79,7 @@ For example, if you wanted to submit a pull request for a specific part of the [
 
 (Don't forget to select the appropriate branches you wish to merge!)
 
-![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/THP_fF_YarD3zd-kVKh5vVQq.png)
+![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/THP\_fF\_YarD3zd-kVKh5vVQq.png)
 
 #### 4. The Alchemy team / Community Maintainers will review the PR or reach out accordingly either approving it or contacting you to edit it.
 

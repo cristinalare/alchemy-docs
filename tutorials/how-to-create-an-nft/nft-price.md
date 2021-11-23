@@ -2,7 +2,7 @@
 description: Guide for how to set a price on your NFT
 ---
 
-# 💵 How do I set a price on an NFT?
+# How do I set a price on an NFT?
 
 You've just created an NFT and you want to sell it to your fellow NFT enthusiasts. To do this, we have to put a price on the NFT, and there are two primary ways to attach a price:
 
@@ -14,7 +14,7 @@ You've just created an NFT and you want to sell it to your fellow NFT enthusiast
 ### **Require a Fee Upon Minting**
 
 {% hint style="danger" %}
-NOTE: The following section is not a turnkey solution. In [Step 10](https://docs.alchemy.com/alchemy/tutorials/how-to-create-an-nft#step-10-write-our-contract) of the [NFT Creation Tutorial](https://docs.alchemy.com/alchemy/tutorials/how-to-create-an-nft), we would need to alter the Solidity to accept payments for minting which means that any frontend`web3` / `ethers.js`logic dictating minting would need to include the`msg.value`parameter to allow for the transfer of ETH.  
+NOTE: The following section is not a turnkey solution. In [Step 10](https://docs.alchemy.com/alchemy/tutorials/how-to-create-an-nft#step-10-write-our-contract) of the [NFT Creation Tutorial](https://docs.alchemy.com/alchemy/tutorials/how-to-create-an-nft), we would need to alter the Solidity to accept payments for minting which means that any frontend`web3` / `ethers.js`logic dictating minting would need to include the`msg.value`parameter to allow for the transfer of ETH. &#x20;
 {% endhint %}
 
 This fee pattern is completely decentralized since it takes place in-contract and bakes the fee mechanism into the minting process itself. To implement a price on minting, you need to alter your smart contract to include this behavior. As a high-level summary, a NFT minting price can be enacted by making the `mint` function `payable` and requiring the user to pay a particular amount of ETH before triggering the transfer of the NFT to the buyer.
@@ -34,7 +34,7 @@ function mintToken(address to, uint256 tokenId, string uri) public virtual payab
 
 *   `function mintToken(address to, uint256 tokenId, string uri) public virtual payable`
 
-    *  To allow users to pay ETH to mint an NFT, we need to make this function both `public` and `payable`.  `public` functions can be called internally or via messages to allow anyone to interact with the function.  (We don't want this function to be only callable by the contract's owner since this would lock out prospective buyers!)
+    * &#x20;To allow users to pay ETH to mint an NFT, we need to make this function both `public` and `payable`.  `public` functions can be called internally or via messages to allow anyone to interact with the function.  (We don't want this function to be only callable by the contract's owner since this would lock out prospective buyers!)
 
 
 *   `require(msg.value >= 10, "Not enough ETH sent; check price!"); `
@@ -48,7 +48,7 @@ function mintToken(address to, uint256 tokenId, string uri) public virtual payab
 
 
 * `_setTokenURI(tokenId, uri);`
-  * This calls the `_setTokenURI`function included in OpenZepplin's ERC721 contract file and sets the NFT URI to a particular endpoint.  
+  * This calls the `_setTokenURI`function included in OpenZepplin's ERC721 contract file and sets the NFT URI to a particular endpoint. &#x20;
 
 There are many different variants for implementing fees into minting contracts.  The one listed above is one of the most simple but many protocols also use fee patterns that are significantly more complex.
 

@@ -2,17 +2,17 @@
 
 * [👋 Welcome to Alchemy](README.md)
 
-## Introduction
+## 🚀 Introduction
 
-* [🤔 Why Use Alchemy?](introduction/why-use-alchemy.md)
-* [🚀 Getting Started](introduction/getting-started.md)
-* [🎁 Core Products](introduction/core-products/README.md)
+* [Why Use Alchemy?](introduction/why-use-alchemy.md)
+* [Getting Started](introduction/getting-started.md)
+* [Core Products](introduction/core-products/README.md)
   * [🦸 Alchemy Supernode](introduction/core-products/alchemy-supernode.md)
   * [🔔 Alchemy Notify](introduction/core-products/alchemy-notify.md)
   * [🛠 Alchemy Build](introduction/core-products/alchemy-build.md)
   * [🔬 Alchemy Monitor](introduction/core-products/alchemy-monitor.md)
-* [🤝 Contributing to these Docs](introduction/contributing-to-docs.md)
-* [💰 Referral Program](introduction/referral-program.md)
+* [Contributing to these Docs](introduction/contributing-to-docs.md)
+* [Referral Program](introduction/referral-program.md)
 
 ## ✨ Enhanced APIs
 
@@ -23,7 +23,7 @@
 * [Debug API](enhanced-apis/debug-api.md)
 * [Trace API](enhanced-apis/trace-api.md)
 
-## Chain APIs <a href="apis" id="apis"></a>
+## ⛓ Chain APIs <a href="apis" id="apis"></a>
 
 * [Ethereum API](apis/ethereum/README.md)
   * [eth\_blockNumber](apis/ethereum/eth\_blocknumber.md)
@@ -120,58 +120,58 @@
 * [Crypto.org Docs](https://docs.alchemy.com/cro/)
 * [Feature Support By Chain](apis/feature-support-by-chain.md)
 
-## Documentation
+## 📖 Documentation
 
-* [🔊 Subscription API (Websockets)](documentation/subscription-api-websockets.md)
-* [🪐 Alchemy Web3.js](documentation/alchemy-web3/README.md)
+* [Subscription API (Websockets)](documentation/subscription-api-websockets.md)
+* [Alchemy Web3.js](documentation/alchemy-web3/README.md)
   * [Enhanced Web3 API](documentation/alchemy-web3/enhanced-web3-api.md)
-* [❗ Error Reference](documentation/error-reference.md)
-* [🔩 Compute Units (CUs)](documentation/compute-units.md)
+* [Error Reference](documentation/error-reference.md)
+* [Compute Units (CUs)](documentation/compute-units.md)
+* [Rate Limits](documentation/rate-limits.md)
 
-## Tutorials
+## 💻 Tutorials
 
-* [👷 Simple Web3 Script](tutorials/simple-web3-script.md)
-* [💸 Sending Transactions Using Web3](tutorials/sending-txs.md)
-* [🌎 Hello World Smart Contract](tutorials/hello-world-smart-contract/README.md)
-  * [💻 Interacting with a Smart Contract](tutorials/hello-world-smart-contract/interacting-with-a-smart-contract.md)
-  * [📩 Submitting your Smart Contract to Etherscan](tutorials/hello-world-smart-contract/submitting-your-smart-contract-to-etherscan.md)
-  * [📱 Integrating Your Smart Contract with the Frontend](tutorials/hello-world-smart-contract/part-4.md)
-* [🎨 How to Create an NFT Tutorial](tutorials/how-to-create-an-nft/README.md)
-  * [🏗 How to Mint an NFT Using Web3.js (option 1)](tutorials/how-to-create-an-nft/how-to-mint-a-nft.md)
-  * [🏗 How to Mint an NFT with Ethers.js (option 2)](tutorials/how-to-create-an-nft/how-to-mint-an-nft-with-ethers.md)
-  * [👛 How to View Your NFT in Your Mobile Wallet](tutorials/how-to-create-an-nft/how-to-view-your-nft-in-your-wallet.md)
-  * [💵 How do I set a price on an NFT?](tutorials/how-to-create-an-nft/nft-price.md)
-* [📝 NFT Minter Tutorial: How to Create a Full Stack DApp](tutorials/nft-minter/README.md)
-  * [🛠 How to Build an NFT Website](tutorials/nft-minter/how-do-i-deploy-nfts-online.md)
-* [📜 Integrating Historical Transaction Data into your dApp](tutorials/transfers-tutorial.md)
-* [♻ Alchemy Notify Tutorial: Tracking Transaction Life Cycles](tutorials/tracking-transaction-life-cycles.md)
-* [📱 Building a dApp with Real-Time Transaction Notifications](tutorials/building-a-dapp-with-real-time-transaction-notifications.md)
+* [Simple Web3 Script](tutorials/simple-web3-script.md)
+* [Sending Transactions Using Web3](tutorials/sending-txs.md)
+* [Hello World Smart Contract](tutorials/hello-world-smart-contract/README.md)
+  * [Interacting with a Smart Contract](tutorials/hello-world-smart-contract/interacting-with-a-smart-contract.md)
+  * [Submitting your Smart Contract to Etherscan](tutorials/hello-world-smart-contract/submitting-your-smart-contract-to-etherscan.md)
+  * [Integrating Your Smart Contract with the Frontend](tutorials/hello-world-smart-contract/part-4.md)
+* [How to Create an NFT Tutorial](tutorials/how-to-create-an-nft/README.md)
+  * [How to Mint an NFT Using Web3.js (option 1)](tutorials/how-to-create-an-nft/how-to-mint-a-nft.md)
+  * [How to Mint an NFT with Ethers.js (option 2)](tutorials/how-to-create-an-nft/how-to-mint-an-nft-with-ethers.md)
+  * [How to View Your NFT in Your Mobile Wallet](tutorials/how-to-create-an-nft/how-to-view-your-nft-in-your-wallet.md)
+  * [How do I set a price on an NFT?](tutorials/how-to-create-an-nft/nft-price.md)
+* [NFT Minter Tutorial: How to Create a Full Stack DApp](tutorials/nft-minter/README.md)
+  * [How to Build an NFT Website](tutorials/nft-minter/how-do-i-deploy-nfts-online.md)
+* [Integrating Historical Transaction Data into your dApp](tutorials/transfers-tutorial.md)
+* [Alchemy Notify Tutorial: Tracking Transaction Life Cycles](tutorials/tracking-transaction-life-cycles.md)
+* [Building a dApp with Real-Time Transaction Notifications](tutorials/building-a-dapp-with-real-time-transaction-notifications.md)
 
-## Guides
+## 📜 Guides
 
-* [🍴 EIP-1559 Resource and Tutorial Hub](guides/eip-1559/README.md)
-  * [🧰 The Developer EIP-1559 Prep Kit](https://blog.alchemy.com/blog/eip-1559)
-  * [⛽ How to Send Transactions with EIP 1559](guides/eip-1559/send-tx-eip-1559.md)
-  * [🧐 maxPriorityFeePerGas vs maxFeePerGas](guides/eip-1559/maxpriorityfeepergas-vs-maxfeepergas.md)
-  * [🔄 Retrying an EIP 1559 transaction](guides/eip-1559/retry-eip-1559-tx.md)
-  * [📊 How to Build a Gas Fee Estimator using EIP-1559](guides/eip-1559/gas-estimator.md)
-* [🔔 Using Alchemy Notify/Webhooks](guides/using-notify.md)
-* [🔈 Using WebSockets](guides/using-websockets.md)
-* [📋 Dashboard Walkthrough](guides/demo-app.md)
-* [🤿 Deep Dive into eth\_getLogs](guides/eth\_getlogs.md)
-* [💸 How to Speed Up MetaMask Transactions](guides/connecting-metamask-to-alchemy.md)
-* [🍎 Alchemy Set-up for Macs](guides/alchemy-for-macs.md)
-* [🌐 Choosing a Network](guides/choosing-a-network.md)
-* [🚦 Rate Limits](guides/rate-limits.md)
-* [💎 Running an Eth2.0 Staking Node or Validator with Alchemy](guides/running-an-eth2-node-with-alchemy/README.md)
+* [EIP-1559 Resource and Tutorial Hub](guides/eip-1559/README.md)
+  * [The Developer EIP-1559 Prep Kit](https://blog.alchemy.com/blog/eip-1559)
+  * [How to Send Transactions with EIP 1559](guides/eip-1559/send-tx-eip-1559.md)
+  * [maxPriorityFeePerGas vs maxFeePerGas](guides/eip-1559/maxpriorityfeepergas-vs-maxfeepergas.md)
+  * [Retrying an EIP 1559 transaction](guides/eip-1559/retry-eip-1559-tx.md)
+  * [How to Build a Gas Fee Estimator using EIP-1559](guides/eip-1559/gas-estimator.md)
+* [Using Alchemy Notify/Webhooks](guides/using-notify.md)
+* [Using WebSockets](guides/using-websockets.md)
+* [Dashboard Walkthrough](guides/demo-app.md)
+* [Deep Dive into eth\_getLogs](guides/eth\_getlogs.md)
+* [How to Speed Up MetaMask Transactions](guides/connecting-metamask-to-alchemy.md)
+* [Alchemy Set-up for Macs](guides/alchemy-for-macs.md)
+* [Choosing a Network](guides/choosing-a-network.md)
+* [Running an Eth2.0 Staking Node or Validator with Alchemy](guides/running-an-eth2-node-with-alchemy/README.md)
   * [Setting up an Eth 2.0 Staking Validator with Prysm](guides/running-an-eth2-node-with-alchemy/eth2-staking-prysm.md)
   * [Setting up an Eth 2.0 Staking Validator with Teku](guides/running-an-eth2-node-with-alchemy/eth2-staking-teku.md)
-* [✅ Internal Playbook: Upgrading Ethereum Nodes](guides/internal-playbook-upgrading-ethereum-nodes.md)
-* [🐛 Debugging CORS problems for end-users](guides/debugging-cors.md)
+* [Internal Playbook: Upgrading Ethereum Nodes](guides/internal-playbook-upgrading-ethereum-nodes.md)
+* [Debugging CORS problems for end-users](guides/debugging-cors.md)
 
-## Resources
+## 📚 Resources
 
-* [❓ FAQ](resources/faq.md)
-* [👥 Support](resources/contact-us.md)
-* [⛓ Blockchain 101](resources/blockchain-101.md)
-* [📚 Blockchain Glossary](resources/blockchain-glossary.md)
+* [FAQ](resources/faq.md)
+* [Support](resources/contact-us.md)
+* [Blockchain 101](resources/blockchain-101.md)
+* [Blockchain Glossary](resources/blockchain-glossary.md)

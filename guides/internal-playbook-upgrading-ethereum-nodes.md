@@ -4,10 +4,10 @@ description: >-
   Ethereum nodes for our users 🚀
 ---
 
-# ✅ Internal Playbook: Upgrading Ethereum Nodes
+# Internal Playbook: Upgrading Ethereum Nodes
 
 {% hint style="info" %}
-**NOTE**: This guide was originally published on [Medium](https://medium.com/alchemy-api/the-alchemist-playbook-a-guide-to-upgrading-ethereum-nodes-123e0a47e5c3). 
+**NOTE**: This guide was originally published on [Medium](https://medium.com/alchemy-api/the-alchemist-playbook-a-guide-to-upgrading-ethereum-nodes-123e0a47e5c3).&#x20;
 {% endhint %}
 
 On November 10th, the Ethereum ecosystem was hit by a flurry of errors, incorrect data, and downtime. While our infrastructure and our customers passed through the storm without incident, many other developers had a long night on-call.

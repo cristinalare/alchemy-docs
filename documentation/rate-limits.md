@@ -2,11 +2,11 @@
 description: Explanation of what rate limits are and how to handle them.
 ---
 
-# 🚦 Rate Limits
+# Rate Limits
 
 ## :thinking: What is a Rate Limit?
 
-Your plan has a certain capacity for the number of requests per second your application can make. 
+Your plan has a certain capacity for the number of requests per second your application can make.&#x20;
 
 Often times, if you send queries too quickly in succession you will get a rate limit response. For most cases this is totally fine and will not affect your users at all as long as you handle them properly. Some developers see these errors and request for rate limit increases rather than appropriately refactoring their code to handle this case. If you are experience **under 30%** rate limited requests, [using retries](rate-limits.md#retries) is the best solution.
 
@@ -14,9 +14,9 @@ Often times, if you send queries too quickly in succession you will get a rate l
 
 ### Compute Units Per Second (CUPS)
 
-CUPS are a measure of the number of [compute units](https://docs.alchemyapi.io/documentation/compute-units) used per second when making requests. Since each request is weighted differently, we base this on the total compute units used rather than the number of requests. 
+CUPS are a measure of the number of [compute units](https://docs.alchemyapi.io/documentation/compute-units) used per second when making requests. Since each request is weighted differently, we base this on the total compute units used rather than the number of requests.&#x20;
 
-For example, if you send one `eth_blockNumber` (10 CUs), two `eth_getLogs` (75 CUs), and two `eth_call` (26 CUs) requests in the same second, you will have a total of 310 CUPS. 
+For example, if you send one `eth_blockNumber` (10 CUs), two `eth_getLogs` (75 CUs), and two `eth_call` (26 CUs) requests in the same second, you will have a total of 310 CUPS.&#x20;
 
 See the table below for the number of compute units per second (CUPS) permitted for each user type.
 
@@ -26,12 +26,12 @@ See the table below for the number of compute units per second (CUPS) permitted 
 | Growth     | 660    |
 | Enterprise | Custom |
 
-## ****:inbox_tray: **Response**
+## ****:inbox\_tray: **Response**
 
-When you exceed your capacity, you will receive a rate limit response. This response will be different depending on whether you are connecting to Alchemy using HTTP or [WebSockets](using-websockets.md).
+When you exceed your capacity, you will receive a rate limit response. This response will be different depending on whether you are connecting to Alchemy using HTTP or [WebSockets](../guides/using-websockets.md).
 
 {% hint style="info" %}
-If you would like to test receiving a 429 response, send a POST request to [https://httpstat.us/429](https://httpstat.us/429). 
+If you would like to test receiving a 429 response, send a POST request to [https://httpstat.us/429](https://httpstat.us/429).&#x20;
 {% endhint %}
 
 ### HTTP
@@ -52,25 +52,25 @@ You will receive a JSON-RPC error response with error code 429. For example, the
 }
 ```
 
-## :right_facing_fist: Retries 
+## :right\_facing\_fist: Retries&#x20;
 
-All you need to do to easily handle rate limits is to retry the request. This is a great idea to ensure great user experiences with any API even if you aren't hitting rate limits. Once you've implemented retries, [test out the behavior](rate-limits.md#test-rate-limits-retries) to make sure they work as expected. 
+All you need to do to easily handle rate limits is to retry the request. This is a great idea to ensure great user experiences with any API even if you aren't hitting rate limits. Once you've implemented retries, [test out the behavior](rate-limits.md#test-rate-limits-retries) to make sure they work as expected.&#x20;
 
-### **Option 1: Alchemy Web3** 
+### **Option 1: Alchemy Web3**&#x20;
 
-If you're using Web3.js, just use the [Alchemy wrapper for Web3](../documentation/alchemy-web3/). We handle all of the retry logic for you!
+If you're using Web3.js, just use the [Alchemy wrapper for Web3](alchemy-web3/). We handle all of the retry logic for you!
 
 ### **Option 2: `Retry-After`**
 
 If you are using HTTP and not WebSockets you may receive a `Retry-After` header in the HTTP response. This indicates how long you should wait before making a follow-up request. We still recommend using exponential backoff since `Retry-After` only accepts an integer number of seconds.
 
-### **Option 3: Simple Retries** 
+### **Option 3: Simple Retries**&#x20;
 
 If [exponential backoff](rate-limits.md#option-3-exponential-backoff) poses an challenge to you, a simple retry solution is to wait a random interval between 1000 and 1250 milliseconds after receiving a `429` response, and sending the request again, up to some maximum number of attempts you are willing to wait.
 
-### **Option 4: Exponential Backoff** 
+### **Option 4: Exponential Backoff**&#x20;
 
-Exponential backoff is a standard error-handling strategy for network applications. It is a similar solution to retries, however, instead of waiting random intervals, an exponential backoff algorithm retries requests exponentially, increasing the waiting time between retries up to a maximum backoff time. 
+Exponential backoff is a standard error-handling strategy for network applications. It is a similar solution to retries, however, instead of waiting random intervals, an exponential backoff algorithm retries requests exponentially, increasing the waiting time between retries up to a maximum backoff time.&#x20;
 
 #### Example Algorithm:
 
@@ -93,7 +93,7 @@ The client can continue retrying after it has reached the `maximum_backoff` time
 
 To test out your implementation of retries, we created a test app on each network with a low rate limit of 50 Compute Units/Second. Feel free to make requests to this test app on any of the networks using the following API keys:
 
-### Mainnet 
+### Mainnet&#x20;
 
 #### HTTP
 
@@ -117,31 +117,31 @@ To test out your implementation of retries, we created a test app on each networ
 
 #### **HTTP**
 
-[https://eth-kovan.alchemyapi.io/v2/S56zst1IHTq3hOO4-g8lKW\_0W6C7EMlx](https://eth-kovan.alchemyapi.io/v2/S56zst1IHTq3hOO4-g8lKW\_0W6C7EMlx) 
+[https://eth-kovan.alchemyapi.io/v2/S56zst1IHTq3hOO4-g8lKW\_0W6C7EMlx](https://eth-kovan.alchemyapi.io/v2/S56zst1IHTq3hOO4-g8lKW\_0W6C7EMlx)&#x20;
 
 #### **WebSocket**
 
 [wss://eth-kovan.ws.alchemyapi.io/v2/S56zst1IHTq3hOO4-g8lKW\_0W6C7EMlx](wss://eth-kovan.ws.alchemyapi.io/v2/S56zst1IHTq3hOO4-g8lKW\_0W6C7EMlx)
 
-### Rinkeby 
+### Rinkeby&#x20;
 
 #### HTTP
 
-[https://eth-rinkeby.alchemyapi.io/v2/JHuHvKzTtXSgVcKJ4bWAuOgQvUBaVGAV](https://eth-rinkeby.alchemyapi.io/v2/JHuHvKzTtXSgVcKJ4bWAuOgQvUBaVGAV) 
+[https://eth-rinkeby.alchemyapi.io/v2/JHuHvKzTtXSgVcKJ4bWAuOgQvUBaVGAV](https://eth-rinkeby.alchemyapi.io/v2/JHuHvKzTtXSgVcKJ4bWAuOgQvUBaVGAV)&#x20;
 
 #### WebSocket
 
-[wss://eth-rinkeby.ws.alchemyapi.io/v2/JHuHvKzTtXSgVcKJ4bWAuOgQvUBaVGAV](wss://eth-rinkeby.ws.alchemyapi.io/v2/JHuHvKzTtXSgVcKJ4bWAuOgQvUBaVGAV) 
+[wss://eth-rinkeby.ws.alchemyapi.io/v2/JHuHvKzTtXSgVcKJ4bWAuOgQvUBaVGAV](wss://eth-rinkeby.ws.alchemyapi.io/v2/JHuHvKzTtXSgVcKJ4bWAuOgQvUBaVGAV)&#x20;
 
 ### Ropsten
 
 #### HTTP
 
-[https://eth-ropsten.alchemyapi.io/v2/H5VDpwYG31lR46dZlnGy5hrT_nhicRYc](https://eth-ropsten.alchemyapi.io/v2/H5VDpwYG31lR46dZlnGy5hrT_nhicRYc) 
+[https://eth-ropsten.alchemyapi.io/v2/H5VDpwYG31lR46dZlnGy5hrT\_nhicRYc](https://eth-ropsten.alchemyapi.io/v2/H5VDpwYG31lR46dZlnGy5hrT\_nhicRYc)&#x20;
 
 #### WebSocket
 
-[wss://eth-ropsten.ws.alchemyapi.io/v2/H5VDpwYG31lR46dZlnGy5hrT_nhicRYc](wss://eth-ropsten.ws.alchemyapi.io/v2/H5VDpwYG31lR46dZlnGy5hrT_nhicRYc) 
+[wss://eth-ropsten.ws.alchemyapi.io/v2/H5VDpwYG31lR46dZlnGy5hrT\_nhicRYc](wss://eth-ropsten.ws.alchemyapi.io/v2/H5VDpwYG31lR46dZlnGy5hrT\_nhicRYc)&#x20;
 
 ## :bulb: Final Tips
 
