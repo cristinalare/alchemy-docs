@@ -107,7 +107,7 @@ Turning on autoscale gives you instant access to on-demand compute at volume dis
 
 ## Rate Limits (CUPS)
 
-[Rate Limits](rate-limits.md) serve to protect users from malicious actors or runaway scripts. Each tier has prioritized rate limit allocations designed for ultimate reliability.
+[Rate Limits](../guides/rate-limits.md) serve to protect users from malicious actors or runaway scripts. Each tier has prioritized rate limit allocations designed for ultimate reliability.
 
 CUPS are a measure of the number of compute units used per second when making requests. Since each request is weighted differently, we base this on the total compute units used rather than the number of requests.
 

@@ -28,7 +28,7 @@ See the table below for the number of compute units per second (CUPS) permitted 
 
 ## ****:inbox\_tray: **Response**
 
-When you exceed your capacity, you will receive a rate limit response. This response will be different depending on whether you are connecting to Alchemy using HTTP or [WebSockets](../guides/using-websockets.md).
+When you exceed your capacity, you will receive a rate limit response. This response will be different depending on whether you are connecting to Alchemy using HTTP or [WebSockets](using-websockets.md).
 
 {% hint style="info" %}
 If you would like to test receiving a 429 response, send a POST request to [https://httpstat.us/429](https://httpstat.us/429).&#x20;
@@ -58,7 +58,7 @@ All you need to do to easily handle rate limits is to retry the request. This is
 
 ### **Option 1: Alchemy Web3**&#x20;
 
-If you're using Web3.js, just use the [Alchemy wrapper for Web3](alchemy-web3/). We handle all of the retry logic for you!
+If you're using Web3.js, just use the [Alchemy wrapper for Web3](../documentation/alchemy-web3/). We handle all of the retry logic for you!
 
 ### **Option 2: `Retry-After`**
 

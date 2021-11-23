@@ -2,7 +2,7 @@
 description: Returns the number of the most recent block.
 ---
 
-# eth\_blockNumber
+# eth\_blockNumber - Ethereum
 
 ## Parameters
 
@@ -12,7 +12,7 @@ none
 
 `QUANTITY` - integer of the current block number the client is on.
 
-## [Example](eth\_blocknumber.md#parameters)
+## [Example](eth-blocknumber.md#parameters)
 
 Try out an example request using [the Alchemy Composer tool](https://composer.alchemyapi.io/?composer\_state=%7B%22chain%22%3A0%2C%22network%22%3A0%2C%22methodName%22%3A%22eth\_getBlockByNumber%22%2C%22paramValues%22%3A%5B%22latest%22%2Cfalse%5D%7D)!
 

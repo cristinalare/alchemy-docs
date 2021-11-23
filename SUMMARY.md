@@ -26,7 +26,7 @@
 ## ⛓ Chain APIs <a href="apis" id="apis"></a>
 
 * [Ethereum API](apis/ethereum/README.md)
-  * [eth\_blockNumber](apis/ethereum/eth\_blocknumber.md)
+  * [eth\_blockNumber - Ethereum](apis/ethereum/eth-blocknumber.md)
   * [eth\_getBlockByHash](apis/ethereum/eth\_getblockbyhash.md)
   * [eth\_getBlockByNumber](apis/ethereum/eth\_getblockbynumber.md)
   * [eth\_getTransactionByHash](apis/ethereum/eth\_gettransactionbyhash.md)
@@ -127,7 +127,7 @@
   * [Enhanced Web3 API](documentation/alchemy-web3/enhanced-web3-api.md)
 * [Error Reference](documentation/error-reference.md)
 * [Compute Units (CUs)](documentation/compute-units.md)
-* [Rate Limits](documentation/rate-limits.md)
+* [Rate Limits](guides/rate-limits.md)
 
 ## 💻 Tutorials
 
