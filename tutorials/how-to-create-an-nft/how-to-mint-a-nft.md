@@ -208,13 +208,7 @@ async function mintNFT(tokenURI) {
   };
 
   const signedTx = await web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
-  const transactionReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction, function(err, hash) {
-      if (!err) {
-        console.log("The hash of your transaction is: ", hash, "\nCheck Alchemy's Mempool to view the status of your transaction!"); 
-      } else {
-        console.log("Something went wrong when submitting your transaction:", err)
-      }
-  });
+  const transactionReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
   
   console.log(`Transaction receipt: ${JSON.stringify(transactionReceipt)}`);
 }
@@ -263,13 +257,7 @@ async function mintNFT(tokenURI) {
   };
 
   const signedTx = await web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
-  const transactionReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction, function(err, hash) {
-      if (!err) {
-        console.log("The hash of your transaction is: ", hash, "\nCheck Alchemy's Mempool to view the status of your transaction!"); 
-      } else {
-        console.log("Something went wrong when submitting your transaction:", err)
-      }
-  });
+  const transactionReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
   
   console.log(`Transaction receipt: ${JSON.stringify(transactionReceipt)}`);
 }
