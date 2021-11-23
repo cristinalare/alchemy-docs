@@ -127,7 +127,7 @@ After the state variables, you'll see five un-implemented functions: `useEffect`
 {% code title="HelloWorld.js" %}
 ```javascript
   //called only once
-  useEffect(async () => { //TODO: implement
+  useEffect(() => { //TODO: implement
 
   }, []);
 
@@ -388,9 +388,12 @@ Since we want to display this smart contract in our UI, let's update the `useEff
 {% code title="HelloWorld.js" %}
 ```javascript
 //called only once
-useEffect(async () => {
+useEffect(() => {
+  async function fetchMessage() {
     const message = await loadCurrentMessage();
     setMessage(message);
+  }
+  fetchMessage();
 }, []);
 ```
 {% endcode %}
@@ -478,10 +481,13 @@ Finally, let's call our listener in our `useEffect` function so it is initialize
 
 {% code title="HelloWorld.js" %}
 ```javascript
-useEffect(async () => {
+useEffect(() => {
+  async function fetchMessage() {
     const message = await loadCurrentMessage();
-    setMessage(message);
-    addSmartContractListener();
+    setMessage(message);  
+  }
+  fetchMessage();
+  addSmartContractListener();
 }, []);
 ```
 {% endcode %}
@@ -681,15 +687,20 @@ To see this function in action, let's call it in our `useEffect` function of our
 
 {% code title="HelloWorld.js" %}
 ```javascript
-useEffect(async () => {
+useEffect(() => {
+  async function fetchMessage() {
     const message = await loadCurrentMessage();
     setMessage(message);
-    addSmartContractListener();
+  }
+  fetchMessage();
+  addSmartContractListener();
 
+  async function fetchWallet() {
     const {address, status} = await getCurrentWalletConnected();
     setWallet(address);
     setStatus(status); 
-
+  }
+  fetchWallet();
 }, []);
 ```
 {% endcode %}
@@ -747,16 +758,21 @@ Last but not least, we must call it in our `useEffect` function:
 
 {% code title="HelloWorld.js" %}
 ```javascript
-useEffect(async () => {
+useEffect(() => {
+  async function fetchMessage() {
     const message = await loadCurrentMessage();
     setMessage(message);
-    addSmartContractListener();
+  }
+  fetchMessage();
+  addSmartContractListener();
 
+  async function fetchWallet() {
     const {address, status} = await getCurrentWalletConnected();
     setWallet(address)
     setStatus(status); 
-
-    addWalletListener(); 
+  }
+  fetchWallet();
+  addWalletListener(); 
 }, []);
 ```
 {% endcode %}
