@@ -24,15 +24,13 @@ Check out Alchemy's API Reference pages to understand how to use the [Enhanced A
 
 ## 🤷 What is Alchemy?
 
-Alchemy is a blockchain developer platform focused on making Ethereum development easy. We've built a suite of developer tools, enhanced APIs, and superior node infrastructure to make building and running blockchain applications seamless.
+Alchemy is a blockchain developer platform focused on making blockchain development easy. We've built a suite of developer tools, enhanced APIs, and superior node infrastructure to make building and running blockchain applications seamless.
 
 Our platform supports 70% of the top Ethereum applications, including the top blockchain companies in the world:
 
-![](.gitbook/assets/screen-shot-2020-07-21-at-1.53.00-pm.png)
+![](<.gitbook/assets/Screen Shot 2021-11-23 at 11.40.16 AM.png>)
 
-Our product is used by millions of users per week across 99% of all countries, bringing in of billions of dollars in annual volume.
-
-To learn more about the benefits of using Alchemy, check out the "Why Use Alchemy?" page below.
+To learn more about the benefits of using Alchemy, check out the "Why Use Alchemy?" page below:
 
 {% content-ref url="introduction/why-use-alchemy.md" %}
 [why-use-alchemy.md](introduction/why-use-alchemy.md)
@@ -40,7 +38,7 @@ To learn more about the benefits of using Alchemy, check out the "Why Use Alchem
 
 ## 🎁 Alchemy's Products and Features
 
-Alchemy has a full suite of products built to accelerate blockchain development. Our tools make it easier for blockchain developers to focus on their applications and users, rather than interfacing with the blockchain.
+Alchemy has a full suite of products built to accelerate blockchain development. Our tools make it easier for blockchain developers to focus on their applications and users, rather than interfacing with the low level blockchain integrations.
 
 {% content-ref url="introduction/core-products/" %}
 [core-products](introduction/core-products/)
@@ -52,4 +50,20 @@ Get set up to use the Alchemy API in under 5 minutes. Learn how to get and use y
 
 {% content-ref url="introduction/getting-started.md" %}
 [getting-started.md](introduction/getting-started.md)
+{% endcontent-ref %}
+
+## 💻 Learn how to build in Web3
+
+Not sure where to start? New to building in Web3? Check out some of the beginner tutorials below!
+
+{% content-ref url="tutorials/simple-web3-script.md" %}
+[simple-web3-script.md](tutorials/simple-web3-script.md)
+{% endcontent-ref %}
+
+{% content-ref url="tutorials/hello-world-smart-contract/" %}
+[hello-world-smart-contract](tutorials/hello-world-smart-contract/)
+{% endcontent-ref %}
+
+{% content-ref url="tutorials/how-to-create-an-nft/" %}
+[how-to-create-an-nft](tutorials/how-to-create-an-nft/)
 {% endcontent-ref %}
