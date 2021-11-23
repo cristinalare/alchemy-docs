@@ -19,7 +19,7 @@ There are a handful of [beacon node clients](https://ethereum.org/en/eth2/get-in
 
 ## Getting Started
 
-Before we can begin setting up our Ethereum 2.0 node, we should make sure we have meet all the requirements to run our node. You can find the full list of requirements by running through the [Eth2 validator checklist](https://launchpad.ethereum.org/en/checklist). The same instructions can be run with the [mainnet](https://launchpad.ethereum.org/en/).
+Before we can begin setting up our Ethereum 2.0 node, we should make sure we have met all the requirements to run our node. You can find the full list of requirements by running through the [Eth2 validator checklist](https://launchpad.ethereum.org/en/checklist). The same instructions can be run with the [mainnet](https://launchpad.ethereum.org/en/).
 
 ### What you'll need
 
