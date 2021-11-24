@@ -6,10 +6,14 @@ description: Tutorial for deploying your own ERC-20 token on Rinkeby
 
 In this guide, we'll be setting up an ERC-20 token on the Rinkeby test network - start thinking what name you would like to name your very own ERC-20!
 
+{% hint style="info" %}
+Don't know what an ERC-20 (fungible) token is? Check out this [resource](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) from the Ethereum Foundation for a helpful overview!
+{% endhint %}
+
 ## Guide Requirements
 
-- **[Hardhat](https://hardhat.org/)**: Hardhat is an Ethereum development platform that provides all the tools needed to build, debug and deploy smart contracts.
-- **[Alchemy](https://www.alchemy.com/)**: Alchemy is a blockchain development platform from which we will use some APIs to help query the Ethereum blockchain.
+* [**Hardhat**](https://hardhat.org): Hardhat is an Ethereum development platform that provides all the tools needed to build, debug and deploy smart contracts.
+* [**Alchemy**](https://www.alchemy.com): Alchemy is a blockchain development platform from which we will use some APIs to help query the Ethereum blockchain.
 
 ## Step 1: Hardhat Guides Setup
 
@@ -23,11 +27,11 @@ Now, it is time to name your token! 😱 In the next step, you will create your 
 
 For this guide and since ChainShot is full of true Goofy Goobers, we will go with `GoofyGoober` for our token name (the same as above, just without the "Token") - thus, we will name our contract `GoofyGoober.sol`:
 
-2. `cd` into your `/contracts` folder (which should be empty right now!), and run `touch GoofyGoober.sol`
+1. `cd` into your `/contracts` folder (which should be empty right now!), and run `touch GoofyGoober.sol`
 
 > Follow along if you want to create a GoofyGoober token like us but also feel free to replace the name with yours and make your own token!
 
-3. Open the newly-create `.sol` file and copy-paste the following:
+1. Open the newly-create `.sol` file and copy-paste the following:
 
 ```solidity
 //SPDX-License-Identifier: Unlicense
@@ -42,16 +46,17 @@ contract GoofyGoober is ERC20 {
     }
 }
 ```
+
 > The token symbol you choose, in our case "GG" can be any arbitrary character length but do keep in mind that some UIs may display ones that are too long differently.
 
-4. If you are going with an ERC-20 of your own name (you should!), make sure to change all the Goofy Goober references to match the name of your `.sol` file
-16. Feel free to edit the initial supply by changing the `100` to how many tokens you would like your initial supply to be - we put 100 because there are very few true Goofy Goobers in the world! You can put any number you'd like for this - make sure to leave the `(10**18)` as that multiplies the number we want as our supply to have 18 decimals.
-5. Save and close the file
+1. If you are going with an ERC-20 of your own name (you should!), make sure to change all the Goofy Goober references to match the name of your `.sol` file
+2. Feel free to edit the initial supply by changing the `100` to how many tokens you would like your initial supply to be - we put 100 because there are very few true Goofy Goobers in the world! You can put any number you'd like for this - make sure to leave the `(10**18)` as that multiplies the number we want as our supply to have 18 decimals.
+3. Save and close the file
 
 Now that we've got a whole contract set up, let's create the deployment script for it!
 
-6. `cd ..` back into your project root directory and then `cd` into your `scripts` directory (which should be empty right now!)
-7. Run `touch deploy.js`, open the newly-created file and copy-paste the following:
+1. `cd ..` back into your project root directory and then `cd` into your `scripts` directory (which should be empty right now!)
+2. Run `touch deploy.js`, open the newly-created file and copy-paste the following:
 
 ```javascript
 async function main() {
@@ -78,18 +83,18 @@ main()
 });
 ```
 
-8. Just one action item: replace the reference to "GoofyGoober" in the file if you went with another name for your ERC-20 token
-9. Save and close the file
-10. `cd ..` back into your project root directory
+1. Just one action item: replace the reference to "GoofyGoober" in the file if you went with another name for your ERC-20 token
+2. Save and close the file
+3. `cd ..` back into your project root directory
 
 ## Step 3: Deploy Your ERC-20 Token!
 
-1. Run `npx hardhat run scripts/deploy.js --network rinkeby `
+1. Run `npx hardhat run scripts/deploy.js --network rinkeby`
 2. Your contract will be compiled and deployed to the Rinkeby network! You should see something similar to this in your terminal output:
 
 ![formatEther](https://i.imgur.com/2FXHuVw.png)
 
-3. Go to https://rinkeby.etherscan.io/ and input your outputted Token address to see your deployed ERC-20 contract on Rinkeby!
+1. Go to https://rinkeby.etherscan.io/ and input your outputted Token address to see your deployed ERC-20 contract on Rinkeby!
 
 Now it's time to have the real fun! Send some of your new tokens to your friends and family, stimulate an economy - create the Bitcoin/Ethereum of the future! In this guide, you deployed your own ERC-20 token on Rinkeby using the OpenZeppelin ERC20 standard - great job!
 
@@ -99,7 +104,3 @@ We are going to challenge you to send some tokens in one of two ways:
 
 1. **More Challenging Way**: Write your own Hardhat Script to do an airdrop!
 2. **Simpler Way**: Add your ERC-20 token to MetaMask and send it to an address via the UI!
-
-
-
-
