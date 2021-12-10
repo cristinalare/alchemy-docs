@@ -223,7 +223,7 @@ Alchemy Web3 is a drop-in replacement for web3.js, built and configured to work 
 
 ### **Computational infeasibility**
 
-A process is computationally infeasible if it would take an impracticably long time (eg. billions of years) to do it for anyone who might conceivably have an interest in carrying it out. Generally, 280 computational steps is considered the lower bound for computational infeasibility.
+A process is computationally infeasible if it would take an impracticably long time (eg. billions of years) to do it for anyone who might conceivably have an interest in carrying it out. Generally, 280 computational steps are considered the lower bound for computational infeasibility.
 
 ### **Hash**
 
@@ -317,7 +317,7 @@ A censorship fault is a validator failing to accept valid messages from other va
 
 ### **Equivocation**
 
-An equivocation occurs when a validator sends two messages that contradict each other. More precisely, when a validator sends two messages that a validator running the correct algorithm could only send if it sends one message, “rewinds” its internal state to some point before sending that message, then at some future point in time sends the other message. One simple example is a transaction sender sending two transactions with the same nonce.
+An equivocation occurs when a validator sends two messages that contradict each other. More precisely, when a validator sends two messages that a validator running the correct algorithm could only send if it sends one message, “rewinds” it's internal state to some point before sending that message, and then at some future point in time sends the other message. One simple example is a transaction sender sending two transactions with the same nonce.
 
 ### **Invalidity Fault**
 
