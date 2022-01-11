@@ -127,7 +127,7 @@ After the state variables, you'll see five un-implemented functions: `useEffect`
 {% code title="HelloWorld.js" %}
 ```javascript
   //called only once
-  useEffect(async () => { //TODO: implement
+  useEffect(() => { //TODO: implement
 
   }, []);
 
@@ -149,8 +149,8 @@ After the state variables, you'll see five un-implemented functions: `useEffect`
 ```
 {% endcode %}
 
-* [`useEffect`](https://reactjs.org/docs/hooks-effect.html)- this is a React hook that is called after your component is rendered.  Because it has an empty array `[]` prop passed into it (see line 4),  it will only be called on the component's _first_ render. Here we'll load the current message stored in our smart contract, call our smart contract and wallet listeners, and update our UI to reflect whether a wallet is already connected. 
-* `addSmartContractListener`- this function sets up a listener that will watch for our HelloWorld contract's `UpdatedMessages` event and update our UI when the message is changed in our smart contract. 
+* [`useEffect`](https://reactjs.org/docs/hooks-effect.html)- this is a React hook that is called after your component is rendered.  Because it has an empty array `[]` prop passed into it (see line 4),  it will only be called on the component's _first_ render. Here we'll load the current message stored in our smart contract, call our smart contract and wallet listeners, and update our UI to reflect whether a wallet is already connected.&#x20;
+* `addSmartContractListener`- this function sets up a listener that will watch for our HelloWorld contract's `UpdatedMessages` event and update our UI when the message is changed in our smart contract.&#x20;
 * `addWalletListener`-  this function sets up a listener that detects changes in the user's Metamask wallet state, such as when the user disconnects their wallet or switches addresses.
 * `connectWalletPressed`- this function will be called to connect the user's Metamask wallet to our dApp.
 * `onUpdatePressed` - this function will be called when the user wants to update the message stored in the smart contract.
@@ -388,9 +388,12 @@ Since we want to display this smart contract in our UI, let's update the `useEff
 {% code title="HelloWorld.js" %}
 ```javascript
 //called only once
-useEffect(async () => {
+useEffect(() => {
+  async function fetchMessage() {
     const message = await loadCurrentMessage();
     setMessage(message);
+  }
+  fetchMessage();
 }, []);
 ```
 {% endcode %}
@@ -478,10 +481,13 @@ Finally, let's call our listener in our `useEffect` function so it is initialize
 
 {% code title="HelloWorld.js" %}
 ```javascript
-useEffect(async () => {
+useEffect(() => {
+  async function fetchMessage() {
     const message = await loadCurrentMessage();
-    setMessage(message);
-    addSmartContractListener();
+    setMessage(message);  
+  }
+  fetchMessage();
+  addSmartContractListener();
 }, []);
 ```
 {% endcode %}
@@ -510,7 +516,7 @@ To sign a transaction on the Ethereum blockchain, we’ll need some fake Eth. To
 
 ### Check your Balance <a href="step-5-check-your-balance" id="step-5-check-your-balance"></a>
 
-To double check our balance is there, let’s make an [eth_getBalance](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_getbalance) request using [Alchemy’s composer tool](https://composer.alchemyapi.io/?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%22%22%2C%22latest%22%5D%7D). This will return the amount of Eth in our wallet. After you input your Metamask account address and click “Send Request”, you should see a response like this:
+To double check our balance is there, let’s make an [eth\_getBalance](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth\_getbalance) request using [Alchemy’s composer tool](https://composer.alchemyapi.io/?composer\_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth\_getBalance%22%2C%22paramValues%22%3A%5B%22%22%2C%22latest%22%5D%7D). This will return the amount of Eth in our wallet. After you input your Metamask account address and click “Send Request”, you should see a response like this:
 
 ```
 {"jsonrpc": "2.0", "id": 0, "result": "0xde0b6b3a7640000"}
@@ -681,15 +687,20 @@ To see this function in action, let's call it in our `useEffect` function of our
 
 {% code title="HelloWorld.js" %}
 ```javascript
-useEffect(async () => {
+useEffect(() => {
+  async function fetchMessage() {
     const message = await loadCurrentMessage();
     setMessage(message);
-    addSmartContractListener();
+  }
+  fetchMessage();
+  addSmartContractListener();
 
+  async function fetchWallet() {
     const {address, status} = await getCurrentWalletConnected();
     setWallet(address);
     setStatus(status); 
-
+  }
+  fetchWallet();
 }, []);
 ```
 {% endcode %}
@@ -741,22 +752,27 @@ I bet you don't even need our help to understand what's going on here at this po
 
 * First, our function checks if `window.ethereum` is enabled (i.e. Metamask is installed).
   * If it's not, we simply set our `status`  state variable to a JSX string that prompts the user to install Metamask.
-  * If it is enabled, we set up the listener `window.ethereum.on("accountsChanged")` on line 3 that listens for state changes in the Metamask wallet, which include when the user connects an additional account to the dApp, switches accounts, or disconnects an account. If there is at least one account connected, the `walletAddress` state variable is updated as the first account in the `accounts` array returned by the listener. Otherwise, `walletAddress` is set as an empty string. 
+  * If it is enabled, we set up the listener `window.ethereum.on("accountsChanged")` on line 3 that listens for state changes in the Metamask wallet, which include when the user connects an additional account to the dApp, switches accounts, or disconnects an account. If there is at least one account connected, the `walletAddress` state variable is updated as the first account in the `accounts` array returned by the listener. Otherwise, `walletAddress` is set as an empty string.&#x20;
 
 Last but not least, we must call it in our `useEffect` function:
 
 {% code title="HelloWorld.js" %}
 ```javascript
-useEffect(async () => {
+useEffect(() => {
+  async function fetchMessage() {
     const message = await loadCurrentMessage();
     setMessage(message);
-    addSmartContractListener();
+  }
+  fetchMessage();
+  addSmartContractListener();
 
+  async function fetchWallet() {
     const {address, status} = await getCurrentWalletConnected();
     setWallet(address)
     setStatus(status); 
-
-    addWalletListener(); 
+  }
+  fetchWallet();
+  addWalletListener(); 
 }, []);
 ```
 {% endcode %}

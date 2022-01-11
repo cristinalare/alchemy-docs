@@ -4,7 +4,7 @@ description: >-
   and more using Websockets.
 ---
 
-# 🔊 Subscription API (Websockets)
+# Subscription API (Websockets)
 
 To learn more about how to use websockets check out the guide below👇
 

@@ -39,7 +39,7 @@ const web3 = createAlchemyWeb3(API_URL);
 
 ### Step 3: Grab your contract ABI <a href="step-3-grab-your-contract-abi" id="step-3-grab-your-contract-abi"></a>
 
-Our contract ABI (Application Binary Interface) is the interface to interact with our smart contract. You can learn more about Contract ABIs [here](https://docs.alchemyapi.io/alchemy/guides/eth_getlogs#what-are-ab-is). Hardhat automatically generates an ABI for us and saves it in the MyNFT.json file. In order to use this we'll need to parse out the contents by adding the following lines of code to our `mint-nft.js` file:
+Our contract ABI (Application Binary Interface) is the interface to interact with our smart contract. You can learn more about Contract ABIs [here](https://docs.alchemyapi.io/alchemy/guides/eth\_getlogs#what-are-ab-is). Hardhat automatically generates an ABI for us and saves it in the MyNFT.json file. In order to use this we'll need to parse out the contents by adding the following lines of code to our `mint-nft.js` file:
 
 ```
 const contract = require("../artifacts/contracts/MyNFT.sol/MyNFT.json");
@@ -130,7 +130,7 @@ PUBLIC_KEY = "your-public-account-address"
 First, let's define a function called `mintNFT(tokenData)` and create our transaction by doing the following:
 
 1. Grab your `PRIVATE_KEY` and `PUBLIC_KEY` from the .env file.
-2. Next, we'll need to figure out the account `nonce`. The nonce specification is used to keep track of the number of transactions sent from your address— which we need for security purposes and to prevent [replay attacks](https://docs.alchemyapi.io/alchemy/resources/blockchain-glossary#account-nonce). To get the number of transactions sent from your address, we use [getTransactionCount](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactioncount).
+2. Next, we'll need to figure out the account `nonce`. The nonce specification is used to keep track of the number of transactions sent from your address— which we need for security purposes and to prevent [replay attacks](https://docs.alchemyapi.io/alchemy/resources/blockchain-glossary#account-nonce). To get the number of transactions sent from your address, we use [getTransactionCount](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth\_gettransactioncount).
 3. Finally we'll set up our `transaction` with the following info:
 4. `'from': PUBLIC_KEY` : The origin of our transaction is our public address
 5. `'to': contractAddress` : The contract we wish to interact with and send the transaction
@@ -207,20 +207,10 @@ async function mintNFT(tokenURI) {
     'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()
   };
 
-
-  const signPromise = web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
-  signPromise.then((signedTx) => {
-
-    web3.eth.sendSignedTransaction(signedTx.rawTransaction, function(err, hash) {
-      if (!err) {
-        console.log("The hash of your transaction is: ", hash, "\nCheck Alchemy's Mempool to view the status of your transaction!"); 
-      } else {
-        console.log("Something went wrong when submitting your transaction:", err)
-      }
-    });
-  }).catch((err) => {
-    console.log("Promise failed:", err);
-  });
+  const signedTx = await web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
+  const transactionReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+  
+  console.log(`Transaction receipt: ${JSON.stringify(transactionReceipt)}`);
 }
 ```
 
@@ -266,19 +256,10 @@ async function mintNFT(tokenURI) {
     'data': nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI()
   };
 
-  const signPromise = web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
-  signPromise.then((signedTx) => {
-
-    web3.eth.sendSignedTransaction(signedTx.rawTransaction, function(err, hash) {
-      if (!err) {
-        console.log("The hash of your transaction is: ", hash, "\nCheck Alchemy's Mempool to view the status of your transaction!"); 
-      } else {
-        console.log("Something went wrong when submitting your transaction:", err)
-      }
-    });
-  }).catch((err) => {
-    console.log("Promise failed:", err);
-  });
+  const signedTx = await web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);
+  const transactionReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+  
+  console.log(`Transaction receipt: ${JSON.stringify(transactionReceipt)}`);
 }
 
 mintNFT("https://gateway.pinata.cloud/ipfs/QmYueiuRNmL4MiA2GwtVMm6ZagknXnSpQnB3z2gWbz36hP");
@@ -293,7 +274,7 @@ Check Alchemy's Mempool to view the status of your transaction!
 
 Next, visit your [Alchemy mempool](https://dashboard.alchemyapi.io/mempool) to see the status of your transaction (whether it's pending, mined, or got dropped by the network). If your transaction got dropped, it's also helpful to check [Ropsten Etherscan](https://ropsten.etherscan.io) and search for your transaction hash.
 
-![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/8mFvcM8er_zqvFq7TyKrMEhr.png)
+![](https://static.slab.com/prod/uploads/7adb25ff/posts/images/8mFvcM8er\_zqvFq7TyKrMEhr.png)
 
 And that's it! You've now deployed AND minted an NFT on the Ethereum blockchain 🎉
 

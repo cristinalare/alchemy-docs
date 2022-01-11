@@ -4,7 +4,7 @@ description: >-
   endpoint!
 ---
 
-# 💸 How to Speed Up MetaMask Transactions
+# How to Speed Up MetaMask Transactions
 
 MetaMask uses a default node provider to display and send transactions for your account. Because the node provider does not allocate dedicated resources to each user, it may be slow sometimes, i.e. for transaction broadcasting.
 

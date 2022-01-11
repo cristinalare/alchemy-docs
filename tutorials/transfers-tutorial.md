@@ -4,7 +4,7 @@ description: >-
   into a dApp frontend.
 ---
 
-# 📜 Integrating Historical Transaction Data into your dApp
+# Integrating Historical Transaction Data into your dApp
 
 dApps on Ethereum have grown in complexity, depth, and breadth in the past few years. One missing piece is the efficient querying of historical block information. With standard Ethereum JSON-RPC methods, developers either need to maintain centralized databases containing large swaths of the blockchain history, or repeatedly query blocks across long time periods in order to scrap the entire transaction history of a particular address. These two options complicate the process in which users like wallet providers supply information such as the history of a particular user's interactions on the blockchain. Without easy access to this information, developers must rely on expensive, slow methods that limit the feature set of their apps.
 

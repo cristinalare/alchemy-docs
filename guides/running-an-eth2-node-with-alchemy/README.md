@@ -19,15 +19,15 @@ There are a handful of [beacon node clients](https://ethereum.org/en/eth2/get-in
 
 ## Getting Started
 
-Before we can begin setting up our Ethereum 2.0 node, we should make sure we have meet all the requirements to run our node. You can find the full list of requirements by running through the [Eth2 validator checklist](https://launchpad.ethereum.org/en/checklist). The same instructions can be run with the [mainnet](https://launchpad.ethereum.org/en/).
+Before we can begin setting up our Ethereum 2.0 node, we should make sure we have met all the requirements to run our node. You can find the full list of requirements by running through the [Eth2 validator checklist](https://launchpad.ethereum.org/en/checklist). The same instructions can be run with the [mainnet](https://launchpad.ethereum.org/en/).
 
 ### What you'll need
 
-* A wallet with 32 Ethereum 
+* A wallet with 32 Ethereum&#x20;
 
 ## 1. Checking advisories
 
-We'll start by going through the Ethereum foundation advisory checklist: 
+We'll start by going through the Ethereum foundation advisory checklist:&#x20;
 
 {% embed url="https://prater.launchpad.ethereum.org/en/overview" %}
 These instructions are for the Prater Test network
@@ -35,7 +35,7 @@ These instructions are for the Prater Test network
 
 Some notable advisories:
 
-* Setup will require some use of the command line - luckily you've got this great guide to walk you through all the technical portions. 
+* Setup will require some use of the command line - luckily you've got this great guide to walk you through all the technical portions.&#x20;
 * Uptime is important! You will only get rewards if your validator is online. If your validator is offline, you will be penalized.
 * You will have to manage your validator key & passwords.
 
@@ -61,7 +61,7 @@ There are four major Eth2 clients [which can be found here](https://ethereum.org
 
 [https://github.com/ethereum/eth2.0-deposit-cli/releases/](https://github.com/ethereum/eth2.0-deposit-cli/releases/)
 
-You're going to want the latest release. Download the binary that is appropriate for your operating system. 
+You're going to want the latest release. Download the binary that is appropriate for your operating system.&#x20;
 
 ![eth2deposit-cli binary choices for Mac, Linux, and Windows](../../.gitbook/assets/choose-package.jpg)
 
@@ -98,7 +98,7 @@ Type the password that secures your validator keystore(s):
 Repeat for confirmation:
 ```
 
-After confirming your password, you will be handed a mnemonic. This is a collection of words that represent your key. It's **extremely **important that you have a private copy of these keys. This key is the only way to get your deposit back. Loss of this key could result in the loss of the 32 Eth deposit or have your deposit stolen from you. 
+After confirming your password, you will be handed a mnemonic. This is a collection of words that represent your key. It's **extremely **important that you have a private copy of these keys. This key is the only way to get your deposit back. Loss of this key could result in the loss of the 32 Eth deposit or have your deposit stolen from you.&#x20;
 
 ```
 This is your seed phrase. Write it down and store it safely, 
@@ -125,7 +125,7 @@ Upload your validator keys to  [launch pad](https://prater.launchpad.ethereum.or
 
 ## 6. Submit your keys to launchpad
 
-Connect your wallet to launchpad. In this demo, we will be using metamask. Switch your network to **Goerli. **If you are on the right network and the required 32 Eth, you will be able to proceed. If you need Goerli test ether, you can get 35 Eth [from the public faucet](https://faucet.goerli.mudit.blog). 
+Connect your wallet to launchpad. In this demo, we will be using metamask. Switch your network to **Goerli. **If you are on the right network and the required 32 Eth, you will be able to proceed. If you need Goerli test ether, you can get 35 Eth [from the public faucet](https://faucet.goerli.mudit.blog).&#x20;
 
 ![Connecting your wallet and validating 32 Eth requirement](<../../.gitbook/assets/image (38).png>)
 
@@ -137,7 +137,7 @@ Review the requirements and click continue. When ready, submit your transaction 
 
 ![Success message after sending deposit](<../../.gitbook/assets/image (39).png>)
 
-## 8. Set up Eth 2.0 client 
+## 8. Set up Eth 2.0 client&#x20;
 
 Congrats! You have successfully submitted your initial deposit to the beacon chain. The final step is to set up your Eth 2.0 client! Alchemy has guides on how to set up both Prysm and Teku:
 

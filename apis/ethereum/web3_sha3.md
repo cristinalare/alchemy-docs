@@ -1,10 +1,12 @@
 ---
-description: Returns Keccak-256 (not the standardized SHA3-256) of the given data.
+description: >-
+  Arbitrum API - Returns Keccak-256 (not the standardized SHA3-256) of the given
+  data.
 ---
 
 # web3\_sha3
 
-### **Parameters**
+## **Parameters**
 
 1. `DATA` - the data in hex form to convert into a SHA3 hash
 
@@ -18,18 +20,22 @@ params: [
 ]
 ```
 
-### **Returns**
+## **Returns**
 
 `DATA` - The SHA3 result of the given string.
 
-### ****[**Example**](https://composer.alchemyapi.io/?composer\_state=%7B%22chain%22%3A2%2C%22network%22%3A401%2C%22methodName%22%3A%22web3\_sha3%22%2C%22paramValues%22%3A%5B%220x0%22%5D%7D)****
+## Example
 
-Request
+### [Alchemy Composer](https://composer.alchemyapi.io/?composer\_state=%7B%22chain%22%3A1%2C%22network%22%3A201%2C%22methodName%22%3A%22web3\_sha3%22%2C%22paramValues%22%3A%5B%220x0%22%5D%7D)
+
+The Alchemy Composer allows you to make a no-code example request via your browser. Try it out above!
+
+### Request
 
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
+curl https://arb-mainnet.g.alchemy.com/v2/your-api-key\
 -X POST \
 -H "Content-Type: application/json" \
 -d '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c6f20776f726c64"],"id":64}'
@@ -38,7 +44,7 @@ curl https://eth-mainnet.alchemyapi.io/v2/your-api-key \
 
 {% tab title="Postman" %}
 ```http
-URL: https://eth-mainnet.alchemyapi.io/v2/your-api-key
+URL: https://arb-mainnet.g.alchemy.com/v2/your-api-key
 RequestType: POST
 Body: 
 {
@@ -51,7 +57,7 @@ Body:
 {% endtab %}
 {% endtabs %}
 
-Result
+### Result
 
 ```javascript
 {
@@ -61,4 +67,4 @@ Result
 }
 ```
 
-##
+###

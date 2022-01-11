@@ -18,7 +18,7 @@ With the current blockchain landscape, maintaining self-hosted nodes is expensiv
 
 ## :thumbsdown: The Downside of Self-Hosted Nodes
 
-Running and maintaining self-hosted nodes can be a blockchain developer's #1 pain. 
+Running and maintaining self-hosted nodes can be a blockchain developer's #1 pain.&#x20;
 
 #### It's expensive:
 
@@ -35,28 +35,28 @@ Running and maintaining self-hosted nodes can be a blockchain developer's #1 pai
 #### It can be unreliable:
 
 * Nodes on average have issues once every 5 days:
-  * CPU spikes, memory leaks, disk issues 
-  * Inconsistent peering 
-  * Corrupted internal databases 
-  * Transaction broadcasting issues 
+  * CPU spikes, memory leaks, disk issues&#x20;
+  * Inconsistent peering&#x20;
+  * Corrupted internal databases&#x20;
+  * Transaction broadcasting issues&#x20;
   * Frequent bugs + regressions
-  * 1 in 6 “stable releases” are broken 
+  * 1 in 6 “stable releases” are broken&#x20;
 
-Trust us, you don't want to be doing this. 
+Trust us, you don't want to be doing this.&#x20;
 
 ## :sunglasses: Leave Node Hosting to the Experts
 
-Alchemy's core products are here to eliminate the pains of self-hosting nodes, in addition to providing world-class developer tools. 
+Alchemy's core products are here to eliminate the pains of self-hosting nodes, in addition to providing world-class developer tools.&#x20;
 
 ![](../.gitbook/assets/screen-shot-2020-07-20-at-9.33.44-am.png)
 
 ### [Alchemy Supernode](core-products/alchemy-supernode.md)
 
-Alchemy Supernode is our infrastructure engine that replaces the typical self-hosted blockchain node, with unparalleled advantages: 
+Alchemy Supernode is our infrastructure engine that replaces the typical self-hosted blockchain node, with unparalleled advantages:&#x20;
 
 * [x] 1,000+ engineering hours saved per year
 * [x] 99.9% Reliability
-* [x] Dynamic Scalability: as you scale, we scale 
+* [x] Dynamic Scalability: as you scale, we scale&#x20;
 * [x] 100% Data Correctness
 * [x] Instant On (no setup or sync times)
 * [x] Instant Testnet
@@ -99,7 +99,7 @@ Alchemy Notify provides timely notifications on the most important Web3 events.
 
 **Learn more about Alchemy Notify **[**here**](core-products/alchemy-notify.md)**. **
 
-### [Alchemy Support](../resources/contact-us.md) 
+### [Alchemy Support](../resources/contact-us.md)&#x20;
 
 Alchemy has expert, hands-on support, dedicated for all customers.
 
@@ -112,14 +112,14 @@ Alchemy has expert, hands-on support, dedicated for all customers.
 
 ## :handshake: Who we work with
 
-Top blockchain companies and millions of users around the world trust our products.  
+Top blockchain companies and millions of users around the world trust our products. &#x20;
 
 * 4 million users per week across 197 countries
 * 70% of top Ethereum applications
 * 10s of Billions of Dollars in yearly volume
-* $1 Billion+ DeFi assets (74% of all value) 
+* $1 Billion+ DeFi assets (74% of all value)&#x20;
 
-### User Quotes 
+### User Quotes&#x20;
 
 > **"Alchemy is extremely reliable and robust, and sets the standard for how blockchain infrastructure should be. Alchemy just works. Very rarely does a company come along that takes 30 seconds to integrate with and saves you substantial time and money." - Joey Krug, CIO Plantera **
 
@@ -131,6 +131,6 @@ Top blockchain companies and millions of users around the world trust our produc
 
 > **"We ran our own Ethereum infrastructure for long enough, partnering with Alchemy to instead focus on building our business. Now we leave Ethereum infrastructure to the pros." - Adam Link, Engineer, Airswap**
 
-## ****:star_struck: Sounds Good?
+## ****:star\_struck: Sounds Good?
 
-[Sign up for free here](https://dashboard.alchemyapi.io/signup/). [Get started here](getting-started.md). 
+[Sign up for free here](https://dashboard.alchemyapi.io/signup/). [Get started here](getting-started.md).&#x20;

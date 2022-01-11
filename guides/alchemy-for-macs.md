@@ -42,7 +42,7 @@ In Terminal on the command line:
 npm install @alch/alchemy-web3
 ```
 
-## 3. \[Optional] Install WebSockets 
+## 3. \[Optional] Install WebSockets&#x20;
 
 WebSockets are a great way to subscribe to events and changes, learn more through our [Using WebSockets](using-websockets.md) page. To use WebSockets, first install WebSocket cat.
 
@@ -52,7 +52,7 @@ npm install -g wscat
 
 Now connect to Alchemy's blockchain infrastructure using WebSockets:
 
-Using Alchemy's demo: 
+Using Alchemy's demo:&#x20;
 
 ```
 wscat -c wss://eth-mainnet.ws.alchemyapi.io/ws/demo
@@ -70,10 +70,10 @@ Create a Web3 instance and set your provider as Alchemy:
 const web3 = new Web3("wss://eth-mainnet.ws.alchemyapi.io/ws/demo");
 ```
 
-## 4. Start Building! 
+## 4. Start Building!&#x20;
 
 Now that you have everything you need installed, start building your first app. Here are a couple great starting points:
 
-1. Write your first [web3 script](../tutorials/simple-web3-script.md) 
+1. Write your first [web3 script](../tutorials/simple-web3-script.md)&#x20;
 2. Check out the [Demo App](demo-app.md) we seeded in your Alchemy dashboard
-3. Follow this [tutorial to create a smart contract](../tutorials/hello-world-smart-contract/)! 
+3. Follow this [tutorial to create a smart contract](../tutorials/hello-world-smart-contract/)!&#x20;
