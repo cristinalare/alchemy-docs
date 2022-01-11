@@ -16,12 +16,14 @@
 
 ## ✨ Enhanced APIs
 
+* [NFT API](enhanced-apis/nft-api.md)
 * [Transfers API (Tx History)](enhanced-apis/transfers-api.md)
 * [Token API](enhanced-apis/token-api.md)
 * [Parity API](enhanced-apis/block-api-beta.md)
 * [Notify API](enhanced-apis/notify-api.md)
 * [Debug API](enhanced-apis/debug-api.md)
 * [Trace API](enhanced-apis/trace-api.md)
+* [NFT API](enhanced-apis/nft-api.md)
 
 ## ⛓ Chain APIs <a href="#apis" id="apis"></a>
 
