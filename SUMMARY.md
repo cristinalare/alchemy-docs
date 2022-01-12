@@ -13,23 +13,15 @@
   * [🔬 Alchemy Monitor](introduction/core-products/alchemy-monitor.md)
 * [Contributing to these Docs](introduction/contributing-to-docs.md)
 * [Referral Program](introduction/referral-program.md)
-* [Web3 University](https://web3.university)
 
 ## ✨ Enhanced APIs
 
-* [NFT API](enhanced-apis/nft-api.md)
-  * [getNFTs](enhanced-apis/nft-api/getnfts.md)
-  * [getNFTMetadata](enhanced-apis/nft-api/getnftmetadata.md)
 * [Transfers API (Tx History)](enhanced-apis/transfers-api.md)
 * [Token API](enhanced-apis/token-api.md)
 * [Parity API](enhanced-apis/block-api-beta.md)
 * [Notify API](enhanced-apis/notify-api.md)
 * [Debug API](enhanced-apis/debug-api.md)
 * [Trace API](enhanced-apis/trace-api.md)
-* [Unstoppable Domains APIs](enhanced-apis/unstoppable-domains-apis.md)
-  * [Get records for a domain](enhanced-apis/get-records-for-a-domain.md)
-  * [Get records for owner addresses](enhanced-apis/get-records-for-owner-addresses.md)
-  * [Get domain transfer events](enhanced-apis/get-domain-transfer-events.md)
 
 ## ⛓ Chain APIs <a href="#apis" id="apis"></a>
 
