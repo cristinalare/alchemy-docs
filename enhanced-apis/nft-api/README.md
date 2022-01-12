@@ -5,13 +5,18 @@ description: >-
 
 # NFT API
 
-![NFT APIs quickstart guide](https://www.loom.com/share/d7e85ff04c3441dd8e7c312a9b718acb)
+{% embed url="https://www.loom.com/share/d7e85ff04c3441dd8e7c312a9b718acb" caption="NFT APIs quickstart guide" %}
 
 Check out our quick start NFT API scripts!
 
-![](https://github.com/alchemyplatform/nft-api-scripts)
+{% embed url="https://github.com/alchemyplatform/nft-api-scripts" %}
 
 Endpoints documentation:
 
-![](enhanced_apis/nft-api/getnfts.md)
-![](enhanced_apis/nft-api/getNFTMetadata.md)
+{% content-ref url="enhanced-apis/getnfts.md" %}
+[getnfts.md](enhanced-apis/getnfts.md)
+{% endcontent-ref %}
+
+{% content-ref url="enhanced-apis/getnftmetadata.md" %}
+[getnftmetadata.md](enhanced-apis/getnftmetadata.md)
+{% endcontent-ref %}

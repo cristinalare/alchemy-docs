@@ -2,10 +2,18 @@
 
 **How to set up your Alchemy account and start querying the APIs**
 
-![Unstoppable Domains APIs Quickstart Video](https://www.loom.com/share/7cd5398275e74d8ba024323985cd90c7)
+{% embed url="https://www.loom.com/share/7cd5398275e74d8ba024323985cd90c7" caption="Unstoppable Domains APIs Quickstart Video" %}
 
 #### Endpoint Documentation
 
-![](enhanced-apis/unstoppable-domains/get-records-for-a-domain.md)
-![](enhanced-apis/unstoppable-domains/get-records-for-owner-addresses.md)
-![](enhanced-apis/unstoppable-domains/get-domain-transfer-events.md)
+{% content-ref url="enhanced-apis/unstoppable-domains/get-records-for-a-domain.md" %}
+[get-records-for-a-domain.md](enhanced-apis/unstoppable-domains/get-records-for-a-domain.md)
+{% endcontent-ref %}
+
+{% content-ref url="enhanced-apis/unstoppable-domains/get-records-for-owner-addresses.md" %}
+[get-records-for-owner-addresses.md](enhanced-apis/unstoppable-domains/get-records-for-owner-addresses.md)
+{% endcontent-ref %}
+
+{% content-ref url="enhanced-apis/unstoppable-domains/get-domain-transfer-events.md" %}
+[get-domain-transfer-events.md](enhanced-apis/unstoppable-domains/get-domain-transfer-events.md)
+{% endcontent-ref %}
