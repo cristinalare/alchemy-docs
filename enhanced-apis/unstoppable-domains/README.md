@@ -6,14 +6,14 @@
 
 #### Endpoint Documentation
 
-{% content-ref url="enhanced-apis/unstoppable-domains/get-records-for-a-domain.md" %}
-[get-records-for-a-domain.md](enhanced-apis/unstoppable-domains/get-records-for-a-domain.md)
+{% content-ref url="get-records-for-a-domain.md" %}
+[get-records-for-a-domain.md](get-records-for-a-domain.md)
 {% endcontent-ref %}
 
-{% content-ref url="enhanced-apis/unstoppable-domains/get-records-for-owner-addresses.md" %}
-[get-records-for-owner-addresses.md](enhanced-apis/unstoppable-domains/get-records-for-owner-addresses.md)
+{% content-ref url="get-records-for-owner-addresses.md" %}
+[get-records-for-owner-addresses.md](get-records-for-owner-addresses.md)
 {% endcontent-ref %}
 
-{% content-ref url="enhanced-apis/unstoppable-domains/get-domain-transfer-events.md" %}
-[get-domain-transfer-events.md](enhanced-apis/unstoppable-domains/get-domain-transfer-events.md)
+{% content-ref url="get-domain-transfer-events.md" %}
+[get-domain-transfer-events.md](get-domain-transfer-events.md)
 {% endcontent-ref %}

@@ -17,6 +17,6 @@ Endpoints documentation:
 [getnfts.md](getnfts.md)
 {% endcontent-ref %}
 
-{% content-ref url="enhanced-apis/getnftmetadata.md" %}
-[getnftmetadata.md](enhanced-apis/getnftmetadata.md)
+{% content-ref url="getnftmetadata.md" %}
+[getnftmetadata.md](getnftmetadata.md)
 {% endcontent-ref %}
