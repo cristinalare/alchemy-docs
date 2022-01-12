@@ -13,8 +13,8 @@ Check out our quick start NFT API scripts!
 
 Endpoints documentation:
 
-{% content-ref url="enhanced-apis/getnfts.md" %}
-[getnfts.md](enhanced-apis/getnfts.md)
+{% content-ref url="getnfts.md" %}
+[getnfts.md](getnfts.md)
 {% endcontent-ref %}
 
 {% content-ref url="enhanced-apis/getnftmetadata.md" %}
