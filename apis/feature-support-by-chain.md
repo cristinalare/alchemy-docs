@@ -23,8 +23,8 @@ description: >-
     <tr>
       <td>Mempool</td>
       <td>Mempool Dashboard</td>
-      <td data-type="select" data-multiple>All Networks</td>
-      <td data-type="select" data-multiple>All Networks</td>
+      <td>All Networks</td>
+      <td>All Networks</td>
       <td>No Pending Txs</td>
       <td>No Pending Txs</td>
       <td>Unsupported</td>
