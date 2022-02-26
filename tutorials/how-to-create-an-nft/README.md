@@ -173,18 +173,18 @@ Open up the my-nft project in your favorite editor (we like [VSCode](https://cod
 ```
 //Contract based on https://docs.openzeppelin.com/contracts/3.x/erc721
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.3;
+pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 
-contract MyNFT is ERC721, Ownable {
+contract MyNFT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    constructor() public ERC721("MyNFT", "NFT") {}
+    constructor() ERC721("MyNFT", "NFT") {}
 
     function mintNFT(address recipient, string memory tokenURI)
         public onlyOwner
@@ -203,13 +203,13 @@ contract MyNFT is ERC721, Ownable {
 
 1. Because we are inheriting classes from the OpenZepplin contracts library, in your command line run the following to install the library into our folder:
 
-`npm install @openzeppelin/contracts@3.1.0-solc-0.7`
+`npm install @openzeppelin/contracts`
 
 So, what does this code _do_ exactly? Let's break it down, line by line.
 
 In lines 5-7, our code inherits three [OpenZepplin](https://openzeppelin.com) smart contract classes:
 
-* `@openzeppelin/contracts/token/ERC721/ERC721.sol`contains the implementation of the ERC721 standard, which our NFT smart contract will inherit. (To be a valid NFT, your smart contract must implement all the methods of the ERC721 standard.) To learn more about the inherited ERC721 functions, check out the interface definition [here](https://eips.ethereum.org/EIPS/eip-721).
+* `@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol`contains the implementation of the ERC721 standard (along with a few additional NFT metadata tracking helper methods), which our NFT smart contract will inherit. (To be a valid NFT, your smart contract must implement all the methods of the ERC721 standard.) To learn more about the inherited ERC721 functions, check out the interface definition [here](https://eips.ethereum.org/EIPS/eip-721).
 * `@openzeppelin/contracts/utils/Counters.sol`provides counters that can only be incremented or decremented by one. Our smart contract uses a counter to keep track of the total number of NFTs minted and set the unique ID to our new NFT. Each NFT minted using a smart contract must be assigned a unique ID—here our unique ID is just determined by the total number of NFTs in existance. For example, the first NFT we mint with our smart contract has an ID of "1," our second NFT has an ID of "2," etc.
 * `@openzeppelin/contracts/access/Ownable.sol` sets up [access control](https://docs.openzeppelin.com/contracts/3.x/access-control) on our smart contract, so only the owner of the smart contract (you) can mint NFTs. Note, including access control is entirely a preference. If you'd like anyone to be able to mint an NFT using your smart contract, remove the word `Ownable` on line 10 and `onlyOwner` on line 17.
 
@@ -286,7 +286,7 @@ require('dotenv').config();
 require("@nomiclabs/hardhat-ethers");
 const { API_URL, PRIVATE_KEY } = process.env;
 module.exports = {
-   solidity: "0.7.3",
+   solidity: "0.8.1",
    defaultNetwork: "ropsten",
    networks: {
       hardhat: {},
