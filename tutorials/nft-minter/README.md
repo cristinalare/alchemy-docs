@@ -51,7 +51,7 @@ An NFT's metadata is really what brings it to life, allowing it to have properti
 
 In this tutorial, we're going to focus on part 2, calling an existing NFT's smart contract minting function using our React UI.
 
-[Here's a link](https://ropsten.etherscan.io/address/0x4C4a07F737Bf57F6632B6CAB089B78f62385aCaE) to the ERC-721 NFT smart contract we will be calling in this tutorial. If you'd like to learn how we made it, we highly recommend that you check out our other tutorial, ["How to Create an NFT."](https://docs.alchemyapi.io/alchemy/tutorials/how-to-create-an-nft)
+[Here's a link](https://ropsten.etherscan.io/address/0x4C4a07F737Bf57F6632B6CAB089B78f62385aCaE) to the ERC-721 NFT smart contract we will be calling in this tutorial. If you'd like to learn how we made it, we highly recommend that you check out our other tutorial, ["How to Create an NFT."](https://docs.alchemy.com/docs/how-to-create-an-nft)
 
 {% content-ref url="../how-to-create-an-nft/" %}
 [how-to-create-an-nft](../how-to-create-an-nft/)
@@ -621,7 +621,7 @@ As with our `connectWallet`function return types, we're returning JSON objects s
 Now that we have a way to upload our NFT metadata to IPFS via our `pinJSONToIPFS` function, we're going to need a way to load an instance of our smart contract so we can call its `mintNFT` function.
 
 {% hint style="success" %}
-As we mentioned earlier, in this tutorial we will be using [this existing NFT smart contract](https://ropsten.etherscan.io/address/0x4C4a07F737Bf57F6632B6CAB089B78f62385aCaE); however, if you'd like to learn how we made it, or make one yourself, we highly recommend you check out our other tutorial, ["How to Create an NFT."](https://docs.alchemyapi.io/alchemy/tutorials/how-to-create-an-nft)
+As we mentioned earlier, in this tutorial we will be using [this existing NFT smart contract](https://ropsten.etherscan.io/address/0x4C4a07F737Bf57F6632B6CAB089B78f62385aCaE); however, if you'd like to learn how we made it, or make one yourself, we highly recommend you check out our other tutorial, ["How to Create an NFT."](https://docs.alchemy.com/docs/how-to-create-an-nft)
 {% endhint %}
 
 ### The contract ABI
