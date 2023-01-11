@@ -915,7 +915,7 @@ JK, you made it to the end of the tutorial! To recap, by building an NFT minter,
 * Call smart contract methods from your frontend
 * Sign transactions using Metamask
 
-Presumably, you'd like to be able to show off the NFTs minted via your dApp in your wallet — so be sure to check out our quick tutorial [How to View Your NFT in Your Wallet](https://docs.alchemyapi.io/alchemy/tutorials/how-to-write-and-deploy-a-nft-smart-contract/how-to-view-your-nft-in-your-wallet)!
+Presumably, you'd like to be able to show off the NFTs minted via your dApp in your wallet — so be sure to check out our quick tutorial [How to View Your NFT in Your Wallet](https://docs.alchemy.com/docs/how-to-view-your-nft-in-your-mobile-wallet)!
 
 And, as always, if you have any questions, we're here to help in the [Alchemy Discord](https://discord.gg/gWuC7zB). We can't wait to see how you apply the concepts from this tutorial to your future projects! 🧙‍♂️
 
